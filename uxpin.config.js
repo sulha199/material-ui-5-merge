@@ -195,7 +195,7 @@ module.exports = {
         ],
       },
     ],
-    wrapper: 'src/components/UXPinWrapper/UXPinWrapper.js',
+    wrapper: 'src/components/UXPinWrapper/UXPinWrapper.tsx',
     webpackConfig: 'uxpin.webpack.config.js',
   },
   name: 'MUI 5 with UXPin Merge'
