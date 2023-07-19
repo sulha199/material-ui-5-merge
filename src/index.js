@@ -3,6 +3,7 @@
 
 // Inputs
 import Button from './components/Button/Button';
+import Button2 from './components/Button2/Button2';
 import ButtonGroup from './components/ButtonGroup/ButtonGroup';
 import Checkbox from './components/Checkbox/Checkbox';
 import CheckboxWithLabel from './components/CheckboxWithLabel/CheckboxWithLabel';
@@ -105,7 +106,8 @@ import UXPinWrapper from './components/UXPinWrapper/UXPinWrapper';
 
 export {
     // Inputs
-    Button, 
+    Button,
+    Button2,
     ButtonGroup,
     Checkbox,
     CheckboxWithLabel,

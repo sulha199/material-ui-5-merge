@@ -80,3 +80,6 @@ typings/
 
 #Parcel
 .parcel-cache
+
+# Build
+dist

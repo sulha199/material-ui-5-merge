@@ -9,7 +9,7 @@ module.exports = {
   },
   resolve: {
     modules: [__dirname, "node_modules"],
-    extensions: ["*", ".js", ".jsx"]
+    extensions: ["*", ".js", ".jsx", ".tsx"]
   },
   devtool: "source-map",
   module: {
@@ -38,6 +38,11 @@ module.exports = {
             require.resolve('@babel/preset-react', { paths: ['./node_modules/@uxpin/merge-cli'] })
           ],
         }
+      },
+      {
+        test: /\.tsx?$/,
+        use: 'ts-loader',
+        exclude: /node_modules/,
       },
     ]
   }

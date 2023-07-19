@@ -5,6 +5,7 @@ module.exports = {
         name: 'Buttons',
         include: [
           'src/components/Button/Button.js',
+          'src/components/Button2/Button2.tsx',
           'src/components/ButtonGroup/ButtonGroup.js',
           'src/components/IconButton/IconButton.js',
           'src/components/FloatingActionButton/FloatingActionButton.js',
