@@ -82,4 +82,4 @@ typings/
 .parcel-cache
 
 # Build
-dist
+#dist
