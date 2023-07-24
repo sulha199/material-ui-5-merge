@@ -8596,5 +8596,62 @@ var $ba1ec7fcd8d78c81$export$2e2bcd8739ae039 = $ba1ec7fcd8d78c81$var$UXPinWrappe
 
 
 
-export {$01c2718700122605$export$2e2bcd8739ae039 as Button, $ab6ea12fa206d7fb$export$2e2bcd8739ae039 as Button2, $5c0a7a33a48a0785$export$2e2bcd8739ae039 as ButtonGroup, $dd4f814d3ed670f5$export$2e2bcd8739ae039 as Checkbox, $de67f934c20e68f5$export$2e2bcd8739ae039 as CheckboxWithLabel, $2302f9d68c76d905$export$2e2bcd8739ae039 as Collapse, $484dfd49b78c6641$export$2e2bcd8739ae039 as IconButton, $6b4ed155a77e98ff$export$2e2bcd8739ae039 as FloatingActionButton, $41426880bf9767c2$export$2e2bcd8739ae039 as LoadingButton, $5b98ef666a8916ec$export$2e2bcd8739ae039 as Radio, $c691b7d4585d8c52$export$2e2bcd8739ae039 as RadioWithLabel, $029dc6d9ac055f9d$export$2e2bcd8739ae039 as RadioGroup, $45bf60c90bdbc522$export$2e2bcd8739ae039 as Rating, $b560fc0518d1308d$export$2e2bcd8739ae039 as Select, $3fcc80741341f138$export$2e2bcd8739ae039 as Slider, $553a6ecaacba8e36$export$2e2bcd8739ae039 as Switch, $55c48518655a9109$export$2e2bcd8739ae039 as SwitchWithLabel, $846045c082082f73$export$2e2bcd8739ae039 as TextField, $fd02248996edd8f7$export$2e2bcd8739ae039 as ToggleButton, $4943289653bbb50f$export$2e2bcd8739ae039 as ToggleButtonGroup, $de22927cabdeb196$export$2e2bcd8739ae039 as Avatar, $1f0581438bdcce8e$export$2e2bcd8739ae039 as Badge, $7fafffb45bd8603c$export$2e2bcd8739ae039 as Divider, $6ee864df121e395b$export$2e2bcd8739ae039 as Icon, $97d942c1a4fb586d$export$2e2bcd8739ae039 as List, $fe05808764991176$export$2e2bcd8739ae039 as ListItem, $0643506a24dd75ef$export$2e2bcd8739ae039 as ListItemAvatar, $ce0cdac88fa16ea3$export$2e2bcd8739ae039 as ListItemButton, $51e79e9f992e0d31$export$2e2bcd8739ae039 as ListItemIcon, $929dadd0f37ff8a8$export$2e2bcd8739ae039 as ListItemText, $d2e69a04631af15a$export$2e2bcd8739ae039 as ListSubheader, $c0914ae58ab6e5d3$export$2e2bcd8739ae039 as Tooltip, $495d4d60bd4d6faa$export$2e2bcd8739ae039 as Typography, $ae5c557c89d1f374$export$2e2bcd8739ae039 as BottomNavigation, $2b4c3fa339d07464$export$2e2bcd8739ae039 as BottomNavigationAction, $5687d590c9a7b989$export$2e2bcd8739ae039 as Breadcrumbs, $726d4e32959b0628$export$2e2bcd8739ae039 as Link, $9a94b05c37b872c4$export$2e2bcd8739ae039 as Menu, $0b4bed606fcfeec2$export$2e2bcd8739ae039 as MenuItem, $cab657c5b11ce901$export$2e2bcd8739ae039 as Pagination, $bb56cd0be5f74ec3$export$2e2bcd8739ae039 as Tab, $cd7de0441de58065$export$2e2bcd8739ae039 as Tabs, $9dff21fbaccdd569$export$2e2bcd8739ae039 as Toolbar, $a94ecc01b7c4a311$export$2e2bcd8739ae039 as Alert, $ebbb581919b8ae6b$export$2e2bcd8739ae039 as AlertTitle, $07620b41bfb6fd6f$export$2e2bcd8739ae039 as CircularProgress, $ac833bab733449cf$export$2e2bcd8739ae039 as DialogActions, $3a854a656f6632ed$export$2e2bcd8739ae039 as DialogContentText, $22d68e382d6154be$export$2e2bcd8739ae039 as DialogTitle, $02ae133ba3be51cf$export$2e2bcd8739ae039 as DialogContent, $b441a3903f81c9b7$export$2e2bcd8739ae039 as LinearProgress, $c2094d47014e15d4$export$2e2bcd8739ae039 as Snackbar, $666b97be0ebbfed9$export$2e2bcd8739ae039 as Skeleton, $3f15db54171bbd32$export$2e2bcd8739ae039 as Table, $dda942c3b5658ae4$export$2e2bcd8739ae039 as TableCell, $f4d216d083cc9950$export$2e2bcd8739ae039 as TableBody, $f9276cb62da5b234$export$2e2bcd8739ae039 as TableHead, $e9f0e5becfd403a3$export$2e2bcd8739ae039 as TableRow, $27a34599ce9c08b4$export$2e2bcd8739ae039 as FormControl, $a7bec6d5450860fc$export$2e2bcd8739ae039 as FormControlLabel, $946c82112296c706$export$2e2bcd8739ae039 as FormGroup, $134a90f9d8fd8dab$export$2e2bcd8739ae039 as FormHelperText, $0446759e8abdb16f$export$2e2bcd8739ae039 as FormLabel, $d493ef5b3f1b99eb$export$2e2bcd8739ae039 as Box, $c716763b1d724ad6$export$2e2bcd8739ae039 as Grid, $10ff67c3f8c14e30$export$2e2bcd8739ae039 as Stack, $b579141aaba57910$export$2e2bcd8739ae039 as Accordion, $947e175b9886ec40$export$2e2bcd8739ae039 as AccordionDetails, $be637ad248945679$export$2e2bcd8739ae039 as AccordionSummary, $207b102639b313d5$export$2e2bcd8739ae039 as AppBar, $ab029674f7947e83$export$2e2bcd8739ae039 as Card, $9a3c1010da7b251c$export$2e2bcd8739ae039 as CardActions, $8f73571a72641311$export$2e2bcd8739ae039 as CardActionArea, $0c72a034f4851b7b$export$2e2bcd8739ae039 as CardContent, $ca2c7731f9b8acd2$export$2e2bcd8739ae039 as CardHeader, $7113635453d70c3b$export$2e2bcd8739ae039 as CardMedia, $a2b78b47169a4edd$export$2e2bcd8739ae039 as Paper, $19daaff829f21759$export$2e2bcd8739ae039 as Image, $ba1ec7fcd8d78c81$export$2e2bcd8739ae039 as UXPinWrapper};
+
+/**
+ * @uxpindocurl https://mui.com/api/input-label/#main-content
+ */ function $2f417e42292cbe62$var$InputLabel(props) {
+    return /*#__PURE__*/ (0, $d4YY5$react).createElement((0, $d4YY5$muimaterialInputLabel), props, props.children);
+}
+$2f417e42292cbe62$var$InputLabel.propTypes = {
+    /**
+  * @uxpinignoreprop 
+  * The contents of the `InputLabel`.
+  */ children: (0, $d4YY5$proptypes).node,
+    /**
+   * @uxpinignoreprop 
+   * Override or extend the styles applied to the component.
+   * See [CSS API](#css-api) below for more details.
+   */ classes: (0, $d4YY5$proptypes).object.isRequired,
+    /**
+   * If `true`, the transition animation is disabled.
+   */ disableAnimation: (0, $d4YY5$proptypes).bool,
+    /**
+   * If `true`, apply disabled class.
+   */ disabled: (0, $d4YY5$proptypes).bool,
+    /**
+   * If `true`, the label will be displayed in an error state.
+   */ error: (0, $d4YY5$proptypes).bool,
+    /**
+   * If `true`, the input of this label is focused.
+   */ focused: (0, $d4YY5$proptypes).bool,
+    /**
+  * If `dense`, will adjust vertical spacing. This is normally obtained via context from
+  * FormControl.
+  */ margin: (0, $d4YY5$proptypes).oneOf([
+        "dense"
+    ]),
+    /**
+   * if `true`, the label will indicate that the input is required.
+   */ required: (0, $d4YY5$proptypes).bool,
+    /**
+   * If `true`, the label is shrunk.
+   */ shrink: (0, $d4YY5$proptypes).bool,
+    /**
+   * The variant to use.
+   */ variant: (0, $d4YY5$proptypes).oneOf([
+        "standard",
+        "outlined",
+        "filled"
+    ]),
+    /**
+   * The system prop that allows defining system overrides as well as additional CSS styles.
+   * See the `sx` page for more details. https://mui.com/system/the-sx-prop/
+   */ sx: (0, $d4YY5$proptypes).object
+};
+var $2f417e42292cbe62$export$2e2bcd8739ae039 = $2f417e42292cbe62$var$InputLabel;
+
+
+
+
+export {$01c2718700122605$export$2e2bcd8739ae039 as Button, $ab6ea12fa206d7fb$export$2e2bcd8739ae039 as Button2, $5c0a7a33a48a0785$export$2e2bcd8739ae039 as ButtonGroup, $dd4f814d3ed670f5$export$2e2bcd8739ae039 as Checkbox, $de67f934c20e68f5$export$2e2bcd8739ae039 as CheckboxWithLabel, $2302f9d68c76d905$export$2e2bcd8739ae039 as Collapse, $484dfd49b78c6641$export$2e2bcd8739ae039 as IconButton, $6b4ed155a77e98ff$export$2e2bcd8739ae039 as FloatingActionButton, $41426880bf9767c2$export$2e2bcd8739ae039 as LoadingButton, $5b98ef666a8916ec$export$2e2bcd8739ae039 as Radio, $c691b7d4585d8c52$export$2e2bcd8739ae039 as RadioWithLabel, $029dc6d9ac055f9d$export$2e2bcd8739ae039 as RadioGroup, $45bf60c90bdbc522$export$2e2bcd8739ae039 as Rating, $b560fc0518d1308d$export$2e2bcd8739ae039 as Select, $3fcc80741341f138$export$2e2bcd8739ae039 as Slider, $553a6ecaacba8e36$export$2e2bcd8739ae039 as Switch, $55c48518655a9109$export$2e2bcd8739ae039 as SwitchWithLabel, $846045c082082f73$export$2e2bcd8739ae039 as TextField, $fd02248996edd8f7$export$2e2bcd8739ae039 as ToggleButton, $4943289653bbb50f$export$2e2bcd8739ae039 as ToggleButtonGroup, $de22927cabdeb196$export$2e2bcd8739ae039 as Avatar, $1f0581438bdcce8e$export$2e2bcd8739ae039 as Badge, $7fafffb45bd8603c$export$2e2bcd8739ae039 as Divider, $6ee864df121e395b$export$2e2bcd8739ae039 as Icon, $97d942c1a4fb586d$export$2e2bcd8739ae039 as List, $fe05808764991176$export$2e2bcd8739ae039 as ListItem, $0643506a24dd75ef$export$2e2bcd8739ae039 as ListItemAvatar, $ce0cdac88fa16ea3$export$2e2bcd8739ae039 as ListItemButton, $51e79e9f992e0d31$export$2e2bcd8739ae039 as ListItemIcon, $929dadd0f37ff8a8$export$2e2bcd8739ae039 as ListItemText, $d2e69a04631af15a$export$2e2bcd8739ae039 as ListSubheader, $c0914ae58ab6e5d3$export$2e2bcd8739ae039 as Tooltip, $495d4d60bd4d6faa$export$2e2bcd8739ae039 as Typography, $ae5c557c89d1f374$export$2e2bcd8739ae039 as BottomNavigation, $2b4c3fa339d07464$export$2e2bcd8739ae039 as BottomNavigationAction, $5687d590c9a7b989$export$2e2bcd8739ae039 as Breadcrumbs, $726d4e32959b0628$export$2e2bcd8739ae039 as Link, $9a94b05c37b872c4$export$2e2bcd8739ae039 as Menu, $0b4bed606fcfeec2$export$2e2bcd8739ae039 as MenuItem, $cab657c5b11ce901$export$2e2bcd8739ae039 as Pagination, $bb56cd0be5f74ec3$export$2e2bcd8739ae039 as Tab, $cd7de0441de58065$export$2e2bcd8739ae039 as Tabs, $9dff21fbaccdd569$export$2e2bcd8739ae039 as Toolbar, $a94ecc01b7c4a311$export$2e2bcd8739ae039 as Alert, $ebbb581919b8ae6b$export$2e2bcd8739ae039 as AlertTitle, $07620b41bfb6fd6f$export$2e2bcd8739ae039 as CircularProgress, $ac833bab733449cf$export$2e2bcd8739ae039 as DialogActions, $3a854a656f6632ed$export$2e2bcd8739ae039 as DialogContentText, $22d68e382d6154be$export$2e2bcd8739ae039 as DialogTitle, $02ae133ba3be51cf$export$2e2bcd8739ae039 as DialogContent, $b441a3903f81c9b7$export$2e2bcd8739ae039 as LinearProgress, $c2094d47014e15d4$export$2e2bcd8739ae039 as Snackbar, $666b97be0ebbfed9$export$2e2bcd8739ae039 as Skeleton, $3f15db54171bbd32$export$2e2bcd8739ae039 as Table, $dda942c3b5658ae4$export$2e2bcd8739ae039 as TableCell, $f4d216d083cc9950$export$2e2bcd8739ae039 as TableBody, $f9276cb62da5b234$export$2e2bcd8739ae039 as TableHead, $e9f0e5becfd403a3$export$2e2bcd8739ae039 as TableRow, $27a34599ce9c08b4$export$2e2bcd8739ae039 as FormControl, $a7bec6d5450860fc$export$2e2bcd8739ae039 as FormControlLabel, $946c82112296c706$export$2e2bcd8739ae039 as FormGroup, $134a90f9d8fd8dab$export$2e2bcd8739ae039 as FormHelperText, $0446759e8abdb16f$export$2e2bcd8739ae039 as FormLabel, $2f417e42292cbe62$export$2e2bcd8739ae039 as InputLabel, $d493ef5b3f1b99eb$export$2e2bcd8739ae039 as Box, $c716763b1d724ad6$export$2e2bcd8739ae039 as Grid, $10ff67c3f8c14e30$export$2e2bcd8739ae039 as Stack, $b579141aaba57910$export$2e2bcd8739ae039 as Accordion, $947e175b9886ec40$export$2e2bcd8739ae039 as AccordionDetails, $be637ad248945679$export$2e2bcd8739ae039 as AccordionSummary, $207b102639b313d5$export$2e2bcd8739ae039 as AppBar, $ab029674f7947e83$export$2e2bcd8739ae039 as Card, $9a3c1010da7b251c$export$2e2bcd8739ae039 as CardActions, $8f73571a72641311$export$2e2bcd8739ae039 as CardActionArea, $0c72a034f4851b7b$export$2e2bcd8739ae039 as CardContent, $ca2c7731f9b8acd2$export$2e2bcd8739ae039 as CardHeader, $7113635453d70c3b$export$2e2bcd8739ae039 as CardMedia, $a2b78b47169a4edd$export$2e2bcd8739ae039 as Paper, $19daaff829f21759$export$2e2bcd8739ae039 as Image, $ba1ec7fcd8d78c81$export$2e2bcd8739ae039 as UXPinWrapper};
 //# sourceMappingURL=module.js.map

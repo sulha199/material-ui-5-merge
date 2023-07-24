@@ -154,6 +154,7 @@ $parcel$export(module.exports, "FormControlLabel", function () { return $40de6ad
 $parcel$export(module.exports, "FormGroup", function () { return $2c69faae06f7978c$export$2e2bcd8739ae039; });
 $parcel$export(module.exports, "FormHelperText", function () { return $d11646dcc2e3b067$export$2e2bcd8739ae039; });
 $parcel$export(module.exports, "FormLabel", function () { return $621d4471d2e3d957$export$2e2bcd8739ae039; });
+$parcel$export(module.exports, "InputLabel", function () { return $2351aa8e8e0e1996$export$2e2bcd8739ae039; });
 $parcel$export(module.exports, "Box", function () { return $5ce67b4abf8c8c03$export$2e2bcd8739ae039; });
 $parcel$export(module.exports, "Grid", function () { return $5effb4eeef9e84ed$export$2e2bcd8739ae039; });
 $parcel$export(module.exports, "Stack", function () { return $2fbfb2eb4d5a8e7b$export$2e2bcd8739ae039; });
@@ -8737,6 +8738,63 @@ var $73510f8881ac0f56$var$UXPinWrapper = function(param) {
     }, children);
 };
 var $73510f8881ac0f56$export$2e2bcd8739ae039 = $73510f8881ac0f56$var$UXPinWrapper;
+
+
+
+
+
+/**
+ * @uxpindocurl https://mui.com/api/input-label/#main-content
+ */ function $2351aa8e8e0e1996$var$InputLabel(props) {
+    return /*#__PURE__*/ (0, ($parcel$interopDefault($bzML5$react))).createElement((0, ($parcel$interopDefault($bzML5$muimaterialInputLabel))), props, props.children);
+}
+$2351aa8e8e0e1996$var$InputLabel.propTypes = {
+    /**
+  * @uxpinignoreprop 
+  * The contents of the `InputLabel`.
+  */ children: (0, ($parcel$interopDefault($bzML5$proptypes))).node,
+    /**
+   * @uxpinignoreprop 
+   * Override or extend the styles applied to the component.
+   * See [CSS API](#css-api) below for more details.
+   */ classes: (0, ($parcel$interopDefault($bzML5$proptypes))).object.isRequired,
+    /**
+   * If `true`, the transition animation is disabled.
+   */ disableAnimation: (0, ($parcel$interopDefault($bzML5$proptypes))).bool,
+    /**
+   * If `true`, apply disabled class.
+   */ disabled: (0, ($parcel$interopDefault($bzML5$proptypes))).bool,
+    /**
+   * If `true`, the label will be displayed in an error state.
+   */ error: (0, ($parcel$interopDefault($bzML5$proptypes))).bool,
+    /**
+   * If `true`, the input of this label is focused.
+   */ focused: (0, ($parcel$interopDefault($bzML5$proptypes))).bool,
+    /**
+  * If `dense`, will adjust vertical spacing. This is normally obtained via context from
+  * FormControl.
+  */ margin: (0, ($parcel$interopDefault($bzML5$proptypes))).oneOf([
+        "dense"
+    ]),
+    /**
+   * if `true`, the label will indicate that the input is required.
+   */ required: (0, ($parcel$interopDefault($bzML5$proptypes))).bool,
+    /**
+   * If `true`, the label is shrunk.
+   */ shrink: (0, ($parcel$interopDefault($bzML5$proptypes))).bool,
+    /**
+   * The variant to use.
+   */ variant: (0, ($parcel$interopDefault($bzML5$proptypes))).oneOf([
+        "standard",
+        "outlined",
+        "filled"
+    ]),
+    /**
+   * The system prop that allows defining system overrides as well as additional CSS styles.
+   * See the `sx` page for more details. https://mui.com/system/the-sx-prop/
+   */ sx: (0, ($parcel$interopDefault($bzML5$proptypes))).object
+};
+var $2351aa8e8e0e1996$export$2e2bcd8739ae039 = $2351aa8e8e0e1996$var$InputLabel;
 
 
 

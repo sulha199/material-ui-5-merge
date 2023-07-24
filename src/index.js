@@ -103,6 +103,7 @@ import Image from './components/Image/Image';
 
 // Misc.
 import UXPinWrapper from './components/UXPinWrapper/UXPinWrapper';
+import InputLabel from './components/InputLabel/InputLabel';
 
 export {
     // Inputs
@@ -178,7 +179,8 @@ export {
     FormControlLabel,
     FormGroup,
     FormHelperText,
-    FormLabel,
+    FormLabel,    
+    InputLabel,
 
     // Layout
     Box,
