@@ -170,6 +170,7 @@ module.exports = {
         include: [
           'src/components/Box/Box.js',
           'src/components/Container/Container.js',
+          'src/components/Div/Div.tsx',
           'src/components/Grid/Grid.js',
           'src/components/ImageList/ImageList.js',
           'src/components/ImageListItem/ImageListItem.js',

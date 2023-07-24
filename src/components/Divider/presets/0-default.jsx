@@ -1,7 +1,7 @@
 import React from "react";
-import Divider from "../Divider";
 import Typography from "../../Typography/Typography";
+import Div from "../../Div/Div";
 
 export default( 
-    <Divider uxpId="divider-1"><Typography uxpId="divider-child">Optional Child</Typography></Divider>
+    <Div uxpId="divider-1"><Typography uxpId="divider-child">Optional Child</Typography></Div>
 )

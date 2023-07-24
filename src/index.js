@@ -78,6 +78,7 @@ import FormLabel from './components/FormLabel/FormLabel';
 
 // Layout
 import Box from './components/Box/Box';
+import Div from './components/Div/Div';
 import Grid from './components/Grid/Grid';
 import Stack from './components/Stack/Stack';
 
@@ -184,6 +185,7 @@ export {
 
     // Layout
     Box,
+    Div,
     Grid,
     Stack,
 
