@@ -1,7 +1,7 @@
 {
   "name": "material-ui-uxpin",
   "version": "1.0.0",
-  "source": "src/index.js",
+  "source": "src/index.tsx",
   "main": "dist/main.js",
   "module": "dist/module.js",
   "dependencies": {
