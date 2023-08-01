@@ -1,84 +1,234 @@
-import $d4YY5$react, {createElement as $d4YY5$createElement, useState as $d4YY5$useState, useEffect as $d4YY5$useEffect, Fragment as $d4YY5$Fragment} from "react";
-import $d4YY5$proptypes, {string as $d4YY5$string} from "prop-types";
+import $d4YY5$react, {createElement as $d4YY5$createElement, useState as $d4YY5$useState, useRef as $d4YY5$useRef, useEffect as $d4YY5$useEffect, Fragment as $d4YY5$Fragment} from "react";
+import {createRoot as $d4YY5$createRoot} from "react-dom/client";
+import {Box as $d4YY5$Box, Typography as $d4YY5$Typography, Stack as $d4YY5$Stack, Button as $d4YY5$Button, Stepper as $d4YY5$Stepper, Backdrop as $d4YY5$Backdrop} from "@mui/material";
+import $d4YY5$proptypes from "prop-types";
 import $d4YY5$muimaterialButton from "@mui/material/Button";
 import $d4YY5$muimaterialIcon from "@mui/material/Icon";
+import $d4YY5$muimaterialTablePagination from "@mui/material/TablePagination";
 import $d4YY5$muimaterialButtonGroup from "@mui/material/ButtonGroup";
-import $d4YY5$muimaterialCheckbox from "@mui/material/Checkbox";
-import {makeStyles as $d4YY5$makeStyles} from "@mui/styles";
-import {v4 as $d4YY5$v4} from "uuid";
-import $d4YY5$muimaterialFormControlLabel from "@mui/material/FormControlLabel";
-import $d4YY5$muimaterialCollapse from "@mui/material/Collapse";
 import $d4YY5$muimaterialIconButton from "@mui/material/IconButton";
 import $d4YY5$muimaterialFab from "@mui/material/Fab";
 import $d4YY5$muilabLoadingButton from "@mui/lab/LoadingButton";
-import $d4YY5$muimaterialRadio from "@mui/material/Radio";
-import $d4YY5$muimaterialRadioGroup from "@mui/material/RadioGroup";
+import $d4YY5$muimaterialClickAwayListener from "@mui/material/ClickAwayListener";
+import $d4YY5$muimaterialGrow from "@mui/material/Grow";
+import $d4YY5$muimaterialPaper from "@mui/material/Paper";
+import $d4YY5$muimaterialPopper from "@mui/material/Popper";
+import $d4YY5$muimaterialMenuItem from "@mui/material/MenuItem";
+import $d4YY5$muimaterialMenuList from "@mui/material/MenuList";
+import $d4YY5$muimaterialToggleButton from "@mui/material/ToggleButton";
+import $d4YY5$muimaterialToggleButtonGroup from "@mui/material/ToggleButtonGroup";
+import $d4YY5$muimaterialCheckbox from "@mui/material/Checkbox";
+import {v4 as $d4YY5$v4} from "uuid";
+import $d4YY5$muimaterialFormControlLabel from "@mui/material/FormControlLabel";
+import $d4YY5$muimaterialFormGroup from "@mui/material/FormGroup";
 import $d4YY5$muimaterialFormControl from "@mui/material/FormControl";
 import $d4YY5$muimaterialFormLabel from "@mui/material/FormLabel";
+import $d4YY5$muimaterialRadio from "@mui/material/Radio";
+import $d4YY5$muimaterialRadioGroup from "@mui/material/RadioGroup";
 import $d4YY5$muimaterialRating from "@mui/material/Rating";
 import $d4YY5$muimaterialSelect from "@mui/material/Select";
-import $d4YY5$muimaterialInputLabel from "@mui/material/InputLabel";
-import $d4YY5$muimaterialSlider from "@mui/material/Slider";
 import $d4YY5$muimaterialSwitch from "@mui/material/Switch";
 import $d4YY5$muimaterialTextField from "@mui/material/TextField";
 import $d4YY5$muimaterialInputAdornment from "@mui/material/InputAdornment";
-import $d4YY5$muimaterialToggleButton from "@mui/material/ToggleButton";
-import $d4YY5$muimaterialToggleButtonGroup from "@mui/material/ToggleButtonGroup";
-import $d4YY5$muimaterialAvatar from "@mui/material/Avatar";
-import $d4YY5$muimaterialBadge from "@mui/material/Badge";
-import {styled as $d4YY5$styled, createTheme as $d4YY5$createTheme, ThemeProvider as $d4YY5$ThemeProvider} from "@mui/material/styles";
-import $d4YY5$muimaterialDivider from "@mui/material/Divider";
-import $d4YY5$muimaterialList from "@mui/material/List";
-import $d4YY5$muimaterialListItem from "@mui/material/ListItem";
-import $d4YY5$muimaterialListItemIcon from "@mui/material/ListItemIcon";
-import $d4YY5$muimaterialListItemText from "@mui/material/ListItemText";
-import $d4YY5$muimaterialListItemAvatar from "@mui/material/ListItemAvatar";
-import $d4YY5$muimaterialListItemButton from "@mui/material/ListItemButton";
-import $d4YY5$muimaterialListSubheader from "@mui/material/ListSubheader";
-import $d4YY5$muimaterialTooltip from "@mui/material/Tooltip";
-import $d4YY5$muimaterialTypography from "@mui/material/Typography";
-import $d4YY5$muimaterialBottomNavigation from "@mui/material/BottomNavigation";
-import $d4YY5$muimaterialBottomNavigationAction from "@mui/material/BottomNavigationAction";
-import $d4YY5$muimaterialBreadcrumbs from "@mui/material/Breadcrumbs";
-import $d4YY5$muimaterialLink from "@mui/material/Link";
-import $d4YY5$muimaterialMenu from "@mui/material/Menu";
-import $d4YY5$muimaterialMenuItem from "@mui/material/MenuItem";
-import $d4YY5$muimaterialPagination from "@mui/material/Pagination";
-import $d4YY5$muimaterialTab from "@mui/material/Tab";
-import $d4YY5$muimaterialTabs from "@mui/material/Tabs";
-import $d4YY5$muimaterialToolbar from "@mui/material/Toolbar";
-import $d4YY5$muimaterialAlert from "@mui/material/Alert";
-import $d4YY5$muimaterialAlertTitle from "@mui/material/AlertTitle";
-import $d4YY5$muimaterialCircularProgress from "@mui/material/CircularProgress";
-import $d4YY5$muimaterialDialogActions from "@mui/material/DialogActions";
-import $d4YY5$muimaterialDialogContentText from "@mui/material/DialogContentText";
-import $d4YY5$muimaterialDialogTitle from "@mui/material/DialogTitle";
-import $d4YY5$muimaterialDialogContent from "@mui/material/DialogContent";
-import $d4YY5$muimaterialLinearProgress from "@mui/material/LinearProgress";
-import $d4YY5$muimaterialSnackbar from "@mui/material/Snackbar";
-import $d4YY5$muimaterialSkeleton from "@mui/material/Skeleton";
-import $d4YY5$muimaterialTable from "@mui/material/Table";
-import $d4YY5$muimaterialTableCell from "@mui/material/TableCell";
-import $d4YY5$muimaterialTableBody from "@mui/material/TableBody";
-import $d4YY5$muimaterialTableHead from "@mui/material/TableHead";
-import $d4YY5$muimaterialTableRow from "@mui/material/TableRow";
-import $d4YY5$muimaterialFormGroup from "@mui/material/FormGroup";
-import $d4YY5$muimaterialFormHelperText from "@mui/material/FormHelperText";
-import $d4YY5$muimaterialBox from "@mui/material/Box";
-import $d4YY5$muimaterialGrid from "@mui/material/Grid";
-import $d4YY5$muimaterialStack from "@mui/material/Stack";
-import $d4YY5$muimaterialAccordion from "@mui/material/Accordion";
-import $d4YY5$muimaterialAccordionDetails from "@mui/material/AccordionDetails";
-import $d4YY5$muimaterialAccordionSummary from "@mui/material/AccordionSummary";
-import $d4YY5$muimaterialAppBar from "@mui/material/AppBar";
 import $d4YY5$muimaterialCard from "@mui/material/Card";
 import $d4YY5$muimaterialCardActions from "@mui/material/CardActions";
 import $d4YY5$muimaterialCardActionArea from "@mui/material/CardActionArea";
 import $d4YY5$muimaterialCardContent from "@mui/material/CardContent";
 import $d4YY5$muimaterialCardHeader from "@mui/material/CardHeader";
+import $d4YY5$muimaterialAvatar from "@mui/material/Avatar";
 import $d4YY5$muimaterialCardMedia from "@mui/material/CardMedia";
-import $d4YY5$muimaterialPaper from "@mui/material/Paper";
+import $d4YY5$muimaterialAccordion from "@mui/material/Accordion";
+import $d4YY5$muimaterialAccordionActions from "@mui/material/AccordionActions";
+import $d4YY5$muimaterialAccordionDetails from "@mui/material/AccordionDetails";
+import $d4YY5$muimaterialAccordionSummary from "@mui/material/AccordionSummary";
+import $d4YY5$muimaterialList from "@mui/material/List";
+import $d4YY5$muimaterialListItem from "@mui/material/ListItem";
+import $d4YY5$muimaterialListItemAvatar from "@mui/material/ListItemAvatar";
+import $d4YY5$muimaterialListItemButton from "@mui/material/ListItemButton";
+import $d4YY5$muimaterialListItemIcon from "@mui/material/ListItemIcon";
+import $d4YY5$muimaterialListItemText from "@mui/material/ListItemText";
+import $d4YY5$muimaterialListSubheader from "@mui/material/ListSubheader";
+import $d4YY5$muimaterialCircularProgress from "@mui/material/CircularProgress";
+import $d4YY5$muimaterialLinearProgress from "@mui/material/LinearProgress";
+import $d4YY5$muimaterialDialog from "@mui/material/Dialog";
+import $d4YY5$muimaterialDialogActions from "@mui/material/DialogActions";
+import $d4YY5$muimaterialDialogContentText from "@mui/material/DialogContentText";
+import $d4YY5$muimaterialDialogTitle from "@mui/material/DialogTitle";
+import $d4YY5$muimaterialDialogContent from "@mui/material/DialogContent";
+import $d4YY5$muimaterialTable from "@mui/material/Table";
+import $d4YY5$muimaterialTableContainer from "@mui/material/TableContainer";
+import $d4YY5$muimaterialTableCell from "@mui/material/TableCell";
+import $d4YY5$muimaterialTableBody from "@mui/material/TableBody";
+import $d4YY5$muimaterialTableFooter from "@mui/material/TableFooter";
+import $d4YY5$muimaterialTableHead from "@mui/material/TableHead";
+import $d4YY5$muimaterialTableRow from "@mui/material/TableRow";
+import $d4YY5$muimaterialAppBar from "@mui/material/AppBar";
+import $d4YY5$muimaterialBottomNavigation from "@mui/material/BottomNavigation";
+import $d4YY5$muimaterialBottomNavigationAction from "@mui/material/BottomNavigationAction";
+import $d4YY5$muimaterialBreadcrumbs from "@mui/material/Breadcrumbs";
+import $d4YY5$muimaterialDrawer from "@mui/material/Drawer";
+import $d4YY5$muimaterialBox from "@mui/material/Box";
+import $d4YY5$muimaterialMenu from "@mui/material/Menu";
+import $d4YY5$muimaterialLink from "@mui/material/Link";
+import $d4YY5$muimaterialPagination from "@mui/material/Pagination";
+import $d4YY5$muimaterialStep from "@mui/material/Step";
+import $d4YY5$muimaterialStepLabel from "@mui/material/StepLabel";
+import $d4YY5$muimaterialTypography from "@mui/material/Typography";
+import $d4YY5$muimaterialTab from "@mui/material/Tab";
+import $d4YY5$muimaterialTabs from "@mui/material/Tabs";
+import $d4YY5$muimaterialAvatarGroup from "@mui/material/AvatarGroup";
+import $d4YY5$muimaterialBadge from "@mui/material/Badge";
+import $d4YY5$muimaterialChip from "@mui/material/Chip";
+import $d4YY5$muimaterialDivider from "@mui/material/Divider";
+import $d4YY5$muimaterialTooltip from "@mui/material/Tooltip";
+import $d4YY5$muimaterialFormHelperText from "@mui/material/FormHelperText";
+import $d4YY5$muimaterialContainer from "@mui/material/Container";
+import $d4YY5$muimaterialGrid from "@mui/material/Grid";
+import $d4YY5$muimaterialImageList from "@mui/material/ImageList";
+import $d4YY5$muimaterialImageListItem from "@mui/material/ImageListItem";
+import $d4YY5$muimaterialImageListItemBar from "@mui/material/ImageListItemBar";
+import $d4YY5$muimaterialStack from "@mui/material/Stack";
+import $d4YY5$muimaterialAlert from "@mui/material/Alert";
+import $d4YY5$muimaterialCollapse from "@mui/material/Collapse";
+import $d4YY5$muimaterialAlertTitle from "@mui/material/AlertTitle";
+import $d4YY5$muimaterialInputLabel from "@mui/material/InputLabel";
+import $d4YY5$muimaterialSkeleton from "@mui/material/Skeleton";
+import $d4YY5$muimaterialSlider from "@mui/material/Slider";
+import $d4YY5$muimaterialSnackbar from "@mui/material/Snackbar";
+import $d4YY5$muimaterialToolbar from "@mui/material/Toolbar";
+import {AdapterDateFns as $d4YY5$AdapterDateFns} from "@mui/x-date-pickers/AdapterDateFns";
+import {LocalizationProvider as $d4YY5$LocalizationProvider} from "@mui/x-date-pickers/LocalizationProvider";
+import {DatePicker as $d4YY5$DatePicker} from "@mui/x-date-pickers";
+import {createTheme as $d4YY5$createTheme, ThemeProvider as $d4YY5$ThemeProvider} from "@mui/material/styles";
 
+function $parcel$export(e, n, v, s) {
+  Object.defineProperty(e, n, {get: v, set: s, enumerable: true, configurable: true});
+}
+
+
+
+
+function $6bca3b58ce68da3c$export$2e2bcd8739ae039() {
+    return /*#__PURE__*/ (0, $d4YY5$react).createElement((0, $d4YY5$Box), {
+        sx: {
+            width: "100%",
+            maxWidth: 500,
+            margin: "0 auto"
+        }
+    }, /*#__PURE__*/ (0, $d4YY5$react).createElement((0, $d4YY5$Typography), {
+        variant: "h1",
+        gutterBottom: true
+    }, "Hello MUI!"), /*#__PURE__*/ (0, $d4YY5$react).createElement((0, $d4YY5$Stack), {
+        spacing: 2,
+        direction: "row"
+    }, /*#__PURE__*/ (0, $d4YY5$react).createElement((0, $d4YY5$Button), {
+        variant: "contained"
+    }, "Contained"), /*#__PURE__*/ (0, $d4YY5$react).createElement((0, $d4YY5$Button), {
+        variant: "outlined"
+    }, "Outlined")));
+}
+
+
+var $1db0e71ec4627c61$exports = {};
+
+$parcel$export($1db0e71ec4627c61$exports, "Button", function () { return $01c2718700122605$export$2e2bcd8739ae039; });
+$parcel$export($1db0e71ec4627c61$exports, "TablePagination", function () { return $d8dcabe1153bcb35$export$2e2bcd8739ae039; });
+$parcel$export($1db0e71ec4627c61$exports, "ButtonGroup", function () { return $5c0a7a33a48a0785$export$2e2bcd8739ae039; });
+$parcel$export($1db0e71ec4627c61$exports, "IconButton", function () { return $484dfd49b78c6641$export$2e2bcd8739ae039; });
+$parcel$export($1db0e71ec4627c61$exports, "FloatingActionButton", function () { return $6b4ed155a77e98ff$export$2e2bcd8739ae039; });
+$parcel$export($1db0e71ec4627c61$exports, "LoadingButton", function () { return $41426880bf9767c2$export$2e2bcd8739ae039; });
+$parcel$export($1db0e71ec4627c61$exports, "SplitButton", function () { return $7d0a855957dbdebe$export$2e2bcd8739ae039; });
+$parcel$export($1db0e71ec4627c61$exports, "ToggleButton", function () { return $fd02248996edd8f7$export$2e2bcd8739ae039; });
+$parcel$export($1db0e71ec4627c61$exports, "ToggleButtonGroup", function () { return $4943289653bbb50f$export$2e2bcd8739ae039; });
+$parcel$export($1db0e71ec4627c61$exports, "Checkbox", function () { return $dd4f814d3ed670f5$export$2e2bcd8739ae039; });
+$parcel$export($1db0e71ec4627c61$exports, "CheckboxWithLabel", function () { return $de67f934c20e68f5$export$2e2bcd8739ae039; });
+$parcel$export($1db0e71ec4627c61$exports, "CheckboxGroup", function () { return $efbad87542ce732c$export$2e2bcd8739ae039; });
+$parcel$export($1db0e71ec4627c61$exports, "Radio", function () { return $5b98ef666a8916ec$export$2e2bcd8739ae039; });
+$parcel$export($1db0e71ec4627c61$exports, "RadioWithLabel", function () { return $c691b7d4585d8c52$export$2e2bcd8739ae039; });
+$parcel$export($1db0e71ec4627c61$exports, "RadioGroup", function () { return $029dc6d9ac055f9d$export$2e2bcd8739ae039; });
+$parcel$export($1db0e71ec4627c61$exports, "Rating", function () { return $45bf60c90bdbc522$export$2e2bcd8739ae039; });
+$parcel$export($1db0e71ec4627c61$exports, "Select", function () { return $b560fc0518d1308d$export$2e2bcd8739ae039; });
+$parcel$export($1db0e71ec4627c61$exports, "DatePicker", function () { return $9f0597e0efd16815$export$2e2bcd8739ae039; });
+$parcel$export($1db0e71ec4627c61$exports, "Switch", function () { return $553a6ecaacba8e36$export$2e2bcd8739ae039; });
+$parcel$export($1db0e71ec4627c61$exports, "SwitchWithLabel", function () { return $55c48518655a9109$export$2e2bcd8739ae039; });
+$parcel$export($1db0e71ec4627c61$exports, "SwitchGroup", function () { return $17eba3cfebb86d0b$export$2e2bcd8739ae039; });
+$parcel$export($1db0e71ec4627c61$exports, "TextField", function () { return $846045c082082f73$export$2e2bcd8739ae039; });
+$parcel$export($1db0e71ec4627c61$exports, "Card", function () { return $ab029674f7947e83$export$2e2bcd8739ae039; });
+$parcel$export($1db0e71ec4627c61$exports, "CardActions", function () { return $9a3c1010da7b251c$export$2e2bcd8739ae039; });
+$parcel$export($1db0e71ec4627c61$exports, "CardActionArea", function () { return $8f73571a72641311$export$2e2bcd8739ae039; });
+$parcel$export($1db0e71ec4627c61$exports, "CardContent", function () { return $0c72a034f4851b7b$export$2e2bcd8739ae039; });
+$parcel$export($1db0e71ec4627c61$exports, "CardHeader", function () { return $ca2c7731f9b8acd2$export$2e2bcd8739ae039; });
+$parcel$export($1db0e71ec4627c61$exports, "CardMedia", function () { return $7113635453d70c3b$export$2e2bcd8739ae039; });
+$parcel$export($1db0e71ec4627c61$exports, "Accordion", function () { return $b579141aaba57910$export$2e2bcd8739ae039; });
+$parcel$export($1db0e71ec4627c61$exports, "AccordionActions", function () { return $57b163ae949ff6c7$export$2e2bcd8739ae039; });
+$parcel$export($1db0e71ec4627c61$exports, "AccordionDetails", function () { return $947e175b9886ec40$export$2e2bcd8739ae039; });
+$parcel$export($1db0e71ec4627c61$exports, "AccordionSummary", function () { return $be637ad248945679$export$2e2bcd8739ae039; });
+$parcel$export($1db0e71ec4627c61$exports, "Paper", function () { return $a2b78b47169a4edd$export$2e2bcd8739ae039; });
+$parcel$export($1db0e71ec4627c61$exports, "List", function () { return $97d942c1a4fb586d$export$2e2bcd8739ae039; });
+$parcel$export($1db0e71ec4627c61$exports, "ListItem", function () { return $fe05808764991176$export$2e2bcd8739ae039; });
+$parcel$export($1db0e71ec4627c61$exports, "ListItemAvatar", function () { return $0643506a24dd75ef$export$2e2bcd8739ae039; });
+$parcel$export($1db0e71ec4627c61$exports, "ListItemButton", function () { return $ce0cdac88fa16ea3$export$2e2bcd8739ae039; });
+$parcel$export($1db0e71ec4627c61$exports, "ListItemIcon", function () { return $51e79e9f992e0d31$export$2e2bcd8739ae039; });
+$parcel$export($1db0e71ec4627c61$exports, "ListItemText", function () { return $929dadd0f37ff8a8$export$2e2bcd8739ae039; });
+$parcel$export($1db0e71ec4627c61$exports, "ListSubheader", function () { return $d2e69a04631af15a$export$2e2bcd8739ae039; });
+$parcel$export($1db0e71ec4627c61$exports, "CircularProgress", function () { return $07620b41bfb6fd6f$export$2e2bcd8739ae039; });
+$parcel$export($1db0e71ec4627c61$exports, "LinearProgress", function () { return $b441a3903f81c9b7$export$2e2bcd8739ae039; });
+$parcel$export($1db0e71ec4627c61$exports, "Dialog", function () { return $a16e965a5d044a0d$export$2e2bcd8739ae039; });
+$parcel$export($1db0e71ec4627c61$exports, "DialogActions", function () { return $ac833bab733449cf$export$2e2bcd8739ae039; });
+$parcel$export($1db0e71ec4627c61$exports, "DialogContentText", function () { return $3a854a656f6632ed$export$2e2bcd8739ae039; });
+$parcel$export($1db0e71ec4627c61$exports, "DialogTitle", function () { return $22d68e382d6154be$export$2e2bcd8739ae039; });
+$parcel$export($1db0e71ec4627c61$exports, "DialogContent", function () { return $02ae133ba3be51cf$export$2e2bcd8739ae039; });
+$parcel$export($1db0e71ec4627c61$exports, "Table", function () { return $3f15db54171bbd32$export$2e2bcd8739ae039; });
+$parcel$export($1db0e71ec4627c61$exports, "TableCell", function () { return $dda942c3b5658ae4$export$2e2bcd8739ae039; });
+$parcel$export($1db0e71ec4627c61$exports, "TableContainer", function () { return $db03b1590ab16b2d$export$2e2bcd8739ae039; });
+$parcel$export($1db0e71ec4627c61$exports, "TableBody", function () { return $f4d216d083cc9950$export$2e2bcd8739ae039; });
+$parcel$export($1db0e71ec4627c61$exports, "TableFooter", function () { return $1280083d972848a8$export$2e2bcd8739ae039; });
+$parcel$export($1db0e71ec4627c61$exports, "TableHead", function () { return $f9276cb62da5b234$export$2e2bcd8739ae039; });
+$parcel$export($1db0e71ec4627c61$exports, "TableRow", function () { return $e9f0e5becfd403a3$export$2e2bcd8739ae039; });
+$parcel$export($1db0e71ec4627c61$exports, "AppBar", function () { return $207b102639b313d5$export$2e2bcd8739ae039; });
+$parcel$export($1db0e71ec4627c61$exports, "BottomNavigation", function () { return $ae5c557c89d1f374$export$2e2bcd8739ae039; });
+$parcel$export($1db0e71ec4627c61$exports, "BottomNavigationAction", function () { return $2b4c3fa339d07464$export$2e2bcd8739ae039; });
+$parcel$export($1db0e71ec4627c61$exports, "Breadcrumbs", function () { return $5687d590c9a7b989$export$2e2bcd8739ae039; });
+$parcel$export($1db0e71ec4627c61$exports, "Drawer", function () { return $68d2406aabe0f569$export$2e2bcd8739ae039; });
+$parcel$export($1db0e71ec4627c61$exports, "Menu", function () { return $9a94b05c37b872c4$export$2e2bcd8739ae039; });
+$parcel$export($1db0e71ec4627c61$exports, "Link", function () { return $726d4e32959b0628$export$2e2bcd8739ae039; });
+$parcel$export($1db0e71ec4627c61$exports, "MenuList", function () { return $05043c2e55525469$export$2e2bcd8739ae039; });
+$parcel$export($1db0e71ec4627c61$exports, "MenuItem", function () { return $0b4bed606fcfeec2$export$2e2bcd8739ae039; });
+$parcel$export($1db0e71ec4627c61$exports, "Pagination", function () { return $cab657c5b11ce901$export$2e2bcd8739ae039; });
+$parcel$export($1db0e71ec4627c61$exports, "Stepper", function () { return $4c4b539818e9e31a$export$2e2bcd8739ae039; });
+$parcel$export($1db0e71ec4627c61$exports, "Tab", function () { return $bb56cd0be5f74ec3$export$2e2bcd8739ae039; });
+$parcel$export($1db0e71ec4627c61$exports, "Tabs", function () { return $cd7de0441de58065$export$2e2bcd8739ae039; });
+$parcel$export($1db0e71ec4627c61$exports, "Avatar", function () { return $de22927cabdeb196$export$2e2bcd8739ae039; });
+$parcel$export($1db0e71ec4627c61$exports, "AvatarGroup", function () { return $aebf4660e02953ed$export$2e2bcd8739ae039; });
+$parcel$export($1db0e71ec4627c61$exports, "Badge", function () { return $1f0581438bdcce8e$export$2e2bcd8739ae039; });
+$parcel$export($1db0e71ec4627c61$exports, "Chip", function () { return $fbd4c41f23b40106$export$2e2bcd8739ae039; });
+$parcel$export($1db0e71ec4627c61$exports, "Divider", function () { return $7fafffb45bd8603c$export$2e2bcd8739ae039; });
+$parcel$export($1db0e71ec4627c61$exports, "Icon", function () { return $6ee864df121e395b$export$2e2bcd8739ae039; });
+$parcel$export($1db0e71ec4627c61$exports, "Tooltip", function () { return $c0914ae58ab6e5d3$export$2e2bcd8739ae039; });
+$parcel$export($1db0e71ec4627c61$exports, "Typography", function () { return $495d4d60bd4d6faa$export$2e2bcd8739ae039; });
+$parcel$export($1db0e71ec4627c61$exports, "FormControl", function () { return $27a34599ce9c08b4$export$2e2bcd8739ae039; });
+$parcel$export($1db0e71ec4627c61$exports, "FormControlLabel", function () { return $a7bec6d5450860fc$export$2e2bcd8739ae039; });
+$parcel$export($1db0e71ec4627c61$exports, "FormGroup", function () { return $946c82112296c706$export$2e2bcd8739ae039; });
+$parcel$export($1db0e71ec4627c61$exports, "FormHelperText", function () { return $134a90f9d8fd8dab$export$2e2bcd8739ae039; });
+$parcel$export($1db0e71ec4627c61$exports, "FormLabel", function () { return $0446759e8abdb16f$export$2e2bcd8739ae039; });
+$parcel$export($1db0e71ec4627c61$exports, "Box", function () { return $d493ef5b3f1b99eb$export$2e2bcd8739ae039; });
+$parcel$export($1db0e71ec4627c61$exports, "Container", function () { return $69f523c5edd6731d$export$2e2bcd8739ae039; });
+$parcel$export($1db0e71ec4627c61$exports, "Grid", function () { return $c716763b1d724ad6$export$2e2bcd8739ae039; });
+$parcel$export($1db0e71ec4627c61$exports, "ImageList", function () { return $618b2c25582462c6$export$2e2bcd8739ae039; });
+$parcel$export($1db0e71ec4627c61$exports, "ImageListItem", function () { return $f867e269675e6e2e$export$2e2bcd8739ae039; });
+$parcel$export($1db0e71ec4627c61$exports, "ImageListItemBar", function () { return $c4e15054fc7915f2$export$2e2bcd8739ae039; });
+$parcel$export($1db0e71ec4627c61$exports, "Stack", function () { return $10ff67c3f8c14e30$export$2e2bcd8739ae039; });
+$parcel$export($1db0e71ec4627c61$exports, "Alert", function () { return $a94ecc01b7c4a311$export$2e2bcd8739ae039; });
+$parcel$export($1db0e71ec4627c61$exports, "AlertTitle", function () { return $ebbb581919b8ae6b$export$2e2bcd8739ae039; });
+$parcel$export($1db0e71ec4627c61$exports, "Backdrop", function () { return $d25cfe59ba757dc6$export$2e2bcd8739ae039; });
+$parcel$export($1db0e71ec4627c61$exports, "Collapse", function () { return $2302f9d68c76d905$export$2e2bcd8739ae039; });
+$parcel$export($1db0e71ec4627c61$exports, "Image", function () { return $19daaff829f21759$export$2e2bcd8739ae039; });
+$parcel$export($1db0e71ec4627c61$exports, "InputLabel", function () { return $2f417e42292cbe62$export$2e2bcd8739ae039; });
+$parcel$export($1db0e71ec4627c61$exports, "Skeleton", function () { return $666b97be0ebbfed9$export$2e2bcd8739ae039; });
+$parcel$export($1db0e71ec4627c61$exports, "Slider", function () { return $3fcc80741341f138$export$2e2bcd8739ae039; });
+$parcel$export($1db0e71ec4627c61$exports, "Snackbar", function () { return $c2094d47014e15d4$export$2e2bcd8739ae039; });
+$parcel$export($1db0e71ec4627c61$exports, "Toolbar", function () { return $9dff21fbaccdd569$export$2e2bcd8739ae039; });
+$parcel$export($1db0e71ec4627c61$exports, "UXPinWrapper", function () { return $c4b11adde67996a1$export$2e2bcd8739ae039; });
 
 
 
@@ -2429,20 +2579,90 @@ $01c2718700122605$var$Button.propTypes = {
    */ onClick: (0, $d4YY5$proptypes).func,
     /**
    * The system prop that allows defining system overrides as well as additional CSS styles.
-   */ sx: (0, $d4YY5$proptypes).object
+   */ sx: (0, $d4YY5$proptypes).object,
+    /**
+   * @uxpinignoreprop
+   */ uxpinRef: (0, $d4YY5$proptypes).any
 };
 var $01c2718700122605$export$2e2bcd8739ae039 = $01c2718700122605$var$Button;
 
 
 
-function $ab6ea12fa206d7fb$export$2e2bcd8739ae039(props) {
-    const { onClick: onClick , disabled: disabled , label: label  } = props;
-    return /*#__PURE__*/ (0, $d4YY5$react).createElement("button", {
-        onClick: onClick,
-        disabled: disabled
-    }, label);
-}
 
+
+function $d8dcabe1153bcb35$var$TablePagination(props) {
+    return /*#__PURE__*/ (0, $d4YY5$react).createElement((0, $d4YY5$muimaterialTablePagination), props);
+}
+$d8dcabe1153bcb35$var$TablePagination.propTypes = {
+    /**
+   * Customize the rows per page label.
+   * For localization purposes, you can use the provided translations.
+   */ labelRowsPerPage: (0, $d4YY5$proptypes).node,
+    /**
+   *
+   * If true, show the first-page button.
+   */ showFirstButton: (0, $d4YY5$proptypes).bool,
+    /**
+   *
+   * If true, show the first-page button.
+   */ showLastButton: (0, $d4YY5$proptypes).bool,
+    /**
+   *  The total number of rows.
+   *  To enable server side pagination for an unknown number of items, provide -1.
+   */ count: (0, $d4YY5$proptypes).number,
+    /**
+   * The zero-based index of the current page.
+   */ page: (0, $d4YY5$proptypes).number,
+    /**
+   * The number of rows per page.
+   * Set -1 to display all the rows.
+   */ rowsPerPage: (0, $d4YY5$proptypes).number,
+    /**
+   * The component used for displaying the actions. Either a string to use a HTML element or a component.
+   */ ActionsComponent: (0, $d4YY5$proptypes).elementType,
+    /**
+   * The component used for the root node. Either a string to use a HTML element or a component.
+   */ component: (0, $d4YY5$proptypes).elementType,
+    /**
+   * Props applied to the back arrow IconButton component.
+   */ backIconButtonProps: (0, $d4YY5$proptypes).object,
+    /**
+   * Override or extend the styles applied to the component. See CSS API below for more details.
+   * @uxpinignoreprop
+   */ classes: (0, $d4YY5$proptypes).object,
+    /**
+   * Props applied to the next arrow IconButton element.
+   */ nextIconButtonProps: (0, $d4YY5$proptypes).object,
+    /**
+   * Props applied to the rows per page Select element.
+   */ SelectProps: (0, $d4YY5$proptypes).object,
+    /**
+   *  Callback fired when the page is changed.
+   *   Signature:
+   *   function(event: React.MouseEvent<HTMLButtonElement> | null, page: number) => void
+   *  event: The event source of the callback.
+   *   page: The page selected.
+   */ onPageChange: (0, $d4YY5$proptypes).func,
+    /**
+   * Customize the displayed rows label. Invoked with a { from, to, count, page } object.
+   * For localization purposes, you can use the provided translations.
+   */ labelDisplayedRows: (0, $d4YY5$proptypes).func,
+    /**
+   * Callback fired when the number of rows per page is changed.
+   * Signature:
+   * function(event: React.ChangeEvent<HTMLTextAreaElement | HTMLInputElement>) => void
+   * event: The event source of the callback.
+   */ onRowsPerPageChange: (0, $d4YY5$proptypes).func,
+    /**
+   * [10, 25, 50, 100]
+   * Customizes the options of the rows per page select field. If less than two options are available, no select field will be displayed. Use -1 for the value with a custom label to show all the rows.
+   */ rowsPerPageOptions: (0, $d4YY5$proptypes).arrayOf((0, $d4YY5$proptypes).number),
+    /**
+   *
+   * The system prop that allows defining system overrides as well as additional CSS styles. See the `sx` page for more details.
+   */ sx: (0, $d4YY5$proptypes).object
+};
+var $d8dcabe1153bcb35$export$2e2bcd8739ae039 = $d8dcabe1153bcb35$var$TablePagination;
 
 
 
@@ -2461,7 +2681,7 @@ $5c0a7a33a48a0785$var$ButtonGroup.propTypes = {
    * Override or extend the styles applied to the component. See CSS API below for more details.
    */ /** @uxpinignoreprop */ classes: (0, $d4YY5$proptypes).object,
     /**
-   * The color of the component. 
+   * The color of the component.
    * It supports those theme colors that make sense for this component.
    */ color: (0, $d4YY5$proptypes).oneOf([
         "inherit",
@@ -2500,12 +2720,12 @@ $5c0a7a33a48a0785$var$ButtonGroup.propTypes = {
         "medium",
         "large"
     ]),
-    /** 
-   * The system prop that allows defining system overrides as well as additional CSS styles. 
+    /**
+   * The system prop that allows defining system overrides as well as additional CSS styles.
    * See the `sx` page for more details https://mui.com/system/the-sx-prop/.
    */ /**  */ sx: (0, $d4YY5$proptypes).object,
     /**
-   * the variant used.  
+   * the variant used.
    */ variant: (0, $d4YY5$proptypes).oneOf([
         "contained",
         "outlined",
@@ -2513,320 +2733,6 @@ $5c0a7a33a48a0785$var$ButtonGroup.propTypes = {
     ])
 };
 var $5c0a7a33a48a0785$export$2e2bcd8739ae039 = $5c0a7a33a48a0785$var$ButtonGroup;
-
-
-
-
-
-function $dd4f814d3ed670f5$var$_extends() {
-    $dd4f814d3ed670f5$var$_extends = Object.assign ? Object.assign.bind() : function(target) {
-        for(var i = 1; i < arguments.length; i++){
-            var source = arguments[i];
-            for(var key in source)if (Object.prototype.hasOwnProperty.call(source, key)) target[key] = source[key];
-        }
-        return target;
-    };
-    return $dd4f814d3ed670f5$var$_extends.apply(this, arguments);
-}
-/**
- * @uxpindocurl https://mui.com/api/checkbox/
- */ function $dd4f814d3ed670f5$var$Checkbox(props) {
-    return /*#__PURE__*/ (0, $d4YY5$react).createElement((0, $d4YY5$muimaterialCheckbox), $dd4f814d3ed670f5$var$_extends({}, props, {
-        defaultChecked: true
-    }));
-}
-$dd4f814d3ed670f5$var$Checkbox.propTypes = {
-    /**
-   * If `true`, the component is checked.
-   * @uxpinbind onChange 1
-   */ checked: (0, $d4YY5$proptypes).bool,
-    /**
-   * @uxpinignoreprop
-   * The icon to display when the component is checked.
-   */ checkedIcon: (0, $d4YY5$proptypes).node,
-    /**
-   * @uxpinignoreprop
-   * Override or extend the styles applied to the component.
-   */ classes: (0, $d4YY5$proptypes).object,
-    /**
-   * The color of the component. It supports those theme colors that make sense for this component.
-   */ color: (0, $d4YY5$proptypes).oneOf([
-        "default",
-        "primary",
-        "secondary",
-        "error",
-        "success",
-        "warning"
-    ]),
-    /**
-   * If `true`, the switch will be disabled.
-   */ disabled: (0, $d4YY5$proptypes).bool,
-    /**
-   * Callback fired when the state is changed.
-   */ onChange: (0, $d4YY5$proptypes).func,
-    /**
-   * If true, the input element is required.
-   */ required: (0, $d4YY5$proptypes).bool,
-    /**
-   * The size of the component. small is equivalent to the dense checkbox styling.
-   */ size: (0, $d4YY5$proptypes).oneOf([
-        "small",
-        "medium",
-        "large"
-    ]),
-    /**
-   * The value of the component.
-   */ value: (0, $d4YY5$proptypes).string,
-    /**
-   * The system prop that allows defining system overrides as well as additional CSS styles.
-   */ sx: (0, $d4YY5$proptypes).object
-};
-$dd4f814d3ed670f5$var$Checkbox.defaultProps = {
-    // NOTE: Checked must be controlled state from the outset, otherwise changing state in the app will trigger an error
-    // see: https://fb.me/react-controlled-components
-    checked: false
-};
-var $dd4f814d3ed670f5$export$2e2bcd8739ae039 = $dd4f814d3ed670f5$var$Checkbox;
-
-
-
-
-
-
-
-/**
- * @uxpindocurl https://mui.com/api/form-control-label/#main-content
- */ function $a7bec6d5450860fc$var$FormControlLabel(props) {
-    return /*#__PURE__*/ (0, $d4YY5$react).createElement((0, $d4YY5$muimaterialFormControlLabel), props, props.children);
-}
-$a7bec6d5450860fc$var$FormControlLabel.propTypes = {
-    /**
-  * If `true`, the component appears selected.
-  */ checked: (0, $d4YY5$proptypes).bool,
-    /**
-   * @uxpinignoreprop 
-   * Override or extend the styles applied to the component.
-   * See [CSS API](#css-api) below for more details.
-   */ classes: (0, $d4YY5$proptypes).object,
-    /**
-   * A control element. For instance, it can be be a `Radio`, a `Switch` or a `Checkbox`.
-   */ control: (0, $d4YY5$proptypes).element,
-    /**
-   * If `true`, the control will be disabled.
-   */ disabled: (0, $d4YY5$proptypes).bool,
-    /**
-   * If 'true', the label is rendered as it is passed without an additional typography node.
-   */ disableTypography: (0, $d4YY5$proptypes).bool,
-    /**
-   * @uxpinignoreprop 
-   * Use that property to pass a ref callback to the native input component.
-   */ inputRef: (0, $d4YY5$proptypes).oneOfType([
-        (0, $d4YY5$proptypes).func,
-        (0, $d4YY5$proptypes).object
-    ]),
-    /**
-   * The text to be used in an enclosing label element.
-   */ label: (0, $d4YY5$proptypes).node,
-    /**
-   * The position of the label.
-   */ labelPlacement: (0, $d4YY5$proptypes).oneOf([
-        "end",
-        "start",
-        "top",
-        "bottom"
-    ]),
-    /**
-   * @uxpinignoreprop 
-   * @ignore
-   */ muiFormControl: (0, $d4YY5$proptypes).object,
-    /*
-   * @ignore
-   */ name: (0, $d4YY5$proptypes).string,
-    /**
-   * Callback fired when the state is changed.
-   *
-   * @param {object} event The event source of the callback.
-   * You can pull out the new value by accessing `event.target.checked`.
-   * @param {boolean} checked The `checked` value of the switch
-   */ onChange: (0, $d4YY5$proptypes).func,
-    /**
-   * @uxpinignoreprop 
-   * The value of the component.
-   */ value: (0, $d4YY5$proptypes).string,
-    /**
-   * The system prop that allows defining system overrides as well as additional CSS styles. See the `sx` page for more details.
-   * https://mui.com/system/the-sx-prop/
-   */ /** */ sx: (0, $d4YY5$proptypes).object
-};
-var $a7bec6d5450860fc$export$2e2bcd8739ae039 = $a7bec6d5450860fc$var$FormControlLabel;
-
-
-
-
-
-function $de67f934c20e68f5$var$_extends() {
-    $de67f934c20e68f5$var$_extends = Object.assign ? Object.assign.bind() : function(target) {
-        for(var i = 1; i < arguments.length; i++){
-            var source = arguments[i];
-            for(var key in source)if (Object.prototype.hasOwnProperty.call(source, key)) target[key] = source[key];
-        }
-        return target;
-    };
-    return $de67f934c20e68f5$var$_extends.apply(this, arguments);
-}
-const $de67f934c20e68f5$var$useStyles = (0, $d4YY5$makeStyles)({
-    root: {
-        width: "100%"
-    }
-});
-function $de67f934c20e68f5$export$2e2bcd8739ae039(props) {
-    const classes = $de67f934c20e68f5$var$useStyles();
-    // Unique Id 
-    const id = (0, $d4YY5$v4)();
-    return /*#__PURE__*/ (0, $d4YY5$react).createElement((0, $a7bec6d5450860fc$export$2e2bcd8739ae039), $de67f934c20e68f5$var$_extends({}, props, {
-        htmlFor: id,
-        control: /*#__PURE__*/ (0, $d4YY5$react).createElement((0, $dd4f814d3ed670f5$export$2e2bcd8739ae039), {
-            id: id,
-            inputProps: {
-                role: "switch",
-                "aria-checked": props.checked
-            },
-            size: props.size,
-            color: props.color,
-            checked: props.checked
-        }),
-        label: props.label,
-        className: classes.root
-    }));
-}
-$de67f934c20e68f5$export$2e2bcd8739ae039.propTypes = {
-    /**
-   * If `true`, the checkbox is checked.
-   * @uxpinbind onChange 1
-   */ checked: (0, $d4YY5$proptypes).bool,
-    /**
-   * If `true`, the checkbox will be disabled.
-   */ disabled: (0, $d4YY5$proptypes).bool,
-    /**
-   * The label text.
-   */ label: (0, $d4YY5$proptypes).string,
-    /**
-   * The value of the component.
-   */ value: (0, $d4YY5$proptypes).string,
-    /**
-  * The size of the component. small is equivalent to the dense checkbox styling.
-  */ size: (0, $d4YY5$proptypes).oneOf([
-        "small",
-        "medium",
-        "large"
-    ]),
-    color: (0, $d4YY5$proptypes).oneOf([
-        "default",
-        "primary",
-        "secondary",
-        "error",
-        "success",
-        "warning"
-    ]),
-    /**
-   * Change event to use with UXPin interactions.
-   */ onChange: (0, $d4YY5$proptypes).func,
-    /**
-   * The position of the label.
-   */ labelPlacement: (0, $d4YY5$proptypes).oneOf([
-        "end",
-        "start",
-        "top",
-        "bottom"
-    ]),
-    /**
-   * A control element. For instance, it can be be a `Radio`, a `Switch` or a `Checkbox`.
-   * @uxpinignoreprop
-   */ control: (0, $d4YY5$proptypes).element,
-    /**
-  * The color of the component. It supports those theme colors that make sense for this component.
-  */ color: (0, $d4YY5$proptypes).oneOf([
-        "default",
-        "primary",
-        "secondary",
-        "error",
-        "success",
-        "warning"
-    ])
-};
-$de67f934c20e68f5$export$2e2bcd8739ae039.defaultProps = {
-    // NOTE: Checked must be controlled state from the outset, otherwise changing state in the app will trigger an error
-    // see: https://fb.me/react-controlled-components
-    checked: false,
-    onChange: ()=>undefined
-};
-
-
-
-
-
-/**
- * @uxpindocurl https://mui.com/api/collapse/#main-content
- */ function $2302f9d68c76d905$var$Collapse(props) {
-    return /*#__PURE__*/ (0, $d4YY5$react).createElement((0, $d4YY5$muimaterialCollapse), props, props.children);
-}
-$2302f9d68c76d905$var$Collapse.propTypes = {
-    /**
-   * Add a custom transition end trigger. Called with the transitioning DOM node and a done callback. 
-   * Allows for more fine grained transition end logic. 
-   * Note: Timeouts are still used as a fallback if provided.
-   */ /** @uxpinignoreprop */ addEndListener: (0, $d4YY5$proptypes).func,
-    /**
-   * The content node to be collapsed.
-   * @uxpinignoreprop
-   */ children: (0, $d4YY5$proptypes).node,
-    /**
-   * Override or extend the styles applied to the component.
-   * See [CSS API](#css-api) below for more details.
-   * @uxpinignoreprop
-   */ classes: (0, $d4YY5$proptypes).object,
-    /**
-   * Override or extend the styles applied to the component. 
-   * See CSS API below for more details.
-   * @uxpinignoreprop
-   */ className: (0, $d4YY5$proptypes).string,
-    /**
-   * The width (horizontal) or height (vertical) of the container when collapsed.
-   * Use px, for example - 30px
-   */ collapsedSize: (0, $d4YY5$proptypes).string,
-    /**
-   * The component used for the root node.
-   * Either a string to use a DOM element or a component.
-   * Example: span, div
-   */ component: (0, $d4YY5$proptypes).string,
-    /**
-   * If `true`, the component will transition in.
-   * @uxpinpropname Visible 
-   */ in: (0, $d4YY5$proptypes).bool,
-    /**
-   * The transition orientation.
-   */ orientation: (0, $d4YY5$proptypes).oneOf([
-        "horizontal",
-        "vertical"
-    ]),
-    /**
-   * The duration for the transition, in milliseconds.
-   * You may specify a single timeout for all transitions, or individually with an object.
-   *
-   * Set to "auto" to automatically calculate transition time based on height. "" must be used instead of '' or ``.
-   * When using number simple write the number with no quotes. Example: 3000.
-   */ timeout: (0, $d4YY5$proptypes).number | (0, $d4YY5$proptypes).string,
-    // timeout: PropTypes.oneOfType([
-    //   PropTypes.number, 
-    //   PropTypes.shape({enter: PropTypes.number, exit: PropTypes.number}), 
-    //   PropTypes.oneOf(['auto'])
-    // ]),
-    /**
-   * The system prop that allows defining system overrides as well as additional CSS styles. 
-   * See the `sx` page for more details. https://mui.com/system/the-sx-prop/
-   */ sx: (0, $d4YY5$proptypes).object
-};
-var $2302f9d68c76d905$export$2e2bcd8739ae039 = $2302f9d68c76d905$var$Collapse;
 
 
 
@@ -2855,11 +2761,11 @@ $484dfd49b78c6641$var$IconButton.propTypes = {
         "large"
     ]),
     /**
-  * If given, uses a negative margin to counteract the padding on one
-  * side (this is often helpful for aligning the left or right
-  * side of the icon with content above or below, without ruining the border
-  * size and shape).
-  */ edge: (0, $d4YY5$proptypes).oneOf([
+   * If given, uses a negative margin to counteract the padding on one
+   * side (this is often helpful for aligning the left or right
+   * side of the icon with content above or below, without ruining the border
+   * size and shape).
+   */ edge: (0, $d4YY5$proptypes).oneOf([
         "start",
         "end",
         false
@@ -2876,9 +2782,6 @@ $484dfd49b78c6641$var$IconButton.propTypes = {
         "success",
         "warning"
     ]),
-    /**
-   * Aria tag for accessibility
-   */ ariaLabel: (0, $d4YY5$proptypes).string,
     /**
    * If `true`, the button will be disabled.
    */ disabled: (0, $d4YY5$proptypes).bool,
@@ -2932,8 +2835,7 @@ $6b4ed155a77e98ff$var$FloatingActionButton.propTypes = {
    */ color: (0, $d4YY5$proptypes).oneOf([
         "inherit",
         "primary",
-        "secondary",
-        "string"
+        "secondary"
     ]),
     /**
    * @uxpinignoreprop
@@ -2951,7 +2853,7 @@ $6b4ed155a77e98ff$var$FloatingActionButton.propTypes = {
    * If true, the ripple effect is disabled.
    */ disabledRipple: (0, $d4YY5$proptypes).bool,
     /**
-   * The URL to link to when the button is clicked. 
+   * The URL to link to when the button is clicked.
    * If defined, an a element will be used as the root node.
    */ href: (0, $d4YY5$proptypes).string,
     /**
@@ -2972,7 +2874,7 @@ $6b4ed155a77e98ff$var$FloatingActionButton.propTypes = {
         "extended"
     ]),
     /**
-   * The system prop that allows defining system overrides as well as additional CSS styles.    
+   * The system prop that allows defining system overrides as well as additional CSS styles.
    * */ sx: (0, $d4YY5$proptypes).object
 };
 var $6b4ed155a77e98ff$export$2e2bcd8739ae039 = $6b4ed155a77e98ff$var$FloatingActionButton;
@@ -3009,7 +2911,7 @@ $41426880bf9767c2$var$LoadingButton.propTypes = {
    * @uxpinpropname Text
    */ children: (0, $d4YY5$proptypes).node,
     /**
-   * Override or extend the styles applied to the component. 
+   * Override or extend the styles applied to the component.
    * See CSS API https://mui.com/api/loading-button/#css for more details.
    */ /** @uxpinignoreprop */ classes: (0, $d4YY5$proptypes).object,
     /**
@@ -3066,12 +2968,15 @@ $41426880bf9767c2$var$LoadingButton.propTypes = {
    * Use the name of the icon from https://material.io/tools/icons.
    */ endIcon: (0, $d4YY5$proptypes).oneOf((0, $07ef162fcc571302$export$84babfcc2344e650)),
     /**
-   * The system prop that allows defining system overrides as well as additional CSS styles. 
+   * The system prop that allows defining system overrides as well as additional CSS styles.
    * See the `sx` page for more details. https://mui.com/system/the-sx-prop/
    */ sx: (0, $d4YY5$proptypes).object,
     /**
    * On click event to use with UXPin interactions.
-   */ onClick: (0, $d4YY5$proptypes).func
+   */ onClick: (0, $d4YY5$proptypes).func,
+    /**
+   * @uxpinignoreprop
+   */ uxpinRef: (0, $d4YY5$proptypes).any
 };
 var $41426880bf9767c2$export$2e2bcd8739ae039 = $41426880bf9767c2$var$LoadingButton;
 
@@ -3079,63 +2984,6 @@ var $41426880bf9767c2$export$2e2bcd8739ae039 = $41426880bf9767c2$var$LoadingButt
 
 
 
-/**
- * @uxpindocurl https://mui.com/api/radio/
- */ function $5b98ef666a8916ec$var$Radio(props) {
-    return /*#__PURE__*/ $d4YY5$createElement((0, $d4YY5$muimaterialRadio), props);
-}
-$5b98ef666a8916ec$var$Radio.propTypes = {
-    /**
-   * If `true`, the component is checked.
-   * @uxpinbind onChange 1
-   */ checked: (0, $d4YY5$proptypes).bool,
-    /**
-   * @uxpinignoreprop
-   * The icon to display when the component is checked.
-   */ checkedIcon: (0, $d4YY5$proptypes).node,
-    /**
-   * @uxpinignoreprop
-   * Override or extend the styles applied to the component.
-   */ classes: (0, $d4YY5$proptypes).object,
-    /**
-   * The color of the component. It supports those theme colors that make sense for this component.
-   */ color: (0, $d4YY5$proptypes).oneOf([
-        "default",
-        "primary",
-        "secondary",
-        "error",
-        "success",
-        "warning"
-    ]),
-    /**
-   * If `true`, the switch will be disabled.
-   */ disabled: (0, $d4YY5$proptypes).bool,
-    /**
-   * Name attribute of the input element.
-   */ name: (0, $d4YY5$proptypes).string,
-    /**
-   * Callback fired when the state is changed.
-   */ onChange: (0, $d4YY5$proptypes).func,
-    /**
-   * If true, the input element is required.
-   */ required: (0, $d4YY5$proptypes).bool,
-    /**
-   * The size of the component. small is equivalent to the dense checkbox styling.
-   */ size: (0, $d4YY5$proptypes).oneOf([
-        "small",
-        "medium",
-        "large"
-    ]),
-    /**
-   * The value of the component.
-   */ value: (0, $d4YY5$proptypes).string,
-    /**
-   * The system prop that allows defining system overrides as well as additional CSS styles.
-   */ sx: (0, $d4YY5$proptypes).object
-};
-$5b98ef666a8916ec$var$Radio.defaultProps = {
-};
-var $5b98ef666a8916ec$export$2e2bcd8739ae039 = $5b98ef666a8916ec$var$Radio;
 
 
 
@@ -3143,964 +2991,91 @@ var $5b98ef666a8916ec$export$2e2bcd8739ae039 = $5b98ef666a8916ec$var$Radio;
 
 
 
-function $c691b7d4585d8c52$var$_extends() {
-    $c691b7d4585d8c52$var$_extends = Object.assign ? Object.assign.bind() : function(target) {
+
+function $7d0a855957dbdebe$var$_extends() {
+    $7d0a855957dbdebe$var$_extends = Object.assign ? Object.assign.bind() : function(target) {
         for(var i = 1; i < arguments.length; i++){
             var source = arguments[i];
             for(var key in source)if (Object.prototype.hasOwnProperty.call(source, key)) target[key] = source[key];
         }
         return target;
     };
-    return $c691b7d4585d8c52$var$_extends.apply(this, arguments);
+    return $7d0a855957dbdebe$var$_extends.apply(this, arguments);
 }
-const $c691b7d4585d8c52$var$useStyles = (0, $d4YY5$makeStyles)({
-    root: {
-        width: "100%"
-    }
-});
-function $c691b7d4585d8c52$export$2e2bcd8739ae039(props) {
-    const classes = $c691b7d4585d8c52$var$useStyles();
-    return /*#__PURE__*/ (0, $d4YY5$react).createElement((0, $a7bec6d5450860fc$export$2e2bcd8739ae039), $c691b7d4585d8c52$var$_extends({}, props, {
-        htmlFor: "radioWithLabel",
-        control: /*#__PURE__*/ (0, $d4YY5$react).createElement((0, $5b98ef666a8916ec$export$2e2bcd8739ae039), {
-            id: "radioWithLabel",
-            inputProps: {
-                role: "radio",
-                "aria-checked": props.checked
-            },
-            color: props.color,
-            size: props.size
-        }),
-        label: props.label,
-        className: classes.root
-    }));
-}
-$c691b7d4585d8c52$export$2e2bcd8739ae039.propTypes = {
-    /**
-   * If `true`, the checkbox appears selected.
-   * @uxpinbind onChange 1
-   */ checked: (0, $d4YY5$proptypes).bool,
-    /**
-   * If `true`, the checkbox will be disabled.
-   */ disabled: (0, $d4YY5$proptypes).bool,
-    /**
-   * The label text.
-   */ label: (0, $d4YY5$proptypes).string,
-    /**
-   * The value of the component.
-   */ value: (0, $d4YY5$proptypes).string,
-    /**
-  * The size of the component. small is equivalent to the dense checkbox styling.
-  */ size: (0, $d4YY5$proptypes).oneOf([
-        "small",
-        "medium",
-        "large"
-    ]),
-    color: (0, $d4YY5$proptypes).oneOf([
-        "default",
-        "primary",
-        "secondary",
-        "error",
-        "success",
-        "warning"
-    ]),
-    /**
-   * The position of the label.
-   */ labelPlacement: (0, $d4YY5$proptypes).oneOf([
-        "end",
-        "start",
-        "top",
-        "bottom"
-    ]),
-    /**
-   * Change event to use with UXPin interactions.
-   */ onChange: (0, $d4YY5$proptypes).func,
-    /**
-   * A control element. For instance, it can be be a `Radio`, a `Switch` or a `Checkbox`.
-   * @uxpinignoreprop
-   */ control: (0, $d4YY5$proptypes).element
-};
-$c691b7d4585d8c52$export$2e2bcd8739ae039.defaultProps = {
-    // NOTE: Checked must be controlled state from the outset, otherwise changing state in the app will trigger an error
-    // see: https://fb.me/react-controlled-components
-    checked: false,
-    onChange: ()=>undefined
-};
-
-
-
-
-
-
-
-
-
-/**
- * @uxpindocurl https://mui.com/api/form-control/#main-content
- */ function $27a34599ce9c08b4$var$FormControl(props) {
-    return /*#__PURE__*/ (0, $d4YY5$react).createElement((0, $d4YY5$muimaterialFormControl), props, props.children);
-}
-$27a34599ce9c08b4$var$FormControl.propTypes = {
-    /**
-   * The content of the component. 
-   * */ /** @uxpinignoreprop */ children: (0, $d4YY5$proptypes).node,
-    /**
-   * Override or extend the styles applied to the component. 
-   * See CSS API https://mui.com/api/form-label/#css for more details.
-   */ classes: (0, $d4YY5$proptypes).object,
-    /**
-   * The color of the component. 
-   * It supports those theme colors that make sense for this component.
-   */ color: (0, $d4YY5$proptypes).oneOf([
-        "error",
-        "info",
-        "primary",
-        "secondary",
-        "success",
-        "warning"
-    ]),
-    /**
-   * The component used for the root node. Either a string to use a HTML element or a component.
-   */ /** @uxpinignoreprop */ component: (0, $d4YY5$proptypes).elementType,
-    /**
-   * If 'true', the label should be displayed in a disabled state.
-   */ disabled: (0, $d4YY5$proptypes).bool,
-    /**
-   * If 'true', the label is displayed in an error state.
-   */ error: (0, $d4YY5$proptypes).bool,
-    /**
-   * If 'true', the label should use filled classes key.
-   */ /** @uxpinignoreprop */ filled: (0, $d4YY5$proptypes).bool,
-    /**
-   * If 'true', the input of this label is focused (used by FormGroup components).
-   */ focused: (0, $d4YY5$proptypes).bool,
-    /**
-   * If 'true', the label will indicate that the input is required.
-   */ required: (0, $d4YY5$proptypes).bool,
-    /**
-   * The system prop that allows defining system overrides as well as additional CSS styles. 
-   * See the `sx` page for more details https://mui.com/system/the-sx-prop/.
-   */ /** */ sx: (0, $d4YY5$proptypes).object
-};
-var $27a34599ce9c08b4$export$2e2bcd8739ae039 = $27a34599ce9c08b4$var$FormControl;
-
-
-
-
-
-/**
- * @uxpindocurl https://mui.com/api/form-label/
- */ function $0446759e8abdb16f$var$FormLabel(props) {
-    return /*#__PURE__*/ (0, $d4YY5$react).createElement((0, $d4YY5$muimaterialFormLabel), props, props.children);
-}
-$0446759e8abdb16f$var$FormLabel.propTypes = {
-    /**
-   * The content of the component.
-   */ /** @uxpinignoreprop */ children: (0, $d4YY5$proptypes).node,
-    /**
-   * Override or extend the styles applied to the component. 
-   * See CSS API https://mui.com/api/form-label/#css for more details.
-   */ classes: (0, $d4YY5$proptypes).object,
-    /**
-   * The color of the component. 
-   * It supports those theme colors that make sense for this component.
-   */ color: (0, $d4YY5$proptypes).oneOf([
-        "error",
-        "info",
-        "primary",
-        "secondary",
-        "success",
-        "warning"
-    ]),
-    /**
-   * The component used for the root node. Either a string to use a HTML element or a component.
-   */ /** @uxpinignoreprop */ component: (0, $d4YY5$proptypes).elementType,
-    /**
-   * If 'true', the label should be displayed in a disabled state.
-   */ disabled: (0, $d4YY5$proptypes).bool,
-    /**
-   * If 'true', the label is displayed in an error state.
-   */ error: (0, $d4YY5$proptypes).bool,
-    /**
-   * If 'true', the label should use filled classes key.
-   */ /** @uxpinignoreprop */ filled: (0, $d4YY5$proptypes).bool,
-    /**
-   * If 'true', the input of this label is focused (used by FormGroup components).
-   */ focused: (0, $d4YY5$proptypes).bool,
-    /**
-   * If 'true', the label will indicate that the input is required.
-   */ required: (0, $d4YY5$proptypes).bool,
-    /**
-   * The system prop that allows defining system overrides as well as additional CSS styles. 
-   * See the `sx` page for more details https://mui.com/system/the-sx-prop/.
-   */ /** */ sx: (0, $d4YY5$proptypes).object
-};
-var $0446759e8abdb16f$export$2e2bcd8739ae039 = $0446759e8abdb16f$var$FormLabel;
-
-
-
-function $029dc6d9ac055f9d$export$2e2bcd8739ae039(props) {
-    return /*#__PURE__*/ (0, $d4YY5$react).createElement((0, $27a34599ce9c08b4$export$2e2bcd8739ae039), {
-        component: "fieldset"
-    }, /*#__PURE__*/ (0, $d4YY5$react).createElement((0, $0446759e8abdb16f$export$2e2bcd8739ae039), {
-        component: "legend"
-    }, props.grouplabel), /*#__PURE__*/ (0, $d4YY5$react).createElement((0, $d4YY5$muimaterialRadioGroup), props, (0, $d4YY5$react).Children.map(props.children, (child, index)=>{
-        return /*#__PURE__*/ (0, $d4YY5$react).createElement((0, $a7bec6d5450860fc$export$2e2bcd8739ae039), {
-            value: child.props.value,
-            checked: child.props.checked,
-            control: /*#__PURE__*/ (0, $d4YY5$react).createElement((0, $5b98ef666a8916ec$export$2e2bcd8739ae039), {
-                id: "radio-group",
-                color: props.color,
-                size: props.size,
-                inputProps: {
-                    role: "radio",
-                    "aria-checked": props.checked
-                }
-            }),
-            htmlFor: "radio-group",
-            label: child.props.label,
-            labelPlacement: props.labelPlacement,
-            disabled: child.props.disabled
-        });
-    })));
-}
-$029dc6d9ac055f9d$export$2e2bcd8739ae039.propTypes = {
-    /**
-  * Display text over the radio group.
-  */ grouplabel: (0, $d4YY5$proptypes).string,
-    /**
-  * The position of the label.
-  */ labelPlacement: (0, $d4YY5$proptypes).oneOf([
-        "end",
-        "start",
-        "top",
-        "bottom"
-    ]),
-    /**
-   * The value of the initially selected radio button.
-   * @uxpinbind onChange 1
-   * @uxpinpropname  Selected Value
-   */ value: (0, $d4YY5$proptypes).string,
-    /**
-   * The content of the component.
-   * @uxpinignoreprop
-   */ children: (0, $d4YY5$proptypes).node,
-    /**
-  * The size of the component. small is equivalent to the dense checkbox styling.
-  */ size: (0, $d4YY5$proptypes).oneOf([
-        "small",
-        "medium",
-        "large"
-    ]),
-    color: (0, $d4YY5$proptypes).oneOf([
-        "default",
-        "primary",
-        "secondary",
-        "error",
-        "success",
-        "warning"
-    ]),
-    /**
-   * The name used to reference the value of the control.
-   * @uxpinignoreprop
-   */ name: (0, $d4YY5$proptypes).string,
-    /**
-   * @uxpinignoreprop
-   */ onKeyDown: (0, $d4YY5$proptypes).func,
-    /**
-   * display selection controls in a single row.
-   */ row: (0, $d4YY5$proptypes).bool,
-    /**
-   * Change event to use with UXPin interactions.
-   */ onChange: (0, $d4YY5$proptypes).func
-};
-$029dc6d9ac055f9d$export$2e2bcd8739ae039.defaultProps = {
-    onChange: ()=>undefined
-};
-
-
-
-
-
-
-
-function $45bf60c90bdbc522$var$_extends() {
-    $45bf60c90bdbc522$var$_extends = Object.assign ? Object.assign.bind() : function(target) {
-        for(var i = 1; i < arguments.length; i++){
-            var source = arguments[i];
-            for(var key in source)if (Object.prototype.hasOwnProperty.call(source, key)) target[key] = source[key];
-        }
-        return target;
-    };
-    return $45bf60c90bdbc522$var$_extends.apply(this, arguments);
-}
-/**
- * @uxpindocurl https://mui.com/api/rating/#main-content
- */ function $45bf60c90bdbc522$var$Rating(props) {
-    return /*#__PURE__*/ $d4YY5$createElement((0, $d4YY5$muimaterialRating), $45bf60c90bdbc522$var$_extends({}, props, {
-        emptyIcon: props.emptyIcon && /*#__PURE__*/ $d4YY5$createElement((0, $6ee864df121e395b$export$2e2bcd8739ae039), null, props.emptyIcon),
-        icon: props.icon && /*#__PURE__*/ $d4YY5$createElement((0, $6ee864df121e395b$export$2e2bcd8739ae039), null, props.icon),
-        getLabelText: (value)=>`${value} Rating${value !== 1 ? "s" : ""}`
-    }));
-}
-$45bf60c90bdbc522$var$Rating.propTypes = {
-    /**
-   * @uxpinignoreprop
-   * Override or extend the styles applied to the component.
-   */ classes: (0, $d4YY5$proptypes).object,
-    /**
-    * The icon to display when empty.
-    */ emptyIcon: (0, $d4YY5$proptypes).oneOf((0, $07ef162fcc571302$export$84babfcc2344e650)),
-    /**
-   * The icon to display.
-   * @uxpinpropname Full Icon
-   */ icon: (0, $d4YY5$proptypes).oneOf((0, $07ef162fcc571302$export$84babfcc2344e650)),
-    /**
-   * Maximum rating.
-   * @uxpinpropname Max Rating
-   */ max: (0, $d4YY5$proptypes).number,
-    /**
-   * The minimum increment value change allowed.
-   */ precision: (0, $d4YY5$proptypes).string,
-    /**
-   * If true, the component is disabled.
-   */ disabled: (0, $d4YY5$proptypes).bool,
-    /**
-   * Removes all hover effects and pointer events.
-     */ readOnly: (0, $d4YY5$proptypes).bool,
-    /**
-   * @uxpinignoreprop
-   * Override or extend the styles applied to the component.
-   */ defaultValue: (0, $d4YY5$proptypes).number,
-    /**
-   * @uxpinignoreprop
-   * Override or extend the styles applied to the component.
-   */ emptyLabelText: (0, $d4YY5$proptypes).node,
-    /**
-   * @uxpinignoreprop
-   * Override or extend the styles applied to the component.
-   */ getLabelText: (0, $d4YY5$proptypes).func,
-    /**
-   * If true, only the selected icon will be highlighted.
-   * @uxpinignoreprop
-   */ highlightSelectedOnly: (0, $d4YY5$proptypes).bool,
-    /**
-   * The name attribute of the radio input elements. 
-   * This input name should be unique within the page. 
-   * Being unique within a form is insufficient since the name is used to generated IDs.
-   */ name: (0, $d4YY5$proptypes).string,
-    /**
-   * The size of the component.
-   */ size: (0, $d4YY5$proptypes).oneOf([
-        "small",
-        "medium",
-        "large",
-        (0, $d4YY5$string)
-    ]),
-    /**
-   * The rating value.
-   * @uxpinbind onChange 1
-   */ value: (0, $d4YY5$proptypes).number,
-    /**
-   * On click event to use with UXPin interactions.
-   */ onChange: (0, $d4YY5$proptypes).func,
-    /**
-   * Callback function that is fired when the hover state changes.
-   */ onChangeActive: (0, $d4YY5$proptypes).func,
-    /**
-  * The system prop that allows defining system overrides as well as additional CSS styles.
-  */ sx: (0, $d4YY5$proptypes).object
-};
-var $45bf60c90bdbc522$export$2e2bcd8739ae039 = $45bf60c90bdbc522$var$Rating;
-
-
-
-
-
-
-
-/**
- * @uxpindocurl https://mui.com/api/select/
- */ function $b560fc0518d1308d$var$Select(props) {
-    const [selectedValue, setSelectedValue] = $d4YY5$useState("");
+function $7d0a855957dbdebe$export$2e2bcd8739ae039(props) {
+    const options = props.options;
+    const [open, setOpen] = $d4YY5$useState(false);
+    const anchorRef = $d4YY5$useRef(null);
+    const [selectedIndex, setSelectedIndex] = $d4YY5$useState(0);
     $d4YY5$useEffect(()=>{
-        setSelectedValue(props.value);
+        setSelectedIndex(props.selected);
     }, [
-        props.value
-    ]); // Only re-run the effect if value prop changes
-    const handleChange = (e)=>{
-        console.log(e.target.value);
-        setSelectedValue(e.target.value);
+        props.selected
+    ]);
+    const handleClick = ()=>{
+        console.info(`You clicked ${options[selectedIndex]}`);
     };
-    return /*#__PURE__*/ $d4YY5$createElement((0, $d4YY5$muimaterialFormControl), {
+    const handleMenuItemClick = (event, index)=>{
+        setSelectedIndex(index);
+        setOpen(false);
+    };
+    const handleToggle = ()=>{
+        setOpen((prevOpen)=>!prevOpen);
+    };
+    const handleClose = (event)=>{
+        if (anchorRef.current && anchorRef.current.contains(event.target)) return;
+        setOpen(false);
+    };
+    return /*#__PURE__*/ $d4YY5$createElement($d4YY5$Fragment, null, /*#__PURE__*/ $d4YY5$createElement((0, $d4YY5$muimaterialButtonGroup), {
         variant: props.variant,
-        fullWidth: true
-    }, /*#__PURE__*/ $d4YY5$createElement((0, $d4YY5$muimaterialInputLabel), {
-        id: "demo-multiple-name-label"
-    }, props.label), /*#__PURE__*/ $d4YY5$createElement((0, $d4YY5$muimaterialSelect), {
-        labelId: "demo-multiple-name-label",
-        id: "demo-multiple-name",
-        onChange: (e)=>handleChange(e),
-        onOpen: props.onOpen,
-        onClose: props.onClose,
-        value: selectedValue,
-        label: props.label
-    }, props.children));
+        ref: anchorRef,
+        "aria-label": "split button"
+    }, /*#__PURE__*/ $d4YY5$createElement((0, $01c2718700122605$export$2e2bcd8739ae039), {
+        onClick: handleClick
+    }, options[selectedIndex]), /*#__PURE__*/ $d4YY5$createElement((0, $01c2718700122605$export$2e2bcd8739ae039), {
+        size: "small",
+        "aria-controls": open ? "split-button-menu" : undefined,
+        "aria-expanded": open ? "true" : undefined,
+        "aria-label": "hello",
+        "aria-haspopup": "menu",
+        onClick: handleToggle
+    }, /*#__PURE__*/ $d4YY5$createElement((0, $6ee864df121e395b$export$2e2bcd8739ae039), null, "arrow_drop_down"))), /*#__PURE__*/ $d4YY5$createElement((0, $d4YY5$muimaterialPopper), {
+        open: open,
+        anchorEl: anchorRef.current,
+        role: undefined,
+        transition: true,
+        disablePortal: true
+    }, ({ TransitionProps: TransitionProps , placement: placement  })=>/*#__PURE__*/ $d4YY5$createElement((0, $d4YY5$muimaterialGrow), $7d0a855957dbdebe$var$_extends({}, TransitionProps, {
+            style: {
+                transformOrigin: placement === "bottom" ? "center top" : "center bottom"
+            }
+        }), /*#__PURE__*/ $d4YY5$createElement((0, $d4YY5$muimaterialPaper), null, /*#__PURE__*/ $d4YY5$createElement((0, $d4YY5$muimaterialClickAwayListener), {
+            onClickAway: handleClose
+        }, /*#__PURE__*/ $d4YY5$createElement((0, $d4YY5$muimaterialMenuList), {
+            id: "split-button-menu"
+        }, options.map((option, index)=>/*#__PURE__*/ $d4YY5$createElement((0, $d4YY5$muimaterialMenuItem), {
+                key: option,
+                selected: index === selectedIndex,
+                onClick: (event)=>handleMenuItemClick(event, index)
+            }, option))))))));
 }
-$b560fc0518d1308d$var$Select.propTypes = {
-    /**
-   * Replaced with width prop
-   * If true, the width of the popover will automatically be set according to the items inside the menu, otherwise it will be at least the width of the select input.
-  * @uxpinignoreprop
-   * */ autoWidth: (0, $d4YY5$proptypes).bool,
-    /**
-   * @uxpinignoreprop
-   */ children: (0, $d4YY5$proptypes).node,
-    /**
-   * @uxpinignoreprop
-   * Override or extend the styles applied to the component. 
-   */ classes: (0, $d4YY5$proptypes).object,
-    /**
-   * @uxpinignoreprop
-   * The default value. Use when the component is not controlled.
-   */ defaultValue: (0, $d4YY5$proptypes).any,
-    /**
-   * If true, the component is initially open. Use when the component open state is not controlled 
-   * (i.e. the open prop is not defined). You can only use it when the native prop is false (default).
-   */ defaultOpen: (0, $d4YY5$proptypes).bool,
-    /**
-   * @uxpinignoreprop
-   * If true, a value is displayed even if no items are selected.
-   * In order to display a meaningful value, a function can be passed to the renderValue prop which returns the value to be displayed when no items are selected.
-   * When using this prop, make sure the label doesn't overlap with the empty displayed value. 
-   * The label should either be hidden or forced to a shrunk state.
-   */ displayEmpty: (0, $d4YY5$proptypes).bool,
-    /**
-   * @uxpinignoreprop
-   * The icon that displays the arrow.
-   */ IconComponent: (0, $d4YY5$proptypes).elementType,
-    /**
-   * @uxpinignoreprop
-   * The id of the wrapper element or the select element when native.
-   */ id: (0, $d4YY5$proptypes).string,
-    /**
-   * @uxpinignoreprop
-   * An Input element; does not have to be a MUI specific Input.
-   */ inputProps: (0, $d4YY5$proptypes).object,
-    /**
-   * The Label of the Component.
-   * The value is used in InputLabel.
-   * OutlineInput provides layout css to the label when a MenuItem is selected.
-   */ label: (0, $d4YY5$proptypes).string,
-    /**
-   * @uxpinignoreprop
-   * The ID of an element that acts as an additional label. The Select will be labelled by the additional label and the selected value.
-   */ labelId: (0, $d4YY5$proptypes).string,
-    /**
-   * Props applied to the Menu element.
-   * @uxpinignoreprop
-     */ MenuProps: (0, $d4YY5$proptypes).object,
-    /**
-   * If true, value must be an array and the menu will support multiple selections.
-   * @uxpinignoreprop
-   */ multiple: (0, $d4YY5$proptypes).bool,
-    /**
-   * @uxpinignoreprop
-   * If true, the component uses a native select element.
-   */ native: (0, $d4YY5$proptypes).bool,
-    /**
-   * @uxpinignoreprop
-   * Render the selected value. You can only use it when the native prop is false (default).
-   */ renderValue: (0, $d4YY5$proptypes).func,
-    /**
-   * Props applied to the clickable div element.
-   * @uxpinignoreprop
-   */ SelectDisplayProps: (0, $d4YY5$proptypes).object,
-    /**
-   * The varian to use.
-   */ variant: (0, $d4YY5$proptypes).oneOf([
-        "filled",
+$7d0a855957dbdebe$export$2e2bcd8739ae039.propTypes = {
+    options: (0, $d4YY5$proptypes).array,
+    selected: (0, $d4YY5$proptypes).number,
+    variant: (0, $d4YY5$proptypes).oneOf([
+        "text",
         "outlined",
-        "standard"
-    ]),
-    /**
-   * The input value. 
-   * Providing an empty string will select no options. Set to an empty string '' if you don't want any of the available options to be selected.
-   * If the value is an object it must have reference equality with the option in order to be selected. 
-   * If the value is not an object, the string representation must match with the string representation of the option in order to be selected.
-   */ value: (0, $d4YY5$proptypes).string,
-    /**
-   * Custom Prop.
-   * The width of the Select.
-   * Can use px - 50px.
-   * Can use % - 100%.
-   * @uxpinignoreprop
-   */ width: (0, $d4YY5$proptypes).string,
-    /**
-  * Callback fired when a menu item is selected.
-  */ onChange: (0, $d4YY5$proptypes).func,
-    /**
-   * Callback fired when the component requests to be closed. Use in controlled mode (see open).
-   */ onClose: (0, $d4YY5$proptypes).func,
-    /**
-   * Callback fired when the component requests to be opened. Use in controlled mode (see open).
-   */ onOpen: (0, $d4YY5$proptypes).func,
-    /**
-   * If true, the component is shown. You can only use it when the native prop is false (default).
-   * @uxpinignoreprop
-   */ open: (0, $d4YY5$proptypes).bool,
-    /**
-   */ sx: (0, $d4YY5$proptypes).object
-};
-var $b560fc0518d1308d$export$2e2bcd8739ae039 = $b560fc0518d1308d$var$Select;
-
-
-
-
-
-
-function $3fcc80741341f138$var$_extends() {
-    $3fcc80741341f138$var$_extends = Object.assign ? Object.assign.bind() : function(target) {
-        for(var i = 1; i < arguments.length; i++){
-            var source = arguments[i];
-            for(var key in source)if (Object.prototype.hasOwnProperty.call(source, key)) target[key] = source[key];
-        }
-        return target;
-    };
-    return $3fcc80741341f138$var$_extends.apply(this, arguments);
-}
-function $3fcc80741341f138$export$2e2bcd8739ae039(props) {
-    // Unique Id 
-    const id = (0, $d4YY5$v4)();
-    return /*#__PURE__*/ (0, $d4YY5$react).createElement((0, $d4YY5$muimaterialSlider), $3fcc80741341f138$var$_extends({
-        key: id
-    }, props));
-}
-// Need to add support for Aria props
-$3fcc80741341f138$export$2e2bcd8739ae039.propTypes = {
-    // value: PropTypes.number,
-    /**
-   * The size of the slider.
-   */ size: (0, $d4YY5$proptypes).oneOf([
-        "small",
-        "medium"
-    ]),
-    /**
-   * The minimum allowed value of the slider. Should not be equal to max.
-   */ min: (0, $d4YY5$proptypes).number,
-    /**
-   * The maximum allowed value of the slider. Should not be equal to min.
-   */ max: (0, $d4YY5$proptypes).number,
-    /**
-   * The default value. Use when the component is not controlled.
-   */ defaultValue: (0, $d4YY5$proptypes).number,
-    /**
-   * Controls when the value label is displayed:
-   * auto the value label will display when the thumb is hovered or focused.
-   * on will display persistently.
-   * off will never display.
-   */ valueLabelDisplay: (0, $d4YY5$proptypes).oneOf([
-        "auto",
-        "off",
-        "on"
-    ]),
-    /**
-   * The format function the value label's value.
-   * When a function is provided, it should have the following signature:
-   * {number} value The value label's value to format - {number} index The value label's index to format
-   * @uxpinignoreprop
-   */ valueLabelFormat: (0, $d4YY5$proptypes).func | (0, $d4YY5$proptypes).string,
-    /**
-   * The granularity with which the slider can step through values. 
-   * (A "discrete" slider.) The min prop serves as the origin for the valid values. 
-   * We recommend (max - min) to be evenly divisible by the step.
-   * When step is null, the thumb can only be slid onto marks provided with the marks prop.
-   */ step: (0, $d4YY5$proptypes).number,
-    /**
-   * Marks indicate predetermined values to which the user can move the slider. 
-   * If true the marks are spaced according the value of the step prop. If an array, it should contain objects with value and an optional label keys.
-   */ marks: (0, $d4YY5$proptypes).bool,
-    /**
-   * The color of the component. It supports those theme colors that make sense for this component.
-   */ color: (0, $d4YY5$proptypes).oneOf([
-        "primary",
-        "secondary",
-        "string"
-    ]),
-    /**
-   * The component orientation.
-   */ orientation: (0, $d4YY5$proptypes).oneOf([
-        "vertical",
-        "horizontal"
-    ]),
-    /**
-   * The track presentation:
-   * normal the track will render a bar representing the slider value.
-   * inverted the track will render a bar representing the remaining slider value.
-   * false the track will render without a bar.
-   */ track: (0, $d4YY5$proptypes).oneOf([
-        false,
-        true,
-        "inverted"
-    ]),
-    /**
-   * If true, the component is disabled.
-   */ disabled: (0, $d4YY5$proptypes).bool,
-    /**
-     * The component used for the root node. Either a string to use a HTML element or a component.
-     */ components: (0, $d4YY5$proptypes).string,
-    /**
-   * Name attribute of the hidden input element.
-   */ name: (0, $d4YY5$proptypes).string,
-    /**
-   * If true, the active thumb doesn't swap when moving pointer over a thumb while dragging another thumb.
-   * @uxpinignoreprop
-   */ disableSwap: (0, $d4YY5$proptypes).bool,
-    /**
-   * The components used for each slot inside the Slider. Either a string to use a HTML element or a component.
-   * @uxpinignoreprop
-   */ components: (0, $d4YY5$proptypes).object,
-    /**
-   * The props used for each slot inside the Slider
-   * @uxpinignoreprop
-   */ componentsProps: (0, $d4YY5$proptypes).object,
-    /**
-   * Accepts a function which returns a string value that provides a user-friendly name for the thumb labels of the slider. This is important for screen reader users.
-   * @uxpinignoreprop
-   */ getAriaLabel: (0, $d4YY5$proptypes).func,
-    /**
-   * Accepts a function which returns a string value that provides a user-friendly name for the current value of the slider. This is important for screen reader users.
-   * @uxpinignoreprop
-   */ getAriaValueText: (0, $d4YY5$proptypes).func,
-    /**
-   * A transformation function, to change the scale of the slider.
-   * @uxpinignoreprop
-   */ scale: (0, $d4YY5$proptypes).func,
-    /**
-   * Indicates whether the theme context has rtl direction. It is set automatically.
-   * @uxpinignoreprop
-   */ isRtl: (0, $d4YY5$proptypes).bool,
-    /**
-   * Override or extend the styles applied to the component.
-   * @uxpinignoreprop
-   */ classes: (0, $d4YY5$proptypes).object,
-    /**
-   * Custom Style Object
-   */ sx: (0, $d4YY5$proptypes).object,
-    /**
-  * Custom Style Object
-  */ onChange: (0, $d4YY5$proptypes).func
-};
-
-
-
-
-
-/**
- * @uxpindocurl https://mui.com/components/switches/#main-content
- */ function $553a6ecaacba8e36$var$Switch(props) {
-    return /*#__PURE__*/ (0, $d4YY5$react).createElement((0, $d4YY5$muimaterialSwitch), props);
-}
-$553a6ecaacba8e36$var$Switch.propTypes = {
-    /**
-   * If `true`, the switch is checked.
-   * @uxpinbind onChange 1
-   */ checked: (0, $d4YY5$proptypes).bool,
-    /**
-   * @uxpinignoreprop
-   * The icon to display when the component is checked.
-   */ checkedIcon: (0, $d4YY5$proptypes).node,
-    /**
-   * @uxpinignoreprop
-   * Override or extend the styles applied to the component.
-   */ classes: (0, $d4YY5$proptypes).object,
-    /**
-   * The color of the component.
-   */ color: (0, $d4YY5$proptypes).oneOf([
-        "default",
-        "primary",
-        "secondary",
-        "error",
-        "success",
-        "warning"
-    ]),
-    /**
-   * if `true`, the switch will be disabled.
-   */ disabled: (0, $d4YY5$proptypes).bool,
-    /**
-   * If `true`, the ripple effect will be disabled.
-   * @uxpinignoreprop
-   */ disableRipple: (0, $d4YY5$proptypes).bool,
-    /**
-   * @uxpinignoreprop
-   * The icon to display when the component is unchecked.
-   */ icon: (0, $d4YY5$proptypes).node,
-    /**
-   * @uxpinignoreprop
-   * The id of the `input` element.
-   */ id: (0, $d4YY5$proptypes).string,
-    /**
-   * Change event to use with UXPin interactions.
-   */ onChange: (0, $d4YY5$proptypes).func,
-    /**
-   * The size of the component.
-   */ size: (0, $d4YY5$proptypes).oneOf([
-        "small",
-        "medium"
-    ]),
-    /**
-   * The value of the component
-   */ value: (0, $d4YY5$proptypes).string,
-    /**
-   * The system prop that allows defining system overrides as well as additional CSS styles.
-   */ sx: (0, $d4YY5$proptypes).object
-};
-$553a6ecaacba8e36$var$Switch.defaultProps = {
-};
-var $553a6ecaacba8e36$export$2e2bcd8739ae039 = $553a6ecaacba8e36$var$Switch;
-
-
-
-
-
-
-
-
-function $55c48518655a9109$var$_extends() {
-    $55c48518655a9109$var$_extends = Object.assign ? Object.assign.bind() : function(target) {
-        for(var i = 1; i < arguments.length; i++){
-            var source = arguments[i];
-            for(var key in source)if (Object.prototype.hasOwnProperty.call(source, key)) target[key] = source[key];
-        }
-        return target;
-    };
-    return $55c48518655a9109$var$_extends.apply(this, arguments);
-}
-const $55c48518655a9109$var$useStyles = (0, $d4YY5$makeStyles)({
-    root: {
-        width: "100%"
-    }
-});
-function $55c48518655a9109$export$2e2bcd8739ae039(props) {
-    const classes = $55c48518655a9109$var$useStyles();
-    // Unique Id 
-    const id = (0, $d4YY5$v4)();
-    return /*#__PURE__*/ (0, $d4YY5$react).createElement((0, $a7bec6d5450860fc$export$2e2bcd8739ae039), $55c48518655a9109$var$_extends({}, props, {
-        htmlFor: id,
-        control: /*#__PURE__*/ (0, $d4YY5$react).createElement((0, $553a6ecaacba8e36$export$2e2bcd8739ae039), {
-            id: id,
-            inputProps: {
-                role: "switch",
-                "aria-checked": props.checked
-            },
-            size: props.size,
-            color: props.color
-        }),
-        label: props.label,
-        className: classes.root
-    }));
-}
-$55c48518655a9109$export$2e2bcd8739ae039.propTypes = {
-    /**
-   * If `true`, the checkbox is checked.
-   * @uxpinbind onChange 1
-   */ checked: (0, $d4YY5$proptypes).bool,
-    /**
-   * If `true`, the checkbox will be disabled.
-   */ disabled: (0, $d4YY5$proptypes).bool,
-    /**
-   * The label text.
-   */ label: (0, $d4YY5$proptypes).string,
-    /**
-   * The value of the component.
-   */ value: (0, $d4YY5$proptypes).string,
-    /**
-  * The size of the component. small is equivalent to the dense checkbox styling.
-  */ size: (0, $d4YY5$proptypes).oneOf([
-        "small",
-        "medium",
-        "large"
-    ]),
-    /**
-   * Change event to use with UXPin interactions.
-   */ onChange: (0, $d4YY5$proptypes).func,
-    /**
-   * The position of the label.
-   */ labelPlacement: (0, $d4YY5$proptypes).oneOf([
-        "end",
-        "start",
-        "top",
-        "bottom"
-    ]),
-    /**
-   * A control element. For instance, it can be be a `Radio`, a `Switch` or a `Checkbox`.
-   * @uxpinignoreprop
-   */ control: (0, $d4YY5$proptypes).element,
-    /**
-  * The color of the component. It supports those theme colors that make sense for this component.
-  */ color: (0, $d4YY5$proptypes).oneOf([
-        "default",
-        "primary",
-        "secondary",
-        "error",
-        "success",
-        "warning"
+        "contained"
     ])
 };
-$55c48518655a9109$export$2e2bcd8739ae039.defaultProps = {
-    // NOTE: Checked must be controlled state from the outset, otherwise changing state in the app will trigger an error
-    // see: https://fb.me/react-controlled-components
-    checked: false,
-    onChange: ()=>undefined
+$7d0a855957dbdebe$export$2e2bcd8739ae039.defaultProps = {
+    options: [
+        "Option 1",
+        "Option 2",
+        "Option 3"
+    ],
+    selected: 0
 };
-
-
-
-
-
-
-
-
-function $846045c082082f73$var$_extends() {
-    $846045c082082f73$var$_extends = Object.assign ? Object.assign.bind() : function(target) {
-        for(var i = 1; i < arguments.length; i++){
-            var source = arguments[i];
-            for(var key in source)if (Object.prototype.hasOwnProperty.call(source, key)) target[key] = source[key];
-        }
-        return target;
-    };
-    return $846045c082082f73$var$_extends.apply(this, arguments);
-}
-/**
- * @uxpindocurl https://mui.com/api/text-field/
- */ function $846045c082082f73$var$TextField(props) {
-    const { uxpinRef: uxpinRef , startAdornment: startAdornment , endAdornment: endAdornment , ...other } = props;
-    return /*#__PURE__*/ (0, $d4YY5$react).createElement((0, $d4YY5$muimaterialTextField), $846045c082082f73$var$_extends({}, other, {
-        InputProps: {
-            startAdornment: props.startAdornment && /*#__PURE__*/ (0, $d4YY5$react).createElement((0, $d4YY5$muimaterialInputAdornment), {
-                position: "start"
-            }, /*#__PURE__*/ (0, $d4YY5$react).createElement((0, $6ee864df121e395b$export$2e2bcd8739ae039), null, startAdornment)),
-            endAdornment: props.endAdornment && /*#__PURE__*/ (0, $d4YY5$react).createElement((0, $d4YY5$muimaterialInputAdornment), {
-                position: "end"
-            }, /*#__PURE__*/ (0, $d4YY5$react).createElement((0, $6ee864df121e395b$export$2e2bcd8739ae039), null, endAdornment))
-        }
-    }));
-}
-$846045c082082f73$var$TextField.propTypes = {
-    /**
-   * The label content.
-   */ label: (0, $d4YY5$proptypes).string,
-    /**
-  * The helper text content.
-  */ helperText: (0, $d4YY5$proptypes).string,
-    /**
-   * The short hint displayed in the input before the user enters a value.
-   */ placeholder: (0, $d4YY5$proptypes).string,
-    /**
-   * The value of the `Input` element, required for a controlled component.
-   * @uxpinbind onChange 0.target.value
-   */ value: (0, $d4YY5$proptypes).oneOfType([
-        (0, $d4YY5$proptypes).string,
-        (0, $d4YY5$proptypes).number,
-        (0, $d4YY5$proptypes).bool,
-        (0, $d4YY5$proptypes).arrayOf((0, $d4YY5$proptypes).oneOfType([
-            (0, $d4YY5$proptypes).string,
-            (0, $d4YY5$proptypes).number,
-            (0, $d4YY5$proptypes).bool
-        ]))
-    ]),
-    /**
-   * This prop helps users to fill forms faster, especially on mobile devices. 
-   * The name can be confusing, as it's more like an autofill. 
-   * You can learn more about it: https://html.spec.whatwg.org/multipage/form-control-infrastructure.html#autofill.
-   */ /** @uxpinignoreprop */ autoComplete: (0, $d4YY5$proptypes).string,
-    /**
-   * Override or extend the styles applied to the component. See CSS API: https://mui.com/api/text-field/#css.
-   */ /** @uxpinignoreprop */ classes: (0, $d4YY5$proptypes).object,
-    /**
-   * The variant to use.
-   */ variant: (0, $d4YY5$proptypes).oneOf([
-        "standard",
-        "outlined",
-        "filled"
-    ]),
-    /**The size of the component */ size: (0, $d4YY5$proptypes).oneOf([
-        "small",
-        "medium"
-    ]),
-    /**
-   * The color of the component. It supports those theme colors that make sense for this component.
-   */ color: (0, $d4YY5$proptypes).oneOf([
-        "primary",
-        "secondary",
-        "error",
-        "info",
-        "success",
-        "warning"
-    ]),
-    /**
-  * If 'dense' or 'normal', will adjust vertical spacing of this and contained components.
-  */ margin: (0, $d4YY5$proptypes).oneOf([
-        "dense",
-        "none",
-        "normal"
-    ]),
-    /** The default value. Use when the component is not controlled.*/ /** @uxpinignoreprop */ defaultValue: (0, $d4YY5$proptypes).string,
-    /** If 'true', the component is disabled.*/ disabled: (0, $d4YY5$proptypes).bool,
-    /**
-   * Type of the input element
-   */ type: (0, $d4YY5$proptypes).oneOf([
-        "text",
-        "number",
-        "password"
-    ]),
-    /**
-  * If `true`, the label is displayed as required and the input will be required.
-  */ required: (0, $d4YY5$proptypes).bool,
-    /** If 'true', the label is displayed in an error state.*/ error: (0, $d4YY5$proptypes).bool,
-    /**
-   * If 'true', the input will take up the full width of its container.
-   */ fullWidth: (0, $d4YY5$proptypes).bool,
-    /**
-  * If 'true', the input element is focused during the first mount.
-  */ autoFocus: (0, $d4YY5$proptypes).bool,
-    /**
-   * The id of the input element. Use this prop to make label and helperText accessible for screen readers.
-   */ /** @uxpinignoreprop */ id: (0, $d4YY5$proptypes).string,
-    /**
-   * If true, a textarea element is rendered instead of an input.
-   */ multiline: (0, $d4YY5$proptypes).bool,
-    /**
-   * Maximum number of rows to display when multiline option is set to true.
-   */ maxRows: (0, $d4YY5$proptypes).number,
-    /**
-   * Minimum number of rows to display when multiline option is set to true.
-   */ minRows: (0, $d4YY5$proptypes).number,
-    /**
-   * @uxpinignoreprop
-   * Name attribute of the `input` element.
-   */ name: (0, $d4YY5$proptypes).string,
-    /**
-   * Number of rows to display when multiline option is set to true.
-   */ rows: (0, $d4YY5$proptypes).number,
-    /**
-   * Render a 'Select' element while passing the Input element to 'Select' as 'input' parameter. 
-   * If this option is set you must pass the options of the select as children.
-   */ /** @uxpinignoreprop */ select: (0, $d4YY5$proptypes).bool,
-    /** @uxpinignoreprop */ SelectProps: (0, $d4YY5$proptypes).object,
-    /**
-  * If set, icon will display to the left.
-  * Use the name of the icon from https://material.io/tools/icons.
-  */ startAdornment: (0, $d4YY5$proptypes).oneOf((0, $07ef162fcc571302$export$84babfcc2344e650)),
-    endAdornment: (0, $d4YY5$proptypes).oneOf((0, $07ef162fcc571302$export$84babfcc2344e650)),
-    /**
-  * Callback fired when the value is changed.
-  */ onChange: (0, $d4YY5$proptypes).func,
-    /** The system prop that allows defining 
-   * system overrides as well as additional CSS styles. 
-   * See the `sx` page for more details. https://mui.com/system/the-sx-prop/ */ sx: (0, $d4YY5$proptypes).object
-};
-var $846045c082082f73$export$2e2bcd8739ae039 = $846045c082082f73$var$TextField;
 
 
 
@@ -4154,7 +3129,7 @@ $fd02248996edd8f7$var$ToggleButton.propTypes = {
    */ disabledFocusRipple: (0, $d4YY5$proptypes).bool,
     /**
    * If true, the ripple effect is disabled.
-   * ⚠️ Without a ripple there is no styling for :focus-visible by default. 
+   * ⚠️ Without a ripple there is no styling for :focus-visible by default.
    * @uxpinignoreprop
    */ disabledRipple: (0, $d4YY5$proptypes).bool,
     /**
@@ -4234,7 +3209,7 @@ $4943289653bbb50f$export$2e2bcd8739ae039.propTypes = {
    */ onChange: (0, $d4YY5$proptypes).func,
     /**
    * The component orientation (layout flow direction).
-  */ orientation: (0, $d4YY5$proptypes).oneOf([
+   */ orientation: (0, $d4YY5$proptypes).oneOf([
         "horizontal",
         "vertical"
     ]),
@@ -4246,8 +3221,8 @@ $4943289653bbb50f$export$2e2bcd8739ae039.propTypes = {
         "large"
     ]),
     /**
-  * The color of the button whhen it is in an active state.
-  */ color: (0, $d4YY5$proptypes).oneOf([
+   * The color of the button whhen it is in an active state.
+   */ color: (0, $d4YY5$proptypes).oneOf([
         "standard",
         "primary",
         "secondary",
@@ -4260,12 +3235,12 @@ $4943289653bbb50f$export$2e2bcd8739ae039.propTypes = {
    * The value to associate with the button when selected in a ToggleButtonGroup.
    */ value: (0, $d4YY5$proptypes).string,
     /**
-  * If true, only allow one of the child ToggleButton values to be selected.
-  */ exclusive: (0, $d4YY5$proptypes).bool,
+   * If true, only allow one of the child ToggleButton values to be selected.
+   */ exclusive: (0, $d4YY5$proptypes).bool,
     /**
-  * If true, the component is disabled.
-  * @uxpincontroltype
-  */ disabled: (0, $d4YY5$proptypes).bool,
+   * If true, the component is disabled.
+   * @uxpincontroltype
+   */ disabled: (0, $d4YY5$proptypes).bool,
     /**
    * If true, the button group will take up the full width of its container.
    */ fullWidth: (0, $d4YY5$proptypes).bool,
@@ -4279,46 +3254,1501 @@ $4943289653bbb50f$export$2e2bcd8739ae039.propTypes = {
 
 
 
-function $de22927cabdeb196$var$_extends() {
-    $de22927cabdeb196$var$_extends = Object.assign ? Object.assign.bind() : function(target) {
+
+
+function $dd4f814d3ed670f5$var$_extends() {
+    $dd4f814d3ed670f5$var$_extends = Object.assign ? Object.assign.bind() : function(target) {
         for(var i = 1; i < arguments.length; i++){
             var source = arguments[i];
             for(var key in source)if (Object.prototype.hasOwnProperty.call(source, key)) target[key] = source[key];
         }
         return target;
     };
-    return $de22927cabdeb196$var$_extends.apply(this, arguments);
+    return $dd4f814d3ed670f5$var$_extends.apply(this, arguments);
 }
+/**
+ * @uxpindocurl https://mui.com/api/checkbox/
+ */ function $dd4f814d3ed670f5$var$Checkbox(props) {
+    // Unique Id
+    const id = (0, $d4YY5$v4)();
+    return /*#__PURE__*/ (0, $d4YY5$react).createElement((0, $d4YY5$muimaterialCheckbox), $dd4f814d3ed670f5$var$_extends({
+        key: id
+    }, props, {
+        icon: props.icon ? /*#__PURE__*/ (0, $d4YY5$react).createElement((0, $6ee864df121e395b$export$2e2bcd8739ae039), null, props.icon) : /*#__PURE__*/ (0, $d4YY5$react).createElement((0, $6ee864df121e395b$export$2e2bcd8739ae039), null, "check_box_outline_blank "),
+        checkedIcon: props.checkedIcon ? /*#__PURE__*/ (0, $d4YY5$react).createElement((0, $6ee864df121e395b$export$2e2bcd8739ae039), null, props.checkedIcon) : /*#__PURE__*/ (0, $d4YY5$react).createElement((0, $6ee864df121e395b$export$2e2bcd8739ae039), null, "check_box")
+    }));
+}
+$dd4f814d3ed670f5$var$Checkbox.propTypes = {
+    /**
+   * If `true`, the component is checked.
+   * @uxpinbind onChange 1
+   */ checked: (0, $d4YY5$proptypes).bool,
+    /**
+   * The icon to display when the component is unchecked.
+   */ icon: (0, $d4YY5$proptypes).oneOf((0, $07ef162fcc571302$export$84babfcc2344e650)),
+    /**
+   * The icon to display when the component is checked.
+   */ checkedIcon: (0, $d4YY5$proptypes).oneOf((0, $07ef162fcc571302$export$84babfcc2344e650)),
+    /**
+   * @uxpinignoreprop
+   * Override or extend the styles applied to the component.
+   */ classes: (0, $d4YY5$proptypes).object,
+    /**
+   * The color of the component. It supports those theme colors that make sense for this component.
+   */ color: (0, $d4YY5$proptypes).oneOf([
+        "default",
+        "primary",
+        "secondary",
+        "error",
+        "success",
+        "warning"
+    ]),
+    /**
+   * If `true`, the switch will be disabled.
+   */ disabled: (0, $d4YY5$proptypes).bool,
+    /**
+   * Callback fired when the state is changed.
+   */ onChange: (0, $d4YY5$proptypes).func,
+    /**
+   * If true, the input element is required.
+   */ required: (0, $d4YY5$proptypes).bool,
+    /**
+   * The size of the component. small is equivalent to the dense checkbox styling.
+   */ size: (0, $d4YY5$proptypes).oneOf([
+        "small",
+        "medium",
+        "large"
+    ]),
+    /**
+   * The value of the component.
+   */ value: (0, $d4YY5$proptypes).string,
+    /**
+   * The system prop that allows defining system overrides as well as additional CSS styles.
+   */ sx: (0, $d4YY5$proptypes).object
+};
+var $dd4f814d3ed670f5$export$2e2bcd8739ae039 = $dd4f814d3ed670f5$var$Checkbox;
+
+
+
+
+
+
+
+/**
+ * @uxpindocurl https://mui.com/api/form-control-label/#main-content
+ */ function $a7bec6d5450860fc$var$FormControlLabel(props) {
+    return /*#__PURE__*/ (0, $d4YY5$react).createElement((0, $d4YY5$muimaterialFormControlLabel), props, props.children);
+}
+$a7bec6d5450860fc$var$FormControlLabel.propTypes = {
+    children: (0, $d4YY5$proptypes).node,
+    /**
+   * If `true`, the component appears selected.
+   */ checked: (0, $d4YY5$proptypes).bool,
+    /**
+   * @uxpinignoreprop
+   * Override or extend the styles applied to the component.
+   * See [CSS API](#css-api) below for more details.
+   */ classes: (0, $d4YY5$proptypes).object,
+    /**
+   * A control element. For instance, it can be be a `Radio`, a `Switch` or a `Checkbox`.
+   */ control: (0, $d4YY5$proptypes).element,
+    /**
+   * If `true`, the control will be disabled.
+   */ disabled: (0, $d4YY5$proptypes).bool,
+    /**
+   * If 'true', the label is rendered as it is passed without an additional typography node.
+   */ disableTypography: (0, $d4YY5$proptypes).bool,
+    /**
+   * @uxpinignoreprop
+   * Use that property to pass a ref callback to the native input component.
+   */ inputRef: (0, $d4YY5$proptypes).oneOfType([
+        (0, $d4YY5$proptypes).func,
+        (0, $d4YY5$proptypes).object
+    ]),
+    /**
+   * The text to be used in an enclosing label element.
+   */ label: (0, $d4YY5$proptypes).node,
+    /**
+   * The position of the label.
+   */ labelPlacement: (0, $d4YY5$proptypes).oneOf([
+        "end",
+        "start",
+        "top",
+        "bottom"
+    ]),
+    /**
+   * @uxpinignoreprop
+   * @ignore
+   */ muiFormControl: (0, $d4YY5$proptypes).object,
+    /*
+   * @ignore
+   */ name: (0, $d4YY5$proptypes).string,
+    /**
+   * Callback fired when the state is changed.
+   *
+   * @param {object} event The event source of the callback.
+   * You can pull out the new value by accessing `event.target.checked`.
+   * @param {boolean} checked The `checked` value of the switch
+   */ onChange: (0, $d4YY5$proptypes).func,
+    /**
+   * @uxpinignoreprop
+   * The value of the component.
+   */ value: (0, $d4YY5$proptypes).string,
+    /**
+   * The system prop that allows defining system overrides as well as additional CSS styles. See the `sx` page for more details.
+   * https://mui.com/system/the-sx-prop/
+   */ /** */ sx: (0, $d4YY5$proptypes).object
+};
+var $a7bec6d5450860fc$export$2e2bcd8739ae039 = $a7bec6d5450860fc$var$FormControlLabel;
+
+
+
+
+function $de67f934c20e68f5$var$_extends() {
+    $de67f934c20e68f5$var$_extends = Object.assign ? Object.assign.bind() : function(target) {
+        for(var i = 1; i < arguments.length; i++){
+            var source = arguments[i];
+            for(var key in source)if (Object.prototype.hasOwnProperty.call(source, key)) target[key] = source[key];
+        }
+        return target;
+    };
+    return $de67f934c20e68f5$var$_extends.apply(this, arguments);
+}
+function $de67f934c20e68f5$export$2e2bcd8739ae039(props) {
+    // Unique Id
+    const id = (0, $d4YY5$v4)();
+    return /*#__PURE__*/ (0, $d4YY5$react).createElement((0, $a7bec6d5450860fc$export$2e2bcd8739ae039), $de67f934c20e68f5$var$_extends({}, props, {
+        htmlFor: id,
+        control: /*#__PURE__*/ (0, $d4YY5$react).createElement((0, $dd4f814d3ed670f5$export$2e2bcd8739ae039), {
+            id: id,
+            inputProps: {
+                role: "switch",
+                "aria-checked": props.checked
+            },
+            size: props.size,
+            color: props.color,
+            checked: props.checked
+        }),
+        label: props.label
+    }));
+}
+$de67f934c20e68f5$export$2e2bcd8739ae039.propTypes = {
+    /**
+   * If `true`, the checkbox is checked.
+   * @uxpinbind onChange 1
+   */ checked: (0, $d4YY5$proptypes).bool,
+    /**
+   * If `true`, the checkbox will be disabled.
+   */ disabled: (0, $d4YY5$proptypes).bool,
+    /**
+   * The label text.
+   */ label: (0, $d4YY5$proptypes).string,
+    /**
+   * The value of the component.
+   */ value: (0, $d4YY5$proptypes).string,
+    /**
+   * The size of the component. small is equivalent to the dense checkbox styling.
+   */ size: (0, $d4YY5$proptypes).oneOf([
+        "small",
+        "medium",
+        "large"
+    ]),
+    color: (0, $d4YY5$proptypes).oneOf([
+        "default",
+        "primary",
+        "secondary",
+        "error",
+        "success",
+        "warning"
+    ]),
+    /**
+   * Change event to use with UXPin interactions.
+   */ onChange: (0, $d4YY5$proptypes).func,
+    /**
+   * The position of the label.
+   */ labelPlacement: (0, $d4YY5$proptypes).oneOf([
+        "end",
+        "start",
+        "top",
+        "bottom"
+    ]),
+    /**
+   * A control element. For instance, it can be be a `Radio`, a `Switch` or a `Checkbox`.
+   * @uxpinignoreprop
+   */ control: (0, $d4YY5$proptypes).element
+};
+
+
+
+
+
+
+
+/**
+ * @uxpindocurl https://mui.com/api/form-group/#main-content
+ */ function $946c82112296c706$var$FormGroup(props) {
+    return /*#__PURE__*/ (0, $d4YY5$react).createElement((0, $d4YY5$muimaterialFormGroup), props, props.children);
+}
+$946c82112296c706$var$FormGroup.propTypes = {
+    /**
+   * The content of this component.
+   * @uxpinignoreprop
+   */ children: (0, $d4YY5$proptypes).node,
+    /**
+   * Override or extend the styles applied to the component. See CSS API https://mui.com/api/form-group/#css for more details.
+   */ classes: (0, $d4YY5$proptypes).object,
+    /**
+   * Display group of elements in a compact row.
+   */ row: (0, $d4YY5$proptypes).bool,
+    /**
+   * The system prop that allows defining system overrides as well as additional CSS styles.
+   * See the `sx` page for more details https://mui.com/system/the-sx-prop/.
+   */ /** */ sx: (0, $d4YY5$proptypes).object
+};
+var $946c82112296c706$export$2e2bcd8739ae039 = $946c82112296c706$var$FormGroup;
+
+
+
+
+
+
+/**
+ * @uxpindocurl https://mui.com/api/form-control/#main-content
+ */ function $27a34599ce9c08b4$var$FormControl(props) {
+    return /*#__PURE__*/ (0, $d4YY5$react).createElement((0, $d4YY5$muimaterialFormControl), props, props.children);
+}
+$27a34599ce9c08b4$var$FormControl.propTypes = {
+    /**
+   * The content of the component.
+   */ /** @uxpinignoreprop */ children: (0, $d4YY5$proptypes).node,
+    /**
+   * Override or extend the styles applied to the component.
+   * See CSS API https://mui.com/api/form-label/#css for more details.
+   */ /** @uxpinignoreprop */ classes: (0, $d4YY5$proptypes).object,
+    /**
+   * The color of the component.
+   * It supports those theme colors that make sense for this component.
+   */ color: (0, $d4YY5$proptypes).oneOf([
+        "error",
+        "info",
+        "primary",
+        "secondary",
+        "success",
+        "warning"
+    ]),
+    /**
+   * The component used for the root node. Either a string to use a HTML element or a component.
+   */ /** @uxpinignoreprop */ component: (0, $d4YY5$proptypes).elementType,
+    /**
+   * The size of the component
+   */ size: (0, $d4YY5$proptypes).oneOf([
+        "small",
+        "medium"
+    ]),
+    /**
+   * If dense or normal, will adjust vertical spacing of this and contained components.
+   */ margin: (0, $d4YY5$proptypes).oneOf([
+        "dense",
+        "none",
+        "normal"
+    ]),
+    /**
+   * 	If true, the component will take up the full width of its container.
+   */ fullWidth: (0, $d4YY5$proptypes).bool,
+    /**
+   * If 'true', the label should be displayed in a disabled state.
+   */ disabled: (0, $d4YY5$proptypes).bool,
+    /**
+   * If 'true', the label is displayed in an error state.
+   */ error: (0, $d4YY5$proptypes).bool,
+    /**
+   * If 'true', the label should use filled classes key.
+   */ /** @uxpinignoreprop */ filled: (0, $d4YY5$proptypes).bool,
+    /**
+   * The variant to use.
+   */ variant: (0, $d4YY5$proptypes).oneOf([
+        "filled",
+        "outlined",
+        "standard"
+    ]),
+    /**
+   * If 'true', the input of this label is focused (used by FormGroup components).
+   */ focused: (0, $d4YY5$proptypes).bool,
+    /**
+   * If 'true', the label will indicate that the input is required.
+   */ required: (0, $d4YY5$proptypes).bool,
+    /**
+   * The system prop that allows defining system overrides as well as additional CSS styles.
+   * See the `sx` page for more details https://mui.com/system/the-sx-prop/.
+   */ /** */ sx: (0, $d4YY5$proptypes).object
+};
+var $27a34599ce9c08b4$export$2e2bcd8739ae039 = $27a34599ce9c08b4$var$FormControl;
+
+
+
+
+
+/**
+ * @uxpindocurl https://mui.com/api/form-label/
+ */ function $0446759e8abdb16f$var$FormLabel(props) {
+    return /*#__PURE__*/ (0, $d4YY5$react).createElement((0, $d4YY5$muimaterialFormLabel), props, props.children);
+}
+$0446759e8abdb16f$var$FormLabel.propTypes = {
+    /**
+   * The content of the component.
+   */ /** @uxpinignoreprop */ children: (0, $d4YY5$proptypes).node,
+    /**
+   * Override or extend the styles applied to the component.
+   * See CSS API https://mui.com/api/form-label/#css for more details.
+   */ classes: (0, $d4YY5$proptypes).object,
+    /**
+   * The color of the component.
+   * It supports those theme colors that make sense for this component.
+   */ color: (0, $d4YY5$proptypes).oneOf([
+        "error",
+        "info",
+        "primary",
+        "secondary",
+        "success",
+        "warning"
+    ]),
+    /**
+   * The component used for the root node. Either a string to use a HTML element or a component.
+   */ /** @uxpinignoreprop */ component: (0, $d4YY5$proptypes).elementType,
+    /**
+   * If 'true', the label should be displayed in a disabled state.
+   */ disabled: (0, $d4YY5$proptypes).bool,
+    /**
+   * If 'true', the label is displayed in an error state.
+   */ error: (0, $d4YY5$proptypes).bool,
+    /**
+   * If 'true', the label should use filled classes key.
+   */ /** @uxpinignoreprop */ filled: (0, $d4YY5$proptypes).bool,
+    /**
+   * If 'true', the input of this label is focused (used by FormGroup components).
+   */ focused: (0, $d4YY5$proptypes).bool,
+    /**
+   * If 'true', the label will indicate that the input is required.
+   */ required: (0, $d4YY5$proptypes).bool,
+    /**
+   * The system prop that allows defining system overrides as well as additional CSS styles.
+   * See the `sx` page for more details https://mui.com/system/the-sx-prop/.
+   */ /** */ sx: (0, $d4YY5$proptypes).object
+};
+var $0446759e8abdb16f$export$2e2bcd8739ae039 = $0446759e8abdb16f$var$FormLabel;
+
+
+
+
+function $efbad87542ce732c$export$2e2bcd8739ae039(props) {
+    let id = (0, $d4YY5$v4)();
+    const [state, setState] = (0, $d4YY5$react).useState(props.checked);
+    const handleChange = (e)=>{
+        setState(e.target.checked);
+    };
+    return /*#__PURE__*/ (0, $d4YY5$react).createElement((0, $27a34599ce9c08b4$export$2e2bcd8739ae039), {
+        component: "fieldset"
+    }, /*#__PURE__*/ (0, $d4YY5$react).createElement((0, $0446759e8abdb16f$export$2e2bcd8739ae039), {
+        component: "legend"
+    }, props.grouplabel), /*#__PURE__*/ (0, $d4YY5$react).createElement((0, $946c82112296c706$export$2e2bcd8739ae039), props, (0, $d4YY5$react).Children.map(props.children, (child)=>{
+        return /*#__PURE__*/ (0, $d4YY5$react).createElement((0, $a7bec6d5450860fc$export$2e2bcd8739ae039), {
+            value: child.props.value,
+            control: /*#__PURE__*/ (0, $d4YY5$react).createElement((0, $dd4f814d3ed670f5$export$2e2bcd8739ae039), {
+                id: id,
+                color: props.color,
+                size: props.size,
+                checked: props.checked ? props.checked : state,
+                onChange: handleChange
+            }),
+            label: child.props.label,
+            labelPlacement: props.labelPlacement,
+            disabled: child.props.disabled
+        });
+    })));
+}
+$efbad87542ce732c$export$2e2bcd8739ae039.propTypes = {
+    /**
+   * Display text over the radio group.
+   */ grouplabel: (0, $d4YY5$proptypes).string,
+    /**
+   * The position of the label.
+   */ labelPlacement: (0, $d4YY5$proptypes).oneOf([
+        "end",
+        "start",
+        "top",
+        "bottom"
+    ]),
+    /**
+   * The value of the initially selected radio button.
+     */ value: (0, $d4YY5$proptypes).string,
+    /**
+   * The content of the component.
+   * @uxpinignoreprop
+   */ children: (0, $d4YY5$proptypes).node,
+    /**
+   * The size of the component. small is equivalent to the dense checkbox styling.
+   */ size: (0, $d4YY5$proptypes).oneOf([
+        "small",
+        "medium",
+        "large"
+    ]),
+    color: (0, $d4YY5$proptypes).oneOf([
+        "default",
+        "primary",
+        "secondary",
+        "error",
+        "success",
+        "warning"
+    ]),
+    /**
+   * The name used to reference the value of the control.
+   * @uxpinignoreprop
+   */ name: (0, $d4YY5$proptypes).string,
+    /**
+   * @uxpinignoreprop
+   */ onKeyDown: (0, $d4YY5$proptypes).func,
+    /**
+   * display selection controls in a single row.
+   */ row: (0, $d4YY5$proptypes).bool,
+    /**
+   * Change event to use with UXPin interactions.
+   */ onChange: (0, $d4YY5$proptypes).func,
+    /**
+   * If `true`, the checkbox is checked.
+   * @uxpinbind onChange 1
+   */ checked: (0, $d4YY5$proptypes).bool
+};
+$efbad87542ce732c$export$2e2bcd8739ae039.defaultProps = {
+    onChange: ()=>undefined
+};
+
+
+
+
+
+
+
+function $5b98ef666a8916ec$var$_extends() {
+    $5b98ef666a8916ec$var$_extends = Object.assign ? Object.assign.bind() : function(target) {
+        for(var i = 1; i < arguments.length; i++){
+            var source = arguments[i];
+            for(var key in source)if (Object.prototype.hasOwnProperty.call(source, key)) target[key] = source[key];
+        }
+        return target;
+    };
+    return $5b98ef666a8916ec$var$_extends.apply(this, arguments);
+}
+/**
+ * @uxpindocurl https://mui.com/api/radio/
+ */ function $5b98ef666a8916ec$var$Radio(props) {
+    return /*#__PURE__*/ $d4YY5$createElement((0, $d4YY5$muimaterialRadio), $5b98ef666a8916ec$var$_extends({}, props, {
+        icon: props.icon ? /*#__PURE__*/ $d4YY5$createElement((0, $6ee864df121e395b$export$2e2bcd8739ae039), null, props.icon) : /*#__PURE__*/ $d4YY5$createElement((0, $6ee864df121e395b$export$2e2bcd8739ae039), null, "radio_button_unchecked"),
+        checkedIcon: props.checkedIcon ? /*#__PURE__*/ $d4YY5$createElement((0, $6ee864df121e395b$export$2e2bcd8739ae039), null, props.checkedIcon) : /*#__PURE__*/ $d4YY5$createElement((0, $6ee864df121e395b$export$2e2bcd8739ae039), null, "radio_button_checked")
+    }));
+}
+$5b98ef666a8916ec$var$Radio.propTypes = {
+    /**
+   * If `true`, the component is checked.
+   * @uxpinbind onChange 1
+   */ checked: (0, $d4YY5$proptypes).bool,
+    /**
+   * The icon to display when the component is unchecked.
+   */ icon: (0, $d4YY5$proptypes).oneOf((0, $07ef162fcc571302$export$84babfcc2344e650)),
+    /**
+   * The icon to display when the component is checked.
+   */ checkedIcon: (0, $d4YY5$proptypes).oneOf((0, $07ef162fcc571302$export$84babfcc2344e650)),
+    /**
+   * @uxpinignoreprop
+   * Override or extend the styles applied to the component.
+   */ classes: (0, $d4YY5$proptypes).object,
+    /**
+   * The color of the component. It supports those theme colors that make sense for this component.
+   */ color: (0, $d4YY5$proptypes).oneOf([
+        "default",
+        "primary",
+        "secondary",
+        "error",
+        "success",
+        "warning"
+    ]),
+    /**
+   * If `true`, the switch will be disabled.
+   */ disabled: (0, $d4YY5$proptypes).bool,
+    /**
+   * Name attribute of the input element.
+   */ name: (0, $d4YY5$proptypes).string,
+    /**
+   * The id of the input element.
+   */ id: (0, $d4YY5$proptypes).string,
+    /**
+   * Callback fired when the state is changed.
+   */ onChange: (0, $d4YY5$proptypes).func,
+    /**
+   * If true, the input element is required.
+   */ required: (0, $d4YY5$proptypes).bool,
+    /**
+   * The size of the component. small is equivalent to the dense checkbox styling.
+   */ size: (0, $d4YY5$proptypes).oneOf([
+        "small",
+        "medium",
+        "large"
+    ]),
+    /**
+   * The value of the component.
+   */ value: (0, $d4YY5$proptypes).string,
+    /**
+   * The system prop that allows defining system overrides as well as additional CSS styles.
+   */ sx: (0, $d4YY5$proptypes).object
+};
+$5b98ef666a8916ec$var$Radio.defaultProps = {
+};
+var $5b98ef666a8916ec$export$2e2bcd8739ae039 = $5b98ef666a8916ec$var$Radio;
+
+
+
+
+
+
+function $c691b7d4585d8c52$var$_extends() {
+    $c691b7d4585d8c52$var$_extends = Object.assign ? Object.assign.bind() : function(target) {
+        for(var i = 1; i < arguments.length; i++){
+            var source = arguments[i];
+            for(var key in source)if (Object.prototype.hasOwnProperty.call(source, key)) target[key] = source[key];
+        }
+        return target;
+    };
+    return $c691b7d4585d8c52$var$_extends.apply(this, arguments);
+}
+function $c691b7d4585d8c52$export$2e2bcd8739ae039(props) {
+    return /*#__PURE__*/ (0, $d4YY5$react).createElement((0, $a7bec6d5450860fc$export$2e2bcd8739ae039), $c691b7d4585d8c52$var$_extends({}, props, {
+        htmlFor: "radioWithLabel",
+        control: /*#__PURE__*/ (0, $d4YY5$react).createElement((0, $5b98ef666a8916ec$export$2e2bcd8739ae039), {
+            id: "radioWithLabel",
+            inputProps: {
+                role: "radio",
+                "aria-checked": props.checked
+            },
+            color: props.color,
+            size: props.size
+        }),
+        label: props.label
+    }));
+}
+$c691b7d4585d8c52$export$2e2bcd8739ae039.propTypes = {
+    /**
+   * If `true`, the checkbox appears selected.
+   * @uxpinbind onChange 1
+   */ checked: (0, $d4YY5$proptypes).bool,
+    /**
+   * If `true`, the checkbox will be disabled.
+   */ disabled: (0, $d4YY5$proptypes).bool,
+    /**
+   * The label text.
+   */ label: (0, $d4YY5$proptypes).string,
+    /**
+   * The value of the component.
+   */ value: (0, $d4YY5$proptypes).string,
+    /**
+   * The size of the component. small is equivalent to the dense checkbox styling.
+   */ size: (0, $d4YY5$proptypes).oneOf([
+        "small",
+        "medium",
+        "large"
+    ]),
+    color: (0, $d4YY5$proptypes).oneOf([
+        "default",
+        "primary",
+        "secondary",
+        "error",
+        "success",
+        "warning"
+    ]),
+    /**
+   * The position of the label.
+   */ labelPlacement: (0, $d4YY5$proptypes).oneOf([
+        "end",
+        "start",
+        "top",
+        "bottom"
+    ]),
+    /**
+   * Change event to use with UXPin interactions.
+   */ onChange: (0, $d4YY5$proptypes).func,
+    /**
+   * A control element. For instance, it can be be a `Radio`, a `Switch` or a `Checkbox`.
+   * @uxpinignoreprop
+   */ control: (0, $d4YY5$proptypes).element
+};
+
+
+
+
+
+
+
+
+
+function $029dc6d9ac055f9d$export$2e2bcd8739ae039(props) {
+    return /*#__PURE__*/ (0, $d4YY5$react).createElement((0, $27a34599ce9c08b4$export$2e2bcd8739ae039), {
+        component: "fieldset"
+    }, /*#__PURE__*/ (0, $d4YY5$react).createElement((0, $0446759e8abdb16f$export$2e2bcd8739ae039), {
+        component: "legend"
+    }, props.grouplabel), /*#__PURE__*/ (0, $d4YY5$react).createElement((0, $d4YY5$muimaterialRadioGroup), props, (0, $d4YY5$react).Children.map(props.children, (child)=>{
+        return /*#__PURE__*/ (0, $d4YY5$react).createElement((0, $a7bec6d5450860fc$export$2e2bcd8739ae039), {
+            value: child.props.value,
+            checked: child.props.checked,
+            control: /*#__PURE__*/ (0, $d4YY5$react).createElement((0, $5b98ef666a8916ec$export$2e2bcd8739ae039), {
+                id: "radio-group",
+                color: props.color,
+                size: props.size,
+                inputProps: {
+                    role: "radio",
+                    "aria-checked": props.checked
+                }
+            }),
+            htmlFor: "radio-group",
+            label: child.props.label,
+            labelPlacement: props.labelPlacement,
+            disabled: child.props.disabled
+        });
+    })));
+}
+$029dc6d9ac055f9d$export$2e2bcd8739ae039.propTypes = {
+    checked: (0, $d4YY5$proptypes).bool,
+    /**
+   * Display text over the radio group.
+   */ grouplabel: (0, $d4YY5$proptypes).string,
+    /**
+   * The position of the label.
+   */ labelPlacement: (0, $d4YY5$proptypes).oneOf([
+        "end",
+        "start",
+        "top",
+        "bottom"
+    ]),
+    /**
+   * The value of the initially selected radio button.
+   * @uxpinbind onChange 1
+   * @uxpinpropname  Selected Value
+   */ value: (0, $d4YY5$proptypes).string,
+    /**
+   * The content of the component.
+   * @uxpinignoreprop
+   */ children: (0, $d4YY5$proptypes).node,
+    /**
+   * The size of the component. small is equivalent to the dense checkbox styling.
+   */ size: (0, $d4YY5$proptypes).oneOf([
+        "small",
+        "medium",
+        "large"
+    ]),
+    color: (0, $d4YY5$proptypes).oneOf([
+        "default",
+        "primary",
+        "secondary",
+        "error",
+        "success",
+        "warning"
+    ]),
+    /**
+   * The name used to reference the value of the control.
+   * @uxpinignoreprop
+   */ name: (0, $d4YY5$proptypes).string,
+    /**
+   * @uxpinignoreprop
+   */ onKeyDown: (0, $d4YY5$proptypes).func,
+    /**
+   * display selection controls in a single row.
+   */ row: (0, $d4YY5$proptypes).bool,
+    /**
+   * Change event to use with UXPin interactions.
+   */ onChange: (0, $d4YY5$proptypes).func
+};
+$029dc6d9ac055f9d$export$2e2bcd8739ae039.defaultProps = {
+    onChange: ()=>undefined
+};
+
+
+
+
+
+
+
+function $45bf60c90bdbc522$var$_extends() {
+    $45bf60c90bdbc522$var$_extends = Object.assign ? Object.assign.bind() : function(target) {
+        for(var i = 1; i < arguments.length; i++){
+            var source = arguments[i];
+            for(var key in source)if (Object.prototype.hasOwnProperty.call(source, key)) target[key] = source[key];
+        }
+        return target;
+    };
+    return $45bf60c90bdbc522$var$_extends.apply(this, arguments);
+}
+/**
+ * @uxpindocurl https://mui.com/api/rating/#main-content
+ */ function $45bf60c90bdbc522$var$Rating(props) {
+    return /*#__PURE__*/ $d4YY5$createElement((0, $d4YY5$muimaterialRating), $45bf60c90bdbc522$var$_extends({}, props, {
+        emptyIcon: props.emptyIcon && /*#__PURE__*/ $d4YY5$createElement((0, $6ee864df121e395b$export$2e2bcd8739ae039), {
+            fontSize: "inherit"
+        }, props.emptyIcon),
+        icon: props.icon && /*#__PURE__*/ $d4YY5$createElement((0, $6ee864df121e395b$export$2e2bcd8739ae039), {
+            fontSize: "inherit"
+        }, props.icon)
+    }));
+}
+$45bf60c90bdbc522$var$Rating.propTypes = {
+    /**
+   * @uxpinignoreprop
+   * Override or extend the styles applied to the component.
+   */ classes: (0, $d4YY5$proptypes).object,
+    /**
+   * The icon to display when empty.
+   */ emptyIcon: (0, $d4YY5$proptypes).oneOf((0, $07ef162fcc571302$export$84babfcc2344e650)),
+    /**
+   * The icon to display.
+   * @uxpinpropname Full Icon
+   */ icon: (0, $d4YY5$proptypes).oneOf((0, $07ef162fcc571302$export$84babfcc2344e650)),
+    /**
+   * Maximum rating.
+   * @uxpinpropname Max Rating
+   */ max: (0, $d4YY5$proptypes).number,
+    /**
+   * The minimum increment value change allowed.
+   */ precision: (0, $d4YY5$proptypes).string,
+    /**
+   * If true, the component is disabled.
+   */ disabled: (0, $d4YY5$proptypes).bool,
+    /**
+   * Removes all hover effects and pointer events.
+   */ readOnly: (0, $d4YY5$proptypes).bool,
+    /**
+   * @uxpinignoreprop
+   * Override or extend the styles applied to the component.
+   * Don't need this with Merge if we have Rating prop
+   */ defaultValue: (0, $d4YY5$proptypes).number,
+    /**
+   * @uxpinignoreprop
+   * Override or extend the styles applied to the component.
+   */ emptyLabelText: (0, $d4YY5$proptypes).node,
+    /**
+   * @uxpinignoreprop
+   * Override or extend the styles applied to the component.
+   */ getLabelText: (0, $d4YY5$proptypes).func,
+    /**
+   * If true, only the selected icon will be highlighted.
+   */ highlightSelectedOnly: (0, $d4YY5$proptypes).bool,
+    /**
+   * The name attribute of the radio input elements.
+   * This input name should be unique within the page.
+   * Being unique within a form is insufficient since the name is used to generated IDs.
+   */ name: (0, $d4YY5$proptypes).string,
+    /**
+   * The size of the component.
+   */ size: (0, $d4YY5$proptypes).oneOf([
+        "small",
+        "medium",
+        "large"
+    ]),
+    /**
+   * The rating value.
+   * @uxpinbind onChange 1
+   */ value: (0, $d4YY5$proptypes).string,
+    /**
+   * On click event to use with UXPin interactions.
+   */ onChange: (0, $d4YY5$proptypes).func,
+    /**
+   * Callback function that is fired when the hover state changes.
+   */ onChangeActive: (0, $d4YY5$proptypes).func,
+    /**
+   * The system prop that allows defining system overrides as well as additional CSS styles.
+   */ sx: (0, $d4YY5$proptypes).object
+};
+var $45bf60c90bdbc522$export$2e2bcd8739ae039 = $45bf60c90bdbc522$var$Rating;
+
+
+
+
+
+function $b560fc0518d1308d$var$_extends() {
+    $b560fc0518d1308d$var$_extends = Object.assign ? Object.assign.bind() : function(target) {
+        for(var i = 1; i < arguments.length; i++){
+            var source = arguments[i];
+            for(var key in source)if (Object.prototype.hasOwnProperty.call(source, key)) target[key] = source[key];
+        }
+        return target;
+    };
+    return $b560fc0518d1308d$var$_extends.apply(this, arguments);
+}
+/**
+ * @uxpindocurl https://mui.com/api/select/
+ */ function $b560fc0518d1308d$var$Select(props) {
+    const [selectedValue, setSelectedValue] = $d4YY5$useState("");
+    $d4YY5$useEffect(()=>{
+        setSelectedValue(props.value);
+    }, [
+        props.value
+    ]); // Only re-run the effect if value prop changes
+    const handleChange = (e)=>{
+        console.log(e.target.value);
+        setSelectedValue(e.target.value);
+    };
+    return /*#__PURE__*/ $d4YY5$createElement((0, $d4YY5$muimaterialSelect), $b560fc0518d1308d$var$_extends({
+        labelId: "demo-multiple-name-label",
+        id: "demo-multiple-name",
+        onChange: (e)=>handleChange(e),
+        onOpen: props.onOpen,
+        onClose: props.onClose,
+        value: selectedValue,
+        label: props.label
+    }, props), props.children);
+}
+$b560fc0518d1308d$var$Select.propTypes = {
+    /**
+   * Replaced with width prop
+   * If true, the width of the popover will automatically be set according to the items inside the menu, otherwise it will be at least the width of the select input.
+   */ autoWidth: (0, $d4YY5$proptypes).bool,
+    /**
+   * @uxpinignoreprop
+   */ children: (0, $d4YY5$proptypes).node,
+    /**
+   * @uxpinignoreprop
+   * Override or extend the styles applied to the component.
+   */ classes: (0, $d4YY5$proptypes).object,
+    /**
+   * @uxpinignoreprop
+   * The default value. Use when the component is not controlled.
+   */ defaultValue: (0, $d4YY5$proptypes).any,
+    /**
+   * If true, the component is initially open. Use when the component open state is not controlled
+   * (i.e. the open prop is not defined). You can only use it when the native prop is false (default).
+   */ defaultOpen: (0, $d4YY5$proptypes).bool,
+    /**
+   * @uxpinignoreprop
+   * If true, a value is displayed even if no items are selected.
+   * In order to display a meaningful value, a function can be passed to the renderValue prop which returns the value to be displayed when no items are selected.
+   * When using this prop, make sure the label doesn't overlap with the empty displayed value.
+   * The label should either be hidden or forced to a shrunk state.
+   */ displayEmpty: (0, $d4YY5$proptypes).bool,
+    /**
+   * @uxpinignoreprop
+   * The icon that displays the arrow.
+   */ IconComponent: (0, $d4YY5$proptypes).elementType,
+    /**
+   * @uxpinignoreprop
+   * The id of the wrapper element or the select element when native.
+   */ id: (0, $d4YY5$proptypes).string,
+    /**
+   * @uxpinignoreprop
+   * An Input element; does not have to be a MUI specific Input.
+   */ inputProps: (0, $d4YY5$proptypes).object,
+    /**
+   * The Label of the Component.
+   * The value is used in InputLabel.
+   * OutlineInput provides layout css to the label when a MenuItem is selected.
+   */ label: (0, $d4YY5$proptypes).string,
+    /**
+   * @uxpinignoreprop
+   * The ID of an element that acts as an additional label. The Select will be labelled by the additional label and the selected value.
+   */ labelId: (0, $d4YY5$proptypes).string,
+    /**
+   * Props applied to the Menu element.
+   * @uxpinignoreprop
+     */ MenuProps: (0, $d4YY5$proptypes).object,
+    /**
+   * If true, value must be an array and the menu will support multiple selections.
+   * @uxpinignoreprop
+   */ multiple: (0, $d4YY5$proptypes).bool,
+    /**
+   * @uxpinignoreprop
+   * If true, the component uses a native select element.
+   */ native: (0, $d4YY5$proptypes).bool,
+    /**
+   * @uxpinignoreprop
+   * Render the selected value. You can only use it when the native prop is false (default).
+   */ renderValue: (0, $d4YY5$proptypes).func,
+    /**
+   * Props applied to the clickable div element.
+   * @uxpinignoreprop
+   */ SelectDisplayProps: (0, $d4YY5$proptypes).object,
+    /**
+   * The varian to use.
+   */ variant: (0, $d4YY5$proptypes).oneOf([
+        "filled",
+        "outlined",
+        "standard"
+    ]),
+    /**
+   * The input value.
+   * Providing an empty string will select no options. Set to an empty string '' if you don't want any of the available options to be selected.
+   * If the value is an object it must have reference equality with the option in order to be selected.
+   * If the value is not an object, the string representation must match with the string representation of the option in order to be selected.
+   */ value: (0, $d4YY5$proptypes).string,
+    /**
+   * Custom Prop.
+   * The width of the Select.
+   * Can use px - 50px.
+   * Can use % - 100%.
+   * @uxpinignoreprop
+   */ width: (0, $d4YY5$proptypes).string,
+    /**
+   * Callback fired when a menu item is selected.
+   */ onChange: (0, $d4YY5$proptypes).func,
+    /**
+   * Callback fired when the component requests to be closed. Use in controlled mode (see open).
+   */ onClose: (0, $d4YY5$proptypes).func,
+    /**
+   * Callback fired when the component requests to be opened. Use in controlled mode (see open).
+   */ onOpen: (0, $d4YY5$proptypes).func,
+    /**
+   * If true, the component is shown. You can only use it when the native prop is false (default).
+   * @uxpinignoreprop
+   */ open: (0, $d4YY5$proptypes).bool,
+    /**
+   */ sx: (0, $d4YY5$proptypes).object
+};
+var $b560fc0518d1308d$export$2e2bcd8739ae039 = $b560fc0518d1308d$var$Select;
+
+
+
+
+
+
+
+function $553a6ecaacba8e36$var$_extends() {
+    $553a6ecaacba8e36$var$_extends = Object.assign ? Object.assign.bind() : function(target) {
+        for(var i = 1; i < arguments.length; i++){
+            var source = arguments[i];
+            for(var key in source)if (Object.prototype.hasOwnProperty.call(source, key)) target[key] = source[key];
+        }
+        return target;
+    };
+    return $553a6ecaacba8e36$var$_extends.apply(this, arguments);
+}
+/**
+ * @uxpindocurl https://mui.com/components/switches/#main-content
+ */ function $553a6ecaacba8e36$var$Switch(props) {
+    return /*#__PURE__*/ (0, $d4YY5$react).createElement((0, $d4YY5$muimaterialSwitch), $553a6ecaacba8e36$var$_extends({}, props, {
+        icon: props.icon ? /*#__PURE__*/ (0, $d4YY5$react).createElement((0, $6ee864df121e395b$export$2e2bcd8739ae039), {
+            fontSize: "small"
+        }, props.icon) : null,
+        checkedIcon: props.checkedIcon ? /*#__PURE__*/ (0, $d4YY5$react).createElement((0, $6ee864df121e395b$export$2e2bcd8739ae039), {
+            fontSize: "small"
+        }, props.checkedIcon) : null
+    }));
+}
+$553a6ecaacba8e36$var$Switch.propTypes = {
+    /**
+   * If `true`, the switch is checked.
+   * @uxpinbind onChange 1
+   */ checked: (0, $d4YY5$proptypes).bool,
+    /**
+   * The icon to display when the component is unchecked.
+   */ icon: (0, $d4YY5$proptypes).oneOf((0, $07ef162fcc571302$export$84babfcc2344e650)),
+    /**
+   * The icon to display when the component is checked.
+   */ checkedIcon: (0, $d4YY5$proptypes).oneOf((0, $07ef162fcc571302$export$84babfcc2344e650)),
+    /**
+   * @uxpinignoreprop
+   * Override or extend the styles applied to the component.
+   */ classes: (0, $d4YY5$proptypes).object,
+    /**
+   * The color of the component.
+   */ color: (0, $d4YY5$proptypes).oneOf([
+        "default",
+        "primary",
+        "secondary",
+        "error",
+        "success",
+        "warning"
+    ]),
+    /**
+   * if `true`, the switch will be disabled.
+   */ disabled: (0, $d4YY5$proptypes).bool,
+    /**
+   * If `true`, the ripple effect will be disabled.
+   * @uxpinignoreprop
+   */ disableRipple: (0, $d4YY5$proptypes).bool,
+    /**
+   * @uxpinignoreprop
+   * The id of the `input` element.
+   */ id: (0, $d4YY5$proptypes).string,
+    /**
+   * Change event to use with UXPin interactions.
+   */ onChange: (0, $d4YY5$proptypes).func,
+    /**
+   * The size of the component.
+   */ size: (0, $d4YY5$proptypes).oneOf([
+        "small",
+        "medium"
+    ]),
+    /**
+   * The value of the component
+   */ value: (0, $d4YY5$proptypes).string,
+    /**
+   * The system prop that allows defining system overrides as well as additional CSS styles.
+   */ sx: (0, $d4YY5$proptypes).object
+};
+$553a6ecaacba8e36$var$Switch.defaultProps = {
+};
+var $553a6ecaacba8e36$export$2e2bcd8739ae039 = $553a6ecaacba8e36$var$Switch;
+
+
+
+
+
+
+
+function $55c48518655a9109$var$_extends() {
+    $55c48518655a9109$var$_extends = Object.assign ? Object.assign.bind() : function(target) {
+        for(var i = 1; i < arguments.length; i++){
+            var source = arguments[i];
+            for(var key in source)if (Object.prototype.hasOwnProperty.call(source, key)) target[key] = source[key];
+        }
+        return target;
+    };
+    return $55c48518655a9109$var$_extends.apply(this, arguments);
+}
+function $55c48518655a9109$export$2e2bcd8739ae039(props) {
+    // Unique Id
+    const id = (0, $d4YY5$v4)();
+    return /*#__PURE__*/ (0, $d4YY5$react).createElement((0, $a7bec6d5450860fc$export$2e2bcd8739ae039), $55c48518655a9109$var$_extends({}, props, {
+        htmlFor: id,
+        control: /*#__PURE__*/ (0, $d4YY5$react).createElement((0, $553a6ecaacba8e36$export$2e2bcd8739ae039), {
+            id: id,
+            inputProps: {
+                role: "switch",
+                "aria-checked": props.checked
+            },
+            size: props.size,
+            color: props.color
+        }),
+        label: props.label
+    }));
+}
+$55c48518655a9109$export$2e2bcd8739ae039.propTypes = {
+    /**
+   * If `true`, the checkbox is checked.
+   * @uxpinbind onChange 1
+   */ checked: (0, $d4YY5$proptypes).bool,
+    /**
+   * If `true`, the checkbox will be disabled.
+   */ disabled: (0, $d4YY5$proptypes).bool,
+    /**
+   * The label text.
+   */ label: (0, $d4YY5$proptypes).string,
+    /**
+   * The value of the component.
+   */ value: (0, $d4YY5$proptypes).string,
+    /**
+   * The size of the component. small is equivalent to the dense checkbox styling.
+   */ size: (0, $d4YY5$proptypes).oneOf([
+        "small",
+        "medium",
+        "large"
+    ]),
+    /**
+   * Change event to use with UXPin interactions.
+   */ onChange: (0, $d4YY5$proptypes).func,
+    /**
+   * The position of the label.
+   */ labelPlacement: (0, $d4YY5$proptypes).oneOf([
+        "end",
+        "start",
+        "top",
+        "bottom"
+    ]),
+    /**
+   * A control element. For instance, it can be be a `Radio`, a `Switch` or a `Checkbox`.
+   * @uxpinignoreprop
+   */ control: (0, $d4YY5$proptypes).element,
+    /**
+   * The color of the component. It supports those theme colors that make sense for this component.
+   */ color: (0, $d4YY5$proptypes).oneOf([
+        "default",
+        "primary",
+        "secondary",
+        "error",
+        "success",
+        "warning"
+    ])
+};
+$55c48518655a9109$export$2e2bcd8739ae039.defaultProps = {
+    // NOTE: Checked must be controlled state from the outset, otherwise changing state in the app will trigger an error
+    // see: https://fb.me/react-controlled-components
+    checked: false,
+    onChange: ()=>undefined
+};
+
+
+
+
+
+
+
+
+
+function $17eba3cfebb86d0b$export$2e2bcd8739ae039(props) {
+    return /*#__PURE__*/ (0, $d4YY5$react).createElement((0, $27a34599ce9c08b4$export$2e2bcd8739ae039), {
+        component: "fieldset"
+    }, /*#__PURE__*/ (0, $d4YY5$react).createElement((0, $0446759e8abdb16f$export$2e2bcd8739ae039), {
+        component: "legend"
+    }, props.grouplabel), /*#__PURE__*/ (0, $d4YY5$react).createElement((0, $d4YY5$muimaterialFormGroup), props, (0, $d4YY5$react).Children.map(props.children, (child)=>{
+        return /*#__PURE__*/ (0, $d4YY5$react).createElement((0, $a7bec6d5450860fc$export$2e2bcd8739ae039), {
+            value: child.props.value,
+            checked: child.props.checked,
+            control: /*#__PURE__*/ (0, $d4YY5$react).createElement((0, $553a6ecaacba8e36$export$2e2bcd8739ae039), {
+                id: "switch-group",
+                color: props.color,
+                size: props.size,
+                inputProps: {
+                    role: "switch",
+                    "aria-checked": props.checked
+                }
+            }),
+            htmlFor: "switch-group",
+            label: child.props.label,
+            labelPlacement: props.labelPlacement,
+            disabled: child.props.disabled
+        });
+    })));
+}
+$17eba3cfebb86d0b$export$2e2bcd8739ae039.propTypes = {
+    checked: (0, $d4YY5$proptypes).bool,
+    /**
+   * Display text over the radio group.
+   */ grouplabel: (0, $d4YY5$proptypes).string,
+    /**
+   * The position of the label.
+   */ labelPlacement: (0, $d4YY5$proptypes).oneOf([
+        "end",
+        "start",
+        "top",
+        "bottom"
+    ]),
+    /**
+   * The value of the initially selected radio button.
+   * @uxpinbind onChange 1
+   * @uxpinpropname  Selected Value
+   */ value: (0, $d4YY5$proptypes).string,
+    /**
+   * The content of the component.
+   * @uxpinignoreprop
+   */ children: (0, $d4YY5$proptypes).node,
+    /**
+   * The size of the component. small is equivalent to the dense checkbox styling.
+   */ size: (0, $d4YY5$proptypes).oneOf([
+        "small",
+        "medium",
+        "large"
+    ]),
+    color: (0, $d4YY5$proptypes).oneOf([
+        "default",
+        "primary",
+        "secondary",
+        "error",
+        "success",
+        "warning"
+    ]),
+    /**
+   * The name used to reference the value of the control.
+   * @uxpinignoreprop
+   */ name: (0, $d4YY5$proptypes).string,
+    /**
+   * @uxpinignoreprop
+   */ onKeyDown: (0, $d4YY5$proptypes).func,
+    /**
+   * display selection controls in a single row.
+   */ row: (0, $d4YY5$proptypes).bool,
+    /**
+   * Change event to use with UXPin interactions.
+   */ onChange: (0, $d4YY5$proptypes).func
+};
+$17eba3cfebb86d0b$export$2e2bcd8739ae039.defaultProps = {
+    onChange: ()=>undefined
+};
+
+
+
+
+
+
+
+
+function $846045c082082f73$var$_extends() {
+    $846045c082082f73$var$_extends = Object.assign ? Object.assign.bind() : function(target) {
+        for(var i = 1; i < arguments.length; i++){
+            var source = arguments[i];
+            for(var key in source)if (Object.prototype.hasOwnProperty.call(source, key)) target[key] = source[key];
+        }
+        return target;
+    };
+    return $846045c082082f73$var$_extends.apply(this, arguments);
+}
+/**
+ * @uxpindocurl https://mui.com/api/text-field/
+ */ function $846045c082082f73$var$TextField(props) {
+    const { startAdornment: startAdornment , endAdornment: endAdornment , ...other } = props;
+    return /*#__PURE__*/ (0, $d4YY5$react).createElement((0, $d4YY5$muimaterialTextField), $846045c082082f73$var$_extends({}, other, {
+        InputProps: {
+            startAdornment: props.startAdornment && /*#__PURE__*/ (0, $d4YY5$react).createElement((0, $d4YY5$muimaterialInputAdornment), {
+                position: "start"
+            }, /*#__PURE__*/ (0, $d4YY5$react).createElement((0, $6ee864df121e395b$export$2e2bcd8739ae039), null, startAdornment)),
+            endAdornment: props.endAdornment && /*#__PURE__*/ (0, $d4YY5$react).createElement((0, $d4YY5$muimaterialInputAdornment), {
+                position: "end"
+            }, /*#__PURE__*/ (0, $d4YY5$react).createElement((0, $6ee864df121e395b$export$2e2bcd8739ae039), null, endAdornment))
+        }
+    }));
+}
+$846045c082082f73$var$TextField.propTypes = {
+    /**
+   * The label content.
+   */ label: (0, $d4YY5$proptypes).string,
+    /**
+   * The helper text content.
+   */ helperText: (0, $d4YY5$proptypes).string,
+    /**
+   * The short hint displayed in the input before the user enters a value.
+   */ placeholder: (0, $d4YY5$proptypes).string,
+    /**
+   * The value of the `Input` element, required for a controlled component.
+   * @uxpinbind onChange 0.target.value
+   */ value: (0, $d4YY5$proptypes).oneOfType([
+        (0, $d4YY5$proptypes).string,
+        (0, $d4YY5$proptypes).number,
+        (0, $d4YY5$proptypes).bool,
+        (0, $d4YY5$proptypes).arrayOf((0, $d4YY5$proptypes).oneOfType([
+            (0, $d4YY5$proptypes).string,
+            (0, $d4YY5$proptypes).number,
+            (0, $d4YY5$proptypes).bool
+        ]))
+    ]),
+    /**
+   * This prop helps users to fill forms faster, especially on mobile devices.
+   * The name can be confusing, as it's more like an autofill.
+   * You can learn more about it: https://html.spec.whatwg.org/multipage/form-control-infrastructure.html#autofill.
+   */ /** @uxpinignoreprop */ autoComplete: (0, $d4YY5$proptypes).string,
+    /**
+   * Override or extend the styles applied to the component. See CSS API: https://mui.com/api/text-field/#css.
+   */ /** @uxpinignoreprop */ classes: (0, $d4YY5$proptypes).object,
+    /**
+   * The variant to use.
+   */ variant: (0, $d4YY5$proptypes).oneOf([
+        "standard",
+        "outlined",
+        "filled"
+    ]),
+    /**The size of the component */ size: (0, $d4YY5$proptypes).oneOf([
+        "small",
+        "medium"
+    ]),
+    /**
+   * The color of the component. It supports those theme colors that make sense for this component.
+   */ color: (0, $d4YY5$proptypes).oneOf([
+        "primary",
+        "secondary",
+        "error",
+        "info",
+        "success",
+        "warning"
+    ]),
+    /**
+   * If 'dense' or 'normal', will adjust vertical spacing of this and contained components.
+   */ margin: (0, $d4YY5$proptypes).oneOf([
+        "dense",
+        "none",
+        "normal"
+    ]),
+    /** The default value. Use when the component is not controlled.*/ /** @uxpinignoreprop */ defaultValue: (0, $d4YY5$proptypes).string,
+    /** If 'true', the component is disabled.*/ disabled: (0, $d4YY5$proptypes).bool,
+    /**
+   * Type of the input element
+   */ type: (0, $d4YY5$proptypes).oneOf([
+        "text",
+        "number",
+        "password"
+    ]),
+    /**
+   * If `true`, the label is displayed as required and the input will be required.
+   */ required: (0, $d4YY5$proptypes).bool,
+    /** If 'true', the label is displayed in an error state.*/ error: (0, $d4YY5$proptypes).bool,
+    /**
+   * If 'true', the input will take up the full width of its container.
+   */ fullWidth: (0, $d4YY5$proptypes).bool,
+    /**
+   * If 'true', the input element is focused during the first mount.
+   */ autoFocus: (0, $d4YY5$proptypes).bool,
+    /**
+   * The id of the input element. Use this prop to make label and helperText accessible for screen readers.
+   */ /** @uxpinignoreprop */ id: (0, $d4YY5$proptypes).string,
+    /**
+   * If true, a textarea element is rendered instead of an input.
+   */ multiline: (0, $d4YY5$proptypes).bool,
+    /**
+   * Maximum number of rows to display when multiline option is set to true.
+   */ maxRows: (0, $d4YY5$proptypes).number,
+    /**
+   * Minimum number of rows to display when multiline option is set to true.
+   */ minRows: (0, $d4YY5$proptypes).number,
+    /**
+   * @uxpinignoreprop
+   * Name attribute of the `input` element.
+   */ name: (0, $d4YY5$proptypes).string,
+    /**
+   * Number of rows to display when multiline option is set to true.
+   */ rows: (0, $d4YY5$proptypes).number,
+    /**
+   * Render a 'Select' element while passing the Input element to 'Select' as 'input' parameter.
+   * If this option is set you must pass the options of the select as children.
+   */ /** @uxpinignoreprop */ select: (0, $d4YY5$proptypes).bool,
+    /** @uxpinignoreprop */ SelectProps: (0, $d4YY5$proptypes).object,
+    /**
+   * If set, icon will display to the left.
+   * Use the name of the icon from https://material.io/tools/icons.
+   */ startAdornment: (0, $d4YY5$proptypes).oneOf((0, $07ef162fcc571302$export$84babfcc2344e650)),
+    endAdornment: (0, $d4YY5$proptypes).oneOf((0, $07ef162fcc571302$export$84babfcc2344e650)),
+    /**
+   * Callback fired when the value is changed.
+   */ onChange: (0, $d4YY5$proptypes).func,
+    /** The system prop that allows defining
+   * system overrides as well as additional CSS styles.
+   * See the `sx` page for more details. https://mui.com/system/the-sx-prop/ */ sx: (0, $d4YY5$proptypes).object
+};
+var $846045c082082f73$export$2e2bcd8739ae039 = $846045c082082f73$var$TextField;
+
+
+
+
+
+/**
+ * @uxpindocurl https://mui.com/api/card/
+ */ function $ab029674f7947e83$var$Card(props) {
+    return /*#__PURE__*/ (0, $d4YY5$react).createElement((0, $d4YY5$muimaterialCard), props, props.children);
+}
+$ab029674f7947e83$var$Card.propTypes = {
+    /**
+   * The content of the component.
+   * @uxpinignoreprop
+   */ children: (0, $d4YY5$proptypes).node,
+    /**
+   * Override or extend the styles applied to the component.
+   * @uxpinignoreprop
+   */ classes: (0, $d4YY5$proptypes).object,
+    /**
+   * If true, the card will use raised styling.
+   * @uxpinignoreprop
+   */ raised: (0, $d4YY5$proptypes).bool,
+    /**
+   * The shadow depth of paper surface. Accepts values between 0 and 16.
+   */ elevation: (0, $d4YY5$proptypes).number,
+    /**
+   * the variant to use.
+   */ variant: (0, $d4YY5$proptypes).oneOf([
+        "elevation",
+        "outlined"
+    ]),
+    /**
+   * If `true`, rounded corners are disabled.
+   */ square: (0, $d4YY5$proptypes).bool,
+    /**
+   * The system prop that allows defining system overrides as well as additional CSS styles.
+   */ sx: (0, $d4YY5$proptypes).object
+};
+var $ab029674f7947e83$export$2e2bcd8739ae039 = $ab029674f7947e83$var$Card;
+
+
+
+
+
+/**
+ * @uxpindocurl https://mui.com/api/card-actions/
+ */ function $9a3c1010da7b251c$var$CardActions(props) {
+    return /*#__PURE__*/ (0, $d4YY5$react).createElement((0, $d4YY5$muimaterialCardActions), props, props.children);
+}
+$9a3c1010da7b251c$var$CardActions.propTypes = {
+    /**
+   * The content of the component.
+   * @uxpinignoreprop
+   */ children: (0, $d4YY5$proptypes).node,
+    /**
+   * Override or extend the styles applied to the component.
+   * @uxpinignoreprop
+   */ classes: (0, $d4YY5$proptypes).object,
+    /**
+   * If true, the actions do not have additional margin.
+   */ disableSpacing: (0, $d4YY5$proptypes).bool,
+    /**
+   * The system prop that allows defining system overrides as well as additional CSS styles.
+   */ sx: (0, $d4YY5$proptypes).object
+};
+var $9a3c1010da7b251c$export$2e2bcd8739ae039 = $9a3c1010da7b251c$var$CardActions;
+
+
+
+
+
+/**
+ * @uxpindocurl https://mui.com/api/card-action-area/
+ */ function $8f73571a72641311$var$CardActionArea(props) {
+    return /*#__PURE__*/ (0, $d4YY5$react).createElement((0, $d4YY5$muimaterialCardActionArea), props, props.children);
+}
+$8f73571a72641311$var$CardActionArea.propTypes = {
+    /**
+   * The content of the component.
+   * @uxpinignoreprop
+   */ children: (0, $d4YY5$proptypes).node,
+    /**
+   * Override or extend the styles applied to the component.
+   * @uxpinignoreprop
+   */ classes: (0, $d4YY5$proptypes).object,
+    /**
+   * The system prop that allows defining system overrides as well as additional CSS styles.
+   */ sx: (0, $d4YY5$proptypes).object
+};
+var $8f73571a72641311$export$2e2bcd8739ae039 = $8f73571a72641311$var$CardActionArea;
+
+
+
+
+
+/**
+ * @uxpindocurl https://mui.com/api/card-content/
+ */ function $0c72a034f4851b7b$var$CardContent(props) {
+    return /*#__PURE__*/ (0, $d4YY5$react).createElement((0, $d4YY5$muimaterialCardContent), props, props.children);
+}
+$0c72a034f4851b7b$var$CardContent.propTypes = {
+    /**
+   * The content of the component.
+   * @uxpinignoreprop
+   */ children: (0, $d4YY5$proptypes).node,
+    /**
+   * Override or extend the styles applied to the component.
+   * @uxpinignoreprop
+   */ classes: (0, $d4YY5$proptypes).object,
+    /**
+   * Map typography to another html tag.
+   */ component: (0, $d4YY5$proptypes).string,
+    /**
+   * The system prop that allows defining system overrides as well as additional CSS styles.
+   */ sx: (0, $d4YY5$proptypes).object
+};
+var $0c72a034f4851b7b$export$2e2bcd8739ae039 = $0c72a034f4851b7b$var$CardContent;
+
+
+
+
+
+
+
+
 /**
  * @uxpindocurl https://mui.com/api/avatar/
  */ function $de22927cabdeb196$var$Avatar(props) {
-    return /*#__PURE__*/ (0, $d4YY5$react).createElement((0, $d4YY5$muimaterialAvatar), $de22927cabdeb196$var$_extends({}, props, {
-        sx: {
-            bgcolor: props.color
-        }
-    }), props.icon ? /*#__PURE__*/ (0, $d4YY5$react).createElement((0, $6ee864df121e395b$export$2e2bcd8739ae039), null, props.icon) : props.children);
+    return /*#__PURE__*/ (0, $d4YY5$react).createElement((0, $d4YY5$muimaterialAvatar), props, props.children);
 }
 $de22927cabdeb196$var$Avatar.propTypes = {
     /**
-    * Letters for initial icons
-    */ /** @uxpinpropname  Letters */ children: (0, $d4YY5$proptypes).string,
-    color: (0, $d4YY5$proptypes).oneOf([
-        "red",
-        "pink",
-        "purple",
-        "indigo",
-        "blue",
-        "lightBlue",
-        "cyan",
-        "teal",
-        "green",
-        "lightGreen",
-        "lime",
-        "yellow",
-        "orange",
-        "brown",
-        "grey"
-    ]),
+   * Used to render icon or text elements inside the Avatar if src is not set. This can be an element, or just a string.
+   */ children: (0, $d4YY5$proptypes).node,
     /**
    * The name of the icon from https://material.io/resources/icons.
    */ icon: (0, $d4YY5$proptypes).string,
@@ -4351,164 +4781,394 @@ $de22927cabdeb196$var$Avatar.propTypes = {
         "square"
     ]),
     /**
-  * The system prop that allows defining system overrides as well as additional CSS styles. 
-  * See the `sx` https://mui.com/system/the-sx-prop/ page for more details.
-  */ sx: (0, $d4YY5$proptypes).object
+   * The system prop that allows defining system overrides as well as additional CSS styles.
+   * See the `sx` https://mui.com/system/the-sx-prop/ page for more details.
+   */ sx: (0, $d4YY5$proptypes).object
 };
 var $de22927cabdeb196$export$2e2bcd8739ae039 = $de22927cabdeb196$var$Avatar;
 
 
 
 
-
-
-function $1f0581438bdcce8e$var$_extends() {
-    $1f0581438bdcce8e$var$_extends = Object.assign ? Object.assign.bind() : function(target) {
+function $ca2c7731f9b8acd2$var$_extends() {
+    $ca2c7731f9b8acd2$var$_extends = Object.assign ? Object.assign.bind() : function(target) {
         for(var i = 1; i < arguments.length; i++){
             var source = arguments[i];
             for(var key in source)if (Object.prototype.hasOwnProperty.call(source, key)) target[key] = source[key];
         }
         return target;
     };
-    return $1f0581438bdcce8e$var$_extends.apply(this, arguments);
+    return $ca2c7731f9b8acd2$var$_extends.apply(this, arguments);
 }
-const $1f0581438bdcce8e$var$Root = (0, $d4YY5$styled)("div")({
-    flexGrow: 1
-});
 /**
- * @uxpindocurl https://mui.com/api/badge/
- */ function $1f0581438bdcce8e$var$Badge(props) {
-    const sx = $1f0581438bdcce8e$var$Root;
-    return /*#__PURE__*/ (0, $d4YY5$react).createElement((0, $d4YY5$muimaterialBadge), $1f0581438bdcce8e$var$_extends({}, props, {
-        showZero: props.showZero,
-        anchorOrigin: {
-            vertical: `${props.vertical}`,
-            horizontal: `${props.horizontal}`
-        }
+ * @uxpindocurl https://mui.com/api/card-header/
+ */ function $ca2c7731f9b8acd2$var$CardHeader(props) {
+    const { ...other } = props;
+    return /*#__PURE__*/ (0, $d4YY5$react).createElement((0, $d4YY5$muimaterialCardHeader), $ca2c7731f9b8acd2$var$_extends({}, other, {
+        avatar: props.avatar && /*#__PURE__*/ (0, $d4YY5$react).createElement((0, $de22927cabdeb196$export$2e2bcd8739ae039), {
+            color: props.color
+        }, props.avatar),
+        action: props.action && /*#__PURE__*/ (0, $d4YY5$react).createElement((0, $484dfd49b78c6641$export$2e2bcd8739ae039), {
+            onClick: props.iconOnClick
+        }, props.action)
     }), props.children);
 }
-$1f0581438bdcce8e$var$Badge.propTypes = {
+$ca2c7731f9b8acd2$var$CardHeader.propTypes = {
+    children: (0, $d4YY5$proptypes).node,
     /**
-   * The vertical position of the badge.
-   */ vertical: (0, $d4YY5$proptypes).oneOf([
-        "top",
-        "bottom"
+   * The action to display in the card header.
+   * @uxpinpropname Icon Action
+   */ action: (0, $d4YY5$proptypes).oneOf((0, $07ef162fcc571302$export$84babfcc2344e650)),
+    /**
+   * The Avatar element to display.
+   */ avatar: (0, $d4YY5$proptypes).string,
+    /**
+   * Color of the Avatar text.
+   * @uxpinpropname Avatar Bg Color
+   */ color: (0, $d4YY5$proptypes).oneOf([
+        "red",
+        "pink",
+        "purple",
+        "indigo",
+        "blue",
+        "lightBlue",
+        "cyan",
+        "teal",
+        "green",
+        "lightGreen",
+        "lime",
+        "yellow",
+        "orange",
+        "brown",
+        "grey"
     ]),
     /**
-   * The horizontal position of the badge.
-   */ horizontal: (0, $d4YY5$proptypes).oneOf([
-        "right",
-        "left"
-    ]),
-    /**
-   * The number to display in badge
-   * @uxpinpropname  Count
-   */ badgeContent: (0, $d4YY5$proptypes).number,
-    /**
-   * Max count to show.
-   */ max: (0, $d4YY5$proptypes).number,
-    /**
-  * The color of the component. It supports those theme colors that make sense for this component.
-  */ color: (0, $d4YY5$proptypes).oneOf([
-        "primary",
-        "secondary",
-        "error",
-        "info",
-        "success",
-        "warning"
-    ]),
-    /**
-   * The variant to use.
-   */ variant: (0, $d4YY5$proptypes).oneOf([
-        "dot",
-        "standard"
-    ]),
-    /**
-   * Wrapped shape the badge should overlap.
-   */ overlap: (0, $d4YY5$proptypes).oneOf([
-        "circular",
-        "rectangular"
-    ]),
-    /**
-   * If `true`, the badge will be invisible.
-   */ invisible: (0, $d4YY5$proptypes).bool,
-    /**
-   * Controls whether the badge is hidden when badgeContent is zero.
+   * Override or extend the styles applied to the component.
    * @uxpinignoreprop
-   */ showZero: (0, $d4YY5$proptypes).bool,
+   */ classes: (0, $d4YY5$proptypes).object,
     /**
-  * The badge will be added relative to this node.
-  */ /** @uxpinignoreprop */ children: (0, $d4YY5$proptypes).node,
+   * The component used for the root node. Either a string to use a HTML element or a component.
+   */ component: (0, $d4YY5$proptypes).string,
     /**
-  * Override or extend the styles applied to the component.
-  */ /** @uxpinignoreprop */ classes: (0, $d4YY5$proptypes).object,
+   * If true, subheader and title won't be wrapped by a Typography component.
+   * This can be useful to render an alternative Typography variant by wrapping the title text, and optional subheader text with the Typography component.
+   */ disableTypography: (0, $d4YY5$proptypes).bool,
     /**
-   * The system prop that allows defining system overrides as well as additional CSS styles. 
-   * See the `sx` page for more details. https://mui.com/api/badge/
+   * The content of the component.
+   */ subheader: (0, $d4YY5$proptypes).node,
+    /**
+   * These props will be forwarded to the subheader (as long as disableTypography is not true).
+   * @uxpinignoreprop
+   */ subheaderTypograhyProps: (0, $d4YY5$proptypes).object,
+    /**
+   * The content of the component.
+   */ title: (0, $d4YY5$proptypes).node,
+    /**
+   * Aria tag for accessibility
+   */ // ariaLabel: PropTypes.string,
+    /**
+   * These props will be forwarded to the title (as long as disableTypography is not true).
+   * @uxpinignoreprop
+   */ titleTypographyProps: (0, $d4YY5$proptypes).object,
+    /**
+   * The system prop that allows defining system overrides as well as additional CSS styles.
+   */ sx: (0, $d4YY5$proptypes).object,
+    /**
+   * On click event to use with UXPin interactions.
+   * This interferes with iconOnClick as it runs when clicking icon.
+   */ // onClick: PropTypes.func,
+    /**
+   * On click event to use with UXPin interactions.
+   */ iconOnClick: (0, $d4YY5$proptypes).func
+};
+var $ca2c7731f9b8acd2$export$2e2bcd8739ae039 = $ca2c7731f9b8acd2$var$CardHeader;
+
+
+
+
+
+function $7113635453d70c3b$var$_extends() {
+    $7113635453d70c3b$var$_extends = Object.assign ? Object.assign.bind() : function(target) {
+        for(var i = 1; i < arguments.length; i++){
+            var source = arguments[i];
+            for(var key in source)if (Object.prototype.hasOwnProperty.call(source, key)) target[key] = source[key];
+        }
+        return target;
+    };
+    return $7113635453d70c3b$var$_extends.apply(this, arguments);
+}
+/**
+ * @uxpindocurl https://mui.com/api/card-media/
+ */ function $7113635453d70c3b$export$2e2bcd8739ae039(props) {
+    return /*#__PURE__*/ (0, $d4YY5$react).createElement((0, $d4YY5$muimaterialCardMedia), $7113635453d70c3b$var$_extends({
+        controls: true
+    }, props));
+}
+$7113635453d70c3b$export$2e2bcd8739ae039.propTypes = {
+    /**
+   * Override or extend the styles applied to the component.
+   * @uxpinignoreprop
+   */ classes: (0, $d4YY5$proptypes).object,
+    /**
+   * The component used for the root node.
+   */ component: (0, $d4YY5$proptypes).oneOf([
+        "img",
+        "video",
+        "audio"
+    ]),
+    /**
+   * The height of the media
+   */ height: (0, $d4YY5$proptypes).number,
+    /**
+   * Image to be displayed as a background image.
+   * Either `image` or `src` prop must be specified. Specifying both may causes the media not to load.
+   * Note that caller must specify height otherwise the image will not be visible.
+   * @uxpinpropname Img src
+   */ image: (0, $d4YY5$proptypes).string,
+    /**
+   * An alias for `image` property.
+   * Available only with media components.
+   * Media components: `video`, `audio`, `picture`, `iframe`, `img`.
+   * @uxpinpropname Video/ Audio src
+   */ src: (0, $d4YY5$proptypes).string,
+    /**
+   * The system prop that allows defining system overrides as well as additional CSS styles.
    */ sx: (0, $d4YY5$proptypes).object
 };
-var $1f0581438bdcce8e$export$2e2bcd8739ae039 = $1f0581438bdcce8e$var$Badge;
+$7113635453d70c3b$export$2e2bcd8739ae039.defaultProps = {
+    component: "img",
+    height: 120,
+    image: "https://images.unsplash.com/photo-1604871000636-074fa5117945?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80"
+};
 
 
 
 
 
-/**
- * @uxpindocurl https://mui.com/api/divider/
- */ function $7fafffb45bd8603c$var$Divider(props) {
-    return /*#__PURE__*/ (0, $d4YY5$react).createElement((0, $d4YY5$muimaterialDivider), props);
+function $b579141aaba57910$var$_extends() {
+    $b579141aaba57910$var$_extends = Object.assign ? Object.assign.bind() : function(target) {
+        for(var i = 1; i < arguments.length; i++){
+            var source = arguments[i];
+            for(var key in source)if (Object.prototype.hasOwnProperty.call(source, key)) target[key] = source[key];
+        }
+        return target;
+    };
+    return $b579141aaba57910$var$_extends.apply(this, arguments);
 }
-$7fafffb45bd8603c$var$Divider.propTypes = {
-    /**
-   * Absolutely position the element.
-    * @uxpinignoreprop
-   */ absolute: (0, $d4YY5$proptypes).bool,
+/**
+ * @upxindocurl https://mui.com/api/accordion/
+ */ function $b579141aaba57910$var$Accordion(props) {
+    const [expanded, setExpanded] = (0, $d4YY5$react).useState("");
+    (0, $d4YY5$react).useEffect(()=>{
+        setExpanded(props.expanded);
+    }, [
+        props.expanded
+    ]); // Only re-run the effect if value prop changes
+    return /*#__PURE__*/ (0, $d4YY5$react).createElement((0, $d4YY5$muimaterialAccordion), $b579141aaba57910$var$_extends({
+        expanded: expanded
+    }, props), props.children);
+}
+$b579141aaba57910$var$Accordion.propTypes = {
     /**
    * The content of the component.
    * @uxpinignoreprop
    */ children: (0, $d4YY5$proptypes).node,
     /**
-   * @uxpinignoreprop
    * Override or extend the styles applied to the component.
+   * @uxpinignoreprop
    */ classes: (0, $d4YY5$proptypes).object,
     /**
-   * The component used for the root node. Either a string to use a HTML element or a component.
-   */ component: (0, $d4YY5$proptypes).elementType,
-    /**
-   * If true, a vertical divider will have the correct height when used in flex container. 
-   * (By default, a vertical divider will have a calculated height of 0px if it is the child of a flex container.)
-   */ flexItem: (0, $d4YY5$proptypes).bool,
-    /**
-   * If true, the divider will have a lighter color.
+   * If true, expands the accordion by default.
    * @uxpinignoreprop
-   */ light: (0, $d4YY5$proptypes).bool,
+   */ defaultExpanded: (0, $d4YY5$proptypes).bool,
     /**
-   * The component orientation.
-   * If using "vertical" items and divider must reside within a Stack or Grid container
-   */ orientation: (0, $d4YY5$proptypes).oneOf([
-        "horizontal",
-        "vertical"
-    ]),
+   * If true, the component is disabled.
+   */ disabled: (0, $d4YY5$proptypes).bool,
     /**
-   * The text alignment.
-   */ textAlign: (0, $d4YY5$proptypes).oneOf([
-        "center",
-        "left",
-        "right"
-    ]),
+   * If true, it removes the margin between two expanded accordion items and the increase of height.
+   */ disableGutters: (0, $d4YY5$proptypes).bool,
     /**
-   * The variant to use.
-   */ variant: (0, $d4YY5$proptypes).oneOf([
-        "fullWidth",
-        "inset",
-        "middle"
-    ]),
+   * If true, expands the accordion, otherwise collapse it. Setting this prop enables control over the accordion.
+   * @uxpinbind onChange 1
+   */ expanded: (0, $d4YY5$proptypes).bool,
+    /**
+   * Callback fired when the expand/collapse state is changed.
+   */ onChange: (0, $d4YY5$proptypes).func,
+    /**
+   * If true, rounded corners are disabled.
+   */ square: (0, $d4YY5$proptypes).bool,
+    /**
+   * The component used for the transition. Follow this guide to learn more about the requirements for this component.
+   */ TransitionComponent: (0, $d4YY5$proptypes).elementType,
+    /**
+   * Props applied to the transition element. By default, the element is based on this Transition component.
+   */ TransitionProps: (0, $d4YY5$proptypes).object,
+    /**
+   * The system prop that allows defining system overrides as well as additional CSS styles.
+   *
+   */ sx: (0, $d4YY5$proptypes).object
+};
+$b579141aaba57910$var$Accordion.defaultProps = {
+    // NOTE: Checked must be controlled state from the outset, otherwise changing state in the app will trigger an error
+    // see: https://fb.me/react-controlled-components
+    expanded: false
+};
+var $b579141aaba57910$export$2e2bcd8739ae039 = $b579141aaba57910$var$Accordion;
+
+
+
+
+
+/**
+ * @upxindocurl https://mui.com/api/accordion-actions/
+ */ function $57b163ae949ff6c7$var$AccordionActions(props) {
+    return /*#__PURE__*/ (0, $d4YY5$react).createElement((0, $d4YY5$muimaterialAccordionActions), props, props.children);
+}
+$57b163ae949ff6c7$var$AccordionActions.propTypes = {
+    /**
+   * The content of the component.
+   * @uxpinignoreprop
+   */ children: (0, $d4YY5$proptypes).node,
+    /**
+   * Override or extend the styles applied to the component.
+   * @uxpinignoreprop
+   */ classes: (0, $d4YY5$proptypes).object,
+    /**
+   * If true, the actions do not have additional margin.
+   */ disableSpacing: (0, $d4YY5$proptypes).bool.prototype,
+    /**
+   * The system prop that allows defining system overrides as well as additional CSS styles.
+   *
+   */ sx: (0, $d4YY5$proptypes).object
+};
+var $57b163ae949ff6c7$export$2e2bcd8739ae039 = $57b163ae949ff6c7$var$AccordionActions;
+
+
+
+
+
+/**
+ * @upxindocurl https://mui.com/api/accordion-details/
+ */ function $947e175b9886ec40$var$AccordionDetails(props) {
+    return /*#__PURE__*/ (0, $d4YY5$react).createElement((0, $d4YY5$muimaterialAccordionDetails), props, props.children);
+}
+$947e175b9886ec40$var$AccordionDetails.propTypes = {
+    /**
+   * The content of the component.
+   * @uxpinignoreprop
+   */ children: (0, $d4YY5$proptypes).node,
+    /**
+   * Override or extend the styles applied to the component.
+   * @uxpinignoreprop
+   */ classes: (0, $d4YY5$proptypes).object,
+    /**
+   * The system prop that allows defining system overrides as well as additional CSS styles.
+   *
+   */ sx: (0, $d4YY5$proptypes).object
+};
+var $947e175b9886ec40$export$2e2bcd8739ae039 = $947e175b9886ec40$var$AccordionDetails;
+
+
+
+
+
+
+
+function $be637ad248945679$var$_extends() {
+    $be637ad248945679$var$_extends = Object.assign ? Object.assign.bind() : function(target) {
+        for(var i = 1; i < arguments.length; i++){
+            var source = arguments[i];
+            for(var key in source)if (Object.prototype.hasOwnProperty.call(source, key)) target[key] = source[key];
+        }
+        return target;
+    };
+    return $be637ad248945679$var$_extends.apply(this, arguments);
+}
+/**
+ * @upxindocurl https://mui.com/api/accordion-summary/
+ */ function $be637ad248945679$var$AccordionSummary(props) {
+    return /*#__PURE__*/ (0, $d4YY5$react).createElement((0, $d4YY5$muimaterialAccordionSummary), $be637ad248945679$var$_extends({}, props, {
+        expandIcon: /*#__PURE__*/ (0, $d4YY5$react).createElement((0, $6ee864df121e395b$export$2e2bcd8739ae039), null, props.expandIcon)
+    }), props.children);
+}
+$be637ad248945679$var$AccordionSummary.propTypes = {
+    /**
+   * The content of the component.
+   * @uxpinignoreprop
+   */ children: (0, $d4YY5$proptypes).node,
+    /**
+   * Override or extend the styles applied to the component.
+   * @uxpinignoreprop
+   */ classes: (0, $d4YY5$proptypes).object,
+    /**
+   * The icon to display as the expand indicator.
+   * Icon prop is used to improve Merge usability.
+   */ expandIcon: (0, $d4YY5$proptypes).oneOf((0, $07ef162fcc571302$export$84babfcc2344e650)),
+    /**
+   * This prop can help identify which element has keyboard focus. The class name will be applied when the element gains the focus through keyboard interaction.
+   * @uxpinignoreprop
+   * */ focusVisibleClassName: (0, $d4YY5$proptypes).string,
     /**
    * The system prop that allows defining system overrides as well as additional CSS styles.
    */ sx: (0, $d4YY5$proptypes).object
 };
-var $7fafffb45bd8603c$export$2e2bcd8739ae039 = $7fafffb45bd8603c$var$Divider;
+var $be637ad248945679$export$2e2bcd8739ae039 = $be637ad248945679$var$AccordionSummary;
 
+
+
+
+
+function $a2b78b47169a4edd$var$_extends() {
+    $a2b78b47169a4edd$var$_extends = Object.assign ? Object.assign.bind() : function(target) {
+        for(var i = 1; i < arguments.length; i++){
+            var source = arguments[i];
+            for(var key in source)if (Object.prototype.hasOwnProperty.call(source, key)) target[key] = source[key];
+        }
+        return target;
+    };
+    return $a2b78b47169a4edd$var$_extends.apply(this, arguments);
+}
+/**
+ * @uxpindocurl https://mui.com/api/paper/
+ */ function $a2b78b47169a4edd$var$Paper(props) {
+    return /*#__PURE__*/ (0, $d4YY5$react).createElement((0, $d4YY5$muimaterialPaper), $a2b78b47169a4edd$var$_extends({}, props, {
+        sx: {
+            height: "100%"
+        }
+    }), props.children);
+}
+$a2b78b47169a4edd$var$Paper.propTypes = {
+    /**
+   * The content of the component. Text or nested components.
+   */ children: (0, $d4YY5$proptypes).node,
+    /**
+   * The shadow depth of paper surface. Accepts values between 0 and 16.
+   */ elevation: (0, $d4YY5$proptypes).number,
+    /**
+   * the variant to use.
+   */ variant: (0, $d4YY5$proptypes).oneOf([
+        "elevation",
+        "outlined"
+    ]),
+    /**
+   * Override or extend the styles applied to the component.
+   * See [CSS API](#css-api) below for more details.
+   * @uxpinignoreprop
+   */ classes: (0, $d4YY5$proptypes).object,
+    /**
+   * The component used for the root node.
+   * Either a string to use a DOM element or a component.
+   * @uxpinignoreprop
+   */ component: (0, $d4YY5$proptypes).node,
+    /**
+   * If `true`, rounded corners are disabled.
+   * @uxpinignoreprop
+   */ square: (0, $d4YY5$proptypes).bool,
+    /**
+   * Custom Style Object
+   */ sx: (0, $d4YY5$proptypes).object
+};
+var $a2b78b47169a4edd$export$2e2bcd8739ae039 = $a2b78b47169a4edd$var$Paper;
 
 
 
@@ -4534,7 +5194,7 @@ $97d942c1a4fb586d$var$List.propTypes = {
    * The component used for the root node. Either a string to use a HTML element or a component.
    */ component: (0, $d4YY5$proptypes).elementType,
     /**
-   * If true, compact vertical padding designed for keyboard and mouse input is used for the list and list items. 
+   * If true, compact vertical padding designed for keyboard and mouse input is used for the list and list items.
    * The prop is available to descendant components as the dense context.
    */ dense: (0, $d4YY5$proptypes).bool,
     /**
@@ -4552,6 +5212,133 @@ var $97d942c1a4fb586d$export$2e2bcd8739ae039 = $97d942c1a4fb586d$var$List;
 
 
 
+
+/**
+ * @uxpindocurl https://mui.com/api/list-item/
+ */ function $fe05808764991176$var$ListItem(props) {
+    return /*#__PURE__*/ (0, $d4YY5$react).createElement((0, $d4YY5$muimaterialListItem), props, props.children);
+}
+$fe05808764991176$var$ListItem.propTypes = {
+    alignItems: (0, $d4YY5$proptypes).oneOf([
+        "center",
+        "flex-start"
+    ]),
+    /**
+   * The content of the component. Text or nested components.
+   * @uxpinignoreprop
+   */ children: (0, $d4YY5$proptypes).node,
+    /**
+   * Override or extend the styles applied to the component.
+   * See [CSS API](#css-api) below for more details.
+   * @uxpinignoreprop
+   */ classes: (0, $d4YY5$proptypes).object,
+    /**
+   * The component used for the root node. Either a string to use a HTML element or a component.
+   */ component: (0, $d4YY5$proptypes).elementType,
+    /**
+   * The props used for each slot inside the Input.
+   * @uxpinignoreprop
+   */ componentProps: (0, $d4YY5$proptypes).object,
+    /**
+   * If true, compact vertical padding designed for keyboard and mouse input is used for the list and list items.
+   * The prop is available to descendant components as the dense context.
+   */ dense: (0, $d4YY5$proptypes).bool,
+    /**
+   * If true, the left and right padding is removed.
+   */ disableGutters: (0, $d4YY5$proptypes).bool,
+    /**
+   * If true, all padding is removed.
+   */ disablePadding: (0, $d4YY5$proptypes).bool,
+    /**
+   * If true, a 1px light border is added to the bottom of the list item.
+   */ divider: (0, $d4YY5$proptypes).bool,
+    /**
+   * The element to display at the end of ListItem.
+  //  * @uxpinignoreprop
+   * This might be difficult to add for merge as writing for e.g. <Checkbox /> is not good Designer experience.
+   */ secondaryAction: (0, $d4YY5$proptypes).node,
+    /**
+   * The system prop that allows defining system overrides as well as additional CSS styles.
+   */ sx: (0, $d4YY5$proptypes).object
+};
+var $fe05808764991176$export$2e2bcd8739ae039 = $fe05808764991176$var$ListItem;
+
+
+
+
+
+/**
+ * @uxpindocurl https://mui.com/api/list-item-avatar/
+ */ function $0643506a24dd75ef$var$ListItemAvatar(props) {
+    return /*#__PURE__*/ (0, $d4YY5$react).createElement((0, $d4YY5$muimaterialListItemAvatar), props, props.children);
+}
+$0643506a24dd75ef$var$ListItemAvatar.propTypes = {
+    /**
+   * The content of the component. Text or nested components.
+   * @uxpinignoreprop
+   */ children: (0, $d4YY5$proptypes).node,
+    /**
+   * Override or extend the styles applied to the component.
+   * See [CSS API](#css-api) below for more details.
+   * @uxpinignoreprop
+   */ classes: (0, $d4YY5$proptypes).object,
+    /**
+   * The system prop that allows defining system overrides as well as additional CSS styles.
+   */ sx: (0, $d4YY5$proptypes).object
+};
+var $0643506a24dd75ef$export$2e2bcd8739ae039 = $0643506a24dd75ef$var$ListItemAvatar;
+
+
+
+
+
+/**
+ * @uxpindocurl https://mui.com/api/list-item-button/
+ */ function $ce0cdac88fa16ea3$var$ListItemButton(props) {
+    return /*#__PURE__*/ (0, $d4YY5$react).createElement((0, $d4YY5$muimaterialListItemButton), props, props.children);
+}
+$ce0cdac88fa16ea3$var$ListItemButton.propTypes = {
+    alignItems: (0, $d4YY5$proptypes).oneOf([
+        "center",
+        "flex-start"
+    ]),
+    autoFocus: (0, $d4YY5$proptypes).bool,
+    /**
+   * The content of the component. Text or nested components.
+   * @uxpinignoreprop
+   */ children: (0, $d4YY5$proptypes).node,
+    /**
+   * Override or extend the styles applied to the component.
+   * See [CSS API](#css-api) below for more details.
+   * @uxpinignoreprop
+   */ classes: (0, $d4YY5$proptypes).object,
+    /**
+   * The component used for the root node. Either a string to use a HTML element or a component.
+   */ component: (0, $d4YY5$proptypes).elementType,
+    /**
+   * If true, compact vertical padding designed for keyboard and mouse input is used for the list and list items.
+   * The prop is available to descendant components as the dense context.
+   */ dense: (0, $d4YY5$proptypes).bool,
+    /**
+   * If true, the component is disabled.
+   */ disabled: (0, $d4YY5$proptypes).bool,
+    /**
+   * This prop can help identify which element has keyboard focus.
+   * The class name will be applied when the element gains the focus through keyboard interaction
+   * @uxpinignoreprop
+   */ focusVisibleClassName: (0, $d4YY5$proptypes).string,
+    /**
+   * Custom Prop.
+   * On click event to use with UXPin interactions.
+   */ onClick: (0, $d4YY5$proptypes).func,
+    /**
+   * Use to apply selected styling.
+   */ selected: (0, $d4YY5$proptypes).bool,
+    /**
+   * The system prop that allows defining system overrides as well as additional CSS styles.
+   */ sx: (0, $d4YY5$proptypes).object
+};
+var $ce0cdac88fa16ea3$export$2e2bcd8739ae039 = $ce0cdac88fa16ea3$var$ListItemButton;
 
 
 
@@ -4648,136 +5435,6 @@ $929dadd0f37ff8a8$var$ListItemText.propTypes = {
 var $929dadd0f37ff8a8$export$2e2bcd8739ae039 = $929dadd0f37ff8a8$var$ListItemText;
 
 
-/**
- * @uxpindocurl https://mui.com/api/list-item/
- */ function $fe05808764991176$var$ListItem(props) {
-    return /*#__PURE__*/ (0, $d4YY5$react).createElement((0, $d4YY5$muimaterialListItem), props, props.children);
-}
-$fe05808764991176$var$ListItem.propTypes = {
-    alignItems: (0, $d4YY5$proptypes).oneOf([
-        "center",
-        "flex-start"
-    ]),
-    /**
-   * The content of the component. Text or nested components.
-   * @uxpinignoreprop
-   */ children: (0, $d4YY5$proptypes).node,
-    /**
-   * Override or extend the styles applied to the component.
-   * See [CSS API](#css-api) below for more details.
-   * @uxpinignoreprop
-   */ classes: (0, $d4YY5$proptypes).object,
-    /**
-   * The component used for the root node. Either a string to use a HTML element or a component.
-   */ component: (0, $d4YY5$proptypes).elementType,
-    /**
-   * The props used for each slot inside the Input.
-   * @uxpinignoreprop
-   */ componentProps: (0, $d4YY5$proptypes).object,
-    /**
-   * If true, compact vertical padding designed for keyboard and mouse input is used for the list and list items. 
-   * The prop is available to descendant components as the dense context.
-   */ dense: (0, $d4YY5$proptypes).bool,
-    /**
-   * If true, the left and right padding is removed.
-   */ disableGutters: (0, $d4YY5$proptypes).bool,
-    /**
-   * If true, all padding is removed.
-   */ disablePadding: (0, $d4YY5$proptypes).bool,
-    /**
-   * If true, a 1px light border is added to the bottom of the list item.
-   */ divider: (0, $d4YY5$proptypes).bool,
-    /**
-   * The element to display at the end of ListItem.
-  //  * @uxpinignoreprop
-   * This might be difficult to add for merge as writing for e.g. <Checkbox /> is not good Designer experience.
-   */ secondaryAction: (0, $d4YY5$proptypes).node,
-    /**
-   * The system prop that allows defining system overrides as well as additional CSS styles.
-   */ sx: (0, $d4YY5$proptypes).object
-};
-var $fe05808764991176$export$2e2bcd8739ae039 = $fe05808764991176$var$ListItem;
-
-
-
-
-
-/**
- * @uxpindocurl https://mui.com/api/list-item-avatar/
- */ function $0643506a24dd75ef$var$ListItemAvatar(props) {
-    return /*#__PURE__*/ (0, $d4YY5$react).createElement((0, $d4YY5$muimaterialListItemAvatar), props, props.children);
-}
-$0643506a24dd75ef$var$ListItemAvatar.propTypes = {
-    /**
-   * The content of the component. Text or nested components.
-   * @uxpinignoreprop
-   */ children: (0, $d4YY5$proptypes).node,
-    /**
-   * Override or extend the styles applied to the component.
-   * See [CSS API](#css-api) below for more details.
-   * @uxpinignoreprop
-   */ classes: (0, $d4YY5$proptypes).object,
-    /**
-   * The system prop that allows defining system overrides as well as additional CSS styles.
-   */ sx: (0, $d4YY5$proptypes).object
-};
-var $0643506a24dd75ef$export$2e2bcd8739ae039 = $0643506a24dd75ef$var$ListItemAvatar;
-
-
-
-
-
-/**
- * @uxpindocurl https://mui.com/api/list-item-button/
- */ function $ce0cdac88fa16ea3$var$ListItemButton(props) {
-    return /*#__PURE__*/ (0, $d4YY5$react).createElement((0, $d4YY5$muimaterialListItemButton), props, props.children);
-}
-$ce0cdac88fa16ea3$var$ListItemButton.propTypes = {
-    alignItems: (0, $d4YY5$proptypes).oneOf([
-        "center",
-        "flex-start"
-    ]),
-    autoFocus: (0, $d4YY5$proptypes).bool,
-    /**
-   * The content of the component. Text or nested components.
-   * @uxpinignoreprop
-   */ children: (0, $d4YY5$proptypes).node,
-    /**
-   * Override or extend the styles applied to the component.
-   * See [CSS API](#css-api) below for more details.
-   * @uxpinignoreprop
-   */ classes: (0, $d4YY5$proptypes).object,
-    /**
-   * The component used for the root node. Either a string to use a HTML element or a component.
-   */ component: (0, $d4YY5$proptypes).elementType,
-    /**
-   * If true, compact vertical padding designed for keyboard and mouse input is used for the list and list items. 
-   * The prop is available to descendant components as the dense context.
-   */ dense: (0, $d4YY5$proptypes).bool,
-    /**
-   * If true, the component is disabled.
-   */ disabled: (0, $d4YY5$proptypes).bool,
-    /**
-   * This prop can help identify which element has keyboard focus. 
-   * The class name will be applied when the element gains the focus through keyboard interaction
-   * @uxpinignoreprop
-   */ focusVisibleClassName: (0, $d4YY5$proptypes).string,
-    /**
-   * Custom Prop.
-   * On click event to use with UXPin interactions.
-   */ onClick: (0, $d4YY5$proptypes).func,
-    /**
-   * Use to apply selected styling.
-   */ selected: (0, $d4YY5$proptypes).bool,
-    /**
-   * The system prop that allows defining system overrides as well as additional CSS styles.
-   */ sx: (0, $d4YY5$proptypes).object
-};
-var $ce0cdac88fa16ea3$export$2e2bcd8739ae039 = $ce0cdac88fa16ea3$var$ListItemButton;
-
-
-
-
 
 
 
@@ -4824,122 +5481,851 @@ var $d2e69a04631af15a$export$2e2bcd8739ae039 = $d2e69a04631af15a$var$ListSubhead
 
 
 
-function $c0914ae58ab6e5d3$var$_extends() {
-    $c0914ae58ab6e5d3$var$_extends = Object.assign ? Object.assign.bind() : function(target) {
+/**
+ * @uxpindocurl https://mui.com/api/circular-progress/#main-content
+ */ function $07620b41bfb6fd6f$var$CircularProgress(props) {
+    return /*#__PURE__*/ (0, $d4YY5$react).createElement("div", {
+        style: {
+            width: "fit-content"
+        }
+    }, /*#__PURE__*/ (0, $d4YY5$react).createElement((0, $d4YY5$muimaterialCircularProgress), props));
+}
+$07620b41bfb6fd6f$var$CircularProgress.propTypes = {
+    /**
+   * Override or extend the styles applied to the component.
+   * See [CSS API](#css-api) below for more details.
+   * @uxpinignoreprop
+   */ classes: (0, $d4YY5$proptypes).object,
+    /**
+   * @uxpinignoreprop
+   */ className: (0, $d4YY5$proptypes).string,
+    /**
+   * The variant to use.
+   * Use indeterminate when there is no progress value.
+   */ variant: (0, $d4YY5$proptypes).oneOf([
+        "determinate",
+        "indeterminate",
+        "static"
+    ]),
+    /**
+   * The size of the circle.
+   */ size: (0, $d4YY5$proptypes).oneOfType([
+        (0, $d4YY5$proptypes).number,
+        (0, $d4YY5$proptypes).string
+    ]),
+    /**
+   * The color of the component. It supports those theme colors that make sense for this component.
+   */ color: (0, $d4YY5$proptypes).oneOf([
+        "primary",
+        "secondary",
+        "error",
+        "info",
+        "success",
+        "warning",
+        "inherit"
+    ]),
+    /**
+   * @uxpinignoreprop
+   */ style: (0, $d4YY5$proptypes).object,
+    /**
+   * The thickness of the circle.
+   */ thickness: (0, $d4YY5$proptypes).number,
+    /**
+   * The value of the progress indicator for the determinate and static variants.
+   * Value between 0 and 100.
+   */ value: (0, $d4YY5$proptypes).number,
+    /**
+   * If `true`, the shrink animation is disabled.
+   * This only works if variant is `indeterminate`.
+   */ disableShrink: (0, $d4YY5$proptypes).bool,
+    /**
+   * The system prop that allows defining system overrides as well as additional CSS styles.
+   * See the `sx` page for more details. https://mui.com/system/the-sx-prop/
+   */ /** */ sx: (0, $d4YY5$proptypes).object
+};
+var $07620b41bfb6fd6f$export$2e2bcd8739ae039 = $07620b41bfb6fd6f$var$CircularProgress;
+
+
+
+
+
+function $b441a3903f81c9b7$var$_extends() {
+    $b441a3903f81c9b7$var$_extends = Object.assign ? Object.assign.bind() : function(target) {
         for(var i = 1; i < arguments.length; i++){
             var source = arguments[i];
             for(var key in source)if (Object.prototype.hasOwnProperty.call(source, key)) target[key] = source[key];
         }
         return target;
     };
-    return $c0914ae58ab6e5d3$var$_extends.apply(this, arguments);
+    return $b441a3903f81c9b7$var$_extends.apply(this, arguments);
 }
 /**
- * @uxpindocurl https://mui.com/api/tooltip/
- */ function $c0914ae58ab6e5d3$var$Tooltip(props) {
-    return /*#__PURE__*/ $d4YY5$createElement((0, $d4YY5$muimaterialTooltip), $c0914ae58ab6e5d3$var$_extends({}, props, {
-        PopperProps: {
-            keepMounted: true,
-            disablePortal: true
+ * @uxpindocurl https://mui.com/api/linear-progress/#main-content
+ */ function $b441a3903f81c9b7$var$LinearProgress(props) {
+    return /*#__PURE__*/ (0, $d4YY5$react).createElement((0, $d4YY5$muimaterialLinearProgress), $b441a3903f81c9b7$var$_extends({}, props, {
+        sx: {
+            height: props.height,
+            borderRadius: props.borderRadius
         }
-    }), /*#__PURE__*/ $d4YY5$createElement("div", null, props.children));
+    }));
 }
-$c0914ae58ab6e5d3$var$Tooltip.propTypes = {
+$b441a3903f81c9b7$var$LinearProgress.propTypes = {
     /**
-   * If 'true', adds an arrow to the tooltip.
-   * @uxpinpropname  Tooltip Border Arrow
-   */ arrow: (0, $d4YY5$proptypes).bool,
-    /**
-   * Elements contained by Tooltip.
-   * @uxpinignoreprop 
-   */ children: (0, $d4YY5$proptypes).node,
-    /**
-   * Callback fired when the tooltip requests to be closed.
-   *
-   * @param {object} event The event source of the callback
+   * Override or extend the styles applied to the component.
+   * See [CSS API](#css-api) below for more details.
    * @uxpinignoreprop
-   */ onClose: (0, $d4YY5$proptypes).func,
+   */ classes: (0, $d4YY5$proptypes).object,
     /**
-   * Callback fired when the tooltip requests to be open.
-   *
-   * @param {object} event The event source of the callback
    * @uxpinignoreprop
-   */ onOpen: (0, $d4YY5$proptypes).func,
+   */ className: (0, $d4YY5$proptypes).string,
     /**
-   * If `true`, the tooltip is shown.
-   * @uxpinignoreprop
-   */ open: (0, $d4YY5$proptypes).bool,
-    /**
-   * Where the Tooltip should display in relation to its nested element.
-   */ placement: (0, $d4YY5$proptypes).oneOf([
-        "bottom-end",
-        "bottom-start",
-        "bottom",
-        "left-end",
-        "left-start",
-        "left",
-        "right-end",
-        "right-start",
-        "right",
-        "top-end",
-        "top-start",
-        "top"
+   * The variant to use.
+   * Use indeterminate or query when there is no progress value.
+   */ variant: (0, $d4YY5$proptypes).oneOf([
+        "determinate",
+        "indeterminate",
+        "buffer",
+        "query"
     ]),
     /**
-   * Text to display in the Tooltip.
-   * @uxpinpropname  Tooltip Text
-   */ title: (0, $d4YY5$proptypes).string,
+   * The color of the component. It supports those theme colors that make sense for this component.
+   */ color: (0, $d4YY5$proptypes).oneOf([
+        "inherit",
+        "primary",
+        "secondary",
+        "success",
+        "error",
+        "info",
+        "warning"
+    ]),
+    /**
+   * The value of the progress indicator for the determinate and buffer variants.
+   * Value between 0 and 100.
+   */ value: (0, $d4YY5$proptypes).number,
+    /**
+   * The value for the buffer variant.
+   * Value between 0 and 100.
+   */ valueBuffer: (0, $d4YY5$proptypes).number,
+    /**
+   * The height.
+   */ height: (0, $d4YY5$proptypes).number,
+    borderRadius: (0, $d4YY5$proptypes).number,
     /**
    * The system prop that allows defining system overrides as well as additional CSS styles.
+   * See the `sx` page for more details. https://mui.com/system/the-sx-prop/
+   */ /** */ sx: (0, $d4YY5$proptypes).object
+};
+var $b441a3903f81c9b7$export$2e2bcd8739ae039 = $b441a3903f81c9b7$var$LinearProgress;
+
+
+
+
+
+function $a16e965a5d044a0d$var$_extends() {
+    $a16e965a5d044a0d$var$_extends = Object.assign ? Object.assign.bind() : function(target) {
+        for(var i = 1; i < arguments.length; i++){
+            var source = arguments[i];
+            for(var key in source)if (Object.prototype.hasOwnProperty.call(source, key)) target[key] = source[key];
+        }
+        return target;
+    };
+    return $a16e965a5d044a0d$var$_extends.apply(this, arguments);
+}
+/**
+ * @uxpinuseportal
+ * @uxpindocurl https://mui.com/api/dialog/#main-content
+ */ function $a16e965a5d044a0d$var$Dialog(props) {
+    const [open, setOpen] = (0, $d4YY5$react).useState(props.open);
+    (0, $d4YY5$react).useEffect(()=>setOpen(props.open), [
+        props
+    ]);
+    return /*#__PURE__*/ (0, $d4YY5$react).createElement((0, $d4YY5$muimaterialDialog), $a16e965a5d044a0d$var$_extends({
+        open: open,
+        onClose: ()=>setOpen(false),
+        TransitionProps: {
+            tabIndex: "null"
+        },
+        disablePortal: true,
+        style: {
+            minWidth: "300px",
+            minHeight: "300px",
+            width: "100%",
+            height: "100%"
+        }
+    }, props), props.children);
+}
+$a16e965a5d044a0d$var$Dialog.propTypes = {
+    /**
+   * If `true`, the Dialog is open.
+   */ open: (0, $d4YY5$proptypes).bool,
+    /**
+   * Height of the dialog. This should equal the height of UXP canvas
+   * @uxpinignoreprop
+   */ height: (0, $d4YY5$proptypes).number,
+    /**
+   * If `true`, the dialog will be full-screen
+   */ fullScreen: (0, $d4YY5$proptypes).bool,
+    /**
+   * If `true`, clicking the backdrop will not fire the `onClose` callback.
+   * @uxpinignoreprop
+   */ disableBackdropClick: (0, $d4YY5$proptypes).bool,
+    /**
+   * If true, hitting escape will not fire the onClose callback.
+   */ /** @uxpinignoreprop */ disableEscapeKeyDown: (0, $d4YY5$proptypes).bool,
+    /**
+   * Callback fired when the backdrop is clicked.
+   */ /** @uxpinignoreprop */ onBackdropClick: (0, $d4YY5$proptypes).func,
+    /**
+   * Determine the max width of the dialog.
+   * The dialog width grows with the size of the screen, this property is useful
+   * on the desktop where you might need some coherent different width size across your
+   * application. Set to `false` to disable `maxWidth`.
+   */ maxWidth: (0, $d4YY5$proptypes).oneOf([
+        "xs",
+        "sm",
+        "md",
+        "lg",
+        "xl",
+        false
+    ]),
+    /**
+   *  @uxpinignoreprop
+   */ children: (0, $d4YY5$proptypes).node,
+    /**
+   * The component used to render the body of the dialog.
+   */ /** @uxpinignoreprop */ PaperComponent: (0, $d4YY5$proptypes).elementType,
+    /**
+   * The component used for the transition.
+   * Follow this guide: https://mui.com/components/transitions/#transitioncomponent-prop
+   * to learn more about the requirements for this component.
+   */ /** @uxpinignoreprop */ TransitionComponent: (0, $d4YY5$proptypes).elementType,
+    /**
+   * The duration for the transition, in milliseconds. You may specify a single timeout for all transitions, or individually with an object.
+   */ /** @uxpinignoreprop */ trainstionDuration: (0, $d4YY5$proptypes).oneOf([
+        (0, $d4YY5$proptypes).number,
+        (0, $d4YY5$proptypes).object
+    ]),
+    /**
+   * Props applied to the transition element. By default, the element is based on this Transition component http://reactcommunity.org/react-transition-group/transition.
+   */ /** @uxpinignoreprop */ TransitionProps: (0, $d4YY5$proptypes).object,
+    /**
+   * Override or extend the styles applied to the component. See CSS API https://mui.com/api/dialog/#css for more details.
+   * @uxpinignoreprop
+   */ classes: (0, $d4YY5$proptypes).object,
+    /**
+   * Determine the container for scrolling the dialog.
+   */ scroll: (0, $d4YY5$proptypes).oneOf([
+        "body",
+        "paper"
+    ]),
+    /**
+   * Enter event to use with UXPin interactions.
+   */ onEnter: (0, $d4YY5$proptypes).func,
+    /**
+   * Exit event to use with UXPin interactions.
+   */ onExit: (0, $d4YY5$proptypes).func,
+    onClose: (0, $d4YY5$proptypes).func,
+    /**
+   * If `true`, the dialog stretches to `maxWidth`.
+   * @uxpinignoreprop
+   */ fullWidth: (0, $d4YY5$proptypes).bool,
+    /**
+   * The system prop that allows defining system overrides as well as additional CSS styles.
+   * See the `sx` page for more details. https://mui.com/system/the-sx-prop/
+   */ /** */ sx: (0, $d4YY5$proptypes).object
+};
+var $a16e965a5d044a0d$export$2e2bcd8739ae039 = $a16e965a5d044a0d$var$Dialog;
+
+
+
+
+
+/**
+ * @uxpindocurl https://mui.com/api/dialog-actions/
+ */ function $ac833bab733449cf$var$DialogActions(props) {
+    return /*#__PURE__*/ (0, $d4YY5$react).createElement((0, $d4YY5$muimaterialDialogActions), props, props.children);
+}
+$ac833bab733449cf$var$DialogActions.propTypes = {
+    /**
+   * The content of the component.
+   * @uxpinignoreprop
+   */ children: (0, $d4YY5$proptypes).node,
+    /**
+   * If true, the dialog actions do not have additional margin.
+   */ disableSpacing: (0, $d4YY5$proptypes).bool,
+    /**
+   * Override or extend the styles applied to the component. See CSS API below for more details.
+   */ classes: (0, $d4YY5$proptypes).object,
+    /**
+   * The system prop that allows defining system overrides as well as additional CSS styles.
+   * See the `sx` page for more details.
+   */ /** */ sx: (0, $d4YY5$proptypes).object
+};
+var $ac833bab733449cf$export$2e2bcd8739ae039 = $ac833bab733449cf$var$DialogActions;
+
+
+
+
+
+/**
+ * @uxpindocurl https://mui.com/api/dialog-content-text/
+ */ function $3a854a656f6632ed$var$DialogContentText(props) {
+    return /*#__PURE__*/ (0, $d4YY5$react).createElement((0, $d4YY5$muimaterialDialogContentText), props, props.children);
+}
+$3a854a656f6632ed$var$DialogContentText.propTypes = {
+    /**
+   * The Dialog Content Text
+   */ children: (0, $d4YY5$proptypes).node,
+    /**
+   * Override or extend the styles applied to the component.
+   * See CSS API https://mui.com/api/dialog-content-text/#css for more details.
+   */ classes: (0, $d4YY5$proptypes).object,
+    /**
+   * The system prop that allows defining system overrides as well as additional CSS styles.
+   * See the `sx` page for more details https://mui.com/system/the-sx-prop/.
    */ sx: (0, $d4YY5$proptypes).object
 };
-var $c0914ae58ab6e5d3$export$2e2bcd8739ae039 = $c0914ae58ab6e5d3$var$Tooltip;
+var $3a854a656f6632ed$export$2e2bcd8739ae039 = $3a854a656f6632ed$var$DialogContentText;
 
 
 
 
 
-//import BoxM from "../Box/Box";
+
 /**
- * @uxpindocurl https://mui.com/api/typography/
- */ function $495d4d60bd4d6faa$var$Typography(props) {
-    //const { uxpinRef, ...other } = props;
-    return /*#__PURE__*/ (0, $d4YY5$react).createElement((0, $d4YY5$muimaterialTypography), props, props.children);
+ * @uxpindocurl https://mui.com/api/dialog-title/
+ */ function $22d68e382d6154be$var$DialogTitle(props) {
+    return /*#__PURE__*/ (0, $d4YY5$react).createElement((0, $d4YY5$muimaterialDialogTitle), props, props.children, props.hasClose ? /*#__PURE__*/ (0, $d4YY5$react).createElement((0, $484dfd49b78c6641$export$2e2bcd8739ae039), {
+        "aria-label": "close",
+        onClick: props.onClick,
+        sx: {
+            position: "absolute",
+            right: 8,
+            top: 8
+        }
+    }, "close") : null);
 }
-$495d4d60bd4d6faa$var$Typography.propTypes = {
+$22d68e382d6154be$var$DialogTitle.propTypes = {
     /**
-   * The typography style to apply.
-   * @uxpinpropname  Text
+   * The text of the Dialog Title.
    */ children: (0, $d4YY5$proptypes).node,
-    /*
-   * The typography style to apply.
-   */ variant: (0, $d4YY5$proptypes).oneOf([
-        "h1",
-        "h2",
-        "h3",
-        "h4",
-        "h5",
-        "h6",
-        "subtitle1",
-        "subtitle2",
-        "body1",
-        "body2",
-        "caption",
-        "button",
-        "overline",
-        "inherit"
+    /**
+   * If true, the close icon will be shown.
+   */ hasClose: (0, $d4YY5$proptypes).bool,
+    /**
+   * on click event to use with UXPin interactions.
+   */ onClick: (0, $d4YY5$proptypes).func,
+    /**
+   * Override or extend the styles applied to the component.
+   * See CSS API below for more details. https://mui.com/api/dialog-title/#css
+   * @uxpinignoreprop
+   */ classes: (0, $d4YY5$proptypes).object,
+    /**
+   * The system prop that allows defining system overrides as well as additional CSS styles.
+   * See the `sx` page for more details. https://mui.com/system/the-sx-prop/
+   */ sx: (0, $d4YY5$proptypes).object
+};
+var $22d68e382d6154be$export$2e2bcd8739ae039 = $22d68e382d6154be$var$DialogTitle;
+
+
+
+
+
+/**
+ * @uxpindocurl https://mui.com/api/dialog-content/
+ */ function $02ae133ba3be51cf$var$DialogContent(props) {
+    return /*#__PURE__*/ (0, $d4YY5$react).createElement((0, $d4YY5$muimaterialDialogContent), props, props.children);
+}
+$02ae133ba3be51cf$var$DialogContent.propTypes = {
+    /**
+   * The content of the component.
+   */ children: (0, $d4YY5$proptypes).node,
+    /**
+   * Display the top and bottom dividers.
+   */ dividers: (0, $d4YY5$proptypes).bool,
+    /**
+   * The system prop that allows defining system overrides as well as additional CSS styles.
+   * See the `sx` page for more details https://mui.com/system/the-sx-prop/.
+   */ sx: (0, $d4YY5$proptypes).object,
+    /**
+   * Override or extend the styles applied to the component. See CSS API below for more details..
+   */ classes: (0, $d4YY5$proptypes).object
+};
+var $02ae133ba3be51cf$export$2e2bcd8739ae039 = $02ae133ba3be51cf$var$DialogContent;
+
+
+
+
+
+
+/**
+ * @uxpindocurl https://mui.com/components/tables/#main-content
+ */ function $3f15db54171bbd32$var$Table(props) {
+    return /*#__PURE__*/ (0, $d4YY5$react).createElement((0, $d4YY5$muimaterialTableContainer), null, /*#__PURE__*/ (0, $d4YY5$react).createElement((0, $d4YY5$muimaterialTable), props, props.children));
+}
+$3f15db54171bbd32$var$Table.propTypes = {
+    /**
+   * The content of the component, normally TableRow.
+   * @uxpinignoreprop
+   * */ children: (0, $d4YY5$proptypes).node,
+    /**
+   * Override or extend the styles applied to the component.
+   * See CSS API below for more details.
+   * @uxpinignoreprop
+   */ classes: (0, $d4YY5$proptypes).object,
+    /**
+   * The component used for the root node.
+   * Either a string to use a HTML element or a component.
+   */ component: (0, $d4YY5$proptypes).elementType,
+    /**
+   * Allows TableCells to inherit padding of the Table.
+   */ padding: (0, $d4YY5$proptypes).oneOf([
+        "checkbox",
+        "none",
+        "normal"
     ]),
     /**
-   * Alignment of text.
+   * Allows TableCells to inherit size of the Table.
+   */ size: (0, $d4YY5$proptypes).oneOf([
+        "small",
+        "medium"
+    ]),
+    /**
+   * Set the header sticky.
+   * ⚠️ It doesn't work with IE11.
+   */ stickyHeader: (0, $d4YY5$proptypes).bool,
+    /**
+   * The system prop that allows defining system overrides as well as additional CSS styles.
+   * See the `sx` page for more details.
+   */ sx: (0, $d4YY5$proptypes).object
+};
+var $3f15db54171bbd32$export$2e2bcd8739ae039 = $3f15db54171bbd32$var$Table;
+
+
+
+
+
+/**
+ * @uxpindocurl https://mui.com/api/table-cell/#main-content
+ */ function $dda942c3b5658ae4$var$TableCell(props) {
+    return /*#__PURE__*/ (0, $d4YY5$react).createElement((0, $d4YY5$muimaterialTableCell), props, props.children);
+}
+$dda942c3b5658ae4$var$TableCell.propTypes = {
+    /**
+   * The content of the TableCell, normally TableCellHead and TableCellBody.
+   * @uxpinpropname Cell Data
+   * */ children: (0, $d4YY5$proptypes).node,
+    /**
+   * Set scope attribute.
+   */ scope: (0, $d4YY5$proptypes).string,
+    /**
+   * Set the text-align on the table cell content. M
+   * onetary or generally number fields should be right aligned
+   * as that allows you to add them up quickly in your head without having to worry about decimals.
    */ align: (0, $d4YY5$proptypes).oneOf([
-        "inherit",
-        "left",
         "center",
-        "right",
-        "justify"
+        "inherit",
+        "justify",
+        "left",
+        "right"
     ]),
     /**
-   * Color of text.
+   * Set aria-sort direction.
+   */ sortDirection: (0, $d4YY5$proptypes).oneOf([
+        "asc",
+        "desc",
+        "false"
+    ]),
+    /**
+   * Specify the cell type.
+   * The prop defaults to the value inherited from the parent TableHead, TableBody, or TableFooter components.
+   */ variant: (0, $d4YY5$proptypes).oneOf([
+        "body",
+        "footer",
+        "head"
+    ]),
+    /**
+   * Sets the padding applied to the cell.
+   * The prop defaults to the value ('default') inherited from the parent Table component.
+   */ padding: (0, $d4YY5$proptypes).oneOf([
+        "checkbox",
+        "none",
+        "normal"
+    ]),
+    /**
+   * Specify the size of the cell.
+   * The prop defaults to the value ('medium') inherited from the parent Table component.
+   */ size: (0, $d4YY5$proptypes).oneOf([
+        "small",
+        "medium",
+        "large"
+    ]),
+    /**
+   * The component used for the root node. Either a string to use a HTML element or a component.
+   */ component: (0, $d4YY5$proptypes).elementType,
+    /**
+   * Override or extend the styles applied to the component. See CSS API below for more details.
+   * @uxpinignoreprop
+   */ classes: (0, $d4YY5$proptypes).object,
+    /**
+   * The system prop that allows defining system overrides as well as additional CSS styles.
+   * See the `sx` page for more details.
+   */ sx: (0, $d4YY5$proptypes).object
+};
+var $dda942c3b5658ae4$export$2e2bcd8739ae039 = $dda942c3b5658ae4$var$TableCell;
+
+
+
+
+
+/**
+ * @uxpindocurl https://mui.com/api/table-container/#main-content
+ */ function $db03b1590ab16b2d$var$TableContainer(props) {
+    return /*#__PURE__*/ (0, $d4YY5$react).createElement((0, $d4YY5$muimaterialTableContainer), props, props.children);
+}
+$db03b1590ab16b2d$var$TableContainer.propTypes = {
+    /**
+   * The content of the TableContainer, normally TableContainerContainer and TableContainerContainer.
+   * @uxpinignoreprop
+   * */ children: (0, $d4YY5$proptypes).node,
+    classes: (0, $d4YY5$proptypes).object,
+    component: (0, $d4YY5$proptypes).string,
+    sx: (0, $d4YY5$proptypes).object
+};
+var $db03b1590ab16b2d$export$2e2bcd8739ae039 = $db03b1590ab16b2d$var$TableContainer;
+
+
+
+
+
+/**
+ * @uxpindocurl https://mui.com/api/table-body/#main-content
+ */ function $f4d216d083cc9950$var$TableBody(props) {
+    return /*#__PURE__*/ (0, $d4YY5$react).createElement((0, $d4YY5$muimaterialTableBody), props, props.children);
+}
+$f4d216d083cc9950$var$TableBody.propTypes = {
+    /**
+   * The content of the component, normally TableRow.
+   * @uxpinignoreprop
+   * */ children: (0, $d4YY5$proptypes).node,
+    /**
+   * Override or extend the styles applied to the component.
+   * See CSS API below for more details.
+   * @uxpinignoreprop
+   */ classes: (0, $d4YY5$proptypes).object,
+    /**
+   * The component used for the root node.
+   * Either a string to use a HTML element or a component.
+   */ component: (0, $d4YY5$proptypes).elementType,
+    /**
+   * The system prop that allows defining system overrides as well as additional CSS styles.
+   * See the `sx` page for more details.
+   */ sx: (0, $d4YY5$proptypes).object
+};
+var $f4d216d083cc9950$export$2e2bcd8739ae039 = $f4d216d083cc9950$var$TableBody;
+
+
+
+
+
+/**
+ * @uxpindocurl https://mui.com/api/table-footer/
+ */ function $1280083d972848a8$var$TableFooter(props) {
+    return /*#__PURE__*/ (0, $d4YY5$react).createElement((0, $d4YY5$muimaterialTableFooter), props, props.children);
+}
+$1280083d972848a8$var$TableFooter.propTypes = {
+    /**
+   * The content of the TableFooter, normally TableFooterFooter and TableFooterFooter.
+   * @uxpinignoreprop
+   * */ children: (0, $d4YY5$proptypes).node,
+    classes: (0, $d4YY5$proptypes).object,
+    component: (0, $d4YY5$proptypes).elementType,
+    sx: (0, $d4YY5$proptypes).object
+};
+var $1280083d972848a8$export$2e2bcd8739ae039 = $1280083d972848a8$var$TableFooter;
+
+
+
+
+
+/**
+ * @uxpindocurl https://mui.com/api/table-head/#main-content
+ */ function $f9276cb62da5b234$var$TableHead(props) {
+    return /*#__PURE__*/ (0, $d4YY5$react).createElement((0, $d4YY5$muimaterialTableHead), props, props.children);
+}
+$f9276cb62da5b234$var$TableHead.propTypes = {
+    /**
+   * The content of the component, normally TableRow.
+   * @uxpinignoreprop
+   * */ children: (0, $d4YY5$proptypes).node,
+    /**
+   * Override or extend the styles applied to the component.
+   * See CSS API below for more details.
+   * @uxpinignoreprop
+   */ classes: (0, $d4YY5$proptypes).object,
+    /**
+   * The component used for the root node.
+   * Either a string to use a HTML element or a component.
+   */ component: (0, $d4YY5$proptypes).elementType,
+    /**
+   * The system prop that allows defining system overrides as well as additional CSS styles.
+   * See the `sx` page for more details.
+   */ sx: (0, $d4YY5$proptypes).object
+};
+var $f9276cb62da5b234$export$2e2bcd8739ae039 = $f9276cb62da5b234$var$TableHead;
+
+
+
+
+
+/**
+ * @uxpindocurl https://mui.com/api/table-row/#main-content
+ */ function $e9f0e5becfd403a3$var$TableRow(props) {
+    return /*#__PURE__*/ (0, $d4YY5$react).createElement((0, $d4YY5$muimaterialTableRow), props, props.children);
+}
+$e9f0e5becfd403a3$var$TableRow.propTypes = {
+    /**
+   * Should be valid <tr> children such as TableCell.
+   * @uxpinignoreprop
+   * */ children: (0, $d4YY5$proptypes).node,
+    /**
+   * Override or extend the styles applied to the component. See CSS API below for more details.
+   * @uxpinignoreprop
+   */ classes: (0, $d4YY5$proptypes).object,
+    /**
+   * The component used for the root node.
+   * Either a string to use a HTML element or a component.
+   */ component: (0, $d4YY5$proptypes).elementType,
+    /**
+   * If true, the table row will shade on hover.
+   */ hover: (0, $d4YY5$proptypes).bool,
+    /**
+   * If true, the table row will have the selected shading.
+   */ selected: (0, $d4YY5$proptypes).bool,
+    /**
+   * The system prop that allows defining system overrides as well as additional CSS styles.
+   * See the `sx` page for more details.
+   */ sx: (0, $d4YY5$proptypes).object
+};
+var $e9f0e5becfd403a3$export$2e2bcd8739ae039 = $e9f0e5becfd403a3$var$TableRow;
+
+
+
+
+
+function $207b102639b313d5$var$_extends() {
+    $207b102639b313d5$var$_extends = Object.assign ? Object.assign.bind() : function(target) {
+        for(var i = 1; i < arguments.length; i++){
+            var source = arguments[i];
+            for(var key in source)if (Object.prototype.hasOwnProperty.call(source, key)) target[key] = source[key];
+        }
+        return target;
+    };
+    return $207b102639b313d5$var$_extends.apply(this, arguments);
+}
+/**
+ * @uxpindocurl https://mui.com/api/app-bar/
+ */ function $207b102639b313d5$var$AppBar(props) {
+    return /*#__PURE__*/ (0, $d4YY5$react).createElement((0, $d4YY5$muimaterialAppBar), $207b102639b313d5$var$_extends({}, props, {
+        sx: props.sx
+    }), props.children);
+}
+$207b102639b313d5$var$AppBar.propTypes = {
+    /**
+   * The content of the component.
+   */ /** @uxpinignoreprop */ children: (0, $d4YY5$proptypes).node,
+    /**
+   * Override or extend the styles applied to the component. See CSS API https://mui.com/api/app-bar/#css for more details.
+   */ /** @uxpinignoreprop */ classes: (0, $d4YY5$proptypes).object,
+    /**
+   * The color of the component. It supports those theme colors that make sense for this component.
+   */ color: (0, $d4YY5$proptypes).oneOf([
+        "inherit",
+        "primary",
+        "secondary",
+        "transparent"
+    ]),
+    /**
+   * If true, the color prop is applied in dark mode.
+   */ enableColorOnDark: (0, $d4YY5$proptypes).bool,
+    /** The positioning type. The behavior of the different options is described in the MDN web docs
+   * https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Positioning.
+   * Note: sticky is not universally supported and will fall back to static when unavailable. */ position: (0, $d4YY5$proptypes).oneOf([
+        "absolute",
+        "fixed",
+        "relative",
+        "static",
+        "sticky"
+    ]),
+    /**
+   * The system prop that allows defining system overrides as well as additional CSS styles.
+   * See the `sx` page for more details https://mui.com/system/the-sx-prop/.
+   */ /** Style */ sx: (0, $d4YY5$proptypes).object
+};
+var $207b102639b313d5$export$2e2bcd8739ae039 = $207b102639b313d5$var$AppBar;
+
+
+
+
+
+/**
+ * @uxpindocurl https://mui.com/api/bottom-navigation/
+ */ function $ae5c557c89d1f374$var$BottomNavigation(props) {
+    return /*#__PURE__*/ (0, $d4YY5$react).createElement((0, $d4YY5$muimaterialBottomNavigation), props, props.children);
+}
+$ae5c557c89d1f374$var$BottomNavigation.propTypes = {
+    /**
+   * @uxpinignoreprop
+   * The content of the component.
+   */ children: (0, $d4YY5$proptypes).node,
+    /**
+   * @uxpinignoreprop
+   * Override or extend the styles applied to the component.
+   */ classes: (0, $d4YY5$proptypes).object,
+    /**
+   * The component used for the root node. Either a string to use a HTML element or a component.
+   */ /** @uxpinignoreprop */ component: (0, $d4YY5$proptypes).elementType,
+    /**
+   * Callback fired when the value changes.
+   */ onChange: (0, $d4YY5$proptypes).func,
+    /**
+   * If `true`, all `BottomNavigationAction`s will show their labels.
+   * By default, only the selected `BottomNavigationAction` will show its label.
+   */ showLabels: (0, $d4YY5$proptypes).bool,
+    /**
+   * The system prop that allows defining system overrides as well as additional CSS styles. See the `sx` page for more details.
+   * https://mui.com/system/the-sx-prop/
+   */ sx: (0, $d4YY5$proptypes).object,
+    /**
+   * The value of the currently selected BottomNavigationAction.
+   */ value: (0, $d4YY5$proptypes).string
+};
+var $ae5c557c89d1f374$export$2e2bcd8739ae039 = $ae5c557c89d1f374$var$BottomNavigation;
+
+
+
+
+
+
+
+function $2b4c3fa339d07464$var$_extends() {
+    $2b4c3fa339d07464$var$_extends = Object.assign ? Object.assign.bind() : function(target) {
+        for(var i = 1; i < arguments.length; i++){
+            var source = arguments[i];
+            for(var key in source)if (Object.prototype.hasOwnProperty.call(source, key)) target[key] = source[key];
+        }
+        return target;
+    };
+    return $2b4c3fa339d07464$var$_extends.apply(this, arguments);
+}
+/**
+ * @uxpindocurl https://mui.com/api/bottom-navigation-action/
+ */ function $2b4c3fa339d07464$var$BottomNavigationAction(props) {
+    return /*#__PURE__*/ (0, $d4YY5$react).createElement((0, $d4YY5$muimaterialBottomNavigationAction), $2b4c3fa339d07464$var$_extends({}, props, {
+        icon: /*#__PURE__*/ (0, $d4YY5$react).createElement((0, $6ee864df121e395b$export$2e2bcd8739ae039), null, props.icon)
+    }));
+}
+$2b4c3fa339d07464$var$BottomNavigationAction.propTypes = {
+    /**
+   * @uxpinignoreprop
+   * Override or extend the styles applied to the component.
+   */ classes: (0, $d4YY5$proptypes).object,
+    /**
+   * The icon element.
+   */ icon: (0, $d4YY5$proptypes).oneOf((0, $07ef162fcc571302$export$84babfcc2344e650)),
+    /**
+   * The label element.
+   */ label: (0, $d4YY5$proptypes).string,
+    /**
+   * If `true`, the `BottomNavigationAction` will show its label.
+   * By default, only the selected `BottomNavigationAction`
+   * inside `BottomNavigation` will show its label.
+   */ showLabel: (0, $d4YY5$proptypes).bool,
+    /**
+   * You can provide your own value. Otherwise, we fallback to the child position index.
+   */ value: (0, $d4YY5$proptypes).string,
+    /**
+   * The system prop that allows defining system overrides as well as additional CSS styles. See the `sx` page for more details.
+   * https://mui.com/system/the-sx-prop/
+   */ sx: (0, $d4YY5$proptypes).object
+};
+var $2b4c3fa339d07464$export$2e2bcd8739ae039 = $2b4c3fa339d07464$var$BottomNavigationAction;
+
+
+
+
+
+/**
+ * @uxpindocurl https://mui.com/api/breadcrumbs/#main-content
+ */ function $5687d590c9a7b989$var$Breadcrumbs(props) {
+    return /*#__PURE__*/ (0, $d4YY5$react).createElement((0, $d4YY5$muimaterialBreadcrumbs), props, props.children);
+}
+$5687d590c9a7b989$var$Breadcrumbs.propTypes = {
+    /**
+   * The content of the component.
+   */ /** @uxpinignoreprop */ children: (0, $d4YY5$proptypes).node,
+    /**
+   * Override or extend the styles applied to the component. See CSS API https://mui.com/api/breadcrumbs/#css for more details.
+   */ /** @uxpinignoreprop */ classes: (0, $d4YY5$proptypes).object,
+    /**
+   * The component used for the root node. Either a string to use a HTML element or a component.
+   */ /** @uxpinignoreprop */ component: (0, $d4YY5$proptypes).node,
+    /**
+   * Override the default label for the expand button.
+   * For localization purposes, you can use the provided translations https://mui.com/guides/localization/.
+   */ /** @uxpinignoreprop */ expandText: (0, $d4YY5$proptypes).string,
+    /**
+   * If max items is exceeded, the number of items to show after the ellipsis.
+   */ itemsAfterCollapse: (0, $d4YY5$proptypes).number,
+    /**
+   * If max items is exceeded, the number of items to show before the ellipsis.
+   */ itemsBeforeCollapse: (0, $d4YY5$proptypes).number,
+    /**
+   * Specifies the maximum number of breadcrumbs to display.
+   * When there are more than the maximum number,
+   * only the first itemsBeforeCollapse and last itemsAfterCollapse will be shown, with an ellipsis in between.
+   */ maxItems: (0, $d4YY5$proptypes).number,
+    /** Custom separator node */ /** @uxpinignoreprop */ separator: (0, $d4YY5$proptypes).node,
+    /** The system prop that allows defining system overrides as well as additional CSS styles.
+   * See the `sx` page for more details. https://mui.com/system/the-sx-prop/ */ sx: (0, $d4YY5$proptypes).object
+};
+var $5687d590c9a7b989$export$2e2bcd8739ae039 = $5687d590c9a7b989$var$Breadcrumbs;
+
+
+
+
+
+
+
+
+function $d493ef5b3f1b99eb$var$_extends() {
+    $d493ef5b3f1b99eb$var$_extends = Object.assign ? Object.assign.bind() : function(target) {
+        for(var i = 1; i < arguments.length; i++){
+            var source = arguments[i];
+            for(var key in source)if (Object.prototype.hasOwnProperty.call(source, key)) target[key] = source[key];
+        }
+        return target;
+    };
+    return $d493ef5b3f1b99eb$var$_extends.apply(this, arguments);
+}
+/**
+ * @uxpinwrappers
+ * SkipContainerWrapper
+ */ /**
+ * @uxpindocurl https://mui.com/components/box/#main-content
+ */ function $d493ef5b3f1b99eb$var$Box(props) {
+    const { uxpinRef: uxpinRef , ...other } = props;
+    return /*#__PURE__*/ (0, $d4YY5$react).createElement((0, $d4YY5$muimaterialBox), $d493ef5b3f1b99eb$var$_extends({
+        ref: uxpinRef,
+        height: "100%"
+    }, other), !props.children ? /*#__PURE__*/ (0, $d4YY5$react).createElement("span", null, /*#__PURE__*/ (0, $d4YY5$react).createElement("center", null, /*#__PURE__*/ (0, $d4YY5$react).createElement("p", null, "Drag components into this wrapper"))) : props.children);
+}
+$d493ef5b3f1b99eb$var$Box.propTypes = {
+    /**
+   * The content of the box.
+   */ /** @uxpinignoreprop */ children: (0, $d4YY5$proptypes).node,
+    /**
+   * Color of text
    */ color: (0, $d4YY5$proptypes).oneOf([
         "white",
         "grey.100",
@@ -4961,9 +6347,7 @@ $495d4d60bd4d6faa$var$Typography.propTypes = {
         "text.secondary",
         "text.disabled"
     ]),
-    /**
-   * Color of the Background.
-   */ bgcolor: (0, $d4YY5$proptypes).oneOf([
+    bgcolor: (0, $d4YY5$proptypes).oneOf([
         "white",
         "grey.100",
         "grey.200",
@@ -4985,38 +6369,6 @@ $495d4d60bd4d6faa$var$Typography.propTypes = {
         "text.disabled"
     ]),
     /**
-   *  Controls if typography is inline or block level.
-   */ display: (0, $d4YY5$proptypes).oneOf([
-        "initial",
-        "block",
-        "inline"
-    ]),
-    /**
-   * If `true`, the text will have a bottom margin.
-   */ gutterBottom: (0, $d4YY5$proptypes).bool,
-    /**
-   * If `true`, the text will have a bottom margin.
-   */ paragraph: (0, $d4YY5$proptypes).bool,
-    /**
-   * If `true`, the text will not wrap, but instead will truncate with an ellipsis.
-   */ noWrap: (0, $d4YY5$proptypes).bool,
-    /**
-   * Map typography to another html tag. 
-   * @uxpinignoreprop
-   */ component: (0, $d4YY5$proptypes).node,
-    /**
-   * We are empirically mapping the variant property to a range of different DOM element types.
-   * For instance, subtitle1 to `<h6>`.
-   * If you wish to change that mapping, you can provide your own.
-   * Alternatively, you can use the `component` property.
-   * The default mapping is the following:
-   * @uxpinignoreprop
-   */ headlineMapping: (0, $d4YY5$proptypes).object,
-    /**
-   * Override or extend the styles applied to the component.
-   * @uxpinignoreprop
-   */ classes: (0, $d4YY5$proptypes).object,
-    /**
    * All Padding.
    * In pixels
    */ padding: (0, $d4YY5$proptypes).string,
@@ -5034,7 +6386,7 @@ $495d4d60bd4d6faa$var$Typography.propTypes = {
    */ paddingBottom: (0, $d4YY5$proptypes).string,
     /**
    * Left Padding.
-   * In pixels  
+   * In pixels
    */ paddingLeft: (0, $d4YY5$proptypes).string,
     /**
    * All Margin.
@@ -5094,210 +6446,101 @@ $495d4d60bd4d6faa$var$Typography.propTypes = {
         "text.disabled"
     ]),
     borderRadius: (0, $d4YY5$proptypes).string,
+    boxShadow: (0, $d4YY5$proptypes).number,
+    textAlign: (0, $d4YY5$proptypes).oneOf([
+        "left",
+        "center",
+        "right"
+    ]),
+    // textOverflow: PropTypes.oneOf(["clip", "ellipsis"]),
     /**
-   * The system prop that allows defining system overrides as well as additional CSS styles.
-   */ sx: (0, $d4YY5$proptypes).object
+   * Accepts all system properties, as well as any valid CSS properties.
+   */ sx: (0, $d4YY5$proptypes).object,
+    /**
+   * @uxpinignoreprop
+   */ uxpinRef: (0, $d4YY5$proptypes).any
 };
-var $495d4d60bd4d6faa$export$2e2bcd8739ae039 = $495d4d60bd4d6faa$var$Typography;
-
-
-
-
-
-/**
-  * @uxpindocurl https://mui.com/api/bottom-navigation/
-  */ function $ae5c557c89d1f374$var$BottomNavigation(props) {
-    return /*#__PURE__*/ (0, $d4YY5$react).createElement((0, $d4YY5$muimaterialBottomNavigation), props, props.children);
-}
-$ae5c557c89d1f374$var$BottomNavigation.propTypes = {
-    /**
-    * @uxpinignoreprop 
-    * The content of the component.
-    */ children: (0, $d4YY5$proptypes).node,
-    /**
-   * @uxpinignoreprop 
-   * Override or extend the styles applied to the component.
-   */ classes: (0, $d4YY5$proptypes).object,
-    /**
-   * The component used for the root node. Either a string to use a HTML element or a component.
-   */ /** @uxpinignoreprop */ component: (0, $d4YY5$proptypes).elementType,
-    /**
-   * Callback fired when the value changes.
-   */ onChange: (0, $d4YY5$proptypes).func,
-    /**
-   * If `true`, all `BottomNavigationAction`s will show their labels.
-   * By default, only the selected `BottomNavigationAction` will show its label.
-   */ showLabels: (0, $d4YY5$proptypes).bool,
-    /** 
-   * The system prop that allows defining system overrides as well as additional CSS styles. See the `sx` page for more details.
-   * https://mui.com/system/the-sx-prop/
-  */ sx: (0, $d4YY5$proptypes).object,
-    /**
-   * The value of the currently selected BottomNavigationAction.
-   */ value: (0, $d4YY5$proptypes).string
+$d493ef5b3f1b99eb$var$Box.defaultProps = {
+    sx: {}
 };
-var $ae5c557c89d1f374$export$2e2bcd8739ae039 = $ae5c557c89d1f374$var$BottomNavigation;
+var $d493ef5b3f1b99eb$export$2e2bcd8739ae039 = $d493ef5b3f1b99eb$var$Box;
 
 
 
-
-
-
-
-function $2b4c3fa339d07464$var$_extends() {
-    $2b4c3fa339d07464$var$_extends = Object.assign ? Object.assign.bind() : function(target) {
+function $68d2406aabe0f569$var$_extends() {
+    $68d2406aabe0f569$var$_extends = Object.assign ? Object.assign.bind() : function(target) {
         for(var i = 1; i < arguments.length; i++){
             var source = arguments[i];
             for(var key in source)if (Object.prototype.hasOwnProperty.call(source, key)) target[key] = source[key];
         }
         return target;
     };
-    return $2b4c3fa339d07464$var$_extends.apply(this, arguments);
+    return $68d2406aabe0f569$var$_extends.apply(this, arguments);
 }
-/**
-  * @uxpindocurl https://mui.com/api/bottom-navigation-action/
-  */ function $2b4c3fa339d07464$var$BottomNavigationAction(props) {
-    return /*#__PURE__*/ (0, $d4YY5$react).createElement((0, $d4YY5$muimaterialBottomNavigationAction), $2b4c3fa339d07464$var$_extends({}, props, {
-        icon: /*#__PURE__*/ (0, $d4YY5$react).createElement((0, $6ee864df121e395b$export$2e2bcd8739ae039), null, props.icon)
-    }));
+function $68d2406aabe0f569$export$2e2bcd8739ae039(props) {
+    const [open, setOpen] = (0, $d4YY5$react).useState(props.open);
+    (0, $d4YY5$react).useEffect(()=>setOpen(props.open), [
+        props
+    ]);
+    // Unique Id
+    const id = (0, $d4YY5$v4)();
+    return /*#__PURE__*/ (0, $d4YY5$react).createElement((0, $d493ef5b3f1b99eb$export$2e2bcd8739ae039), {
+        style: {
+            minWidth: "200px",
+            minHeight: "300px",
+            height: "100%"
+        },
+        id: id
+    }, /*#__PURE__*/ (0, $d4YY5$react).createElement((0, $d4YY5$muimaterialDrawer), $68d2406aabe0f569$var$_extends({
+        open: open,
+        onClose: ()=>{
+            setOpen(false);
+        },
+        container: document.querySelector("[id='" + id + "']"),
+        disableEnforceFocus: true,
+        disablePortal: true
+    }, props), /*#__PURE__*/ (0, $d4YY5$react).createElement("div", {
+        style: {
+            width: props.width,
+            minHeight: "200px"
+        }
+    }, props.children)));
 }
-$2b4c3fa339d07464$var$BottomNavigationAction.propTypes = {
+$68d2406aabe0f569$export$2e2bcd8739ae039.propTypes = {
     /**
-   * @uxpinignoreprop 
-   * Override or extend the styles applied to the component.
-   */ classes: (0, $d4YY5$proptypes).object,
+   * if `true` shows the drawer.
+   */ open: (0, $d4YY5$proptypes).bool,
     /**
-   * The icon element.
-   */ icon: (0, $d4YY5$proptypes).oneOf((0, $07ef162fcc571302$export$84babfcc2344e650)),
-    /**
-   * The label element.
-   */ label: (0, $d4YY5$proptypes).string,
-    /**
-   * If `true`, the `BottomNavigationAction` will show its label.
-   * By default, only the selected `BottomNavigationAction`
-   * inside `BottomNavigation` will show its label.
-   */ showLabel: (0, $d4YY5$proptypes).bool,
-    /**
-   * You can provide your own value. Otherwise, we fallback to the child position index.
-   */ value: (0, $d4YY5$proptypes).string,
-    /**
-   * The system prop that allows defining system overrides as well as additional CSS styles. See the `sx` page for more details.
-   * https://mui.com/system/the-sx-prop/
-   */ sx: (0, $d4YY5$proptypes).object
-};
-var $2b4c3fa339d07464$export$2e2bcd8739ae039 = $2b4c3fa339d07464$var$BottomNavigationAction;
-
-
-
-
-
-/**
-  * @uxpindocurl https://mui.com/api/breadcrumbs/#main-content
-  */ function $5687d590c9a7b989$var$Breadcrumbs(props) {
-    return /*#__PURE__*/ (0, $d4YY5$react).createElement((0, $d4YY5$muimaterialBreadcrumbs), props, props.children);
-}
-$5687d590c9a7b989$var$Breadcrumbs.propTypes = {
-    /**
-   * The content of the component.
-   */ /** @uxpinignoreprop */ children: (0, $d4YY5$proptypes).node,
-    /**
-   * Override or extend the styles applied to the component. See CSS API https://mui.com/api/breadcrumbs/#css for more details.
-   */ /** @uxpinignoreprop */ classes: (0, $d4YY5$proptypes).object,
-    /**
-   * The component used for the root node. Either a string to use a HTML element or a component.
-   */ /** @uxpinignoreprop */ component: (0, $d4YY5$proptypes).node,
-    /**
-   * Override the default label for the expand button.
-   * For localization purposes, you can use the provided translations https://mui.com/guides/localization/.
-   */ /** @uxpinignoreprop */ expandText: (0, $d4YY5$proptypes).string,
-    /**
-   * If max items is exceeded, the number of items to show after the ellipsis.
-   */ itemsAfterCollapse: (0, $d4YY5$proptypes).number,
-    /**
-   * If max items is exceeded, the number of items to show before the ellipsis.
-   */ itemsBeforeCollapse: (0, $d4YY5$proptypes).number,
-    /**
-   * Specifies the maximum number of breadcrumbs to display. 
-   * When there are more than the maximum number, 
-   * only the first itemsBeforeCollapse and last itemsAfterCollapse will be shown, with an ellipsis in between.
-   */ maxItems: (0, $d4YY5$proptypes).number,
-    /** Custom separator node */ /** @uxpinignoreprop */ separator: (0, $d4YY5$proptypes).node,
-    /** The system prop that allows defining system overrides as well as additional CSS styles. 
-   * See the `sx` page for more details. https://mui.com/system/the-sx-prop/ */ sx: (0, $d4YY5$proptypes).object
-};
-var $5687d590c9a7b989$export$2e2bcd8739ae039 = $5687d590c9a7b989$var$Breadcrumbs;
-
-
-
-
-
-/**
- * @uxpindocurl https://mui.com/api/link/
- */ function $726d4e32959b0628$var$Link(props) {
-    return /*#__PURE__*/ (0, $d4YY5$react).createElement((0, $d4YY5$muimaterialLink), props, props.children);
-}
-$726d4e32959b0628$var$Link.propTypes = {
-    /**
-   * The content of the component.
-   */ /** @uxpinpropname Text */ children: (0, $d4YY5$proptypes).node,
-    /**
-   * href for the component
-   */ href: (0, $d4YY5$proptypes).string,
-    /**
-   * Override or extend the styles applied to the component. See CSS API https://mui.com/api/link/#css for more details.
-   */ /** @uxpinignoreprop */ classes: (0, $d4YY5$proptypes).object,
-    /**
-   * The color of the link.
-   */ color: (0, $d4YY5$proptypes).oneOf([
-        "inherit",
-        "primary",
-        "secondary",
-        "success",
-        "error",
-        "info",
-        "warning"
+   * The variant to use.
+   *
+   */ //   variant: PropTypes.oneOf(["temporary"]),
+    variant: (0, $d4YY5$proptypes).oneOf([
+        "permanent",
+        "persistent",
+        "temporary"
     ]),
     /**
-   * The component used for the root node. Either a string to use a HTML element or a component.
-   * ⚠️ Needs to be able to hold a ref https://mui.com/guides/composition/#caveat-with-refs.
-   */ /** @uxpinignoreprop */ component: (0, $d4YY5$proptypes).node,
-    /**
-   * classes prop applied to the Typography element.
-   */ /** @uxpinignoreprop */ TypographyClasses: (0, $d4YY5$proptypes).object,
-    /**
-   * Controls when the link should have an underline.
-   */ underline: (0, $d4YY5$proptypes).oneOf([
-        "always",
-        "hover",
-        "none"
+   * Side from which the drawer will appear.
+   */ anchor: (0, $d4YY5$proptypes).oneOf([
+        "left",
+        "top",
+        "right",
+        "bottom"
     ]),
     /**
-   * Applies the theme typography styles.
-   */ variant: (0, $d4YY5$proptypes).oneOf([
-        "body1",
-        "body2",
-        "button",
-        "caption",
-        "h1",
-        "h2",
-        "h3",
-        "h4",
-        "h5",
-        "h6",
-        "inherit",
-        "overline",
-        "subtitle1",
-        "subtitle2"
-    ]),
+   * The width of the drawer.
+   */ width: (0, $d4YY5$proptypes).number,
     /**
-   * The system prop that allows defining system overrides as well as additional CSS styles. 
-   * See the `sx` page for more details. https://mui.com/system/the-sx-prop/
-   */ sx: (0, $d4YY5$proptypes).object,
+   * Close event to use with UXPin interactions.
+   */ onClose: (0, $d4YY5$proptypes).func,
     /**
-   * On click event to use with UXPin interactions.
-   */ onClick: (0, $d4YY5$proptypes).func
+   * The contents of the drawer.
+   * @uxpinignoreprop
+   */ children: (0, $d4YY5$proptypes).node
 };
-var $726d4e32959b0628$export$2e2bcd8739ae039 = $726d4e32959b0628$var$Link;
+$68d2406aabe0f569$export$2e2bcd8739ae039.defaultProps = {
+    open: false
+};
 
 
 
@@ -5353,9 +6596,10 @@ function $9a94b05c37b872c4$export$2e2bcd8739ae039(props) {
     })));
 }
 $9a94b05c37b872c4$export$2e2bcd8739ae039.propTypes = {
+    open: (0, $d4YY5$proptypes).bool,
     /*
-  *The type of element to open the menu.
-  */ trigger: (0, $d4YY5$proptypes).oneOf([
+   * The type of element to open the menu.
+   */ trigger: (0, $d4YY5$proptypes).oneOf([
         "icon",
         "button"
     ]),
@@ -6334,6 +7578,118 @@ $9a94b05c37b872c4$export$2e2bcd8739ae039.defaultProps = {
 
 
 /**
+ * @uxpindocurl https://mui.com/api/link/
+ */ function $726d4e32959b0628$var$Link(props) {
+    return /*#__PURE__*/ (0, $d4YY5$react).createElement("div", {
+        style: {
+            display: "grid"
+        }
+    }, /*#__PURE__*/ (0, $d4YY5$react).createElement((0, $d4YY5$muimaterialLink), props, props.children));
+}
+$726d4e32959b0628$var$Link.propTypes = {
+    /**
+   * The content of the component.
+   */ /** @uxpinpropname Text */ children: (0, $d4YY5$proptypes).node,
+    /**
+   * href for the component
+   */ href: (0, $d4YY5$proptypes).string,
+    /**
+   * Override or extend the styles applied to the component. See CSS API https://mui.com/api/link/#css for more details.
+   */ /** @uxpinignoreprop */ classes: (0, $d4YY5$proptypes).object,
+    /**
+   * The color of the link.
+   */ color: (0, $d4YY5$proptypes).oneOf([
+        "inherit",
+        "primary",
+        "secondary",
+        "error"
+    ]),
+    /**
+   * The component used for the root node. Either a string to use a HTML element or a component.
+   * ⚠️ Needs to be able to hold a ref https://mui.com/guides/composition/#caveat-with-refs.
+   */ /** @uxpinignoreprop */ component: (0, $d4YY5$proptypes).node,
+    /**
+   * classes prop applied to the Typography element.
+   */ /** @uxpinignoreprop */ TypographyClasses: (0, $d4YY5$proptypes).object,
+    /**
+   * Controls when the link should have an underline.
+   */ underline: (0, $d4YY5$proptypes).oneOf([
+        "always",
+        "hover",
+        "none"
+    ]),
+    /**
+   * Applies the theme typography styles.
+   */ variant: (0, $d4YY5$proptypes).oneOf([
+        "body1",
+        "body2",
+        "button",
+        "caption",
+        "h1",
+        "h2",
+        "h3",
+        "h4",
+        "h5",
+        "h6",
+        "inherit",
+        "overline",
+        "subtitle1",
+        "subtitle2"
+    ]),
+    /**
+   * The system prop that allows defining system overrides as well as additional CSS styles.
+   * See the `sx` page for more details. https://mui.com/system/the-sx-prop/
+   */ sx: (0, $d4YY5$proptypes).object,
+    /**
+   * On click event to use with UXPin interactions.
+   */ onClick: (0, $d4YY5$proptypes).func
+};
+var $726d4e32959b0628$export$2e2bcd8739ae039 = $726d4e32959b0628$var$Link;
+
+
+
+
+
+/**
+ * @uxpindocurl https://mui.com/api/menu-list/
+ */ function $05043c2e55525469$var$MenuList(props) {
+    return /*#__PURE__*/ $d4YY5$createElement((0, $d4YY5$muimaterialMenuList), props, props.children);
+}
+$05043c2e55525469$var$MenuList.propTypes = {
+    /**
+   * MenuList contents, normally MenuItems.
+   * @uxpinignoreprop
+   */ children: (0, $d4YY5$proptypes).node,
+    /**
+   * If true, will focus the [role="menu"] container and move into tab order.
+   */ autoFocus: (0, $d4YY5$proptypes).bool,
+    /**
+   * If true, will focus the first menuitem if variant="menu" or selected item if variant="selectedMenu".
+   */ autoFocusItem: (0, $d4YY5$proptypes).bool,
+    /**
+   * If true, will allow focus on disabled items.
+   */ disabledItemsFocusable: (0, $d4YY5$proptypes).bool,
+    /**
+   * If true, the menu items will not wrap focus.
+   */ disableListWrap: (0, $d4YY5$proptypes).bool,
+    /**
+   * The variant to use. Use menu to prevent selected items from impacting the initial focus
+   * and the vertical alignment relative to the anchor element.
+   */ variant: (0, $d4YY5$proptypes).oneOf([
+        "menu",
+        "selectedMenu"
+    ]),
+    /**
+   * The component used for the root node. Either a string to use a HTML element or a component.
+   */ component: (0, $d4YY5$proptypes).elementType
+};
+var $05043c2e55525469$export$2e2bcd8739ae039 = $05043c2e55525469$var$MenuList;
+
+
+
+
+
+/**
  * @uxpindocurl https://mui.com/api/menu-item/
  */ function $0b4bed606fcfeec2$var$MenuItem(props) {
     return /*#__PURE__*/ $d4YY5$createElement((0, $d4YY5$muimaterialMenuItem), props, props.children);
@@ -6357,7 +7713,8 @@ $0b4bed606fcfeec2$var$MenuItem.propTypes = {
     /**
    * Override or extend the styles applied to the component.
    */ sx: (0, $d4YY5$proptypes).object,
-    value: (0, $d4YY5$proptypes).string
+    value: (0, $d4YY5$proptypes).string,
+    onClick: (0, $d4YY5$proptypes).func
 };
 var $0b4bed606fcfeec2$export$2e2bcd8739ae039 = $0b4bed606fcfeec2$var$MenuItem;
 
@@ -6452,12 +7809,411 @@ var $cab657c5b11ce901$export$2e2bcd8739ae039 = $cab657c5b11ce901$var$Pagination;
 
 
 
+
+
+
+
+
+
+
+function $495d4d60bd4d6faa$var$_extends() {
+    $495d4d60bd4d6faa$var$_extends = Object.assign ? Object.assign.bind() : function(target) {
+        for(var i = 1; i < arguments.length; i++){
+            var source = arguments[i];
+            for(var key in source)if (Object.prototype.hasOwnProperty.call(source, key)) target[key] = source[key];
+        }
+        return target;
+    };
+    return $495d4d60bd4d6faa$var$_extends.apply(this, arguments);
+}
+//import BoxM from "../Box/Box";
+/**
+ * @uxpindocurl https://mui.com/api/typography/
+ */ function $495d4d60bd4d6faa$var$Typography(props) {
+    //const { uxpinRef, ...other } = props;
+    return /*#__PURE__*/ (0, $d4YY5$react).createElement((0, $d4YY5$muimaterialTypography), $495d4d60bd4d6faa$var$_extends({}, props, {
+        style: {
+            whiteSpace: "pre-wrap"
+        }
+    }), props.children);
+}
+$495d4d60bd4d6faa$var$Typography.propTypes = {
+    /**
+   * The typography style to apply.
+   * @uxpinpropname  Text
+   */ children: (0, $d4YY5$proptypes).node,
+    /*
+   * The typography style to apply.
+   */ variant: (0, $d4YY5$proptypes).oneOf([
+        "h1",
+        "h2",
+        "h3",
+        "h4",
+        "h5",
+        "h6",
+        "subtitle1",
+        "subtitle2",
+        "body1",
+        "body2",
+        "caption",
+        "button",
+        "overline",
+        "inherit"
+    ]),
+    /**
+   * Alignment of text.
+   */ align: (0, $d4YY5$proptypes).oneOf([
+        "inherit",
+        "left",
+        "center",
+        "right",
+        "justify"
+    ]),
+    /**
+   * Color of text.
+   */ color: (0, $d4YY5$proptypes).oneOf([
+        "white",
+        "grey.100",
+        "grey.200",
+        "grey.300",
+        "grey.400",
+        "grey.500",
+        "primary.main",
+        "primary.light",
+        "primary.dark",
+        "secondary.main",
+        "secondary.light",
+        "secondary.dark",
+        "error.main",
+        "warning.main",
+        "info.main",
+        "success.main",
+        "text.primary",
+        "text.secondary",
+        "text.disabled",
+        "inherit"
+    ]),
+    /**
+   * Color of the Background.
+   */ bgcolor: (0, $d4YY5$proptypes).oneOf([
+        "white",
+        "grey.100",
+        "grey.200",
+        "grey.300",
+        "grey.400",
+        "grey500",
+        "primary.main",
+        "primary.light",
+        "primary.dark",
+        "secondary.main",
+        "secondary.light",
+        "secondary.dark",
+        "error.main",
+        "warning.main",
+        "info.main",
+        "success.main",
+        "text.primary",
+        "text.secondary",
+        "text.disabled"
+    ]),
+    /**
+   *  Controls if typography is inline or block level.
+   */ display: (0, $d4YY5$proptypes).oneOf([
+        "initial",
+        "block",
+        "inline"
+    ]),
+    fontStyle: (0, $d4YY5$proptypes).oneOf([
+        "default",
+        "italic"
+    ]),
+    fontWeight: (0, $d4YY5$proptypes).oneOf([
+        "default",
+        "bold"
+    ]),
+    /**
+   * Override or extend the styles applied to the component.
+   */ fontSize: (0, $d4YY5$proptypes).number,
+    /**
+   * If `true`, the text will have a bottom margin.
+   */ gutterBottom: (0, $d4YY5$proptypes).bool,
+    /**
+   * If `true`, the text will have a bottom margin.
+   */ paragraph: (0, $d4YY5$proptypes).bool,
+    /**
+   * If `true`, the text will not wrap, but instead will truncate with an ellipsis.
+   */ noWrap: (0, $d4YY5$proptypes).bool,
+    /**
+   * Map typography to another html tag.
+   * @uxpinignoreprop
+   */ component: (0, $d4YY5$proptypes).node,
+    /**
+   * We are empirically mapping the variant property to a range of different DOM element types.
+   * For instance, subtitle1 to `<h6>`.
+   * If you wish to change that mapping, you can provide your own.
+   * Alternatively, you can use the `component` property.
+   * The default mapping is the following:
+   * @uxpinignoreprop
+   */ headlineMapping: (0, $d4YY5$proptypes).object,
+    /**
+   * Override or extend the styles applied to the component.
+   * @uxpinignoreprop
+   */ classes: (0, $d4YY5$proptypes).object,
+    /**
+   * All Padding.
+   * In pixels
+   */ padding: (0, $d4YY5$proptypes).string,
+    /**
+   * Top Padding.
+   * In pixels
+   */ paddingTop: (0, $d4YY5$proptypes).string,
+    /**
+   * Right Padding.
+   * In pixels
+   */ paddingRight: (0, $d4YY5$proptypes).string,
+    /**
+   * Bottom Padding.
+   * In pixels
+   */ paddingBottom: (0, $d4YY5$proptypes).string,
+    /**
+   * Left Padding.
+   * In pixels
+   */ paddingLeft: (0, $d4YY5$proptypes).string,
+    /**
+   * All Margin.
+   * In pixels
+   */ margin: (0, $d4YY5$proptypes).string,
+    /**
+   * Top margin.
+   * In pixels
+   */ marginTop: (0, $d4YY5$proptypes).string,
+    /**
+   * Right margin.
+   * In pixels
+   */ marginRight: (0, $d4YY5$proptypes).string,
+    /**
+   * Bottom margin.
+   * In pixels
+   */ marginBottom: (0, $d4YY5$proptypes).string,
+    /**
+   * Left margin.
+   * In pixels
+   */ marginLeft: (0, $d4YY5$proptypes).string,
+    /**
+   * Border margin.
+   * In pixels
+   */ border: (0, $d4YY5$proptypes).number,
+    /**
+   * Border Top.
+   * In pixels
+   */ borderTop: (0, $d4YY5$proptypes).number,
+    /**
+   * Border margin.
+   * In pixels
+   */ borderRight: (0, $d4YY5$proptypes).number,
+    /**
+   * Border margin.
+   * In pixels
+   */ borderBottom: (0, $d4YY5$proptypes).number,
+    /**
+   * Border margin.
+   * In pixels
+   */ borderLeft: (0, $d4YY5$proptypes).number,
+    borderColor: (0, $d4YY5$proptypes).oneOf([
+        "white",
+        "grey.100",
+        "grey.200",
+        "grey.300",
+        "grey.400",
+        "grey500",
+        "primary.main",
+        "secondary.main",
+        "error.main",
+        "warning.main",
+        "info.main",
+        "success.main",
+        "text.primary",
+        "text.secondary",
+        "text.disabled"
+    ]),
+    borderRadius: (0, $d4YY5$proptypes).string,
+    /**
+   * The system prop that allows defining system overrides as well as additional CSS styles.
+   */ sx: (0, $d4YY5$proptypes).object
+};
+var $495d4d60bd4d6faa$export$2e2bcd8739ae039 = $495d4d60bd4d6faa$var$Typography;
+
+
+function $4c4b539818e9e31a$var$_extends() {
+    $4c4b539818e9e31a$var$_extends = Object.assign ? Object.assign.bind() : function(target) {
+        for(var i = 1; i < arguments.length; i++){
+            var source = arguments[i];
+            for(var key in source)if (Object.prototype.hasOwnProperty.call(source, key)) target[key] = source[key];
+        }
+        return target;
+    };
+    return $4c4b539818e9e31a$var$_extends.apply(this, arguments);
+}
+/**
+ * @uxpindocurl https://mui.com/components/steppers/#main-content
+ */ function $4c4b539818e9e31a$var$Stepper(props) {
+    const steps = [
+        {
+            label: "Select campaign settings"
+        },
+        {
+            label: "Create an ad group"
+        },
+        {
+            label: "Create an ad"
+        }
+    ];
+    const [activeStep, setActiveStep] = (0, $d4YY5$react).useState(props.activeStep);
+    const [skipped, setSkipped] = (0, $d4YY5$react).useState(new Set());
+    const isStepOptional = (step)=>{
+        return step === 1;
+    };
+    const isStepSkipped = (step)=>{
+        return skipped.has(step);
+    };
+    const handleNext = ()=>{
+        let newSkipped = skipped;
+        if (isStepSkipped(activeStep)) {
+            newSkipped = new Set(newSkipped.values());
+            newSkipped.delete(activeStep);
+        }
+        setActiveStep((prevActiveStep)=>prevActiveStep + 1);
+        setSkipped(newSkipped);
+    };
+    const handleBack = ()=>{
+        setActiveStep((prevActiveStep)=>prevActiveStep - 1);
+    };
+    const handleSkip = ()=>{
+        if (!isStepOptional(activeStep)) // You probably want to guard against something like this,
+        // it should never occur unless someone's actively trying to break something.
+        throw new Error("You can't skip a step that isn't optional.");
+        setActiveStep((prevActiveStep)=>prevActiveStep + 1);
+        setSkipped((prevSkipped)=>{
+            const newSkipped = new Set(prevSkipped.values());
+            newSkipped.add(activeStep);
+            return newSkipped;
+        });
+    };
+    const handleReset = ()=>{
+        setActiveStep(0);
+    };
+    return /*#__PURE__*/ (0, $d4YY5$react).createElement((0, $d493ef5b3f1b99eb$export$2e2bcd8739ae039), {
+        sx: {
+            width: "100%"
+        }
+    }, /*#__PURE__*/ (0, $d4YY5$react).createElement((0, $d4YY5$Stepper), $4c4b539818e9e31a$var$_extends({}, props, {
+        activeStep: activeStep,
+        orientation: props.orientation,
+        alternativeLabel: props.orientation === "horizontal" ? props.alternativeLabel : null,
+        nonLinear: props.nonLinear
+    }), steps.map((step, index)=>{
+        const stepProps = {};
+        const labelProps = {};
+        if (isStepOptional(index)) labelProps.optional = /*#__PURE__*/ (0, $d4YY5$react).createElement((0, $495d4d60bd4d6faa$export$2e2bcd8739ae039), {
+            variant: "caption"
+        }, "Optional");
+        if (isStepSkipped(index)) stepProps.completed = false;
+        return /*#__PURE__*/ (0, $d4YY5$react).createElement((0, $d4YY5$muimaterialStep), $4c4b539818e9e31a$var$_extends({
+            key: step.label
+        }, stepProps), /*#__PURE__*/ (0, $d4YY5$react).createElement((0, $d4YY5$muimaterialStepLabel), labelProps, step.label));
+    })), activeStep === steps.length ? /*#__PURE__*/ (0, $d4YY5$react).createElement((0, $d4YY5$react).Fragment, null, /*#__PURE__*/ (0, $d4YY5$react).createElement((0, $495d4d60bd4d6faa$export$2e2bcd8739ae039), {
+        sx: {
+            mt: 2,
+            mb: 1
+        }
+    }, "All steps completed - you're finished"), /*#__PURE__*/ (0, $d4YY5$react).createElement((0, $d493ef5b3f1b99eb$export$2e2bcd8739ae039), {
+        sx: {
+            display: "flex",
+            flexDirection: "row",
+            pt: 2
+        }
+    }, /*#__PURE__*/ (0, $d4YY5$react).createElement((0, $d493ef5b3f1b99eb$export$2e2bcd8739ae039), {
+        sx: {
+            flex: "1 1 auto"
+        }
+    }, " "), /*#__PURE__*/ (0, $d4YY5$react).createElement((0, $01c2718700122605$export$2e2bcd8739ae039), {
+        onClick: handleReset
+    }, "Reset"))) : /*#__PURE__*/ (0, $d4YY5$react).createElement((0, $d4YY5$react).Fragment, null, /*#__PURE__*/ (0, $d4YY5$react).createElement((0, $495d4d60bd4d6faa$export$2e2bcd8739ae039), {
+        sx: {
+            mt: 2,
+            mb: 1
+        }
+    }, "Step ", activeStep + 1), /*#__PURE__*/ (0, $d4YY5$react).createElement((0, $d493ef5b3f1b99eb$export$2e2bcd8739ae039), {
+        sx: {
+            display: "flex",
+            flexDirection: "row",
+            pt: 2
+        }
+    }, /*#__PURE__*/ (0, $d4YY5$react).createElement((0, $01c2718700122605$export$2e2bcd8739ae039), {
+        color: "inherit",
+        disabled: activeStep === 0,
+        onClick: handleBack,
+        sx: {
+            mr: 1
+        }
+    }, "Back"), /*#__PURE__*/ (0, $d4YY5$react).createElement((0, $d493ef5b3f1b99eb$export$2e2bcd8739ae039), {
+        sx: {
+            flex: "1 1 auto"
+        }
+    }, " "), isStepOptional(activeStep) && /*#__PURE__*/ (0, $d4YY5$react).createElement((0, $01c2718700122605$export$2e2bcd8739ae039), {
+        color: "inherit",
+        onClick: handleSkip,
+        sx: {
+            mr: 1
+        }
+    }, "Skip"), /*#__PURE__*/ (0, $d4YY5$react).createElement((0, $01c2718700122605$export$2e2bcd8739ae039), {
+        onClick: handleNext
+    }, activeStep === steps.length - 1 ? "Finish" : "Next"))));
+}
+$4c4b539818e9e31a$var$Stepper.propTypes = {
+    /**
+   *  Two or more <Step /> components.
+   */ /** @uxpinignoreprop */ children: (0, $d4YY5$proptypes).node,
+    /**
+   * Set the active step (zero based index). Set to -1 to disable all the steps.
+   */ activeStep: (0, $d4YY5$proptypes).number,
+    /**
+   * The component orientation (layout flow direction).
+   */ orientation: (0, $d4YY5$proptypes).oneOf([
+        "horizontal",
+        "vertical"
+    ]),
+    /**
+   * If set to 'true' and orientation is horizontal, then the step label will be positioned under the icon.
+   */ /** @uxpinpropname label position */ alternativeLabel: (0, $d4YY5$proptypes).bool,
+    /**
+   * If set the Stepper will not assist in controlling steps for linear flow.
+   */ /** @uxpinignoreprop */ nonLinear: (0, $d4YY5$proptypes).bool,
+    /**
+   * Override or extend the styles applied to the component. See CSS API for more details.
+   * https://mui.com/api/stepper/#css
+   */ /** @uxpinignoreprop */ classes: (0, $d4YY5$proptypes).object,
+    /**
+   * An element to be placed between each step.
+   */ /** @uxpinignoreprop */ connector: (0, $d4YY5$proptypes).element,
+    /**
+   * The system prop that allows defining system overrides as well as additional CSS styles.
+   * See the `sx` https://mui.com/system/the-sx-prop/ page for more details.
+   */ sx: (0, $d4YY5$proptypes).object
+};
+var $4c4b539818e9e31a$export$2e2bcd8739ae039 = $4c4b539818e9e31a$var$Stepper;
+
+
+
+
+
 /**
  * @uxpindocurl https://mui.com/api/tab/
  */ function $bb56cd0be5f74ec3$var$Tab(props) {
     return /*#__PURE__*/ (0, $d4YY5$react).createElement((0, $d4YY5$muimaterialTab), props, props.children);
 }
 $bb56cd0be5f74ec3$var$Tab.propTypes = {
+    children: (0, $d4YY5$proptypes).node,
     /**
    * @uxpinignoreprop
    * Override or extend the styles applied to the component.
@@ -6530,13 +8286,13 @@ var $bb56cd0be5f74ec3$export$2e2bcd8739ae039 = $bb56cd0be5f74ec3$var$Tab;
 }
 $cd7de0441de58065$var$Tabs.propTypes = {
     /**
-  * Callback fired when the component mounts.
-  * This is useful when you want to trigger an action programmatically.
-  * It currently only supports `updateIndicator()` action.
-  *
-  * @param {object} actions This object contains all possible actions
-  * that can be triggered programmatically.
-  */ action: (0, $d4YY5$proptypes).func,
+   * Callback fired when the component mounts.
+   * This is useful when you want to trigger an action programmatically.
+   * It currently only supports `updateIndicator()` action.
+   *
+   * @param {object} actions This object contains all possible actions
+   * that can be triggered programmatically.
+   */ action: (0, $d4YY5$proptypes).func,
     /**
    * If 'true', the scroll buttons aren't forced hidden on mobile. By default the scroll buttons are hidden on mobile and takes precedence over scrollButtons.
    */ allowScrollButtonsMobile: (0, $d4YY5$proptypes).bool,
@@ -6629,6 +8385,7 @@ $cd7de0441de58065$var$Tabs.propTypes = {
    */ value: (0, $d4YY5$proptypes).number,
     /**
    * Number of the tab that supposed to be active initially. Starts with  0 for the first tab.
+   * @uxpinignoreprop
    */ defaultValue: (0, $d4YY5$proptypes).number,
     /**
    *  Determines additional display behavior of the Tabss:
@@ -6661,29 +8418,388 @@ var $cd7de0441de58065$export$2e2bcd8739ae039 = $cd7de0441de58065$var$Tabs;
 
 
 
-function $9dff21fbaccdd569$var$_extends() {
-    $9dff21fbaccdd569$var$_extends = Object.assign ? Object.assign.bind() : function(target) {
+
+/**
+ * @uxpindocurl https://mui.com/api/avatar-group/#main-content
+ */ function $aebf4660e02953ed$var$AvatarGroup(props) {
+    return /*#__PURE__*/ $d4YY5$createElement((0, $d4YY5$muimaterialAvatarGroup), props, props.children);
+}
+$aebf4660e02953ed$var$AvatarGroup.propTypes = {
+    /**
+   * 	The avatars to stack.
+   * @uxpinignoreprop
+   */ children: (0, $d4YY5$proptypes).node,
+    /**
+   * Max avatars to show before +x.
+   */ max: (0, $d4YY5$proptypes).number,
+    /**
+   * The total number of avatars. Used for calculating the number of extra avatars.
+   */ total: (0, $d4YY5$proptypes).number,
+    /**
+   * Spacing between avatars.
+   */ spacing: (0, $d4YY5$proptypes).oneOf([
+        "medium",
+        "small",
+        (0, $d4YY5$proptypes).number
+    ]),
+    /**
+   * The variant to use.
+   */ variant: (0, $d4YY5$proptypes).oneOf([
+        "circular",
+        "round",
+        "square",
+        (0, $d4YY5$proptypes).string
+    ]),
+    /**
+   * Override or extend the styles applied to the component. See CSS API https://mui.com/api/avatar-group/#css for more details.
+   */ classes: (0, $d4YY5$proptypes).object,
+    /**
+   * The props used for each slot inside the AvatarGroup.
+   */ componentsProps: (0, $d4YY5$proptypes).object
+};
+var $aebf4660e02953ed$export$2e2bcd8739ae039 = $aebf4660e02953ed$var$AvatarGroup;
+
+
+
+
+
+function $1f0581438bdcce8e$var$_extends() {
+    $1f0581438bdcce8e$var$_extends = Object.assign ? Object.assign.bind() : function(target) {
         for(var i = 1; i < arguments.length; i++){
             var source = arguments[i];
             for(var key in source)if (Object.prototype.hasOwnProperty.call(source, key)) target[key] = source[key];
         }
         return target;
     };
-    return $9dff21fbaccdd569$var$_extends.apply(this, arguments);
+    return $1f0581438bdcce8e$var$_extends.apply(this, arguments);
 }
 /**
- * @uxpindocurl https://mui.com/api/toolbar/
- */ function $9dff21fbaccdd569$var$Toolbar(props) {
-    return /*#__PURE__*/ (0, $d4YY5$react).createElement((0, $d4YY5$muimaterialToolbar), $9dff21fbaccdd569$var$_extends({}, props, {
-        sx: {
-            "justifyContent": props.justifyContent
+ * @uxpindocurl https://mui.com/api/badge/
+ */ function $1f0581438bdcce8e$var$Badge(props) {
+    return /*#__PURE__*/ (0, $d4YY5$react).createElement((0, $d4YY5$muimaterialBadge), $1f0581438bdcce8e$var$_extends({}, props, {
+        showZero: props.showZero,
+        anchorOrigin: {
+            vertical: `${props.vertical}`,
+            horizontal: `${props.horizontal}`
         }
     }), props.children);
 }
-$9dff21fbaccdd569$var$Toolbar.propTypes = {
+$1f0581438bdcce8e$var$Badge.propTypes = {
+    /**
+   * The vertical position of the badge.
+   */ vertical: (0, $d4YY5$proptypes).oneOf([
+        "top",
+        "bottom"
+    ]),
+    /**
+   * The horizontal position of the badge.
+   */ horizontal: (0, $d4YY5$proptypes).oneOf([
+        "right",
+        "left"
+    ]),
+    /**
+   * The number to display in badge
+   * @uxpinpropname  Count
+   */ badgeContent: (0, $d4YY5$proptypes).number,
+    /**
+   * Max count to show.
+   */ max: (0, $d4YY5$proptypes).number,
+    /**
+   * The color of the component. It supports those theme colors that make sense for this component.
+   */ color: (0, $d4YY5$proptypes).oneOf([
+        "primary",
+        "secondary",
+        "error",
+        "info",
+        "success",
+        "warning"
+    ]),
+    /**
+   * The variant to use.
+   */ variant: (0, $d4YY5$proptypes).oneOf([
+        "dot",
+        "standard"
+    ]),
+    /**
+   * Wrapped shape the badge should overlap.
+   */ overlap: (0, $d4YY5$proptypes).oneOf([
+        "circular",
+        "rectangular"
+    ]),
+    /**
+   * If `true`, the badge will be invisible.
+   */ invisible: (0, $d4YY5$proptypes).bool,
+    /**
+   * Controls whether the badge is hidden when badgeContent is zero.
+   * @uxpinignoreprop
+   */ showZero: (0, $d4YY5$proptypes).bool,
+    /**
+   * The badge will be added relative to this node.
+   */ /** @uxpinignoreprop */ children: (0, $d4YY5$proptypes).node,
+    /**
+   * Override or extend the styles applied to the component.
+   */ /** @uxpinignoreprop */ classes: (0, $d4YY5$proptypes).object,
+    /**
+   * The system prop that allows defining system overrides as well as additional CSS styles.
+   * See the `sx` page for more details. https://mui.com/api/badge/
+   */ sx: (0, $d4YY5$proptypes).object
+};
+var $1f0581438bdcce8e$export$2e2bcd8739ae039 = $1f0581438bdcce8e$var$Badge;
+
+
+
+
+
+
+function $fbd4c41f23b40106$var$_extends() {
+    $fbd4c41f23b40106$var$_extends = Object.assign ? Object.assign.bind() : function(target) {
+        for(var i = 1; i < arguments.length; i++){
+            var source = arguments[i];
+            for(var key in source)if (Object.prototype.hasOwnProperty.call(source, key)) target[key] = source[key];
+        }
+        return target;
+    };
+    return $fbd4c41f23b40106$var$_extends.apply(this, arguments);
+}
+function $fbd4c41f23b40106$export$2e2bcd8739ae039(props) {
+    const [chipDeleted, setChipDeleted] = (0, $d4YY5$react).useState(false);
+    const { ...other } = props;
+    return /*#__PURE__*/ (0, $d4YY5$react).createElement((0, $d4YY5$react).Fragment, null, !chipDeleted ? /*#__PURE__*/ (0, $d4YY5$react).createElement((0, $d4YY5$muimaterialChip), $fbd4c41f23b40106$var$_extends({}, other, {
+        onDelete: props.deletable ? ()=>{
+            props.onDelete;
+            setChipDeleted(true);
+        } : null,
+        avatar: props.avatar ? props.avatar : null,
+        icon: props.icon ? /*#__PURE__*/ (0, $d4YY5$react).createElement((0, $6ee864df121e395b$export$2e2bcd8739ae039), null, props.icon) : null,
+        deleteIcon: props.deleteIcon ? /*#__PURE__*/ (0, $d4YY5$react).createElement((0, $6ee864df121e395b$export$2e2bcd8739ae039), null, props.deleteIcon) : null
+    })) : null);
+}
+$fbd4c41f23b40106$export$2e2bcd8739ae039.propTypes = {
+    /**
+   * The content of the component.
+   */ // label: PropTypes.node,
+    label: (0, $d4YY5$proptypes).string,
+    /**
+   * The href attibute of the element.
+   * Only works when component is set to 'a'
+   */ href: (0, $d4YY5$proptypes).string,
+    /**
+   * If true, the component is disabled.
+   */ disabled: (0, $d4YY5$proptypes).bool,
+    /**
+   * If true, the chip will appear clickable.
+   */ clickable: (0, $d4YY5$proptypes).bool,
+    /**
+   * If true, the chip will appear show delete icon.
+   */ deletable: (0, $d4YY5$proptypes).bool,
+    /**
+   * The color of the component. It supports those theme colors that make sense for this component.
+   */ color: (0, $d4YY5$proptypes).oneOf([
+        "primary",
+        "secondary",
+        "error",
+        "info",
+        "success",
+        "warning"
+    ]),
+    /**
+   * The size of the component.
+   */ size: (0, $d4YY5$proptypes).oneOf([
+        "small",
+        "medium"
+    ]),
+    /**
+   * The variant to use.
+   */ variant: (0, $d4YY5$proptypes).oneOf([
+        "filled",
+        "outlined"
+    ]),
+    //
+    /**
+   * The component used for the root node. Either a string to use a HTML element or a component.
+   * @uxpinpropname DOM Element Type
+   */ component: (0, $d4YY5$proptypes).oneOf([
+        "a",
+        "div"
+    ]),
+    /**
+   * Override the default delete icon element. Shown only if onDelete is set.
+   */ deleteIcon: (0, $d4YY5$proptypes).element,
+    /**
+   * Icon element.
+   */ icon: (0, $d4YY5$proptypes).element,
+    /**
+   * The Avatar element to display.
+   * Choose between displaying Icon or Avatar
+   */ avatar: (0, $d4YY5$proptypes).element,
+    /**
+   * If true, the chip will appear clickable, and will raise when pressed, even if the onClick prop is not defined.
+   * If false, the chip will not appear clickable, even if onClick prop is defined.
+   */ onClick: (0, $d4YY5$proptypes).func,
+    /**
+   * 	Callback fired when the delete icon is clicked. If set, the delete icon will be shown.
+   */ onDelete: (0, $d4YY5$proptypes).func,
+    /**
+   * The system prop that allows defining system overrides as well as additional CSS styles.
+   */ sx: (0, $d4YY5$proptypes).object
+};
+
+
+
+
+
+/**
+ * @uxpindocurl https://mui.com/api/divider/
+ */ function $7fafffb45bd8603c$var$Divider(props) {
+    return /*#__PURE__*/ (0, $d4YY5$react).createElement((0, $d4YY5$muimaterialDivider), props);
+}
+$7fafffb45bd8603c$var$Divider.propTypes = {
+    /**
+   * Absolutely position the element.
+   * @uxpinignoreprop
+   */ absolute: (0, $d4YY5$proptypes).bool,
+    /**
+   * The content of the component.
+   * @uxpinignoreprop
+   */ children: (0, $d4YY5$proptypes).node,
     /**
    * @uxpinignoreprop
-   * Toolbar children, usually a mixture of `IconButton`, `Button` and `Typography`.
+   * Override or extend the styles applied to the component.
+   */ classes: (0, $d4YY5$proptypes).object,
+    /**
+   * The component used for the root node. Either a string to use a HTML element or a component.
+   */ component: (0, $d4YY5$proptypes).elementType,
+    /**
+   * If true, a vertical divider will have the correct height when used in flex container.
+   * (By default, a vertical divider will have a calculated height of 0px if it is the child of a flex container.)
+   */ flexItem: (0, $d4YY5$proptypes).bool,
+    /**
+   * If true, the divider will have a lighter color.
+   * @uxpinignoreprop
+   */ light: (0, $d4YY5$proptypes).bool,
+    /**
+   * The component orientation.
+   * If using "vertical" items and divider must reside within a Stack or Grid container
+   */ orientation: (0, $d4YY5$proptypes).oneOf([
+        "horizontal",
+        "vertical"
+    ]),
+    /**
+   * The text alignment.
+   */ textAlign: (0, $d4YY5$proptypes).oneOf([
+        "center",
+        "left",
+        "right"
+    ]),
+    /**
+   * The variant to use.
+   */ variant: (0, $d4YY5$proptypes).oneOf([
+        "fullWidth",
+        "inset",
+        "middle"
+    ]),
+    /**
+   * The system prop that allows defining system overrides as well as additional CSS styles.
+   */ sx: (0, $d4YY5$proptypes).object
+};
+var $7fafffb45bd8603c$export$2e2bcd8739ae039 = $7fafffb45bd8603c$var$Divider;
+
+
+
+
+
+
+/**
+ * @uxpindocurl https://mui.com/api/tooltip/
+ * @uxpinwrappers
+ * SkipContainerWrapper
+ */ function $c0914ae58ab6e5d3$var$Tooltip(props) {
+    return /*#__PURE__*/ (0, $d4YY5$react).createElement((0, $d4YY5$muimaterialTooltip), props, /*#__PURE__*/ (0, $d4YY5$react).createElement("div", null, props.children));
+}
+$c0914ae58ab6e5d3$var$Tooltip.propTypes = {
+    /**
+   * Elements contained by Tooltip.
+   */ children: (0, $d4YY5$proptypes).node,
+    /**
+   * Text to display in the Tooltip.
+   * @uxpinpropname  Tooltip Text
+   */ title: (0, $d4YY5$proptypes).string,
+    /**
+   * 	Override or extend the styles applied to the component. See CSS API below for more details.
+   */ classes: (0, $d4YY5$proptypes).object,
+    /**
+   * 	Props applied to the Popper element: https://mui.com/material-ui/api/popper/
+   */ PopperProps: (0, $d4YY5$proptypes).object,
+    /**
+   * If 'true', adds an arrow to the tooltip.
+   * @uxpinpropname  Tooltip Border Arrow
+   */ arrow: (0, $d4YY5$proptypes).bool,
+    /**
+   * If `true`, the tooltip is shown.
+   */ open: (0, $d4YY5$proptypes).bool,
+    /**
+   *
+   * Do not respond to focus-visible events.
+   */ disableFocusListener: (0, $d4YY5$proptypes).bool,
+    /**
+   *
+   * Do not respond to hover events.
+   */ disableHoverListener: (0, $d4YY5$proptypes).bool,
+    /**
+   * Makes a tooltip not interactive, i.e. it will close when the user hovers over the tooltip before the leaveDelay is expired.
+   */ disableInteractive: (0, $d4YY5$proptypes).bool,
+    /**
+   * Do not respond to long press touch events.
+   */ disableTouchListener: (0, $d4YY5$proptypes).bool,
+    /**
+   * Where the Tooltip should display in relation to its nested element.
+   */ placement: (0, $d4YY5$proptypes).oneOf([
+        "bottom-end",
+        "bottom-start",
+        "bottom",
+        "left-end",
+        "left-start",
+        "left",
+        "right-end",
+        "right-start",
+        "right",
+        "top-end",
+        "top-start",
+        "top"
+    ]),
+    /**
+   * Callback fired when the tooltip requests to be closed.
+   *
+   * @param {object} event The event source of the callback
+   */ onClose: (0, $d4YY5$proptypes).func,
+    /**
+   * Callback fired when the tooltip requests to be open.
+   *
+   * @param {object} event The event source of the callback
+   */ onOpen: (0, $d4YY5$proptypes).func,
+    /**
+   * The system prop that allows defining system overrides as well as additional CSS styles.
+   */ sx: (0, $d4YY5$proptypes).object
+};
+var $c0914ae58ab6e5d3$export$2e2bcd8739ae039 = $c0914ae58ab6e5d3$var$Tooltip;
+
+
+
+
+
+
+
+
+
+/**
+ * @uxpindocurl https://mui.com/api/form-helper-text/
+ */ function $134a90f9d8fd8dab$var$FormHelperText(props) {
+    return /*#__PURE__*/ (0, $d4YY5$react).createElement((0, $d4YY5$muimaterialFormHelperText), props, props.children);
+}
+$134a90f9d8fd8dab$var$FormHelperText.propTypes = {
+    /**
+   * @uxpinignoreprop
+   * The content of the component.
    */ children: (0, $d4YY5$proptypes).node,
     /**
    * @uxpinignoreprop
@@ -6691,32 +8807,495 @@ $9dff21fbaccdd569$var$Toolbar.propTypes = {
    * See [CSS API](#css-api) below for more details.
    */ classes: (0, $d4YY5$proptypes).object,
     /**
-   * The component used for the root node. Either a string to use a HTML element or a component.
-   */ /** @uxpinignoreprop */ component: (0, $d4YY5$proptypes).elementType,
+   * @uxpinignoreprop
+   * The component used for the root node.
+   * Either a string to use a DOM element or a component.
+   */ component: (0, $d4YY5$proptypes).node,
     /**
-   * If `true`, disables gutter padding.
-   */ disableGutters: (0, $d4YY5$proptypes).bool,
-    /** 
-   * The system prop that allows defining system overrides as well as additional CSS styles. 
-   * See the `sx` https://mui.com/system/the-sx-prop/ page for more details.
-   */ sx: (0, $d4YY5$proptypes).object,
+   * If `true`, the helper text should be displayed in a disabled state.
+   */ disabled: (0, $d4YY5$proptypes).bool,
+    /**
+   * If `true`, helper text should be displayed in an error state.
+   */ error: (0, $d4YY5$proptypes).bool,
+    /**
+   * If `true`, the helper text should use filled classes key.
+   */ filled: (0, $d4YY5$proptypes).bool,
+    /**
+   * If `true`, the helper text should use focused classes key.
+   */ focused: (0, $d4YY5$proptypes).bool,
+    /**
+   * If `dense`, will adjust vertical spacing. This is normally obtained via context from
+   * FormControl.
+   */ margin: (0, $d4YY5$proptypes).oneOf([
+        "dense"
+    ]),
+    /**
+   * If `true`, the helper text should use required classes key.
+   */ required: (0, $d4YY5$proptypes).bool,
     /**
    * The variant to use.
    */ variant: (0, $d4YY5$proptypes).oneOf([
-        "regular",
-        "dense"
+        "standard",
+        "outlined",
+        "filled"
     ]),
-    justifyContent: (0, $d4YY5$proptypes).oneOf([
+    /**
+   * The system prop that allows defining system overrides as well as additional CSS styles.
+   * See the `sx` page for more details https://mui.com/system/the-sx-prop/.
+   */ /** */ sx: (0, $d4YY5$proptypes).object
+};
+var $134a90f9d8fd8dab$export$2e2bcd8739ae039 = $134a90f9d8fd8dab$var$FormHelperText;
+
+
+
+
+
+
+
+function $69f523c5edd6731d$export$2e2bcd8739ae039(props) {
+    return /*#__PURE__*/ $d4YY5$createElement($d4YY5$Fragment, null, /*#__PURE__*/ $d4YY5$createElement((0, $d4YY5$muimaterialContainer), props, props.children));
+}
+$69f523c5edd6731d$export$2e2bcd8739ae039.propTypes = {
+    /**
+   * The content node to be collapsed.
+   * @uxpinignoreprop
+   */ children: (0, $d4YY5$proptypes).node,
+    /**
+   * Set the max-width to match the min-width of the current breakpoint.
+   * This is useful if you'd prefer to design for a fixed set of sizes instead of trying to accommodate a fully fluid viewport.
+   * It's fluid by default.
+   */ fixed: (0, $d4YY5$proptypes).bool,
+    /**
+   * If true, the left and right padding is removed.
+   */ disableGutters: (0, $d4YY5$proptypes).bool,
+    /**
+   * Determine the max-width of the container. The container width grows with the size of the screen. Set to false to disable maxWidth.
+   */ maxWidth: (0, $d4YY5$proptypes).oneOf([
+        "xs",
+        "sm",
+        "md",
+        "lg",
+        "xl",
+        "false"
+    ]),
+    /**
+   * The component used for the root node.
+   * Either a string to use a DOM element or a component.
+   * Example: span, div
+   */ component: (0, $d4YY5$proptypes).string,
+    /**
+   * Override or extend the styles applied to the component.
+   * @uxpinignoreprop
+   */ classes: (0, $d4YY5$proptypes).object,
+    /**
+   * The system prop that allows defining system overrides as well as additional CSS styles.
+   * See the `sx` page for more details. https://mui.com/system/the-sx-prop/
+   */ sx: (0, $d4YY5$proptypes).object
+};
+
+
+
+
+
+function $c716763b1d724ad6$var$_extends() {
+    $c716763b1d724ad6$var$_extends = Object.assign ? Object.assign.bind() : function(target) {
+        for(var i = 1; i < arguments.length; i++){
+            var source = arguments[i];
+            for(var key in source)if (Object.prototype.hasOwnProperty.call(source, key)) target[key] = source[key];
+        }
+        return target;
+    };
+    return $c716763b1d724ad6$var$_extends.apply(this, arguments);
+}
+/**
+ * @uxpindocurl https://mui.com/api/grid/
+ */ function $c716763b1d724ad6$var$Grid(props) {
+    // const space = Number(props.spacing);
+    return /*#__PURE__*/ (0, $d4YY5$react).createElement((0, $d4YY5$muimaterialGrid), $c716763b1d724ad6$var$_extends({}, props, {
+        spacing: props.spacing,
+        sx: {
+            paddingTop: props.paddingTop + "px",
+            paddingBottom: props.paddingBottom + "px",
+            paddingRight: props.paddingRight + "px",
+            paddingLeft: props.paddingLeft + "px"
+        }
+    }), props.children);
+}
+$c716763b1d724ad6$var$Grid.propTypes = {
+    /**
+   * Defines the `align-content` style property.
+   * It's applied for all screen sizes.
+   */ alignContent: (0, $d4YY5$proptypes).oneOf([
+        "stretch",
+        "center",
+        "flex-start",
+        "flex-end",
+        "space-between",
+        "space-around"
+    ]),
+    /**
+   * Defines the `align-items` style property.
+   * It's applied for all screen sizes.
+   */ alignItems: (0, $d4YY5$proptypes).oneOf([
+        "flex-start",
         "center",
         "flex-end",
+        "stretch",
+        "baseline"
+    ]),
+    /**
+   * @uxpinignoreprop
+   * The content of the component.
+   */ children: (0, $d4YY5$proptypes).node,
+    /**
+   * @uxpinignoreprop
+   * Override or extend the styles applied to the component.
+   * See [CSS API](#css-api) below for more details.
+   */ classes: (0, $d4YY5$proptypes).object,
+    /**
+   * @uxpinignoreprop
+   * @ignore
+   */ className: (0, $d4YY5$proptypes).string,
+    /**
+   * @uxpinignoreprop
+   * The component used for the root node.
+   * Either a string to use a DOM element or a component.
+   */ component: (0, $d4YY5$proptypes).string,
+    /**
+   * If `true`, the component will have the flex *container* behavior.
+   * You should be wrapping *items* with a *container*.
+   */ container: (0, $d4YY5$proptypes).bool,
+    /**
+   * Defines the `flex-direction` style property.
+   * It is applied for all screen sizes.
+   */ direction: (0, $d4YY5$proptypes).oneOf([
+        "row",
+        "row-reverse",
+        "column",
+        "column-reverse"
+    ]),
+    order: (0, $d4YY5$proptypes).number,
+    /**
+   * If `true`, the component will have the flex *item* behavior.
+   * You should be wrapping *items* with a *container*.
+   */ item: (0, $d4YY5$proptypes).bool,
+    /**
+   * Defines the `justify-content` style property.
+   * It is applied for all screen sizes.
+   */ justifyContent: (0, $d4YY5$proptypes).oneOf([
         "flex-start",
-        "space-around",
+        "center",
+        "flex-end",
         "space-between",
-        "space-evenly",
-        "stretch"
+        "space-around",
+        "space-evenly"
+    ]),
+    /**
+   * Defines the number of grids the component is going to use.
+   * It's applied for the `lg` breakpoint and wider screens if not overridden.  1-12, true, false, or auto.
+   */ lg: (0, $d4YY5$proptypes).oneOfType([
+        (0, $d4YY5$proptypes).number,
+        (0, $d4YY5$proptypes).bool,
+        (0, $d4YY5$proptypes).string
+    ]),
+    /**
+   * Defines the number of grids the component is going to use.
+   * It's applied for the `md` breakpoint and wider screens if not overridden.  1-12, true, false, or auto.
+   */ md: (0, $d4YY5$proptypes).oneOfType([
+        (0, $d4YY5$proptypes).number,
+        (0, $d4YY5$proptypes).bool,
+        (0, $d4YY5$proptypes).string
+    ]),
+    /**
+   * Defines the number of grids the component is going to use.
+   * It's applied for the `sm` breakpoint and wider screens if not overridden.  1-12, true, false, or auto.
+   */ sm: (0, $d4YY5$proptypes).oneOfType([
+        (0, $d4YY5$proptypes).number,
+        (0, $d4YY5$proptypes).bool,
+        (0, $d4YY5$proptypes).string
+    ]),
+    /**
+   * Defines the space between the type `item` component.
+   * It can only be used on a type `container` component.
+   */ spacing: (0, $d4YY5$proptypes).oneOf([
+        "0",
+        "8",
+        "16",
+        "24",
+        "32",
+        "40"
+    ]),
+    /**
+   * Defines the `flex-wrap` style property.
+   * It's applied for all screen sizes.
+   */ wrap: (0, $d4YY5$proptypes).oneOf([
+        "nowrap",
+        "wrap",
+        "wrap-reverse"
+    ]),
+    /**
+   * Defines the number of grids the component is going to use.
+   * It's applied for the `columns (xl)` breakpoint and wider screens.  1-12, true, false, or auto.
+   * @uxpinpropname  columns (xl)
+   */ xl: (0, $d4YY5$proptypes).oneOfType([
+        (0, $d4YY5$proptypes).number,
+        (0, $d4YY5$proptypes).bool,
+        (0, $d4YY5$proptypes).string
+    ]),
+    /**
+   * Defines the number of grids the component is going to use.
+   * It's applied for all the screen sizes with the lowest priority. 1-12, true, false, or auto.
+   * @uxpinpropname  columns (xs)
+   */ xs: (0, $d4YY5$proptypes).oneOfType([
+        (0, $d4YY5$proptypes).number,
+        (0, $d4YY5$proptypes).bool,
+        (0, $d4YY5$proptypes).string
+    ]),
+    /**
+   * If `true`, it sets `min-width: 0` on the item.
+   * Refer to the limitations section of the documentation to better understand the use case.
+   */ zeroMinWidth: (0, $d4YY5$proptypes).bool,
+    paddingTop: (0, $d4YY5$proptypes).number,
+    paddingBottom: (0, $d4YY5$proptypes).number,
+    paddingRight: (0, $d4YY5$proptypes).number,
+    paddingLeft: (0, $d4YY5$proptypes).number,
+    /**
+   * The system prop that allows defining system overrides as well as additional CSS styles.
+   * See the `sx` page for more details https://mui.com/system/the-sx-prop/.
+   */ /** */ sx: (0, $d4YY5$proptypes).object
+};
+var $c716763b1d724ad6$export$2e2bcd8739ae039 = $c716763b1d724ad6$var$Grid;
+
+
+
+
+
+/**
+ * @uxpindocurl https://mui.com/components/image-list/#main-content
+ */ function $618b2c25582462c6$var$ImageList(props) {
+    return /*#__PURE__*/ (0, $d4YY5$react).createElement((0, $d4YY5$muimaterialImageList), props, props.children);
+}
+$618b2c25582462c6$var$ImageList.propTypes = {
+    /**
+   * The content of the component, normally ImageListItems.
+   */ /** @uxpinignoreprops */ children: (0, $d4YY5$proptypes).node,
+    /**
+   * Override or extend the styles applied to the component. See CSS API https://mui.com/api/image-list/#css for more details.
+   */ /** @uxpinignoreprop */ classes: (0, $d4YY5$proptypes).object,
+    /**
+   * Number of columns.
+   */ cols: (0, $d4YY5$proptypes).number,
+    /**
+   * The component used for the root node. Either a string to use a HTML element or a component.
+   */ component: (0, $d4YY5$proptypes).elementType,
+    /**
+   * The gap between items in px.
+   */ gap: (0, $d4YY5$proptypes).number,
+    /**
+   * The height of one row in px.
+   */ rowHeight: (0, $d4YY5$proptypes).oneOfType([
+        "auto",
+        (0, $d4YY5$proptypes).number
+    ]),
+    /**
+   * The system prop that allows defining system overrides as well as additional CSS styles.
+   * See the `sx` page for more details. https://mui.com/system/the-sx-prop/
+   */ /** */ sx: (0, $d4YY5$proptypes).object,
+    /** The variant to use. */ variant: (0, $d4YY5$proptypes).oneOf([
+        "masonary",
+        "quilted",
+        "standard",
+        "woven"
     ])
 };
-var $9dff21fbaccdd569$export$2e2bcd8739ae039 = $9dff21fbaccdd569$var$Toolbar;
+var $618b2c25582462c6$export$2e2bcd8739ae039 = $618b2c25582462c6$var$ImageList;
+
+
+
+
+
+/**
+ * @uxpindocurl https://mui.com/api/image-list-item/#main-content
+ */ function $f867e269675e6e2e$var$ImageListItem(props) {
+    return /*#__PURE__*/ (0, $d4YY5$react).createElement((0, $d4YY5$muimaterialImageListItem), props, props.children);
+}
+$f867e269675e6e2e$var$ImageListItem.propTypes = {
+    /**
+   * The content of the component, normally an <img>.
+   */ /** @uxpinignoreprop */ children: (0, $d4YY5$proptypes).node,
+    /**
+   * Override or extend the styles applied to the component.
+   * See CSS API https://mui.com/api/image-list-item/#css for more details.
+   */ /** @uxpinignoreprop */ classes: (0, $d4YY5$proptypes).object,
+    /**
+   * Width of the item in number of grid columns.
+   */ cols: (0, $d4YY5$proptypes).number,
+    /**
+   * The component used for the root node. Either a string to use a HTML element or a component.
+   */ /** @uxpinignoreprop */ component: (0, $d4YY5$proptypes).elementType,
+    /**
+   * Height of the item in number of grid rows.
+   */ rows: (0, $d4YY5$proptypes).number,
+    /**
+   * The system prop that allows defining system overrides as well as additional CSS styles.
+   * See the `sx` page for more details https://mui.com/system/the-sx-prop/.
+   */ /** */ sx: (0, $d4YY5$proptypes).object
+};
+var $f867e269675e6e2e$export$2e2bcd8739ae039 = $f867e269675e6e2e$var$ImageListItem;
+
+
+
+
+
+/**
+ * @uxpindocurl https://mui.com/api/image-list-item-bar/
+ */ function $c4e15054fc7915f2$var$ImageListItemBar(props) {
+    return /*#__PURE__*/ (0, $d4YY5$react).createElement((0, $d4YY5$muimaterialImageListItemBar), props, props.children);
+}
+$c4e15054fc7915f2$var$ImageListItemBar.propTypes = {
+    children: (0, $d4YY5$proptypes).node,
+    /**
+   * An IconButton element to be used as secondary action target (primary action target is the item itself).
+   */ // /** @uxpinignoreprop */
+    actionIcon: (0, $d4YY5$proptypes).node,
+    /**
+   * Position of secondary action IconButton.
+   */ actionPosition: (0, $d4YY5$proptypes).oneOf([
+        "left",
+        "right"
+    ]),
+    /**
+   * Override or extend the styles applied to the component.
+   * See CSS API https://mui.com/api/image-list-item-bar/#css for more details.
+   */ /** @uxpinignoreprop */ classes: (0, $d4YY5$proptypes).object,
+    /**
+   * Position of the title bar.
+   */ position: (0, $d4YY5$proptypes).oneOf([
+        "below",
+        "bottom",
+        "top"
+    ]),
+    /**
+   * String or element serving as subtitle (support text).
+   */ subtitle: (0, $d4YY5$proptypes).node,
+    /**
+   * The system prop that allows defining system overrides as well as additional CSS styles.
+   * See the `sx` page for more details. https://mui.com/system/the-sx-prop/
+   */ /** */ sx: (0, $d4YY5$proptypes).object,
+    /**
+   * Title to be displayed.
+   */ title: (0, $d4YY5$proptypes).node
+};
+var $c4e15054fc7915f2$export$2e2bcd8739ae039 = $c4e15054fc7915f2$var$ImageListItemBar;
+
+
+
+
+
+
+function $10ff67c3f8c14e30$var$_extends() {
+    $10ff67c3f8c14e30$var$_extends = Object.assign ? Object.assign.bind() : function(target) {
+        for(var i = 1; i < arguments.length; i++){
+            var source = arguments[i];
+            for(var key in source)if (Object.prototype.hasOwnProperty.call(source, key)) target[key] = source[key];
+        }
+        return target;
+    };
+    return $10ff67c3f8c14e30$var$_extends.apply(this, arguments);
+}
+/**
+ * @uxpindocurl https://mui.com/components/stack/#main-content
+ */ function $10ff67c3f8c14e30$var$Stack(props) {
+    let dividerOrientation = "";
+    if (props.direction === "row" || props.direction === "row-reverse") dividerOrientation = "vertical";
+    else dividerOrientation = "horizontal";
+    const { hasDivider: hasDivider , ...otherProps } = props;
+    return /*#__PURE__*/ $d4YY5$createElement((0, $d4YY5$muimaterialStack), $10ff67c3f8c14e30$var$_extends({}, otherProps, {
+        divider: hasDivider && /*#__PURE__*/ $d4YY5$createElement((0, $d4YY5$muimaterialDivider), {
+            orientation: dividerOrientation,
+            flexItem: true
+        }),
+        sx: {
+            paddingTop: props.paddingTop + "px",
+            paddingBottom: props.paddingBottom + "px",
+            paddingRight: props.paddingRight + "px",
+            paddingLeft: props.paddingLeft + "px",
+            flexWrap: props.wrap
+        }
+    }), props.children);
+}
+$10ff67c3f8c14e30$var$Stack.propTypes = {
+    /**
+   * Elements contained by Tooltip.
+   * @uxpinignoreprop
+   */ children: (0, $d4YY5$proptypes).node,
+    /**
+   * Defines the flex-direction style property. It is applied for all screen sizes.
+   */ direction: (0, $d4YY5$proptypes).oneOf([
+        "column-reverse",
+        "column",
+        "row-reverse",
+        "row"
+    ]),
+    justifyContent: (0, $d4YY5$proptypes).oneOf([
+        "flex-start",
+        "center",
+        "flex-end",
+        "space-between",
+        "space-around",
+        "space-evenly"
+    ]),
+    /**
+   * Defines the `align-content` style property.
+   * It's applied for all screen sizes.
+   */ //  alignContent: PropTypes.oneOf([
+    //   "stretch",
+    //   "center",
+    //   "flex-start",
+    //   "flex-end",
+    //   "space-between",
+    //   "space-around"
+    // ]),
+    /**
+   * Defines the `align-items` style property.
+   * It's applied for all screen sizes.
+   */ alignItems: (0, $d4YY5$proptypes).oneOf([
+        "flex-start",
+        "center",
+        "flex-end",
+        "stretch",
+        "baseline"
+    ]),
+    /**
+   * Defines the `flex-wrap` style property.
+   * It's applied for all screen sizes.
+   */ wrap: (0, $d4YY5$proptypes).oneOf([
+        "nowrap",
+        "wrap",
+        "wrap-reverse"
+    ]),
+    /**
+   * Defines the space between immediate children in px
+   */ spacing: (0, $d4YY5$proptypes).number,
+    paddingTop: (0, $d4YY5$proptypes).number,
+    paddingBottom: (0, $d4YY5$proptypes).number,
+    paddingRight: (0, $d4YY5$proptypes).number,
+    paddingLeft: (0, $d4YY5$proptypes).number,
+    /**
+   * Add an element between each child.
+   * This needs improving
+   * @uxpinignoreprop
+   */ divider: (0, $d4YY5$proptypes).node,
+    /**
+   * Add an element between each child.
+   * This needs improving
+   *
+   */ hasDivider: (0, $d4YY5$proptypes).bool,
+    /**
+   * The system prop that allows defining system overrides as well as additional CSS styles.
+   */ sx: (0, $d4YY5$proptypes).object
+};
+var $10ff67c3f8c14e30$export$2e2bcd8739ae039 = $10ff67c3f8c14e30$var$Stack;
 
 
 
@@ -6769,13 +9348,13 @@ function $a94ecc01b7c4a311$var$_extends() {
     }, [
         props.isOpen
     ]); // Only re-run the effect if value prop changes
-    const { isOpen: isOpen , icon: icon , title: title , hasClose: hasClose , onClose: onClose , ...otherProps } = props;
+    const { icon: icon , title: title , ...otherProps } = props;
     return /*#__PURE__*/ (0, $d4YY5$react).createElement((0, $d4YY5$muimaterialCollapse), {
         in: open
     }, /*#__PURE__*/ (0, $d4YY5$react).createElement((0, $d4YY5$muimaterialAlert), $a94ecc01b7c4a311$var$_extends({}, otherProps, {
         icon: icon ? /*#__PURE__*/ (0, $d4YY5$react).createElement((0, $6ee864df121e395b$export$2e2bcd8739ae039), {
             fontSize: "inherit"
-        }, icon) : null,
+        }, icon) : false,
         action: props.hasClose ? /*#__PURE__*/ (0, $d4YY5$react).createElement((0, $484dfd49b78c6641$export$2e2bcd8739ae039), {
             "aria-label": "close",
             color: "inherit",
@@ -6792,7 +9371,7 @@ function $a94ecc01b7c4a311$var$_extends() {
 $a94ecc01b7c4a311$var$Alert.propTypes = {
     title: (0, $d4YY5$proptypes).string,
     /**
-   * Override the icon displayed before the children. 
+   * Override the icon displayed before the children.
    * Unless provided, the icon is mapped to the value of the severity prop. Set to false to remove the icon.
    */ icon: (0, $d4YY5$proptypes).oneOf((0, $07ef162fcc571302$export$84babfcc2344e650)),
     /**
@@ -6805,11 +9384,11 @@ $a94ecc01b7c4a311$var$Alert.propTypes = {
    */ action: (0, $d4YY5$proptypes).oneOf((0, $07ef162fcc571302$export$84babfcc2344e650)),
     isOpen: (0, $d4YY5$proptypes).bool,
     /**
-  * The variant to use.
-  * @uxpinpropname Closeable
-  */ hasClose: (0, $d4YY5$proptypes).bool,
+   * The variant to use.
+   * @uxpinpropname Closeable
+   */ hasClose: (0, $d4YY5$proptypes).bool,
     /**
-   * The component maps the severity prop to a range of different icons, for instance success to <SuccessOutlined>. 
+   * The component maps the severity prop to a range of different icons, for instance success to <SuccessOutlined>.
    * If you wish to change this mapping, you can provide your own. Alternatively, you can use the icon prop to override the icon displayed.
    * @uxpinignoreprop
    */ iconMapping: (0, $d4YY5$proptypes).object,
@@ -6851,7 +9430,7 @@ $a94ecc01b7c4a311$var$Alert.propTypes = {
    * @uxpinpropname ARIA Role
    */ role: (0, $d4YY5$proptypes).string,
     /**
-   * Callback fired when the component requests to be closed. 
+   * Callback fired when the component requests to be closed.
    * When provided and no action prop is set, a close icon button is displayed that triggers the callback when clicked.
    * @uxpinignoreprop
    */ onClose: (0, $d4YY5$proptypes).func,
@@ -6877,235 +9456,430 @@ var $a94ecc01b7c4a311$export$2e2bcd8739ae039 = $a94ecc01b7c4a311$var$Alert;
 
 
 
-/**
- * @uxpindocurl https://mui.com/api/circular-progress/#main-content
- */ function $07620b41bfb6fd6f$var$CircularProgress(props) {
-    return /*#__PURE__*/ (0, $d4YY5$react).createElement("div", {
-        style: {
-            width: "fit-content"
+function $d25cfe59ba757dc6$var$_extends() {
+    $d25cfe59ba757dc6$var$_extends = Object.assign ? Object.assign.bind() : function(target) {
+        for(var i = 1; i < arguments.length; i++){
+            var source = arguments[i];
+            for(var key in source)if (Object.prototype.hasOwnProperty.call(source, key)) target[key] = source[key];
         }
-    }, /*#__PURE__*/ (0, $d4YY5$react).createElement((0, $d4YY5$muimaterialCircularProgress), props));
+        return target;
+    };
+    return $d25cfe59ba757dc6$var$_extends.apply(this, arguments);
 }
-$07620b41bfb6fd6f$var$CircularProgress.propTypes = {
-    /**
-     * Override or extend the styles applied to the component.
-     * See [CSS API](#css-api) below for more details.
-     * @uxpinignoreprop
-     */ classes: (0, $d4YY5$proptypes).object,
-    /**
-   * @uxpinignoreprop
-   */ className: (0, $d4YY5$proptypes).string,
-    /**
-   * The variant to use.
-   * Use indeterminate when there is no progress value.
-   */ variant: (0, $d4YY5$proptypes).oneOf([
-        "determinate",
-        "indeterminate",
-        "static"
-    ]),
-    /**
-   * The size of the circle.
-   */ size: (0, $d4YY5$proptypes).oneOfType([
-        (0, $d4YY5$proptypes).number,
-        (0, $d4YY5$proptypes).string
-    ]),
-    /**
-   * The color of the component. It supports those theme colors that make sense for this component.
-   */ color: (0, $d4YY5$proptypes).oneOf([
-        "primary",
-        "secondary",
-        "error",
-        "info",
-        "success",
-        "warning",
-        "inherit"
-    ]),
-    /**
-   * @uxpinignoreprop
-   */ style: (0, $d4YY5$proptypes).object,
-    /**
-   * The thickness of the circle.
-   */ thickness: (0, $d4YY5$proptypes).number,
-    /**
-   * The value of the progress indicator for the determinate and static variants.
-   * Value between 0 and 100.
-   */ value: (0, $d4YY5$proptypes).number,
-    /**
-   * If `true`, the shrink animation is disabled.
-   * This only works if variant is `indeterminate`.
-   */ disableShrink: (0, $d4YY5$proptypes).bool,
-    /**
-   * The system prop that allows defining system overrides as well as additional CSS styles. 
-   * See the `sx` page for more details. https://mui.com/system/the-sx-prop/
-   */ /** */ sx: (0, $d4YY5$proptypes).object
-};
-var $07620b41bfb6fd6f$export$2e2bcd8739ae039 = $07620b41bfb6fd6f$var$CircularProgress;
-
-
-
-
-
 /**
- * @uxpindocurl https://mui.com/api/dialog-actions/
- */ function $ac833bab733449cf$var$DialogActions(props) {
-    return /*#__PURE__*/ (0, $d4YY5$react).createElement((0, $d4YY5$muimaterialDialogActions), props, props.children);
+ * @uxpindocurl https://mui.com/api/backdrop/
+ */ function $d25cfe59ba757dc6$export$2e2bcd8739ae039(props) {
+    const [open, setOpen] = (0, $d4YY5$react).useState(props.open);
+    (0, $d4YY5$react).useEffect(()=>{
+        setOpen(props.open);
+    }, [
+        props
+    ]); // Only re-run the effect if value prop changes
+    return /*#__PURE__*/ (0, $d4YY5$react).createElement((0, $d4YY5$Backdrop), $d25cfe59ba757dc6$var$_extends({}, props, {
+        open: open,
+        onClick: ()=>{
+            setOpen(!open);
+        }
+    }), props.children);
 }
-$ac833bab733449cf$var$DialogActions.propTypes = {
+$d25cfe59ba757dc6$export$2e2bcd8739ae039.propTypes = {
+    /**
+   * If true, the component is shown.
+   */ open: (0, $d4YY5$proptypes).bool,
     /**
    * The content of the component.
    * @uxpinignoreprop
    */ children: (0, $d4YY5$proptypes).node,
     /**
-   * If true, the dialog actions do not have additional margin.
-   */ disableSpacing: (0, $d4YY5$proptypes).bool,
+   * Override or extend the styles applied to the component. See CSS API for more details.
+   * https://mui.com/api/backdrop/#css
+   * @uxpinignoreprop
+   */ classes: (0, $d4YY5$proptypes).object,
+    /**
+   * The component used for the root node. Either a string to use a HTML element or a component.
+   * @uxpinignoreprop
+   */ component: (0, $d4YY5$proptypes).elementType,
+    /**
+   * The components used for each slot inside the Backdrop. Either a string to use a HTML element or a component.
+   * @uxpinignoreprop
+   */ components: (0, $d4YY5$proptypes).elementType,
+    /**
+   * The props used for each slot inside the Backdrop.
+   * @uxpinignoreprop
+   */ componentsProps: (0, $d4YY5$proptypes).object,
+    /**
+   * If true, the backdrop is invisible. It can be used when rendering a popover or a custom select component.
+   */ invisible: (0, $d4YY5$proptypes).bool,
+    /**
+   * The system prop that allows defining system overrides as well as additional CSS styles. https://mui.com/system/the-sx-prop/
+   */ sx: (0, $d4YY5$proptypes).object,
+    /**
+   * The duration for the transition, in milliseconds. You may specify a single timeout for all transitions, or individually with an object.
+   * Set to "auto" to automatically calculate transition time based on height. "" must be used instead of '' or ``.
+   * When using number simple write the number with no quotes. Example: 3000.
+   */ transitionDuration: (0, $d4YY5$proptypes).number,
+    // transitionDuration: PropTypes.oneOfType([
+    //   PropTypes.number,
+    //   PropTypes.shape({
+    //     enter: PropTypes.number,
+    //     exit: PropTypes.number
+    //   })
+    // ]),
+    /**
+   * @uxpinignoreprop
+   */ onClick: (0, $d4YY5$proptypes).func
+};
+$d25cfe59ba757dc6$export$2e2bcd8739ae039.defaultProps = {
+    // NOTE: Checked must be controlled state from the outset, otherwise changing state in the app will trigger an error
+    // see: https://fb.me/react-controlled-components
+    open: true
+};
+
+
+
+
+
+/**
+ * @uxpindocurl https://mui.com/api/collapse/#main-content
+ */ function $2302f9d68c76d905$var$Collapse(props) {
+    return /*#__PURE__*/ (0, $d4YY5$react).createElement((0, $d4YY5$muimaterialCollapse), props, props.children);
+}
+$2302f9d68c76d905$var$Collapse.propTypes = {
+    /**
+   * Add a custom transition end trigger. Called with the transitioning DOM node and a done callback.
+   * Allows for more fine grained transition end logic.
+   * Note: Timeouts are still used as a fallback if provided.
+   */ /** @uxpinignoreprop */ addEndListener: (0, $d4YY5$proptypes).func,
+    /**
+   * The content node to be collapsed.
+   * @uxpinignoreprop
+   */ children: (0, $d4YY5$proptypes).node,
+    /**
+   * Override or extend the styles applied to the component.
+   * See [CSS API](#css-api) below for more details.
+   * @uxpinignoreprop
+   */ classes: (0, $d4YY5$proptypes).object,
+    /**
+   * Override or extend the styles applied to the component.
+   * See CSS API below for more details.
+   * @uxpinignoreprop
+   */ className: (0, $d4YY5$proptypes).string,
+    /**
+   * The width (horizontal) or height (vertical) of the container when collapsed.
+   * Use px, for example - 30px
+   */ collapsedSize: (0, $d4YY5$proptypes).string,
+    /**
+   * The component used for the root node.
+   * Either a string to use a DOM element or a component.
+   * Example: span, div
+   */ component: (0, $d4YY5$proptypes).string,
+    /**
+   * If `true`, the component will transition in.
+   * @uxpinpropname Visible
+   */ in: (0, $d4YY5$proptypes).bool,
+    /**
+   * The transition orientation.
+   */ orientation: (0, $d4YY5$proptypes).oneOf([
+        "horizontal",
+        "vertical"
+    ]),
+    /**
+   * The duration for the transition, in milliseconds.
+   * You may specify a single timeout for all transitions, or individually with an object.
+   *
+   * Set to "auto" to automatically calculate transition time based on height. "" must be used instead of '' or ``.
+   * When using number simple write the number with no quotes. Example: 3000.
+   */ timeout: (0, $d4YY5$proptypes).number | (0, $d4YY5$proptypes).string,
+    // timeout: PropTypes.oneOfType([
+    //   PropTypes.number,
+    //   PropTypes.shape({enter: PropTypes.number, exit: PropTypes.number}),
+    //   PropTypes.oneOf(['auto'])
+    // ]),
+    /**
+   * The system prop that allows defining system overrides as well as additional CSS styles.
+   * See the `sx` page for more details. https://mui.com/system/the-sx-prop/
+   */ sx: (0, $d4YY5$proptypes).object
+};
+var $2302f9d68c76d905$export$2e2bcd8739ae039 = $2302f9d68c76d905$var$Collapse;
+
+
+
+
+function $19daaff829f21759$var$Image(props) {
+    return /*#__PURE__*/ (0, $d4YY5$react).createElement("img", {
+        alt: props.alt,
+        src: props.src,
+        height: props.height,
+        width: props.width,
+        style: {
+            objectFit: props.objectFit,
+            height: props.height,
+            width: props.width,
+            ...props.style
+        }
+    });
+}
+$19daaff829f21759$var$Image.propTypes = {
+    alt: (0, $d4YY5$proptypes).string,
+    height: (0, $d4YY5$proptypes).string,
+    width: (0, $d4YY5$proptypes).string,
+    objectFit: (0, $d4YY5$proptypes).oneOf([
+        "fill",
+        "contain",
+        "cover",
+        "none",
+        "scale-down"
+    ]),
+    src: (0, $d4YY5$proptypes).string,
+    style: (0, $d4YY5$proptypes).object
+};
+$19daaff829f21759$var$Image.defaultProps = {
+    src: "https://images.unsplash.com/photo-1604871000636-074fa5117945?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80",
+    width: "100%",
+    height: "100%",
+    objectFit: "cover"
+};
+var $19daaff829f21759$export$2e2bcd8739ae039 = $19daaff829f21759$var$Image;
+
+
+
+
+
+/**
+ * @uxpindocurl https://mui.com/api/input-label/#main-content
+ */ function $2f417e42292cbe62$var$InputLabel(props) {
+    return /*#__PURE__*/ (0, $d4YY5$react).createElement((0, $d4YY5$muimaterialInputLabel), props, props.children);
+}
+$2f417e42292cbe62$var$InputLabel.propTypes = {
+    /**
+   * The contents of the `InputLabel`.
+   */ children: (0, $d4YY5$proptypes).node,
+    /**
+   * @uxpinignoreprop
+   * Override or extend the styles applied to the component.
+   * See [CSS API](#css-api) below for more details.
+   */ classes: (0, $d4YY5$proptypes).object.isRequired,
+    /**
+   * If `true`, the transition animation is disabled.
+   */ disableAnimation: (0, $d4YY5$proptypes).bool,
+    /**
+   * If `true`, apply disabled class.
+   */ disabled: (0, $d4YY5$proptypes).bool,
+    /**
+   * If `true`, the label will be displayed in an error state.
+   */ error: (0, $d4YY5$proptypes).bool,
+    /**
+   * If `true`, the input of this label is focused.
+   */ focused: (0, $d4YY5$proptypes).bool,
+    /**
+   * If `dense`, will adjust vertical spacing. This is normally obtained via context from
+   * FormControl.
+   */ margin: (0, $d4YY5$proptypes).oneOf([
+        "dense"
+    ]),
+    /**
+   * if `true`, the label will indicate that the input is required.
+   */ required: (0, $d4YY5$proptypes).bool,
+    /**
+   * If `true`, the label is shrunk.
+   */ shrink: (0, $d4YY5$proptypes).bool,
+    /**
+   * The variant to use.
+   */ variant: (0, $d4YY5$proptypes).oneOf([
+        "standard",
+        "outlined",
+        "filled"
+    ]),
+    /**
+   * The system prop that allows defining system overrides as well as additional CSS styles.
+   * See the `sx` page for more details. https://mui.com/system/the-sx-prop/
+   */ sx: (0, $d4YY5$proptypes).object
+};
+var $2f417e42292cbe62$export$2e2bcd8739ae039 = $2f417e42292cbe62$var$InputLabel;
+
+
+
+
+
+/**
+ * @uxpindocurl https://mui.com/api/skeleton/#main-content
+ */ /**
+ * @uxpinwrappers
+ * SkipContainerWrapper
+ */ function $666b97be0ebbfed9$var$Skeleton(props) {
+    const { ...other } = props;
+    return /*#__PURE__*/ $d4YY5$createElement((0, $d4YY5$muimaterialSkeleton), other, props.children);
+}
+$666b97be0ebbfed9$var$Skeleton.propTypes = {
+    /**
+   * The animation. If false the animation effect is disabled.
+   */ animation: (0, $d4YY5$proptypes).oneOf([
+        "pulse",
+        "wave",
+        "false"
+    ]),
+    /**
+   * Optional children to infer width and height from.
+   * @uxpinpignoreprop
+   * */ children: (0, $d4YY5$proptypes).node,
     /**
    * Override or extend the styles applied to the component. See CSS API below for more details.
    */ classes: (0, $d4YY5$proptypes).object,
     /**
-   * The system prop that allows defining system overrides as well as additional CSS styles. 
-   * See the `sx` page for more details.
-   */ /** */ sx: (0, $d4YY5$proptypes).object
-};
-var $ac833bab733449cf$export$2e2bcd8739ae039 = $ac833bab733449cf$var$DialogActions;
-
-
-
-
-
-/**
- * @uxpindocurl https://mui.com/api/dialog-content-text/
- */ function $3a854a656f6632ed$var$DialogContentText(props) {
-    return /*#__PURE__*/ (0, $d4YY5$react).createElement((0, $d4YY5$muimaterialDialogContentText), props, props.children);
-}
-$3a854a656f6632ed$var$DialogContentText.propTypes = {
+   * The component used for the root node. Either a string to use a HTML element or a component.
+   */ component: (0, $d4YY5$proptypes).elementType,
     /**
-   * The Dialog Content Text
-   * @uxpinignoreprop
-   */ children: (0, $d4YY5$proptypes).node,
+   * Height of the skeleton. Useful when you don't want to adapt the skeleton to a text element but for instance a card.
+   */ height: (0, $d4YY5$proptypes).number,
     /**
-   * Override or extend the styles applied to the component. 
-   * See CSS API https://mui.com/api/dialog-content-text/#css for more details.
-   */ classes: (0, $d4YY5$proptypes).object,
+   * The type of content that will be rendered.
+   */ variant: (0, $d4YY5$proptypes).oneOf([
+        "circular",
+        "rectangular",
+        "text"
+    ]),
     /**
-   * The system prop that allows defining system overrides as well as additional CSS styles. 
-   * See the `sx` page for more details https://mui.com/system/the-sx-prop/.
+   * Width of the skeleton. Useful when the skeleton is inside an inline element with no width of its own.
+   */ width: (0, $d4YY5$proptypes).number,
+    /**
+   * The system prop that allows defining system overrides as well as additional CSS styles.
    */ sx: (0, $d4YY5$proptypes).object
 };
-var $3a854a656f6632ed$export$2e2bcd8739ae039 = $3a854a656f6632ed$var$DialogContentText;
+var $666b97be0ebbfed9$export$2e2bcd8739ae039 = $666b97be0ebbfed9$var$Skeleton;
 
 
 
 
 
 
-/**
- * @uxpindocurl https://mui.com/api/dialog-title/
- */ function $22d68e382d6154be$var$DialogTitle(props) {
-    return /*#__PURE__*/ (0, $d4YY5$react).createElement((0, $d4YY5$muimaterialDialogTitle), props, props.children, props.hasClose ? /*#__PURE__*/ (0, $d4YY5$react).createElement((0, $484dfd49b78c6641$export$2e2bcd8739ae039), {
-        "aria-label": "close",
-        onClick: props.onClick,
-        sx: {
-            position: "absolute",
-            right: 8,
-            top: 8
+function $3fcc80741341f138$var$_extends() {
+    $3fcc80741341f138$var$_extends = Object.assign ? Object.assign.bind() : function(target) {
+        for(var i = 1; i < arguments.length; i++){
+            var source = arguments[i];
+            for(var key in source)if (Object.prototype.hasOwnProperty.call(source, key)) target[key] = source[key];
         }
-    }, "close") : null);
+        return target;
+    };
+    return $3fcc80741341f138$var$_extends.apply(this, arguments);
 }
-$22d68e382d6154be$var$DialogTitle.propTypes = {
+function $3fcc80741341f138$export$2e2bcd8739ae039(props) {
+    // Unique Id
+    const id = (0, $d4YY5$v4)();
+    return /*#__PURE__*/ (0, $d4YY5$react).createElement((0, $d4YY5$muimaterialSlider), $3fcc80741341f138$var$_extends({
+        key: id
+    }, props));
+}
+// Need to add support for Aria props
+$3fcc80741341f138$export$2e2bcd8739ae039.propTypes = {
+    // value: PropTypes.number,
     /**
-   * The text of the Dialog Title.
-   */ children: (0, $d4YY5$proptypes).node,
+   * The size of the slider.
+   */ size: (0, $d4YY5$proptypes).oneOf([
+        "small",
+        "medium"
+    ]),
     /**
-   * If true, the close icon will be shown.
-   */ hasClose: (0, $d4YY5$proptypes).bool,
+   * The minimum allowed value of the slider. Should not be equal to max.
+   */ min: (0, $d4YY5$proptypes).number,
     /**
-   * on click event to use with UXPin interactions.
-   */ onClick: (0, $d4YY5$proptypes).func,
+   * The maximum allowed value of the slider. Should not be equal to min.
+   */ max: (0, $d4YY5$proptypes).number,
     /**
-   * Override or extend the styles applied to the component. 
-   * See CSS API below for more details. https://mui.com/api/dialog-title/#css
+   * The default value. Use when the component is not controlled.
+   */ defaultValue: (0, $d4YY5$proptypes).number,
+    /**
+   * Controls when the value label is displayed:
+   * auto the value label will display when the thumb is hovered or focused.
+   * on will display persistently.
+   * off will never display.
+   */ valueLabelDisplay: (0, $d4YY5$proptypes).oneOf([
+        "auto",
+        "off",
+        "on"
+    ]),
+    /**
+   * The format function the value label's value.
+   * When a function is provided, it should have the following signature:
+   * {number} value The value label's value to format - {number} index The value label's index to format
    * @uxpinignoreprop
-   */ classes: (0, $d4YY5$proptypes).object,
+   */ valueLabelFormat: (0, $d4YY5$proptypes).func | (0, $d4YY5$proptypes).string,
     /**
-   * The system prop that allows defining system overrides as well as additional CSS styles. 
-   * See the `sx` page for more details. https://mui.com/system/the-sx-prop/
-   */ sx: (0, $d4YY5$proptypes).object
-};
-var $22d68e382d6154be$export$2e2bcd8739ae039 = $22d68e382d6154be$var$DialogTitle;
-
-
-
-
-
-/**
- * @uxpindocurl https://mui.com/api/dialog-content/
- */ function $02ae133ba3be51cf$var$DialogContent(props) {
-    return /*#__PURE__*/ (0, $d4YY5$react).createElement((0, $d4YY5$muimaterialDialogContent), props, props.children);
-}
-$02ae133ba3be51cf$var$DialogContent.propTypes = {
+   * The granularity with which the slider can step through values.
+   * (A "discrete" slider.) The min prop serves as the origin for the valid values.
+   * We recommend (max - min) to be evenly divisible by the step.
+   * When step is null, the thumb can only be slid onto marks provided with the marks prop.
+   */ step: (0, $d4YY5$proptypes).number,
     /**
-   * The content of the component.
-   */ children: (0, $d4YY5$proptypes).node,
-    /**
-   * Display the top and bottom dividers.
-   */ dividers: (0, $d4YY5$proptypes).bool,
-    /**
-   * The system prop that allows defining system overrides as well as additional CSS styles. 
-   * See the `sx` page for more details https://mui.com/system/the-sx-prop/.
-   */ sx: (0, $d4YY5$proptypes).object,
-    /**
-   * Override or extend the styles applied to the component. See CSS API below for more details..
-   */ classes: (0, $d4YY5$proptypes).object
-};
-var $02ae133ba3be51cf$export$2e2bcd8739ae039 = $02ae133ba3be51cf$var$DialogContent;
-
-
-
-
-
-/**
- * @uxpindocurl https://mui.com/api/linear-progress/#main-content
- */ function $b441a3903f81c9b7$var$LinearProgress(props) {
-    return /*#__PURE__*/ (0, $d4YY5$react).createElement((0, $d4YY5$muimaterialLinearProgress), props);
-}
-$b441a3903f81c9b7$var$LinearProgress.propTypes = {
-    /**
-    * Override or extend the styles applied to the component.
-    * See [CSS API](#css-api) below for more details.
-    */ classes: (0, $d4YY5$proptypes).object,
-    /**
-   * @ignore
-   */ className: (0, $d4YY5$proptypes).string,
+   * Marks indicate predetermined values to which the user can move the slider.
+   * If true the marks are spaced according the value of the step prop. If an array, it should contain objects with value and an optional label keys.
+   */ marks: (0, $d4YY5$proptypes).bool,
     /**
    * The color of the component. It supports those theme colors that make sense for this component.
    */ color: (0, $d4YY5$proptypes).oneOf([
         "primary",
         "secondary",
-        "inherit"
+        "string"
     ]),
     /**
-   * The value of the progress indicator for the determinate and buffer variants.
-   * Value between 0 and 100.
-   */ value: (0, $d4YY5$proptypes).number,
-    /**
-   * The value for the buffer variant.
-   * Value between 0 and 100.
-   */ valueBuffer: (0, $d4YY5$proptypes).number,
-    /**
-   * The variant to use.
-   * Use indeterminate or query when there is no progress value.
-   */ variant: (0, $d4YY5$proptypes).oneOf([
-        "determinate",
-        "indeterminate",
-        "buffer",
-        "query"
+   * The component orientation.
+   */ orientation: (0, $d4YY5$proptypes).oneOf([
+        "vertical",
+        "horizontal"
     ]),
     /**
-   * The system prop that allows defining system overrides as well as additional CSS styles. 
-   * See the `sx` page for more details. https://mui.com/system/the-sx-prop/
-   */ /** */ sx: (0, $d4YY5$proptypes).object
+   * The track presentation:
+   * normal the track will render a bar representing the slider value.
+   * inverted the track will render a bar representing the remaining slider value.
+   * false the track will render without a bar.
+   */ track: (0, $d4YY5$proptypes).oneOf([
+        false,
+        true,
+        "inverted"
+    ]),
+    /**
+   * If true, the component is disabled.
+   */ disabled: (0, $d4YY5$proptypes).bool,
+    /**
+   * The component used for the root node. Either a string to use a HTML element or a component.
+   */ components: (0, $d4YY5$proptypes).string,
+    /**
+   * Name attribute of the hidden input element.
+   */ name: (0, $d4YY5$proptypes).string,
+    /**
+   * If true, the active thumb doesn't swap when moving pointer over a thumb while dragging another thumb.
+   * @uxpinignoreprop
+   */ disableSwap: (0, $d4YY5$proptypes).bool,
+    /**
+   * The props used for each slot inside the Slider
+   * @uxpinignoreprop
+   */ componentsProps: (0, $d4YY5$proptypes).object,
+    /**
+   * Accepts a function which returns a string value that provides a user-friendly name for the thumb labels of the slider. This is important for screen reader users.
+   * @uxpinignoreprop
+   */ getAriaLabel: (0, $d4YY5$proptypes).func,
+    /**
+   * Accepts a function which returns a string value that provides a user-friendly name for the current value of the slider. This is important for screen reader users.
+   * @uxpinignoreprop
+   */ getAriaValueText: (0, $d4YY5$proptypes).func,
+    /**
+   * A transformation function, to change the scale of the slider.
+   * @uxpinignoreprop
+   */ scale: (0, $d4YY5$proptypes).func,
+    /**
+   * Indicates whether the theme context has rtl direction. It is set automatically.
+   * @uxpinignoreprop
+   */ isRtl: (0, $d4YY5$proptypes).bool,
+    /**
+   * Override or extend the styles applied to the component.
+   * @uxpinignoreprop
+   */ classes: (0, $d4YY5$proptypes).object,
+    /**
+   * Custom Style Object
+   */ sx: (0, $d4YY5$proptypes).object,
+    /**
+   * Custom Style Object
+   */ onChange: (0, $d4YY5$proptypes).func
 };
-var $b441a3903f81c9b7$export$2e2bcd8739ae039 = $b441a3903f81c9b7$var$LinearProgress;
 
 
 
@@ -7257,1313 +10031,173 @@ $c2094d47014e15d4$export$2e2bcd8739ae039.defaultProps = {
 
 
 
-/**
- * @uxpindocurl https://mui.com/api/skeleton/#main-content
- */ /**
- * @uxpinwrappers
- * SkipContainerWrapper
- */ function $666b97be0ebbfed9$var$Skeleton(props) {
-    const { uxpinRef: uxpinRef , ...other } = props;
-    return /*#__PURE__*/ $d4YY5$createElement((0, $d4YY5$muimaterialSkeleton), other, props.children);
+function $9dff21fbaccdd569$var$_extends() {
+    $9dff21fbaccdd569$var$_extends = Object.assign ? Object.assign.bind() : function(target) {
+        for(var i = 1; i < arguments.length; i++){
+            var source = arguments[i];
+            for(var key in source)if (Object.prototype.hasOwnProperty.call(source, key)) target[key] = source[key];
+        }
+        return target;
+    };
+    return $9dff21fbaccdd569$var$_extends.apply(this, arguments);
 }
-$666b97be0ebbfed9$var$Skeleton.propTypes = {
-    /**
-   * The animation. If false the animation effect is disabled.
-   */ animation: (0, $d4YY5$proptypes).oneOf([
-        "pulse",
-        "wave",
-        "false"
-    ]),
-    /**
-   * Optional children to infer width and height from.
-   * @uxpinpignoreprop
-   * */ children: (0, $d4YY5$proptypes).node,
-    /**
-   * Override or extend the styles applied to the component. See CSS API below for more details.
-   */ classes: (0, $d4YY5$proptypes).object,
-    /**
-   * The component used for the root node. Either a string to use a HTML element or a component.
-   */ component: (0, $d4YY5$proptypes).elementType,
-    /**
-   * Height of the skeleton. Useful when you don't want to adapt the skeleton to a text element but for instance a card.
-   */ height: (0, $d4YY5$proptypes).number,
-    /**
-   * The type of content that will be rendered.
-   */ variant: (0, $d4YY5$proptypes).oneOf([
-        "circular",
-        "rectangular",
-        "text"
-    ]),
-    /**
-   * Width of the skeleton. Useful when the skeleton is inside an inline element with no width of its own.
-   */ width: (0, $d4YY5$proptypes).number,
-    /**
-   * The system prop that allows defining system overrides as well as additional CSS styles.
-   */ sx: (0, $d4YY5$proptypes).object
-};
-var $666b97be0ebbfed9$export$2e2bcd8739ae039 = $666b97be0ebbfed9$var$Skeleton;
-
-
-
-
-
 /**
- * @uxpindocurl https://mui.com/components/tables/#main-content
- */ function $3f15db54171bbd32$var$Table(props) {
-    return /*#__PURE__*/ (0, $d4YY5$react).createElement((0, $d4YY5$muimaterialTable), props, props.children);
+ * @uxpindocurl https://mui.com/api/toolbar/
+ */ function $9dff21fbaccdd569$var$Toolbar(props) {
+    return /*#__PURE__*/ (0, $d4YY5$react).createElement((0, $d4YY5$muimaterialToolbar), $9dff21fbaccdd569$var$_extends({}, props, {
+        sx: {
+            justifyContent: props.justifyContent
+        }
+    }), props.children);
 }
-$3f15db54171bbd32$var$Table.propTypes = {
+$9dff21fbaccdd569$var$Toolbar.propTypes = {
     /**
-   * The content of the component, normally TableRow.
    * @uxpinignoreprop
-   * */ children: (0, $d4YY5$proptypes).node,
-    /**
-   * Override or extend the styles applied to the component. 
-   * See CSS API below for more details.
-   * @uxpinignoreprop
-   */ classes: (0, $d4YY5$proptypes).object,
-    /**
-   * The component used for the root node. 
-   * Either a string to use a HTML element or a component.
-   */ component: (0, $d4YY5$proptypes).elementType,
-    /**
-   * Allows TableCells to inherit padding of the Table.
-   */ padding: (0, $d4YY5$proptypes).oneOf([
-        "checkbox",
-        "none",
-        "normal"
-    ]),
-    /**
-   * Allows TableCells to inherit size of the Table.
-   */ size: (0, $d4YY5$proptypes).oneOf([
-        "small",
-        "medium"
-    ]),
-    /**
-   * Set the header sticky.
-   * ⚠️ It doesn't work with IE11.
-   */ stickyHeader: (0, $d4YY5$proptypes).bool,
-    /**
-   * The system prop that allows defining system overrides as well as additional CSS styles. 
-   * See the `sx` page for more details.
-   */ sx: (0, $d4YY5$proptypes).object
-};
-var $3f15db54171bbd32$export$2e2bcd8739ae039 = $3f15db54171bbd32$var$Table;
-
-
-
-
-
-/**
- * @uxpindocurl https://mui.com/api/table-cell/#main-content
- */ function $dda942c3b5658ae4$var$TableCell(props) {
-    return /*#__PURE__*/ (0, $d4YY5$react).createElement((0, $d4YY5$muimaterialTableCell), props, props.children);
-}
-$dda942c3b5658ae4$var$TableCell.propTypes = {
-    /**
-   * The content of the TableCell, normally TableCellHead and TableCellBody.
-   * @uxpinpropname Cell Data
-   * */ children: (0, $d4YY5$proptypes).node,
-    /**
-   * Set the text-align on the table cell content. M
-   * onetary or generally number fields should be right aligned 
-   * as that allows you to add them up quickly in your head without having to worry about decimals.
-   */ align: (0, $d4YY5$proptypes).oneOf([
-        "center",
-        "inherit",
-        "justify",
-        "left",
-        "right"
-    ]),
-    /**
-   * Set aria-sort direction.
-   */ sortDirection: (0, $d4YY5$proptypes).oneOf([
-        "asc",
-        "desc",
-        "false"
-    ]),
-    /**
-   * Specify the cell type. 
-   * The prop defaults to the value inherited from the parent TableHead, TableBody, or TableFooter components.
-   */ variant: (0, $d4YY5$proptypes).oneOf([
-        "body",
-        "footer",
-        "head"
-    ]),
-    /**
-   * Sets the padding applied to the cell. 
-   * The prop defaults to the value ('default') inherited from the parent Table component.
-   */ padding: (0, $d4YY5$proptypes).oneOf([
-        "checkbox",
-        "none",
-        "normal"
-    ]),
-    /**
-   * Specify the size of the cell. 
-   * The prop defaults to the value ('medium') inherited from the parent Table component.
-   */ size: (0, $d4YY5$proptypes).oneOf([
-        "small",
-        "medium",
-        "large"
-    ]),
-    /**
-   * Override or extend the styles applied to the component. See CSS API below for more details.
-   * @uxpinignoreprop
-   */ classes: (0, $d4YY5$proptypes).object,
-    /**
-   * The component used for the root node. Either a string to use a HTML element or a component.
-   */ component: (0, $d4YY5$proptypes).elementType,
-    /**
-   * Set scope attribute.
-   */ scope: (0, $d4YY5$proptypes).string,
-    /**
-   * The system prop that allows defining system overrides as well as additional CSS styles. 
-   * See the `sx` page for more details.
-   */ sx: (0, $d4YY5$proptypes).object
-};
-var $dda942c3b5658ae4$export$2e2bcd8739ae039 = $dda942c3b5658ae4$var$TableCell;
-
-
-
-
-
-/**
- * @uxpindocurl https://mui.com/api/table-body/#main-content
- */ function $f4d216d083cc9950$var$TableBody(props) {
-    return /*#__PURE__*/ (0, $d4YY5$react).createElement((0, $d4YY5$muimaterialTableBody), props, props.children);
-}
-$f4d216d083cc9950$var$TableBody.propTypes = {
-    /**
-   * The content of the component, normally TableRow.
-   * @uxpinignoreprop
-   * */ children: (0, $d4YY5$proptypes).node,
-    /**
-   * Override or extend the styles applied to the component. 
-   * See CSS API below for more details.
-   * @uxpinignoreprop
-   */ classes: (0, $d4YY5$proptypes).object,
-    /**
-   * The component used for the root node. 
-   * Either a string to use a HTML element or a component.
-   */ component: (0, $d4YY5$proptypes).elementType,
-    /**
-   * The system prop that allows defining system overrides as well as additional CSS styles. 
-   * See the `sx` page for more details.
-   */ sx: (0, $d4YY5$proptypes).object
-};
-var $f4d216d083cc9950$export$2e2bcd8739ae039 = $f4d216d083cc9950$var$TableBody;
-
-
-
-
-
-/**
- * @uxpindocurl https://mui.com/api/table-head/#main-content
- */ function $f9276cb62da5b234$var$TableHead(props) {
-    return /*#__PURE__*/ (0, $d4YY5$react).createElement((0, $d4YY5$muimaterialTableHead), props, props.children);
-}
-$f9276cb62da5b234$var$TableHead.propTypes = {
-    /**
-   * The content of the component, normally TableRow.
-   * @uxpinignoreprop
-   * */ children: (0, $d4YY5$proptypes).node,
-    /**
-   * Override or extend the styles applied to the component. 
-   * See CSS API below for more details.
-   * @uxpinignoreprop
-   */ classes: (0, $d4YY5$proptypes).object,
-    /**
-   * The component used for the root node. 
-   * Either a string to use a HTML element or a component.
-   */ component: (0, $d4YY5$proptypes).elementType,
-    /**
-   * The system prop that allows defining system overrides as well as additional CSS styles. 
-   * See the `sx` page for more details.
-   */ sx: (0, $d4YY5$proptypes).object
-};
-var $f9276cb62da5b234$export$2e2bcd8739ae039 = $f9276cb62da5b234$var$TableHead;
-
-
-
-
-
-/**
- * @uxpindocurl https://mui.com/api/table-row/#main-content
- */ function $e9f0e5becfd403a3$var$TableRow(props) {
-    return /*#__PURE__*/ (0, $d4YY5$react).createElement((0, $d4YY5$muimaterialTableRow), props, props.children);
-}
-$e9f0e5becfd403a3$var$TableRow.propTypes = {
-    /**
-   * Should be valid <tr> children such as TableCell.
-   * @uxpinignoreprop
-   * */ children: (0, $d4YY5$proptypes).node,
-    /**
-   * Override or extend the styles applied to the component. See CSS API below for more details.
-   * @uxpinignoreprop
-   */ classes: (0, $d4YY5$proptypes).object,
-    /**
-   * The component used for the root node. 
-   * Either a string to use a HTML element or a component.
-   */ component: (0, $d4YY5$proptypes).elementType,
-    /**
-   * If true, the table row will shade on hover.
-   */ hover: (0, $d4YY5$proptypes).bool,
-    /**
-   * If true, the table row will have the selected shading.
-   */ selected: (0, $d4YY5$proptypes).bool,
-    /**
-   * The system prop that allows defining system overrides as well as additional CSS styles. 
-   * See the `sx` page for more details.
-   */ sx: (0, $d4YY5$proptypes).object
-};
-var $e9f0e5becfd403a3$export$2e2bcd8739ae039 = $e9f0e5becfd403a3$var$TableRow;
-
-
-
-
-
-
-
-/**
- * @uxpindocurl https://mui.com/api/form-group/#main-content
- */ function $946c82112296c706$var$FormGroup(props) {
-    return /*#__PURE__*/ (0, $d4YY5$react).createElement((0, $d4YY5$muimaterialFormGroup), props, props.children);
-}
-$946c82112296c706$var$FormGroup.propTypes = {
-    /**
-   * The content of this component.
-   * @uxpinignoreprop
+   * Toolbar children, usually a mixture of `IconButton`, `Button` and `Typography`.
    */ children: (0, $d4YY5$proptypes).node,
     /**
-   * Override or extend the styles applied to the component. See CSS API https://mui.com/api/form-group/#css for more details.
-   */ classes: (0, $d4YY5$proptypes).object,
-    /**
-   * Display group of elements in a compact row.
-   */ row: (0, $d4YY5$proptypes).bool,
-    /**
-   * The system prop that allows defining system overrides as well as additional CSS styles. 
-   * See the `sx` page for more details https://mui.com/system/the-sx-prop/.
-   */ /** */ sx: (0, $d4YY5$proptypes).object
-};
-var $946c82112296c706$export$2e2bcd8739ae039 = $946c82112296c706$var$FormGroup;
-
-
-
-
-
-/**
- * @uxpindocurl https://mui.com/api/form-helper-text/
- */ function $134a90f9d8fd8dab$var$FormHelperText(props) {
-    return /*#__PURE__*/ (0, $d4YY5$react).createElement((0, $d4YY5$muimaterialFormHelperText), props, props.children);
-}
-$134a90f9d8fd8dab$var$FormHelperText.propTypes = {
-    /**
-      * @uxpinignoreprop 
-      * The content of the component.
-      */ children: (0, $d4YY5$proptypes).node,
-    /**
-   * @uxpinignoreprop 
+   * @uxpinignoreprop
    * Override or extend the styles applied to the component.
    * See [CSS API](#css-api) below for more details.
    */ classes: (0, $d4YY5$proptypes).object,
     /**
-  * @uxpinignoreprop 
-  * The component used for the root node.
-  * Either a string to use a DOM element or a component.
-  */ component: (0, $d4YY5$proptypes).node,
+   * The component used for the root node. Either a string to use a HTML element or a component.
+   */ /** @uxpinignoreprop */ component: (0, $d4YY5$proptypes).elementType,
     /**
-   * If `true`, the helper text should be displayed in a disabled state.
-   */ disabled: (0, $d4YY5$proptypes).bool,
+   * If `true`, disables gutter padding.
+   */ disableGutters: (0, $d4YY5$proptypes).bool,
     /**
-   * If `true`, helper text should be displayed in an error state.
-   */ error: (0, $d4YY5$proptypes).bool,
-    /**
-   * If `true`, the helper text should use filled classes key.
-   */ filled: (0, $d4YY5$proptypes).bool,
-    /**
-   * If `true`, the helper text should use focused classes key.
-   */ focused: (0, $d4YY5$proptypes).bool,
-    /**
-   * If `dense`, will adjust vertical spacing. This is normally obtained via context from
-   * FormControl.
-   */ margin: (0, $d4YY5$proptypes).oneOf([
-        "dense"
-    ]),
-    /**
-   * If `true`, the helper text should use required classes key.
-   */ required: (0, $d4YY5$proptypes).bool,
+   * The system prop that allows defining system overrides as well as additional CSS styles.
+   * See the `sx` https://mui.com/system/the-sx-prop/ page for more details.
+   */ sx: (0, $d4YY5$proptypes).object,
     /**
    * The variant to use.
    */ variant: (0, $d4YY5$proptypes).oneOf([
-        "standard",
-        "outlined",
-        "filled"
+        "regular",
+        "dense"
     ]),
-    /**
-   * The system prop that allows defining system overrides as well as additional CSS styles. 
-   * See the `sx` page for more details https://mui.com/system/the-sx-prop/.
-   */ /** */ sx: (0, $d4YY5$proptypes).object
-};
-var $134a90f9d8fd8dab$export$2e2bcd8739ae039 = $134a90f9d8fd8dab$var$FormHelperText;
-
-
-
-
-
-
-
-function $d493ef5b3f1b99eb$var$_extends() {
-    $d493ef5b3f1b99eb$var$_extends = Object.assign ? Object.assign.bind() : function(target) {
-        for(var i = 1; i < arguments.length; i++){
-            var source = arguments[i];
-            for(var key in source)if (Object.prototype.hasOwnProperty.call(source, key)) target[key] = source[key];
-        }
-        return target;
-    };
-    return $d493ef5b3f1b99eb$var$_extends.apply(this, arguments);
-}
-/**
- * @uxpinwrappers
- * SkipContainerWrapper
- */ /**
-  * @uxpindocurl https://mui.com/components/box/#main-content
-  */ function $d493ef5b3f1b99eb$var$Box(props) {
-    const { uxpinRef: uxpinRef , ...other } = props;
-    return /*#__PURE__*/ (0, $d4YY5$react).createElement((0, $d4YY5$muimaterialBox), $d493ef5b3f1b99eb$var$_extends({
-        ref: uxpinRef
-    }, other), !props.children ? /*#__PURE__*/ (0, $d4YY5$react).createElement("span", null, /*#__PURE__*/ (0, $d4YY5$react).createElement("center", null, /*#__PURE__*/ (0, $d4YY5$react).createElement("p", null, "Drag components into this wrapper"))) : props.children);
-}
-$d493ef5b3f1b99eb$var$Box.propTypes = {
-    /**
-  * The content of the box.
-  */ /** @uxpinignoreprop */ children: (0, $d4YY5$proptypes).node,
-    clone: (0, $d4YY5$proptypes).bool,
-    /**
-   * Color of text
-   */ color: (0, $d4YY5$proptypes).oneOf([
-        "white",
-        "grey.100",
-        "grey.200",
-        "grey.300",
-        "grey.400",
-        "grey.500",
-        "primary.main",
-        "primary.light",
-        "primary.dark",
-        "secondary.main",
-        "secondary.light",
-        "secondary.dark",
-        "error.main",
-        "warning.main",
-        "info.main",
-        "success.main",
-        "text.primary",
-        "text.secondary",
-        "text.disabled"
-    ]),
-    bgcolor: (0, $d4YY5$proptypes).oneOf([
-        "white",
-        "grey.100",
-        "grey.200",
-        "grey.300",
-        "grey.400",
-        "grey500",
-        "primary.main",
-        "primary.light",
-        "primary.dark",
-        "secondary.main",
-        "secondary.light",
-        "secondary.dark",
-        "error.main",
-        "warning.main",
-        "info.main",
-        "success.main",
-        "text.primary",
-        "text.secondary",
-        "text.disabled"
-    ]),
-    /**
-   * All Padding.
-   * In pixels
-   */ padding: (0, $d4YY5$proptypes).string,
-    /**
-   * Top Padding.
-   * In pixels
-   */ paddingTop: (0, $d4YY5$proptypes).string,
-    /**
-   * Right Padding.
-   * In pixels
-   */ paddingRight: (0, $d4YY5$proptypes).string,
-    /**
-   * Bottom Padding.
-   * In pixels
-   */ paddingBottom: (0, $d4YY5$proptypes).string,
-    /**
-   * Left Padding.
-   * In pixels  
-   */ paddingLeft: (0, $d4YY5$proptypes).string,
-    /**
-   * All Margin.
-   * In pixels
-   */ margin: (0, $d4YY5$proptypes).string,
-    /**
-   * Top margin.
-   * In pixels
-   */ marginTop: (0, $d4YY5$proptypes).string,
-    /**
-   * Right margin.
-   * In pixels
-   */ marginRight: (0, $d4YY5$proptypes).string,
-    /**
-   * Bottom margin.
-   * In pixels
-   */ marginBottom: (0, $d4YY5$proptypes).string,
-    /**
-   * Left margin.
-   * In pixels
-   */ marginLeft: (0, $d4YY5$proptypes).string,
-    /**
-   * Border margin.
-   * In pixels
-   */ border: (0, $d4YY5$proptypes).number,
-    /**
-   * Border Top.
-   * In pixels
-   */ borderTop: (0, $d4YY5$proptypes).number,
-    /**
-   * Border margin.
-   * In pixels
-   */ borderRight: (0, $d4YY5$proptypes).number,
-    /**
-   * Border margin.
-   * In pixels
-   */ borderBottom: (0, $d4YY5$proptypes).number,
-    /**
-   * Border margin.
-   * In pixels
-   */ borderLeft: (0, $d4YY5$proptypes).number,
-    borderColor: (0, $d4YY5$proptypes).oneOf([
-        "white",
-        "grey.100",
-        "grey.200",
-        "grey.300",
-        "grey.400",
-        "grey500",
-        "primary.main",
-        "secondary.main",
-        "error.main",
-        "warning.main",
-        "info.main",
-        "success.main",
-        "text.primary",
-        "text.secondary",
-        "text.disabled"
-    ]),
-    borderRadius: (0, $d4YY5$proptypes).string,
-    boxShadow: (0, $d4YY5$proptypes).number,
-    textAlign: (0, $d4YY5$proptypes).oneOf([
-        "left",
-        "center",
-        "right"
-    ]),
-    // textOverflow: PropTypes.oneOf(["clip", "ellipsis"]),
-    /**
-  * Accepts all system properties, as well as any valid CSS properties.
-  */ sx: (0, $d4YY5$proptypes).object
-};
-$d493ef5b3f1b99eb$var$Box.defaultProps = {
-    sx: {
-        "padding": "",
-        "padding-top": "",
-        "padding-right": "",
-        "padding-bottom": "",
-        "padding-left": "",
-        "margin": "",
-        "margin-top": "",
-        "margin-right": "",
-        "margin-bottom": "",
-        "margin-left": ""
-    }
-};
-var $d493ef5b3f1b99eb$export$2e2bcd8739ae039 = $d493ef5b3f1b99eb$var$Box;
-
-
-
-
-
-function $c716763b1d724ad6$var$_extends() {
-    $c716763b1d724ad6$var$_extends = Object.assign ? Object.assign.bind() : function(target) {
-        for(var i = 1; i < arguments.length; i++){
-            var source = arguments[i];
-            for(var key in source)if (Object.prototype.hasOwnProperty.call(source, key)) target[key] = source[key];
-        }
-        return target;
-    };
-    return $c716763b1d724ad6$var$_extends.apply(this, arguments);
-}
-/**
- * @uxpindocurl https://mui.com/api/grid/
- */ function $c716763b1d724ad6$var$Grid(props) {
-    // const space = Number(props.spacing);
-    return /*#__PURE__*/ (0, $d4YY5$react).createElement((0, $d4YY5$muimaterialGrid), $c716763b1d724ad6$var$_extends({}, props, {
-        spacing: props.spacing
-    }), props.children);
-}
-$c716763b1d724ad6$var$Grid.propTypes = {
-    /**
-   * Defines the `align-content` style property.
-   * It's applied for all screen sizes.
-   */ alignContent: (0, $d4YY5$proptypes).oneOf([
-        "stretch",
-        "center",
-        "flex-start",
-        "flex-end",
-        "space-between",
-        "space-around"
-    ]),
-    /**
-   * Defines the `align-items` style property.
-   * It's applied for all screen sizes.
-   */ alignItems: (0, $d4YY5$proptypes).oneOf([
-        "flex-start",
+    justifyContent: (0, $d4YY5$proptypes).oneOf([
         "center",
         "flex-end",
-        "stretch",
-        "baseline"
-    ]),
-    /**
-   * @uxpinignoreprop
-   * The content of the component.
-   */ children: (0, $d4YY5$proptypes).node,
-    /**
-   * @uxpinignoreprop
-   * Override or extend the styles applied to the component.
-   * See [CSS API](#css-api) below for more details.
-   */ classes: (0, $d4YY5$proptypes).object,
-    /**
-   * @uxpinignoreprop
-   * @ignore
-   */ className: (0, $d4YY5$proptypes).string,
-    /**
-   * @uxpinignoreprop
-   * The component used for the root node.
-   * Either a string to use a DOM element or a component.
-   */ component: (0, $d4YY5$proptypes).string,
-    /**
-   * If `true`, the component will have the flex *container* behavior.
-   * You should be wrapping *items* with a *container*.
-   */ container: (0, $d4YY5$proptypes).bool,
-    /**
-   * Defines the `flex-direction` style property.
-   * It is applied for all screen sizes.
-   */ direction: (0, $d4YY5$proptypes).oneOf([
-        "row",
-        "row-reverse",
-        "column",
-        "column-reverse"
-    ]),
-    order: (0, $d4YY5$proptypes).number,
-    /**
-   * If `true`, the component will have the flex *item* behavior.
-   * You should be wrapping *items* with a *container*.
-   */ item: (0, $d4YY5$proptypes).bool,
-    /**
-   * Defines the `justify-content` style property.
-   * It is applied for all screen sizes.
-   */ justifyContent: (0, $d4YY5$proptypes).oneOf([
         "flex-start",
-        "center",
-        "flex-end",
-        "space-between",
         "space-around",
-        "space-evenly"
-    ]),
-    /**
-   * Defines the number of grids the component is going to use.
-   * It's applied for the `lg` breakpoint and wider screens if not overridden.  1-12, true, false, or auto.
-   */ lg: (0, $d4YY5$proptypes).oneOfType([
-        (0, $d4YY5$proptypes).number,
-        (0, $d4YY5$proptypes).bool,
-        (0, $d4YY5$proptypes).string
-    ]),
-    /**
-   * Defines the number of grids the component is going to use.
-   * It's applied for the `md` breakpoint and wider screens if not overridden.  1-12, true, false, or auto.
-   */ md: (0, $d4YY5$proptypes).oneOfType([
-        (0, $d4YY5$proptypes).number,
-        (0, $d4YY5$proptypes).bool,
-        (0, $d4YY5$proptypes).string
-    ]),
-    /**
-   * Defines the number of grids the component is going to use.
-   * It's applied for the `sm` breakpoint and wider screens if not overridden.  1-12, true, false, or auto.
-   */ sm: (0, $d4YY5$proptypes).oneOfType([
-        (0, $d4YY5$proptypes).number,
-        (0, $d4YY5$proptypes).bool,
-        (0, $d4YY5$proptypes).string
-    ]),
-    /**
-   * Defines the space between the type `item` component.
-   * It can only be used on a type `container` component.
-   */ spacing: (0, $d4YY5$proptypes).oneOf([
-        "0",
-        "8",
-        "16",
-        "24",
-        "32",
-        "40"
-    ]),
-    /**
-   * Defines the `flex-wrap` style property.
-   * It's applied for all screen sizes.
-   */ wrap: (0, $d4YY5$proptypes).oneOf([
-        "nowrap",
-        "wrap",
-        "wrap-reverse"
-    ]),
-    /**
-   * Defines the number of grids the component is going to use.
-   * It's applied for the `columns (xl)` breakpoint and wider screens.  1-12, true, false, or auto.
-   * @uxpinpropname  columns (xl)
-   */ xl: (0, $d4YY5$proptypes).oneOfType([
-        (0, $d4YY5$proptypes).number,
-        (0, $d4YY5$proptypes).bool,
-        (0, $d4YY5$proptypes).string
-    ]),
-    /**
-   * Defines the number of grids the component is going to use.
-   * It's applied for all the screen sizes with the lowest priority. 1-12, true, false, or auto.
-   * @uxpinpropname  columns (xs)
-   */ xs: (0, $d4YY5$proptypes).oneOfType([
-        (0, $d4YY5$proptypes).number,
-        (0, $d4YY5$proptypes).bool,
-        (0, $d4YY5$proptypes).string
-    ]),
-    /**
-   * If `true`, it sets `min-width: 0` on the item.
-   * Refer to the limitations section of the documentation to better understand the use case.
-   */ zeroMinWidth: (0, $d4YY5$proptypes).bool,
-    /**
-   * The system prop that allows defining system overrides as well as additional CSS styles. 
-   * See the `sx` page for more details https://mui.com/system/the-sx-prop/.
-   */ /** */ sx: (0, $d4YY5$proptypes).object
+        "space-between",
+        "space-evenly",
+        "stretch"
+    ])
 };
-var $c716763b1d724ad6$export$2e2bcd8739ae039 = $c716763b1d724ad6$var$Grid;
+var $9dff21fbaccdd569$export$2e2bcd8739ae039 = $9dff21fbaccdd569$var$Toolbar;
 
 
 
 
 
 
-function $10ff67c3f8c14e30$var$_extends() {
-    $10ff67c3f8c14e30$var$_extends = Object.assign ? Object.assign.bind() : function(target) {
+
+
+function $9f0597e0efd16815$var$_extends() {
+    $9f0597e0efd16815$var$_extends = Object.assign ? Object.assign.bind() : function(target) {
         for(var i = 1; i < arguments.length; i++){
             var source = arguments[i];
             for(var key in source)if (Object.prototype.hasOwnProperty.call(source, key)) target[key] = source[key];
         }
         return target;
     };
-    return $10ff67c3f8c14e30$var$_extends.apply(this, arguments);
+    return $9f0597e0efd16815$var$_extends.apply(this, arguments);
 }
 /**
- * @uxpindocurl https://mui.com/components/stack/#main-content
- */ function $10ff67c3f8c14e30$var$Stack(props) {
-    let dividerOrientation = "";
-    if (props.direction === "row" || props.direction === "row-reverse") dividerOrientation = "vertical";
-    else dividerOrientation = "horizontal";
-    const { hasDivider: hasDivider , ...otherProps } = props;
-    return /*#__PURE__*/ $d4YY5$createElement((0, $d4YY5$muimaterialStack), $10ff67c3f8c14e30$var$_extends({}, otherProps, {
-        divider: hasDivider && /*#__PURE__*/ $d4YY5$createElement((0, $d4YY5$muimaterialDivider), {
-            orientation: dividerOrientation,
-            flexItem: true
-        })
-    }), props.children);
+ * @uxpindocurl https://mui.com/api/date-picker/
+ */ function $9f0597e0efd16815$var$DatePicker(props) {
+    return /*#__PURE__*/ $d4YY5$createElement((0, $d4YY5$LocalizationProvider), {
+        dateAdapter: (0, $d4YY5$AdapterDateFns)
+    }, /*#__PURE__*/ $d4YY5$createElement((0, $d4YY5$DatePicker), $9f0597e0efd16815$var$_extends({}, props, {
+        renderInput: (params)=>/*#__PURE__*/ $d4YY5$createElement((0, $846045c082082f73$export$2e2bcd8739ae039), $9f0597e0efd16815$var$_extends({}, params, {
+                helperText: props.helperText
+            }))
+    })));
 }
-$10ff67c3f8c14e30$var$Stack.propTypes = {
+$9f0597e0efd16815$var$DatePicker.propTypes = {
     /**
-   * Elements contained by Tooltip.
-   * @uxpinignoreprop 
-   */ children: (0, $d4YY5$proptypes).node,
+   * The label text of the input.
+   */ label: (0, $d4YY5$proptypes).string,
     /**
-   * Defines the flex-direction style property. It is applied for all screen sizes.
-   */ direction: (0, $d4YY5$proptypes).oneOf([
-        "column-reverse",
-        "column",
-        "row-reverse",
-        "row"
+   * The helper text of the input.
+   */ helperText: (0, $d4YY5$proptypes).string,
+    /**
+   * The value of the picker.
+   */ value: (0, $d4YY5$proptypes).node,
+    // maxDate: PropTypes.node,
+    // minDate: PropTypes.node,
+    // mask: PropTypes.string,
+    /**
+   * If true, show the toolbar even in desktop mode.
+   * @uxpinignoreprop
+   */ showToolbar: (0, $d4YY5$proptypes).bool,
+    /**
+   * Mobile picker title, displaying in the toolbar.
+   * @uxpinignoreprop
+   */ toolbarTitle: (0, $d4YY5$proptypes).node,
+    /**
+   * Mobile picker date value placeholder, displaying if value === null.
+   * don't need if using 'new Date()' in state.
+   * @uxpinignoreprop
+   */ toolbarPlaceholder: (0, $d4YY5$proptypes).node,
+    /**
+   * Array of views to show.
+   * Examples:
+   * ["day"]
+   * ["year"]
+   * ["month"]
+   * ["month", "year"]
+   * @uxpinignoreprop
+   */ views: (0, $d4YY5$proptypes).object,
+    /**
+   * Control the popup or dialog open state.
+   */ open: (0, $d4YY5$proptypes).bool,
+    /**
+   * Force rendering in particular orientation.
+   * @uxpinignoreprop
+   */ orientation: (0, $d4YY5$proptypes).oneOf([
+        "landscape",
+        "portrait"
     ]),
     /**
-  * Defines the space between immediate children in px
-  */ spacing: (0, $d4YY5$proptypes).number,
+   * If true, the picker and text field are disabled.
+   * */ disabled: (0, $d4YY5$proptypes).bool,
     /**
-   * Add an element between each child.
-   * This needs improving
-   * @uxpinignoreprop 
-   */ divider: (0, $d4YY5$proptypes).node,
+   * Make picker read only.
+   */ readOnly: (0, $d4YY5$proptypes).bool,
     /**
-   * Add an element between each child.
-   * This needs improving
-   * 
-   */ hasDivider: (0, $d4YY5$proptypes).bool,
-    /**
-   * The system prop that allows defining system overrides as well as additional CSS styles.
-   */ sx: (0, $d4YY5$proptypes).object
-};
-var $10ff67c3f8c14e30$export$2e2bcd8739ae039 = $10ff67c3f8c14e30$var$Stack;
-
-
-
-
-
-function $b579141aaba57910$var$_extends() {
-    $b579141aaba57910$var$_extends = Object.assign ? Object.assign.bind() : function(target) {
-        for(var i = 1; i < arguments.length; i++){
-            var source = arguments[i];
-            for(var key in source)if (Object.prototype.hasOwnProperty.call(source, key)) target[key] = source[key];
-        }
-        return target;
-    };
-    return $b579141aaba57910$var$_extends.apply(this, arguments);
-}
-/**
- * @upxindocurl https://mui.com/api/accordion/
- */ function $b579141aaba57910$var$Accordion(props) {
-    const [expanded, setExpanded] = (0, $d4YY5$react).useState("");
-    (0, $d4YY5$react).useEffect(()=>{
-        setExpanded(props.expanded);
-    }, [
-        props.expanded
-    ]); // Only re-run the effect if value prop changes
-    return /*#__PURE__*/ (0, $d4YY5$react).createElement((0, $d4YY5$muimaterialAccordion), $b579141aaba57910$var$_extends({
-        expanded: expanded
-    }, props), props.children);
-}
-$b579141aaba57910$var$Accordion.propTypes = {
-    /**
-   * The content of the component.
+   * The renderInput prop allows you to customize the rendered input.
+   * The props argument of this render prop contains props of TextField that you need to forward.
+   * Pay specific attention to the ref and inputProps keys.
    * @uxpinignoreprop
-   */ children: (0, $d4YY5$proptypes).node,
+   */ renderInput: (0, $d4YY5$proptypes).func,
     /**
-   * Override or extend the styles applied to the component.
-   * @uxpinignoreprop
-   */ classes: (0, $d4YY5$proptypes).object,
-    /**
-   * If true, expands the accordion by default.
-   * @uxpinignoreprop
-   */ defaultExpanded: (0, $d4YY5$proptypes).bool,
-    /**
-   * If true, the component is disabled.
-   */ disabled: (0, $d4YY5$proptypes).bool,
-    /**
-   * If true, it removes the margin between two expanded accordion items and the increase of height.
-   */ disableGutters: (0, $d4YY5$proptypes).bool,
-    /**
-   * If true, expands the accordion, otherwise collapse it. Setting this prop enables control over the accordion.
-   * @uxpinbind onChange 1
-   */ expanded: (0, $d4YY5$proptypes).bool,
-    /**
-   * Callback fired when the expand/collapse state is changed.
+   * Callback fired when the value (the selected date) changes @DateIOType.
    */ onChange: (0, $d4YY5$proptypes).func,
     /**
-   * If true, rounded corners are disabled.
-   */ square: (0, $d4YY5$proptypes).bool,
+   * Callback fired when date is accepted @DateIOType.
+   */ onAccept: (0, $d4YY5$proptypes).func,
     /**
-   * The component used for the transition. Follow this guide to learn more about the requirements for this component.
-   */ TransitionComponent: (0, $d4YY5$proptypes).elementType,
+   * Callback that fired when input value or new value prop validation returns new validation error (or value is valid after error).
+   * To implement follow guide below:
+   * https://next.material-ui-pickers.dev/guides/forms
+   */ onError: (0, $d4YY5$proptypes).func,
     /**
-   * Props applied to the transition element. By default, the element is based on this Transition component.
-   */ TransitionProps: (0, $d4YY5$proptypes).object,
-    /**
-   * The system prop that allows defining system overrides as well as additional CSS styles.
-   * 
-   */ sx: (0, $d4YY5$proptypes).object
+   * Callback fired when the popup requests to be opened. Use in controlled mode (see open).
+   */ onOpen: (0, $d4YY5$proptypes).func
 };
-$b579141aaba57910$var$Accordion.defaultProps = {
-    // NOTE: Checked must be controlled state from the outset, otherwise changing state in the app will trigger an error
-    // see: https://fb.me/react-controlled-components
-    expanded: false
-};
-var $b579141aaba57910$export$2e2bcd8739ae039 = $b579141aaba57910$var$Accordion;
+var $9f0597e0efd16815$export$2e2bcd8739ae039 = $9f0597e0efd16815$var$DatePicker;
 
 
 
 
-
-/**
- * @upxindocurl https://mui.com/api/accordion-details/
- */ function $947e175b9886ec40$var$AccordionDetails(props) {
-    return /*#__PURE__*/ (0, $d4YY5$react).createElement((0, $d4YY5$muimaterialAccordionDetails), props, props.children);
-}
-$947e175b9886ec40$var$AccordionDetails.propTypes = {
-    /**
-   * The content of the component.
-   * @uxpinignoreprop
-   */ children: (0, $d4YY5$proptypes).node,
-    /**
-   * Override or extend the styles applied to the component.
-   * @uxpinignoreprop
-   */ classes: (0, $d4YY5$proptypes).object,
-    /**
-   * The system prop that allows defining system overrides as well as additional CSS styles.
-   * 
-   */ sx: (0, $d4YY5$proptypes).object
-};
-var $947e175b9886ec40$export$2e2bcd8739ae039 = $947e175b9886ec40$var$AccordionDetails;
-
-
-
-
-
-
-
-function $be637ad248945679$var$_extends() {
-    $be637ad248945679$var$_extends = Object.assign ? Object.assign.bind() : function(target) {
-        for(var i = 1; i < arguments.length; i++){
-            var source = arguments[i];
-            for(var key in source)if (Object.prototype.hasOwnProperty.call(source, key)) target[key] = source[key];
-        }
-        return target;
-    };
-    return $be637ad248945679$var$_extends.apply(this, arguments);
-}
-/**
- * @upxindocurl https://mui.com/api/accordion-summary/
- */ function $be637ad248945679$var$AccordionSummary(props) {
-    return /*#__PURE__*/ (0, $d4YY5$react).createElement((0, $d4YY5$muimaterialAccordionSummary), $be637ad248945679$var$_extends({}, props, {
-        expandIcon: /*#__PURE__*/ (0, $d4YY5$react).createElement((0, $6ee864df121e395b$export$2e2bcd8739ae039), null, props.expandedIcon)
-    }), props.children);
-}
-$be637ad248945679$var$AccordionSummary.propTypes = {
-    /**
-   * The content of the component.
-   * @uxpinignoreprop
-   */ children: (0, $d4YY5$proptypes).node,
-    /**
-   * Override or extend the styles applied to the component.
-   * @uxpinignoreprop
-   */ classes: (0, $d4YY5$proptypes).object,
-    /**
-   * The icon to display as the expand indicator.
-   * Icon prop is used to improve Merge usability.
-   * @uxpinpropname icon
-   */ expandedIcon: (0, $d4YY5$proptypes).oneOf((0, $07ef162fcc571302$export$84babfcc2344e650)),
-    /**
-   * This prop can help identify which element has keyboard focus. The class name will be applied when the element gains the focus through keyboard interaction. 
-    * @uxpinignoreprop
-    * */ focusVisibleClassName: (0, $d4YY5$proptypes).string,
-    /**
-   * The system prop that allows defining system overrides as well as additional CSS styles.
-   */ sx: (0, $d4YY5$proptypes).object
-};
-var $be637ad248945679$export$2e2bcd8739ae039 = $be637ad248945679$var$AccordionSummary;
-
-
-
-
-
-function $207b102639b313d5$var$_extends() {
-    $207b102639b313d5$var$_extends = Object.assign ? Object.assign.bind() : function(target) {
-        for(var i = 1; i < arguments.length; i++){
-            var source = arguments[i];
-            for(var key in source)if (Object.prototype.hasOwnProperty.call(source, key)) target[key] = source[key];
-        }
-        return target;
-    };
-    return $207b102639b313d5$var$_extends.apply(this, arguments);
-}
-/**
- * @uxpindocurl https://mui.com/api/app-bar/
- */ function $207b102639b313d5$var$AppBar(props) {
-    return /*#__PURE__*/ (0, $d4YY5$react).createElement((0, $d4YY5$muimaterialAppBar), $207b102639b313d5$var$_extends({}, props, {
-        sx: props.sx
-    }), props.children);
-}
-$207b102639b313d5$var$AppBar.propTypes = {
-    /**
-   * The content of the component.
-   */ /** @uxpinignoreprop */ children: (0, $d4YY5$proptypes).node,
-    /**
-   * Override or extend the styles applied to the component. See CSS API https://mui.com/api/app-bar/#css for more details.
-   */ /** @uxpinignoreprop */ classes: (0, $d4YY5$proptypes).object,
-    /**
-   * The color of the component. It supports those theme colors that make sense for this component.
-   */ color: (0, $d4YY5$proptypes).oneOf([
-        "inherit",
-        "primary",
-        "secondary",
-        "transparent"
-    ]),
-    /**
-   * If true, the color prop is applied in dark mode.
-   */ enableColorOnDark: (0, $d4YY5$proptypes).bool,
-    /** The positioning type. The behavior of the different options is described in the MDN web docs 
-   * https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Positioning. 
-   * Note: sticky is not universally supported and will fall back to static when unavailable. */ position: (0, $d4YY5$proptypes).oneOf([
-        "absolute",
-        "fixed",
-        "relative",
-        "static",
-        "sticky"
-    ]),
-    /**
-   * The system prop that allows defining system overrides as well as additional CSS styles. 
-   * See the `sx` page for more details https://mui.com/system/the-sx-prop/.
-   */ /** Style */ sx: (0, $d4YY5$proptypes).object
-};
-var $207b102639b313d5$export$2e2bcd8739ae039 = $207b102639b313d5$var$AppBar;
-
-
-
-
-
-/**
- * @uxpindocurl https://mui.com/api/card/
- */ function $ab029674f7947e83$var$Card(props) {
-    return /*#__PURE__*/ (0, $d4YY5$react).createElement((0, $d4YY5$muimaterialCard), props, props.children);
-}
-$ab029674f7947e83$var$Card.propTypes = {
-    /**
-   * The content of the component.
-   * @uxpinignoreprop
-   */ children: (0, $d4YY5$proptypes).node,
-    /**
-   * Override or extend the styles applied to the component.
-   * @uxpinignoreprop
-   */ classes: (0, $d4YY5$proptypes).object,
-    /**
-   * If true, the card will use raised styling.
-   */ raised: (0, $d4YY5$proptypes).bool,
-    /**
-   * The system prop that allows defining system overrides as well as additional CSS styles.
-   */ sx: (0, $d4YY5$proptypes).object,
-    title: (0, $d4YY5$proptypes).string
-};
-var $ab029674f7947e83$export$2e2bcd8739ae039 = $ab029674f7947e83$var$Card;
-
-
-
-
-
-/**
- * @uxpindocurl https://mui.com/api/card-actions/
- */ function $9a3c1010da7b251c$var$CardActions(props) {
-    return /*#__PURE__*/ (0, $d4YY5$react).createElement((0, $d4YY5$muimaterialCardActions), props, props.children);
-}
-$9a3c1010da7b251c$var$CardActions.propTypes = {
-    /**
-   * The content of the component.
-   * @uxpinignoreprop
-   */ children: (0, $d4YY5$proptypes).node,
-    /**
-   * Override or extend the styles applied to the component.
-   * @uxpinignoreprop
-   */ classes: (0, $d4YY5$proptypes).object,
-    /**
-   * If true, the actions do not have additional margin.
-   */ disableSpacing: (0, $d4YY5$proptypes).bool,
-    /**
-   * The system prop that allows defining system overrides as well as additional CSS styles.
-   */ sx: (0, $d4YY5$proptypes).object
-};
-var $9a3c1010da7b251c$export$2e2bcd8739ae039 = $9a3c1010da7b251c$var$CardActions;
-
-
-
-
-
-/**
- * @uxpindocurl https://mui.com/api/card-action-area/
- */ function $8f73571a72641311$var$CardActionArea(props) {
-    return /*#__PURE__*/ (0, $d4YY5$react).createElement((0, $d4YY5$muimaterialCardActionArea), props, props.children);
-}
-$8f73571a72641311$var$CardActionArea.propTypes = {
-    /**
-   * The content of the component.
-   * @uxpinignoreprop
-   */ children: (0, $d4YY5$proptypes).node,
-    /**
-   * Override or extend the styles applied to the component.
-   * @uxpinignoreprop
-   */ classes: (0, $d4YY5$proptypes).object,
-    /**
-   * The system prop that allows defining system overrides as well as additional CSS styles.
-   */ sx: (0, $d4YY5$proptypes).object
-};
-var $8f73571a72641311$export$2e2bcd8739ae039 = $8f73571a72641311$var$CardActionArea;
-
-
-
-
-
-/**
- * @uxpindocurl https://mui.com/api/card-content/
- */ function $0c72a034f4851b7b$var$CardContent(props) {
-    return /*#__PURE__*/ (0, $d4YY5$react).createElement((0, $d4YY5$muimaterialCardContent), props, props.children);
-}
-$0c72a034f4851b7b$var$CardContent.propTypes = {
-    /**
-   * The content of the component.
-   * @uxpinignoreprop
-   */ children: (0, $d4YY5$proptypes).node,
-    /**
-   * Override or extend the styles applied to the component.
-   * @uxpinignoreprop
-   */ classes: (0, $d4YY5$proptypes).object,
-    /**
-   * Map typography to another html tag. 
-   */ component: (0, $d4YY5$proptypes).string,
-    /**
-   * The system prop that allows defining system overrides as well as additional CSS styles.
-   */ sx: (0, $d4YY5$proptypes).object
-};
-var $0c72a034f4851b7b$export$2e2bcd8739ae039 = $0c72a034f4851b7b$var$CardContent;
-
-
-
-
-
-
-
-
-
-function $ca2c7731f9b8acd2$var$_extends() {
-    $ca2c7731f9b8acd2$var$_extends = Object.assign ? Object.assign.bind() : function(target) {
-        for(var i = 1; i < arguments.length; i++){
-            var source = arguments[i];
-            for(var key in source)if (Object.prototype.hasOwnProperty.call(source, key)) target[key] = source[key];
-        }
-        return target;
-    };
-    return $ca2c7731f9b8acd2$var$_extends.apply(this, arguments);
-}
-/**
- * @uxpindocurl https://mui.com/api/card-header/
- */ function $ca2c7731f9b8acd2$var$CardHeader(props) {
-    return /*#__PURE__*/ (0, $d4YY5$react).createElement((0, $d4YY5$muimaterialCardHeader), $ca2c7731f9b8acd2$var$_extends({}, props, {
-        avatar: props.avatar && /*#__PURE__*/ (0, $d4YY5$react).createElement((0, $de22927cabdeb196$export$2e2bcd8739ae039), {
-            color: props.color
-        }, props.avatar),
-        action: props.action && /*#__PURE__*/ (0, $d4YY5$react).createElement((0, $484dfd49b78c6641$export$2e2bcd8739ae039), {
-            "aria-label": props.ariaLabel,
-            onClick: props.iconOnClick
-        }, /*#__PURE__*/ (0, $d4YY5$react).createElement((0, $6ee864df121e395b$export$2e2bcd8739ae039), null, props.action))
-    }), props.children);
-}
-$ca2c7731f9b8acd2$var$CardHeader.propTypes = {
-    /**
-   * The action to display in the card header.
-   * @uxpinpropname Icon Action
-   */ action: (0, $d4YY5$proptypes).oneOf((0, $07ef162fcc571302$export$84babfcc2344e650)),
-    /**
-   * The Avatar element to display.
-   */ avatar: (0, $d4YY5$proptypes).string,
-    /**
-   * Color of the Avatar text.
-   * @uxpinpropname Avatar Bg Color
-   */ color: (0, $d4YY5$proptypes).oneOf([
-        "red",
-        "pink",
-        "purple",
-        "indigo",
-        "blue",
-        "lightBlue",
-        "cyan",
-        "teal",
-        "green",
-        "lightGreen",
-        "lime",
-        "yellow",
-        "orange",
-        "brown",
-        "grey"
-    ]),
-    /**
-   * Override or extend the styles applied to the component.
-   * @uxpinignoreprop
-   */ classes: (0, $d4YY5$proptypes).object,
-    /**
-   * The component used for the root node. Either a string to use a HTML element or a component.
-   */ component: (0, $d4YY5$proptypes).string,
-    /**
-   * If true, subheader and title won't be wrapped by a Typography component. 
-   * This can be useful to render an alternative Typography variant by wrapping the title text, and optional subheader text with the Typography component.
-   */ disableTypography: (0, $d4YY5$proptypes).bool,
-    /**
-   * The content of the component.
-   */ subheader: (0, $d4YY5$proptypes).node,
-    /**
-   * These props will be forwarded to the subheader (as long as disableTypography is not true).
-   * @uxpinignoreprop
-   */ subheaderTypograhyProps: (0, $d4YY5$proptypes).object,
-    /**
-   * The content of the component.
-   */ title: (0, $d4YY5$proptypes).node,
-    /**
-   * Aria tag for accessibility
-   */ ariaLabel: (0, $d4YY5$proptypes).string,
-    /**
-   * These props will be forwarded to the title (as long as disableTypography is not true).
-   * @uxpinignoreprop
-   */ titleTypographyProps: (0, $d4YY5$proptypes).object,
-    /**
-   * The system prop that allows defining system overrides as well as additional CSS styles.
-   */ sx: (0, $d4YY5$proptypes).object,
-    /**
-   * On click event to use with UXPin interactions.
-   * This interferes with iconOnClick as it runs when clicking icon.
-   */ // onClick: PropTypes.func,
-    /**
-   * On click event to use with UXPin interactions.
-   */ iconOnClick: (0, $d4YY5$proptypes).func
-};
-var $ca2c7731f9b8acd2$export$2e2bcd8739ae039 = $ca2c7731f9b8acd2$var$CardHeader;
-
-
-
-
-
-function $7113635453d70c3b$var$_extends() {
-    $7113635453d70c3b$var$_extends = Object.assign ? Object.assign.bind() : function(target) {
-        for(var i = 1; i < arguments.length; i++){
-            var source = arguments[i];
-            for(var key in source)if (Object.prototype.hasOwnProperty.call(source, key)) target[key] = source[key];
-        }
-        return target;
-    };
-    return $7113635453d70c3b$var$_extends.apply(this, arguments);
-}
-/**
- * @uxpindocurl https://mui.com/api/card-media/
- */ function $7113635453d70c3b$export$2e2bcd8739ae039(props) {
-    return /*#__PURE__*/ (0, $d4YY5$react).createElement((0, $d4YY5$muimaterialCardMedia), $7113635453d70c3b$var$_extends({
-        controls: true
-    }, props));
-}
-$7113635453d70c3b$export$2e2bcd8739ae039.propTypes = {
-    /**
-   * Override or extend the styles applied to the component.
-   * @uxpinignoreprop
-   */ classes: (0, $d4YY5$proptypes).object,
-    /**
-   * The component used for the root node.
-   */ component: (0, $d4YY5$proptypes).oneOf([
-        "img",
-        "video",
-        "audio"
-    ]),
-    /**
-   * The height of the media
-   */ height: (0, $d4YY5$proptypes).number,
-    /**
-   * Image to be displayed as a background image.
-   * Either `image` or `src` prop must be specified. Specifying both may causes the media not to load.
-   * Note that caller must specify height otherwise the image will not be visible.
-   * @uxpinpropname Img src
-   */ image: (0, $d4YY5$proptypes).string,
-    /**
-   * An alias for `image` property.
-   * Available only with media components.
-   * Media components: `video`, `audio`, `picture`, `iframe`, `img`.
-   * @uxpinpropname Video/ Audio src
-   */ src: (0, $d4YY5$proptypes).string,
-    /**
-   * The system prop that allows defining system overrides as well as additional CSS styles.
-   */ sx: (0, $d4YY5$proptypes).object
-};
-$7113635453d70c3b$export$2e2bcd8739ae039.defaultProps = {
-    component: "img",
-    height: 120,
-    image: "https://images.unsplash.com/photo-1604871000636-074fa5117945?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80"
-};
-
-
-
-
-
-/**
- * @uxpindocurl https://mui.com/api/paper/
- */ function $a2b78b47169a4edd$var$Paper(props) {
-    return /*#__PURE__*/ (0, $d4YY5$react).createElement((0, $d4YY5$muimaterialPaper), props, props.children);
-}
-$a2b78b47169a4edd$var$Paper.propTypes = {
-    /**
-   * The content of the component. Text or nested components.
-   */ children: (0, $d4YY5$proptypes).node,
-    /**
-   * The shadow depth of paper surface. Accepts values between 0 and 16.
-   */ elevation: (0, $d4YY5$proptypes).number,
-    /**
-   * the variant to use.
-   */ variant: (0, $d4YY5$proptypes).oneOf([
-        "elevation",
-        "outlined"
-    ]),
-    /**
-   * Override or extend the styles applied to the component.
-   * See [CSS API](#css-api) below for more details.
-   * @uxpinignoreprop
-   */ classes: (0, $d4YY5$proptypes).object,
-    /**
-   * The component used for the root node.
-   * Either a string to use a DOM element or a component.
-   * @uxpinignoreprop
-   */ component: (0, $d4YY5$proptypes).node,
-    /**
-   * If `true`, rounded corners are disabled.
-   * @uxpinignoreprop
-   */ square: (0, $d4YY5$proptypes).bool,
-    /**
-   * Custom Style Object
-   */ sx: (0, $d4YY5$proptypes).object
-};
-var $a2b78b47169a4edd$export$2e2bcd8739ae039 = $a2b78b47169a4edd$var$Paper;
-
-
-
-
-function $19daaff829f21759$var$Image(props) {
-    return /*#__PURE__*/ (0, $d4YY5$react).createElement("img", {
-        alt: props.alt,
-        src: props.src,
-        height: props.height,
-        width: props.width,
-        style: {
-            objectFit: props.objectFit,
-            height: props.height,
-            width: props.width,
-            ...props.style
-        }
-    });
-}
-$19daaff829f21759$var$Image.propTypes = {
-    alt: (0, $d4YY5$proptypes).string,
-    height: (0, $d4YY5$proptypes).string,
-    width: (0, $d4YY5$proptypes).string,
-    objectFit: (0, $d4YY5$proptypes).oneOf([
-        "fill",
-        "contain",
-        "cover",
-        "none",
-        "scale-down"
-    ]),
-    src: (0, $d4YY5$proptypes).string,
-    style: (0, $d4YY5$proptypes).object
-};
-$19daaff829f21759$var$Image.defaultProps = {
-    src: "https://images.unsplash.com/photo-1604871000636-074fa5117945?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80",
-    width: "100%",
-    height: "100%",
-    objectFit: "cover"
-};
-var $19daaff829f21759$export$2e2bcd8739ae039 = $19daaff829f21759$var$Image;
-
-
-
-
-const $5be9171c6c30cf93$var$boilerplateTheme = {
+const $8d9742ecc5284e43$var$boilerplateTheme = {
     // To further customize this theme,
     // please see the full theme object here: https://mui.com/customization/default-theme/
     palette: {
+        mode: "light",
         primary: {
             main: "#1976d2",
             light: "#42a5f5",
@@ -8578,80 +10212,22 @@ const $5be9171c6c30cf93$var$boilerplateTheme = {
         }
     }
 };
-var $5be9171c6c30cf93$export$2e2bcd8739ae039 = $5be9171c6c30cf93$var$boilerplateTheme;
+var $8d9742ecc5284e43$export$2e2bcd8739ae039 = $8d9742ecc5284e43$var$boilerplateTheme;
 
 
-const $ba1ec7fcd8d78c81$var$theme = (0, $d4YY5$createTheme)((0, $5be9171c6c30cf93$export$2e2bcd8739ae039));
-const $ba1ec7fcd8d78c81$var$UXPinWrapper = ({ children: children  })=>{
-    const icons = document.createElement("link");
-    icons.setAttribute("rel", "stylesheet");
-    icons.setAttribute("href", "https://fonts.googleapis.com/icon?family=Material+Icons");
-    document.head.appendChild(icons);
+const $c4b11adde67996a1$var$theme = (0, $d4YY5$createTheme)((0, $8d9742ecc5284e43$export$2e2bcd8739ae039));
+function $c4b11adde67996a1$export$2e2bcd8739ae039({ children: children  }) {
     return /*#__PURE__*/ (0, $d4YY5$react).createElement((0, $d4YY5$ThemeProvider), {
-        theme: $ba1ec7fcd8d78c81$var$theme
+        theme: $c4b11adde67996a1$var$theme
     }, children);
-};
-var $ba1ec7fcd8d78c81$export$2e2bcd8739ae039 = $ba1ec7fcd8d78c81$var$UXPinWrapper;
-
-
-
-
-
-/**
- * @uxpindocurl https://mui.com/api/input-label/#main-content
- */ function $2f417e42292cbe62$var$InputLabel(props) {
-    return /*#__PURE__*/ (0, $d4YY5$react).createElement((0, $d4YY5$muimaterialInputLabel), props, props.children);
 }
-$2f417e42292cbe62$var$InputLabel.propTypes = {
-    /**
-  * @uxpinignoreprop 
-  * The contents of the `InputLabel`.
-  */ children: (0, $d4YY5$proptypes).node,
-    /**
-   * @uxpinignoreprop 
-   * Override or extend the styles applied to the component.
-   * See [CSS API](#css-api) below for more details.
-   */ classes: (0, $d4YY5$proptypes).object.isRequired,
-    /**
-   * If `true`, the transition animation is disabled.
-   */ disableAnimation: (0, $d4YY5$proptypes).bool,
-    /**
-   * If `true`, apply disabled class.
-   */ disabled: (0, $d4YY5$proptypes).bool,
-    /**
-   * If `true`, the label will be displayed in an error state.
-   */ error: (0, $d4YY5$proptypes).bool,
-    /**
-   * If `true`, the input of this label is focused.
-   */ focused: (0, $d4YY5$proptypes).bool,
-    /**
-  * If `dense`, will adjust vertical spacing. This is normally obtained via context from
-  * FormControl.
-  */ margin: (0, $d4YY5$proptypes).oneOf([
-        "dense"
-    ]),
-    /**
-   * if `true`, the label will indicate that the input is required.
-   */ required: (0, $d4YY5$proptypes).bool,
-    /**
-   * If `true`, the label is shrunk.
-   */ shrink: (0, $d4YY5$proptypes).bool,
-    /**
-   * The variant to use.
-   */ variant: (0, $d4YY5$proptypes).oneOf([
-        "standard",
-        "outlined",
-        "filled"
-    ]),
-    /**
-   * The system prop that allows defining system overrides as well as additional CSS styles.
-   * See the `sx` page for more details. https://mui.com/system/the-sx-prop/
-   */ sx: (0, $d4YY5$proptypes).object
-};
-var $2f417e42292cbe62$export$2e2bcd8739ae039 = $2f417e42292cbe62$var$InputLabel;
 
 
 
 
-export {$01c2718700122605$export$2e2bcd8739ae039 as Button, $ab6ea12fa206d7fb$export$2e2bcd8739ae039 as Button2, $5c0a7a33a48a0785$export$2e2bcd8739ae039 as ButtonGroup, $dd4f814d3ed670f5$export$2e2bcd8739ae039 as Checkbox, $de67f934c20e68f5$export$2e2bcd8739ae039 as CheckboxWithLabel, $2302f9d68c76d905$export$2e2bcd8739ae039 as Collapse, $484dfd49b78c6641$export$2e2bcd8739ae039 as IconButton, $6b4ed155a77e98ff$export$2e2bcd8739ae039 as FloatingActionButton, $41426880bf9767c2$export$2e2bcd8739ae039 as LoadingButton, $5b98ef666a8916ec$export$2e2bcd8739ae039 as Radio, $c691b7d4585d8c52$export$2e2bcd8739ae039 as RadioWithLabel, $029dc6d9ac055f9d$export$2e2bcd8739ae039 as RadioGroup, $45bf60c90bdbc522$export$2e2bcd8739ae039 as Rating, $b560fc0518d1308d$export$2e2bcd8739ae039 as Select, $3fcc80741341f138$export$2e2bcd8739ae039 as Slider, $553a6ecaacba8e36$export$2e2bcd8739ae039 as Switch, $55c48518655a9109$export$2e2bcd8739ae039 as SwitchWithLabel, $846045c082082f73$export$2e2bcd8739ae039 as TextField, $fd02248996edd8f7$export$2e2bcd8739ae039 as ToggleButton, $4943289653bbb50f$export$2e2bcd8739ae039 as ToggleButtonGroup, $de22927cabdeb196$export$2e2bcd8739ae039 as Avatar, $1f0581438bdcce8e$export$2e2bcd8739ae039 as Badge, $7fafffb45bd8603c$export$2e2bcd8739ae039 as Divider, $6ee864df121e395b$export$2e2bcd8739ae039 as Icon, $97d942c1a4fb586d$export$2e2bcd8739ae039 as List, $fe05808764991176$export$2e2bcd8739ae039 as ListItem, $0643506a24dd75ef$export$2e2bcd8739ae039 as ListItemAvatar, $ce0cdac88fa16ea3$export$2e2bcd8739ae039 as ListItemButton, $51e79e9f992e0d31$export$2e2bcd8739ae039 as ListItemIcon, $929dadd0f37ff8a8$export$2e2bcd8739ae039 as ListItemText, $d2e69a04631af15a$export$2e2bcd8739ae039 as ListSubheader, $c0914ae58ab6e5d3$export$2e2bcd8739ae039 as Tooltip, $495d4d60bd4d6faa$export$2e2bcd8739ae039 as Typography, $ae5c557c89d1f374$export$2e2bcd8739ae039 as BottomNavigation, $2b4c3fa339d07464$export$2e2bcd8739ae039 as BottomNavigationAction, $5687d590c9a7b989$export$2e2bcd8739ae039 as Breadcrumbs, $726d4e32959b0628$export$2e2bcd8739ae039 as Link, $9a94b05c37b872c4$export$2e2bcd8739ae039 as Menu, $0b4bed606fcfeec2$export$2e2bcd8739ae039 as MenuItem, $cab657c5b11ce901$export$2e2bcd8739ae039 as Pagination, $bb56cd0be5f74ec3$export$2e2bcd8739ae039 as Tab, $cd7de0441de58065$export$2e2bcd8739ae039 as Tabs, $9dff21fbaccdd569$export$2e2bcd8739ae039 as Toolbar, $a94ecc01b7c4a311$export$2e2bcd8739ae039 as Alert, $ebbb581919b8ae6b$export$2e2bcd8739ae039 as AlertTitle, $07620b41bfb6fd6f$export$2e2bcd8739ae039 as CircularProgress, $ac833bab733449cf$export$2e2bcd8739ae039 as DialogActions, $3a854a656f6632ed$export$2e2bcd8739ae039 as DialogContentText, $22d68e382d6154be$export$2e2bcd8739ae039 as DialogTitle, $02ae133ba3be51cf$export$2e2bcd8739ae039 as DialogContent, $b441a3903f81c9b7$export$2e2bcd8739ae039 as LinearProgress, $c2094d47014e15d4$export$2e2bcd8739ae039 as Snackbar, $666b97be0ebbfed9$export$2e2bcd8739ae039 as Skeleton, $3f15db54171bbd32$export$2e2bcd8739ae039 as Table, $dda942c3b5658ae4$export$2e2bcd8739ae039 as TableCell, $f4d216d083cc9950$export$2e2bcd8739ae039 as TableBody, $f9276cb62da5b234$export$2e2bcd8739ae039 as TableHead, $e9f0e5becfd403a3$export$2e2bcd8739ae039 as TableRow, $27a34599ce9c08b4$export$2e2bcd8739ae039 as FormControl, $a7bec6d5450860fc$export$2e2bcd8739ae039 as FormControlLabel, $946c82112296c706$export$2e2bcd8739ae039 as FormGroup, $134a90f9d8fd8dab$export$2e2bcd8739ae039 as FormHelperText, $0446759e8abdb16f$export$2e2bcd8739ae039 as FormLabel, $2f417e42292cbe62$export$2e2bcd8739ae039 as InputLabel, $d493ef5b3f1b99eb$export$2e2bcd8739ae039 as Box, $c716763b1d724ad6$export$2e2bcd8739ae039 as Grid, $10ff67c3f8c14e30$export$2e2bcd8739ae039 as Stack, $b579141aaba57910$export$2e2bcd8739ae039 as Accordion, $947e175b9886ec40$export$2e2bcd8739ae039 as AccordionDetails, $be637ad248945679$export$2e2bcd8739ae039 as AccordionSummary, $207b102639b313d5$export$2e2bcd8739ae039 as AppBar, $ab029674f7947e83$export$2e2bcd8739ae039 as Card, $9a3c1010da7b251c$export$2e2bcd8739ae039 as CardActions, $8f73571a72641311$export$2e2bcd8739ae039 as CardActionArea, $0c72a034f4851b7b$export$2e2bcd8739ae039 as CardContent, $ca2c7731f9b8acd2$export$2e2bcd8739ae039 as CardHeader, $7113635453d70c3b$export$2e2bcd8739ae039 as CardMedia, $a2b78b47169a4edd$export$2e2bcd8739ae039 as Paper, $19daaff829f21759$export$2e2bcd8739ae039 as Image, $ba1ec7fcd8d78c81$export$2e2bcd8739ae039 as UXPinWrapper};
+const $79881796d07e2293$var$container = document.getElementById("app");
+const $79881796d07e2293$var$root = (0, $d4YY5$createRoot)($79881796d07e2293$var$container);
+$79881796d07e2293$var$root.render(/*#__PURE__*/ (0, $d4YY5$react).createElement((0, $6bca3b58ce68da3c$export$2e2bcd8739ae039), null));
+
+
 //# sourceMappingURL=module.js.map
