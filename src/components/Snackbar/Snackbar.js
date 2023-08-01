@@ -37,12 +37,7 @@ export default function Snackbar(props) {
           Undo
         </Button>
       )}
-      <IconButton
-        size="small"
-        aria-label="close"
-        color="inherit"
-        onClick={() => setIsOpen(false)}
-      >
+      <IconButton size="small" aria-label="close" color="inherit" onClick={() => setIsOpen(false)}>
         close
       </IconButton>
     </>

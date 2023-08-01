@@ -1,45 +1,19 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import AvatarM from '@mui/material/Avatar';
-import Icon from '../Icon/Icon';
-
 
 /**
  * @uxpindocurl https://mui.com/api/avatar/
  */
 function Avatar(props) {
-    return (
-        <AvatarM {...props} sx={{ bgcolor: props.color}}>
-            {props.icon ? <Icon>{props.icon}</Icon> : props.children}
-        </AvatarM>
-    );
+  return <AvatarM {...props}>{props.children}</AvatarM>;
 }
 
 Avatar.propTypes = {
- /**
-   * Letters for initial icons
+  /**
+   * Used to render icon or text elements inside the Avatar if src is not set. This can be an element, or just a string.
    */
-  /** @uxpinpropname  Letters */
-  children: PropTypes.string,
-  
-
-  color: PropTypes.oneOf([
-  'red', 
-  'pink', 
-  'purple',  
-  'indigo', 
-  'blue', 
-  'lightBlue', 
-  'cyan', 
-  'teal', 
-  'green', 
-  'lightGreen', 
-  'lime', 
-  'yellow', 
-  'orange', 
-  'brown', 
-  'grey', 
-]),
+  children: PropTypes.node,
 
   /**
    * The name of the icon from https://material.io/resources/icons.
@@ -58,7 +32,6 @@ Avatar.propTypes = {
    */
   /** @uxpinignoreprop */
   alt: PropTypes.string,
-
 
   /**
    * The `srcSet` attribute for the `img` element.
@@ -83,7 +56,7 @@ Avatar.propTypes = {
    */
   /** @uxpinignoreprop */
   sizes: PropTypes.string,
-  
+
   /**
    * The shape of the avatar.
    * @uxpinpropname Shape
@@ -91,11 +64,10 @@ Avatar.propTypes = {
   variant: PropTypes.oneOf(['circular', 'rounded', 'square']),
 
   /**
-  * The system prop that allows defining system overrides as well as additional CSS styles. 
-  * See the `sx` https://mui.com/system/the-sx-prop/ page for more details.
-  */
+   * The system prop that allows defining system overrides as well as additional CSS styles.
+   * See the `sx` https://mui.com/system/the-sx-prop/ page for more details.
+   */
   sx: PropTypes.object,
-
 };
 
 export default Avatar;

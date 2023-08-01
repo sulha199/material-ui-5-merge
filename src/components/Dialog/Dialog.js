@@ -1,31 +1,28 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import OriginalDialog from '@mui/material/Dialog';
+import DialogM from '@mui/material/Dialog';
 
 /**
- * @uxpindocurl https://mui.com/api/dialog/#main-content
  * @uxpinuseportal
+ * @uxpindocurl https://mui.com/api/dialog/#main-content
  */
 
 function Dialog(props) {
-  const { children, open, sx, ...otherProps } = props;
-  const [isOpen, setIsOpen] = React.useState(open);
+  const [open, setOpen] = React.useState(props.open);
 
-  React.useEffect(() => setIsOpen(open), [open]);
-
-  const styles = { ...sx, position: 'absolute' }; // override `fixed` position to display related to the Preview main area
+  React.useEffect(() => setOpen(props.open), [props]);
 
   return (
-    <OriginalDialog
-      open={isOpen}
-      onClose={() => setIsOpen(false)}
+    <DialogM
+      open={open}
+      onClose={() => setOpen(false)}
       TransitionProps={{ tabIndex: 'null' }}
       disablePortal={true}
-      sx={styles}
-      {...otherProps}
+      style={{ minWidth: '300px', minHeight: '300px', width: '100%', height: '100%' }}
+      {...props}
     >
-      {children}
-    </OriginalDialog>
+      {props.children}
+    </DialogM>
   );
 }
 
@@ -73,11 +70,6 @@ Dialog.propTypes = {
   maxWidth: PropTypes.oneOf(['xs', 'sm', 'md', 'lg', 'xl', false]),
 
   /**
-   * If `true`, the dialog stretches to `maxWidth`.
-   */
-  fullWidth: PropTypes.bool,
-
-  /**
    *  @uxpinignoreprop
    */
   children: PropTypes.node,
@@ -118,8 +110,23 @@ Dialog.propTypes = {
    * Determine the container for scrolling the dialog.
    */
   scroll: PropTypes.oneOf(['body', 'paper']),
+  /**
+   * Enter event to use with UXPin interactions.
+   */
+  onEnter: PropTypes.func,
+
+  /**
+   * Exit event to use with UXPin interactions.
+   */
+  onExit: PropTypes.func,
 
   onClose: PropTypes.func,
+
+  /**
+   * If `true`, the dialog stretches to `maxWidth`.
+   * @uxpinignoreprop
+   */
+  fullWidth: PropTypes.bool,
 
   /**
    * The system prop that allows defining system overrides as well as additional CSS styles.

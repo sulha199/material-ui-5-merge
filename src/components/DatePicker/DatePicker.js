@@ -1,32 +1,17 @@
-import * as React from 'react';
+import { AdapterDateFns } from '@mui/x-date-pickers/AdapterDateFns';
+import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
+import TextField from '../TextField/TextField';
+import { DatePicker as DatePickerM } from '@mui/x-date-pickers';
 import PropTypes from 'prop-types';
-import TextField from '@mui/material/TextField';
-import AdapterDateFns from '@mui/lab/AdapterDateFns';
-import LocalizationProvider from '@mui/lab/LocalizationProvider';
-import DatePickerM from '@mui/lab/DatePicker';
+import * as React from 'react';
 
 /**
  * @uxpindocurl https://mui.com/api/date-picker/
  */
 function DatePicker(props) {
-  const [date, setDate] = React.useState(new Date());
-
   return (
     <LocalizationProvider dateAdapter={AdapterDateFns}>
-      <DatePickerM 
-        {...props}
-        openTo="day"
-        orientation="landscape"
-        value={date}
-        onChange={(newDate) => {
-          setDate(newDate);
-        }}
-        renderInput={(params) => (
-          <TextField 
-            {...params} 
-            helperText={props.helperText} />
-        )}
-      />
+      <DatePickerM {...props} renderInput={(params) => <TextField {...params} helperText={props.helperText} />} />
     </LocalizationProvider>
   );
 }
@@ -40,11 +25,10 @@ DatePicker.propTypes = {
   /**
    * The helper text of the input.
    */
-  helperText: PropTypes.node,
+  helperText: PropTypes.string,
 
   /**
    * The value of the picker.
-   * @uxpinignoreprop
    */
   value: PropTypes.node,
 
@@ -54,19 +38,22 @@ DatePicker.propTypes = {
 
   /**
    * If true, show the toolbar even in desktop mode.
+   * @uxpinignoreprop
    */
   showToolbar: PropTypes.bool,
-  
+
   /**
    * Mobile picker title, displaying in the toolbar.
+   * @uxpinignoreprop
    */
   toolbarTitle: PropTypes.node,
 
   /**
    * Mobile picker date value placeholder, displaying if value === null.
    * don't need if using 'new Date()' in state.
+   * @uxpinignoreprop
    */
-  // toolbarPlaceholder: PropTypes.node,
+  toolbarPlaceholder: PropTypes.node,
 
   /**
    * Array of views to show.
@@ -75,6 +62,7 @@ DatePicker.propTypes = {
    * ["year"]
    * ["month"]
    * ["month", "year"]
+   * @uxpinignoreprop
    */
   views: PropTypes.object,
 
@@ -84,9 +72,10 @@ DatePicker.propTypes = {
   open: PropTypes.bool,
 
   /**
-   * why do PropTypes.oneOf not show up in merge sometimes?
+   * Force rendering in particular orientation.
+   * @uxpinignoreprop
    */
-  // orientation: PropTypes.oneOf('landscape', 'portrait'),
+  orientation: PropTypes.oneOf(['landscape', 'portrait']),
 
   /**
    * If true, the picker and text field are disabled.
@@ -99,8 +88,8 @@ DatePicker.propTypes = {
   readOnly: PropTypes.bool,
 
   /**
-   * The renderInput prop allows you to customize the rendered input. 
-   * The props argument of this render prop contains props of TextField that you need to forward. 
+   * The renderInput prop allows you to customize the rendered input.
+   * The props argument of this render prop contains props of TextField that you need to forward.
    * Pay specific attention to the ref and inputProps keys.
    * @uxpinignoreprop
    */
@@ -108,28 +97,25 @@ DatePicker.propTypes = {
 
   /**
    * Callback fired when the value (the selected date) changes @DateIOType.
-   * @uxpinignoreprop
    */
   onChange: PropTypes.func,
 
   /**
    * Callback fired when date is accepted @DateIOType.
-   * @uxpinignoreprop
    */
   onAccept: PropTypes.func,
 
   /**
-   * Callback that fired when input value or new value prop validation returns new validation error (or value is valid after error). 
+   * Callback that fired when input value or new value prop validation returns new validation error (or value is valid after error).
    * To implement follow guide below:
    * https://next.material-ui-pickers.dev/guides/forms
    */
-  // onError: PropTypes.func,
+  onError: PropTypes.func,
 
   /**
    * Callback fired when the popup requests to be opened. Use in controlled mode (see open).
-   * @uxpinignoreprop
    */
   onOpen: PropTypes.func,
-}
+};
 
 export default DatePicker;

@@ -1,12 +1,20 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import SwitchM from '@mui/material/Switch';
+import Icon from '../Icon/Icon';
+import { iconVariants } from '../Icon/icon-variants';
 
 /**
  * @uxpindocurl https://mui.com/components/switches/#main-content
  */
 function Switch(props) {
-  return <SwitchM {...props} />;
+  return (
+    <SwitchM
+      {...props}
+      icon={props.icon ? <Icon fontSize="small">{props.icon}</Icon> : null}
+      checkedIcon={props.checkedIcon ? <Icon fontSize="small">{props.checkedIcon}</Icon> : null}
+    />
+  );
 }
 
 Switch.propTypes = {
@@ -17,10 +25,14 @@ Switch.propTypes = {
   checked: PropTypes.bool,
 
   /**
-   * @uxpinignoreprop
+   * The icon to display when the component is unchecked.
+   */
+  icon: PropTypes.oneOf(iconVariants),
+
+  /**
    * The icon to display when the component is checked.
    */
-  checkedIcon: PropTypes.node,
+  checkedIcon: PropTypes.oneOf(iconVariants),
 
   /**
    * @uxpinignoreprop
@@ -31,14 +43,7 @@ Switch.propTypes = {
   /**
    * The color of the component.
    */
-  color: PropTypes.oneOf([
-    'default',
-    'primary',
-    'secondary',
-    'error',
-    'success',
-    'warning',
-  ]),
+  color: PropTypes.oneOf(['default', 'primary', 'secondary', 'error', 'success', 'warning']),
 
   /**
    * if `true`, the switch will be disabled.
@@ -50,12 +55,6 @@ Switch.propTypes = {
    * @uxpinignoreprop
    */
   disableRipple: PropTypes.bool,
-
-  /**
-   * @uxpinignoreprop
-   * The icon to display when the component is unchecked.
-   */
-  icon: PropTypes.node,
 
   /**
    * @uxpinignoreprop
@@ -82,12 +81,11 @@ Switch.propTypes = {
    * The system prop that allows defining system overrides as well as additional CSS styles.
    */
   sx: PropTypes.object,
-}
+};
 
 Switch.defaultProps = {
   // NOTE: Checked must be controlled state from the outset, otherwise changing state in the app will trigger an error
   // see: https://fb.me/react-controlled-components
- 
 };
 
 export default Switch;

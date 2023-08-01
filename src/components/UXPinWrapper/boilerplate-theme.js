@@ -2,6 +2,7 @@ const boilerplateTheme = {
   // To further customize this theme,
   // please see the full theme object here: https://mui.com/customization/default-theme/
   palette: {
+    mode: 'light',
     primary: {
       main: '#1976d2',
       light: '#42a5f5',

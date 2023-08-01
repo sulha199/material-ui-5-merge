@@ -2,7 +2,7 @@ import * as React from 'react';
 import PropTypes from 'prop-types';
 import ToggleButtonM from '@mui/material/ToggleButton';
 import Icon from '../Icon/Icon';
-import { iconVariants } from '../Icon/icon-variants'
+import { iconVariants } from '../Icon/icon-variants';
 
 /**
  * @uxpindocurl https://mui.com/api/toggle-button/
@@ -64,7 +64,7 @@ ToggleButton.propTypes = {
 
   /**
    * If true, the ripple effect is disabled.
-   * ⚠️ Without a ripple there is no styling for :focus-visible by default. 
+   * ⚠️ Without a ripple there is no styling for :focus-visible by default.
    * @uxpinignoreprop
    */
   disabledRipple: PropTypes.bool,
@@ -72,7 +72,7 @@ ToggleButton.propTypes = {
   /**
    * The size of the button.
    */
-  size: PropTypes.oneOf(["small", "medium", "large"]),
+  size: PropTypes.oneOf(['small', 'medium', 'large']),
 
   /**
    * The value to associate with the button when selected in a ToggleButtonGroup.
@@ -104,6 +104,6 @@ ToggleButton.propTypes = {
    * The system prop that allows defining system overrides as well as additional CSS styles.
    */
   sx: PropTypes.object,
-}
+};
 
 export default ToggleButton;

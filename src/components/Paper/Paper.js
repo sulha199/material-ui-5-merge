@@ -1,16 +1,17 @@
-import React from "react";
-import PropTypes from "prop-types";
-import PaperM from "@mui/material/Paper";
-
+import React from 'react';
+import PropTypes from 'prop-types';
+import PaperM from '@mui/material/Paper';
 
 /**
  * @uxpindocurl https://mui.com/api/paper/
  */
 function Paper(props) {
-    return (
-        <PaperM {...props}>{props.children}</PaperM>
-    )
-} 
+  return (
+    <PaperM {...props} sx={{ height: '100%' }}>
+      {props.children}
+    </PaperM>
+  );
+}
 
 Paper.propTypes = {
   /**
@@ -22,7 +23,6 @@ Paper.propTypes = {
    * The shadow depth of paper surface. Accepts values between 0 and 16.
    */
   elevation: PropTypes.number,
-
   /**
    * the variant to use.
    */
@@ -51,7 +51,7 @@ Paper.propTypes = {
   /**
    * Custom Style Object
    */
-  sx: PropTypes.object
+  sx: PropTypes.object,
 };
 
 export default Paper;

@@ -1,7 +1,7 @@
 const path = require('path');
 
 const config = {
-  entry: ['src'],
+  entry: ['./src/components/index.js'],
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'bundle.js',
@@ -25,11 +25,11 @@ const config = {
     ],
   },
   resolve: {
-    extensions: ['.tsx', '.ts', '.js', ".jsx"],
+    extensions: ['.tsx', '.ts', '.js', '.jsx'],
   },
   devServer: {
     static: {
-      directory: 'dist',
+      directory: './dist',
     },
   },
 };
