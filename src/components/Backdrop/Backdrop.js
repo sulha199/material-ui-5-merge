@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Backdrop as BackdropM } from '@mui/material';
+import BackdropM from '@mui/material/Backdrop';
 
 /**
  * @uxpindocurl https://mui.com/api/backdrop/

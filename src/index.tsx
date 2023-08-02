@@ -95,7 +95,7 @@ import Slider from './components/Slider/Slider';
 import Snackbar from './components/Snackbar/Snackbar';
 import Toolbar from './components/Toolbar/Toolbar';
 import DatePicker from './components/DatePicker/DatePicker';
-import UXPinWrapper from './components/UXPinWrapper/UXPinWrapper.js';
+import UXPinWrapper from './components/UXPinWrapper/UXPinWrapper';
 export {
   Button,
   TablePagination,

@@ -1,0 +1,27 @@
+import { CardMediaProps } from '@mui/material/CardMedia';
+interface UXPinCardMediaProps extends CardMediaProps {
+    /**
+     * Override or extend the styles applied to the component.
+     * @uxpinignoreprop
+     */
+    classes: object;
+    /**
+     * Image to be displayed as a background image.
+     * Either `image` or `src` prop must be specified. Specifying both may causes the media not to load.
+     * Note that caller must specify height otherwise the image will not be visible.
+     * @uxpinpropname Img src
+     */
+    image: string;
+    /**
+     * An alias for `image` property.
+     * Available only with media components.
+     * Media components: `video`, `audio`, `picture`, `iframe`, `img`.
+     * @uxpinpropname Video/ Audio src
+     */
+    src: string;
+}
+/**
+ * @uxpindocurl https://mui.com/api/card-media/
+ */
+declare function CardMedia(props: UXPinCardMediaProps): import("react/jsx-runtime").JSX.Element;
+export default CardMedia;

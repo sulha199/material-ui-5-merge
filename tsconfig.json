@@ -1,6 +1,9 @@
 {
   "compilerOptions": {
-    "target": "es5",
+    "target": "ESNext",
+    "declaration": true,
+    "sourceMap": true,
+    "pretty": true,
     "allowJs": true,
     "skipLibCheck": true,
     "esModuleInterop": true,
@@ -13,7 +16,7 @@
     "isolatedModules": true,
     "noEmit": false,
     "jsx": "react-jsx",
-    "rootDir": "src/components",
+    "rootDir": "src",
     "outDir": "dist"
   },
   "exclude": [
@@ -21,10 +24,9 @@
     "node_modules",
     "dist",
     ".uxpin-merge",
-    "src/components/javascript"
+    "**/presets/*"
   ],
   "include": [
-    "src/components/typescript",
-    "src/components/UXPinWrapper"
+    "src/components/"
   ]
 }

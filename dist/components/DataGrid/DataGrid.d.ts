@@ -1,0 +1,91 @@
+export default DataGrid;
+/**
+ * @upxindocurl https://mui.com/x/react-data-grid/components/
+ * @uxpinwrappers
+ */
+declare function DataGrid(props: any): import("react/jsx-runtime").JSX.Element;
+declare namespace DataGrid {
+    namespace propTypes {
+        let columns: PropTypes.Requireable<any[]>;
+        let rows: PropTypes.Requireable<(object | null | undefined)[]>;
+        let ariaLabel: PropTypes.Requireable<string>;
+        let ariaLabelLedBy: PropTypes.Requireable<string>;
+        let autoHeight: PropTypes.Requireable<boolean>;
+        let autoPageSize: PropTypes.Requireable<boolean>;
+        let cellModesModel: PropTypes.Requireable<object>;
+        let checkboxSelection: PropTypes.Requireable<boolean>;
+        let classes: PropTypes.Requireable<object>;
+        let columnBuffer: PropTypes.Requireable<number>;
+        let columnThreshold: PropTypes.Requireable<number>;
+        let rowThreshold: PropTypes.Requireable<number>;
+        let columnTypes: PropTypes.Requireable<object>;
+        let columnVisibilityModel: PropTypes.Requireable<object>;
+        let components: PropTypes.Requireable<object>;
+        let componentsProps: PropTypes.Requireable<object>;
+        let density: PropTypes.Requireable<string>;
+        let disableColumnFilter: PropTypes.Requireable<boolean>;
+        let disableColumnMenu: PropTypes.Requireable<boolean>;
+        let disableColumnSelector: PropTypes.Requireable<boolean>;
+        let disableDensitySelector: PropTypes.Requireable<boolean>;
+        let disableExtendRowFullWidth: PropTypes.Requireable<boolean>;
+        let disableIgnoreModificationsIfProcessingProps: PropTypes.Requireable<boolean>;
+        let disableSelectionOnClick: PropTypes.Requireable<boolean>;
+        let disableVirtualization: PropTypes.Requireable<boolean>;
+        let editMode: PropTypes.Requireable<string>;
+        let editRowsModel: PropTypes.Requireable<object>;
+        let error: PropTypes.Requireable<string>;
+        let headerHeight: PropTypes.Requireable<number>;
+        let hideFooter: PropTypes.Requireable<boolean>;
+        let hideFooterPagination: PropTypes.Requireable<boolean>;
+        let hideFooterSelectedRowCount: PropTypes.Requireable<boolean>;
+        let initialState: PropTypes.Requireable<object>;
+        let page: PropTypes.Requireable<number>;
+        let pageSize: PropTypes.Requireable<number>;
+        let rowBuffer: PropTypes.Requireable<number>;
+        let rowCount: PropTypes.Requireable<number>;
+        let rowsPerPageOptions: PropTypes.Requireable<any[]>;
+        let rowHeight: PropTypes.Requireable<number>;
+        let scrollbarSize: PropTypes.Requireable<number>;
+        let showCellRightBorder: PropTypes.Requireable<boolean>;
+        let showColumnRightBorder: PropTypes.Requireable<boolean>;
+        let sortingOrder: PropTypes.Requireable<string>;
+        let sx: PropTypes.Requireable<object>;
+        let onCellClick: PropTypes.Requireable<(...args: any[]) => any>;
+        let onCellDoubleClick: PropTypes.Requireable<(...args: any[]) => any>;
+        let onCellEditCommit: PropTypes.Requireable<(...args: any[]) => any>;
+        let onCellEditStart: PropTypes.Requireable<(...args: any[]) => any>;
+        let onCellEditStop: PropTypes.Requireable<(...args: any[]) => any>;
+        let onCellFocusOut: PropTypes.Requireable<(...args: any[]) => any>;
+        let onCellKeyDown: PropTypes.Requireable<(...args: any[]) => any>;
+        let onCellModesModelChange: PropTypes.Requireable<(...args: any[]) => any>;
+        let onColumnHeaderClick: PropTypes.Requireable<(...args: any[]) => any>;
+        let onColumnHeaderDoubleClick: PropTypes.Requireable<(...args: any[]) => any>;
+        let onColumnHeaderEnter: PropTypes.Requireable<(...args: any[]) => any>;
+        let onColumnHeaderLeave: PropTypes.Requireable<(...args: any[]) => any>;
+        let onColumnHeaderOut: PropTypes.Requireable<(...args: any[]) => any>;
+        let onColumnHeaderOver: PropTypes.Requireable<(...args: any[]) => any>;
+        let onColumnOrderChange: PropTypes.Requireable<(...args: any[]) => any>;
+        let onColumnVisibilityModelChange: PropTypes.Requireable<(...args: any[]) => any>;
+        let onEditRowsModelChange: PropTypes.Requireable<(...args: any[]) => any>;
+        let onError: PropTypes.Requireable<(...args: any[]) => any>;
+        let onFilterModelChange: PropTypes.Requireable<(...args: any[]) => any>;
+        let onMenuClose: PropTypes.Requireable<(...args: any[]) => any>;
+        let onMenuOpen: PropTypes.Requireable<(...args: any[]) => any>;
+        let onPageChange: PropTypes.Requireable<(...args: any[]) => any>;
+        let onPageSizeChange: PropTypes.Requireable<(...args: any[]) => any>;
+        let onPreferencePanelClose: PropTypes.Requireable<(...args: any[]) => any>;
+        let onPreferencePanelOpen: PropTypes.Requireable<(...args: any[]) => any>;
+        let onProcessRowUpdateError: PropTypes.Requireable<(...args: any[]) => any>;
+        let onResize: PropTypes.Requireable<(...args: any[]) => any>;
+        let onRowClick: PropTypes.Requireable<(...args: any[]) => any>;
+        let onRowDoubleClick: PropTypes.Requireable<(...args: any[]) => any>;
+        let onRowEditCommit: PropTypes.Requireable<(...args: any[]) => any>;
+        let onRowEditStart: PropTypes.Requireable<(...args: any[]) => any>;
+        let onRowEditStop: PropTypes.Requireable<(...args: any[]) => any>;
+        let onRowModesModelChange: PropTypes.Requireable<(...args: any[]) => any>;
+        let onSelectionModelChange: PropTypes.Requireable<(...args: any[]) => any>;
+        let onSortModelChange: PropTypes.Requireable<(...args: any[]) => any>;
+        let uxpinRef: PropTypes.Requireable<any>;
+    }
+}
+import PropTypes from 'prop-types';

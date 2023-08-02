@@ -2,7 +2,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Box from '../Box/Box';
-import { Stepper as StepperM } from '@mui/material';
+import StepperM from '@mui/material/Stepper';
 import Step from '@mui/material/Step';
 import StepLabel from '@mui/material/StepLabel';
 import Button from '../Button/Button';
