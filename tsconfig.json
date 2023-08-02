@@ -16,7 +16,7 @@
     "isolatedModules": true,
     "noEmit": false,
     "jsx": "react-jsx",
-    "rootDir": "src",
+    "rootDir": "src/components",
     "outDir": "dist"
   },
   "exclude": [

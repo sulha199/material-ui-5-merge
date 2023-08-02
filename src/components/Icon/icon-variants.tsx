@@ -2217,4 +2217,6 @@ export const iconVariants = [
   'zoom_in_map',
   'zoom_out',
   'zoom_out_map',
-];
+] as const;
+
+export type IconVarian = (typeof iconVariants)[number];

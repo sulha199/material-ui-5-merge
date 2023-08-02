@@ -1,13 +1,6 @@
 import React from 'react';
 import IconM, { IconProps } from '@mui/material/Icon';
-
-enum iconOptions {
-  ADD = 'add',
-  CAMERA = 'camera',
-  FACE = 'face',
-  LOCK = 'lock',
-  PHOTO = 'photo',
-}
+import { IconVarian } from './icon-variants';
 
 interface UXPinIconProps extends IconProps {
   /**
@@ -15,7 +8,7 @@ interface UXPinIconProps extends IconProps {
    * Use the name of the icon from https://material.io/tools/icons.
    * @uxpinpropname  Icon
    **/
-  children: iconOptions;
+  children: IconVarian;
 
   /**
    * The fontSize applied to the icon. Defaults to 24px, but can be configure to inherit font size.

@@ -2,8 +2,9 @@
   "name": "material-ui-uxpin",
   "version": "1.0.0",
   "source": "src/index.tsx",
-  "main": "dist/main.js",
-  "module": "dist/module.js",
+  "main": "dist/index.js",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
   "dependencies": {
     "@emotion/react": "^11.11.1",
     "@emotion/styled": "^11.11.0",

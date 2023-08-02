@@ -1,0 +1,1 @@
+{"version":3,"file":"DialogContentText.js","sourceRoot":"","sources":["../../src/components/DialogContentText/DialogContentText.tsx"],"names":[],"mappings":";AACA,OAAO,kBAA8C,MAAM,iCAAiC,CAAC;AAE7F;;GAEG;AACH,SAAS,iBAAiB,CAAC,KAA6B;IACtD,MAAM,EAAE,QAAQ,EAAE,GAAG,KAAK,CAAC;IAE3B,OAAO,KAAC,kBAAkB,OAAK,KAAK,YAAG,QAAQ,GAAsB,CAAC;AACxE,CAAC;AAED,eAAe,iBAAiB,CAAC"}
