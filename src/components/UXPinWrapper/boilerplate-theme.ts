@@ -1,4 +1,6 @@
-const boilerplateTheme = {
+import { ThemeOptions } from "@mui/material";
+
+const boilerplateTheme: ThemeOptions = {
   // To further customize this theme,
   // please see the full theme object here: https://mui.com/customization/default-theme/
   palette: {
@@ -15,6 +17,15 @@ const boilerplateTheme = {
       contrastText: '#ffffff',
     },
   },
+  components: {
+    MuiButton: {
+      styleOverrides: {
+        sizeLarge: {
+          
+        }        
+      }
+    }
+  }
 };
 
 export default boilerplateTheme;
