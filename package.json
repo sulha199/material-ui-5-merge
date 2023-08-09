@@ -26,7 +26,7 @@
   },
   "scripts": {
     "start": "npx uxpin-merge --disable-tunneling",
-    "uxpin": "uxpin-merge --disable-tunneling --webpack-config ./uxpin.webpack.config.js --wrapper ./src/components/UXPinWrapper/UXPinWrapper.js",
+    "uxpin": "uxpin-merge --disable-tunneling --webpack-config ./webpack.config.js --wrapper ./src/components/UXPinWrapper/UXPinWrapper.tsx",
     "watch": "parcel watch",
     "build": "npm run clean && tsc",
     "clean": "rimraf dist",
