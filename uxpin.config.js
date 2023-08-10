@@ -121,7 +121,7 @@ module.exports = {
           'src/components/FormControlLabel/FormControlLabel.js',
           'src/components/FormGroup/FormGroup.js',
           'src/components/FormHelperText/FormHelperText.js',
-          'src/components/FormLabel/FormLabel.js',
+          'src/components/FormLabel/FormLabel.tsx',
 
           'src/components/ImageListItem/ImageListItem.js',
           'src/components/ImageListItemBar/ImageListItemBar.js',
