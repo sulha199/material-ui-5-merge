@@ -25,7 +25,7 @@ module.exports = {
           'src/components/Switch/Switch.js',
           'src/components/SwitchWithLabel/SwitchWithLabel.js',
           'src/components/SwitchGroup/SwitchGroup.js',
-          'src/components/TextField/TextField.js',
+          'src/components/TextField/TextField.tsx',
           // 'src/components/TransferList/TransferList.js',
           'src/components/ToggleButton/ToggleButton.tsx',
           'src/components/ToggleButtonGroup/ToggleButtonGroup.js',
