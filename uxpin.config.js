@@ -143,7 +143,7 @@ module.exports = {
           'src/components/TableBody/TableBody.js',
           'src/components/TableFooter/TableFooter.js',
           'src/components/TableHead/TableHead.js',
-          'src/components/TableRow/TableRow.js',
+          'src/components/TableRow/TableRow.tsx',
           'src/components/TablePagination/TablePagination.tsx',
 
           'src/components/Tab/Tab.js',
