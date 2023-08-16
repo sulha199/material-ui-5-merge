@@ -28,13 +28,6 @@ function Stack(props: UxPinStackProps) {
     <StackM
       {...otherProps}
       divider={hasDivider && <Divider orientation={dividerOrientation} flexItem />}
-      sx={{
-        paddingTop: props.paddingTop + 'px',
-        paddingBottom: props.paddingBottom + 'px',
-        paddingRight: props.paddingRight + 'px',
-        paddingLeft: props.paddingLeft + 'px',
-        flexWrap: props.wrap,
-      }}
     >
       {props.children}
     </StackM>

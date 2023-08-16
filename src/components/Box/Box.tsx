@@ -1,7 +1,7 @@
 import BoxM, { BoxProps } from '@mui/material/Box';
 
 type UxPinBoxProps<RefType> = BoxProps & {
-  uxpinRef: React.Ref<RefType>
+  uxpinRef?: React.Ref<RefType>
 }
 
 /**

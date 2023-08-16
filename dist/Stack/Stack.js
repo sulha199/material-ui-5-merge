@@ -13,13 +13,7 @@ function Stack(props) {
         dividerOrientation = 'horizontal';
     }
     const { hasDivider, ...otherProps } = props;
-    return (_jsx(StackM, { ...otherProps, divider: hasDivider && _jsx(Divider, { orientation: dividerOrientation, flexItem: true }), sx: {
-            paddingTop: props.paddingTop + 'px',
-            paddingBottom: props.paddingBottom + 'px',
-            paddingRight: props.paddingRight + 'px',
-            paddingLeft: props.paddingLeft + 'px',
-            flexWrap: props.wrap,
-        }, children: props.children }));
+    return (_jsx(StackM, { ...otherProps, divider: hasDivider && _jsx(Divider, { orientation: dividerOrientation, flexItem: true }), children: props.children }));
 }
 export default Stack;
 //# sourceMappingURL=Stack.js.map

@@ -1,5 +1,5 @@
-import React from 'react';
-type ImageProps = Partial<Pick<HTMLImageElement, 'alt' | 'src' | 'height' | 'width'> & {
+import React, { ImgHTMLAttributes } from 'react';
+type ImageProps = Partial<Pick<ImgHTMLAttributes<HTMLImageElement>, 'alt' | 'src' | 'height' | 'width'> & {
     objectFit: 'fill' | 'contain' | 'cover' | 'none' | 'scale-down';
     style?: React.CSSProperties;
 }>;
