@@ -126,7 +126,7 @@ module.exports = {
           'src/components/ImageListItem/ImageListItem.js',
           'src/components/ImageListItemBar/ImageListItemBar.js',
 
-          'src/components/InputLabel/InputLabel.js',
+          'src/components/InputLabel/InputLabel.tsx',
 
           'src/components/ListItem/ListItem.js',
           'src/components/ListItemAvatar/ListItemAvatar.js',
