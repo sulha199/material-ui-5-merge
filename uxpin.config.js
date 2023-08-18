@@ -37,7 +37,7 @@ module.exports = {
           'src/components/Avatar/Avatar.js',
           'src/components/AvatarGroup/AvatarGroup.js',
           'src/components/Badge/Badge.js',
-          'src/components/Chip/Chip.js',
+          'src/components/Chip/Chip.tsx',
           'src/components/DataGrid/DataGrid.js',
           'src/components/Divider/Divider.js',
           'src/components/Icon/Icon.tsx',
@@ -50,7 +50,7 @@ module.exports = {
       {
         name: 'FEEDBACK',
         include: [
-          'src/components/Alert/Alert.js',
+          'src/components/Alert/Alert.tsx',
           'src/components/Backdrop/Backdrop.js',
           'src/components/Dialog/Dialog.tsx',
           'src/components/CircularProgress/CircularProgress.js',
@@ -97,7 +97,7 @@ module.exports = {
       {
         name: 'CHILDREN (PARTS)',
         include: [
-          'src/components/AlertTitle/AlertTitle.js',
+          'src/components/AlertTitle/AlertTitle.tsx',
 
           'src/components/AccordionActions/AccordionActions.js',
           'src/components/AccordionDetails/AccordionDetails.js',
