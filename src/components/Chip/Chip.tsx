@@ -16,12 +16,12 @@ export default function Chip(props: ChipProps) {
   const [chipDeleted, setChipDeleted] = React.useState(false);
   const { ...other } = props;
 
-  const onDelete: ChipProps['onDelete'] = (e) => {
+  const onDelete: ChipProps['onDelete'] = props.onDelete && ((e) => {
     if (props.deletable) {
       props.onDelete?.(e);
       setChipDeleted(true);
     }
-  };
+  });
   return (
     <>
       {!chipDeleted ? (

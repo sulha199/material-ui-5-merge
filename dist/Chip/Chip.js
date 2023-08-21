@@ -8,12 +8,12 @@ import Icon from '../Icon/Icon';
 export default function Chip(props) {
     const [chipDeleted, setChipDeleted] = React.useState(false);
     const { ...other } = props;
-    const onDelete = (e) => {
+    const onDelete = props.onDelete && ((e) => {
         if (props.deletable) {
             props.onDelete?.(e);
             setChipDeleted(true);
         }
-    };
+    });
     return (_jsx(_Fragment, { children: !chipDeleted ? (_jsx(ChipM, { ...other, onDelete: onDelete, avatar: props.avatar, icon: props.icon && _jsx(Icon, { children: props.icon }), deleteIcon: props.deleteIcon && _jsx(Icon, { children: props.deleteIcon }) })) : null }));
 }
 //# sourceMappingURL=Chip.js.map
