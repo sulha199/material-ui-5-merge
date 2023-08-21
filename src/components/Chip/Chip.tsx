@@ -3,7 +3,7 @@ import ChipM, {ChipProps as MChipProps} from '@mui/material/Chip';
 import Icon from '../Icon/Icon';
 import { IconVarian } from '../Icon/icon-variants';
 
-type ChipProps = MChipProps & {
+export type ChipProps = MChipProps & {
   deletable?: boolean;
   deleteIcon?: IconVarian;
   icon?: IconVarian;

@@ -1,6 +1,6 @@
 import { ChipProps as MChipProps } from '@mui/material/Chip';
 import { IconVarian } from '../Icon/icon-variants';
-type ChipProps = MChipProps & {
+export type ChipProps = MChipProps & {
     deletable?: boolean;
     deleteIcon?: IconVarian;
     icon?: IconVarian;
@@ -9,4 +9,3 @@ type ChipProps = MChipProps & {
  * @uxpindocurl https://mui.com/components/chips/
  */
 export default function Chip(props: ChipProps): import("react/jsx-runtime").JSX.Element;
-export {};

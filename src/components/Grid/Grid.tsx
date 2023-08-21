@@ -1,18 +1,18 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import GridM, { GridProps } from '@mui/material/Grid';
+import GridM, { GridProps as GridPropsM } from '@mui/material/Grid';
 
-type UxGridProps = {
+export type GridProps = {
   paddingTop: number;
   paddingBottom: number;
   paddingRight: number;
   paddingLeft: number;
-} & GridProps;
+} & GridPropsM;
 
 /**
  * @uxpindocurl https://mui.com/api/grid/
  */
-function Grid(props: UxGridProps) {
+function Grid(props: GridProps) {
   // const space = Number(props.spacing);
   return (
     <GridM

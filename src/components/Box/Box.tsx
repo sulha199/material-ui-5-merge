@@ -1,6 +1,6 @@
-import BoxM, { BoxProps } from '@mui/material/Box';
+import BoxM, { BoxProps as MBoxProps } from '@mui/material/Box';
 
-type UxPinBoxProps<RefType> = BoxProps & {
+export type BoxProps<RefType> = MBoxProps & {
   uxpinRef?: React.Ref<RefType>
 }
 
@@ -11,7 +11,7 @@ type UxPinBoxProps<RefType> = BoxProps & {
 /**
  * @uxpindocurl https://mui.com/components/box/#main-content
  */
-function Box<RefType>(props: UxPinBoxProps<RefType>) {
+function Box<RefType>(props: BoxProps<RefType>) {
   const { uxpinRef, ...other } = props;
   return (
     <BoxM ref={uxpinRef} height="100%" {...other}>

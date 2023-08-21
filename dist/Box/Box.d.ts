@@ -1,6 +1,6 @@
 /// <reference types="react" />
-import { BoxProps } from '@mui/material/Box';
-type UxPinBoxProps<RefType> = BoxProps & {
+import { BoxProps as MBoxProps } from '@mui/material/Box';
+export type BoxProps<RefType> = MBoxProps & {
     uxpinRef?: React.Ref<RefType>;
 };
 /**
@@ -10,5 +10,5 @@ type UxPinBoxProps<RefType> = BoxProps & {
 /**
  * @uxpindocurl https://mui.com/components/box/#main-content
  */
-declare function Box<RefType>(props: UxPinBoxProps<RefType>): import("react/jsx-runtime").JSX.Element;
+declare function Box<RefType>(props: BoxProps<RefType>): import("react/jsx-runtime").JSX.Element;
 export default Box;

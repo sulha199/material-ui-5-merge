@@ -1,16 +1,16 @@
 import React from 'react';
-import DialogM, { DialogProps } from '@mui/material/Dialog';
+import DialogM, { DialogProps as MDialogProps } from '@mui/material/Dialog';
 
-type UXPinDialogProps = Omit<DialogProps, 'onClose' | 'TransitionProps' | 'disablePortal' | 'style'>;
+export type DialogProps = MDialogProps;
 
 /**
  * @uxpinuseportal
  * @uxpindocurl https://mui.com/api/dialog/#main-content
  */
 
-function Dialog(props: UXPinDialogProps) {
+function Dialog(props: DialogProps) {
   const [open, setOpen] = React.useState(props.open);
-  const { children } = props;
+  const { children, onClose, disablePortal, TransitionProps, style } = props;
 
   React.useEffect(() => setOpen(props.open), [props]);
 
@@ -18,10 +18,13 @@ function Dialog(props: UXPinDialogProps) {
     <DialogM
       {...props}
       open={open}
-      onClose={() => setOpen(false)}
-      TransitionProps={{ tabIndex: undefined }}
-      disablePortal={true}
-      style={{ minWidth: '300px', minHeight: '300px', width: '100%', height: '100%' }}
+      onClose={(e, reason) => {
+        setOpen(false);
+        onClose?.(e, reason);
+      }}
+      TransitionProps={{ tabIndex: undefined, ...TransitionProps }}
+      disablePortal={disablePortal ?? true}
+      style={{ minWidth: '300px', minHeight: '300px', width: '100%', height: '100%', ...style }}
     >
       {children}
     </DialogM>

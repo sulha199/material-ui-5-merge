@@ -7,9 +7,12 @@ import DialogM from '@mui/material/Dialog';
  */
 function Dialog(props) {
     const [open, setOpen] = React.useState(props.open);
-    const { children } = props;
+    const { children, onClose, disablePortal, TransitionProps, style } = props;
     React.useEffect(() => setOpen(props.open), [props]);
-    return (_jsx(DialogM, { ...props, open: open, onClose: () => setOpen(false), TransitionProps: { tabIndex: undefined }, disablePortal: true, style: { minWidth: '300px', minHeight: '300px', width: '100%', height: '100%' }, children: children }));
+    return (_jsx(DialogM, { ...props, open: open, onClose: (e, reason) => {
+            setOpen(false);
+            onClose?.(e, reason);
+        }, TransitionProps: { tabIndex: undefined, ...TransitionProps }, disablePortal: disablePortal ?? true, style: { minWidth: '300px', minHeight: '300px', width: '100%', height: '100%', ...style }, children: children }));
 }
 export default Dialog;
 //# sourceMappingURL=Dialog.js.map

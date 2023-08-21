@@ -1,11 +1,11 @@
 import * as React from 'react';
 import PropTypes from 'prop-types';
-import StackM, {StackProps} from '@mui/material/Stack';
+import StackM, {StackProps as StackPropsM} from '@mui/material/Stack';
 import Divider from '@mui/material/Divider';
 import { DividerProps } from '@material-ui/core';
 import { FlexboxProps } from '@mui/system';
 
-type UxPinStackProps = StackProps & {
+export type StackProps = StackPropsM & {
   hasDivider?: boolean;
   wrap?: FlexboxProps['flexWrap'];
 };
@@ -13,7 +13,7 @@ type UxPinStackProps = StackProps & {
 /**
  * @uxpindocurl https://mui.com/components/stack/#main-content
  */
-function Stack(props: UxPinStackProps) {
+function Stack(props: StackProps) {
   let dividerOrientation: DividerProps['orientation'];
 
   if (props.direction === 'row' || props.direction === 'row-reverse') {
