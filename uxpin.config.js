@@ -56,7 +56,7 @@ module.exports = {
           'src/components/CircularProgress/CircularProgress.js',
           'src/components/LinearProgress/LinearProgress.js',
           'src/components/Skeleton/Skeleton.js',
-          'src/components/Snackbar/Snackbar.js',
+          'src/components/Snackbar/Snackbar.tsx',
         ],
       },
       {
