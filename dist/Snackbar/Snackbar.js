@@ -12,7 +12,7 @@ export default function Snackbar(props) {
     const [isOpen, setIsOpen] = React.useState(open);
     React.useEffect(() => {
         setIsOpen(open);
-    }, [open]); // Only re-run the effect if open prop changes
+    }, [props]);
     const handleClose = (event, reason) => {
         if (reason === 'clickaway') {
             // prevents from closing in the UXPin Editor when switching props
