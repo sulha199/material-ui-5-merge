@@ -22,7 +22,7 @@ export default function Snackbar(props: SnackBarprops) {
 
   React.useEffect(() => {
     setIsOpen(open);
-  }, [open]); // Only re-run the effect if open prop changes
+  }, [props]);
 
   const handleClose = (event: Event | React.SyntheticEvent<any, Event>, reason: SnackbarCloseReason) => {
     if (reason === 'clickaway') {
