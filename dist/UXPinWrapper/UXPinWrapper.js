@@ -9,7 +9,7 @@ const UXPinWrapper = (props) => {
         const icons = document.createElement('link');
         icons.setAttribute('rel', 'stylesheet');
         icons.setAttribute('href', 'https://fonts.googleapis.com/icon?family=Material+Icons');
-        document.head.appendChild(icons);
+        document.head.prepend(icons);
     }, []);
     return _jsx(ThemeProvider, { ...props, theme: theme ?? defaultTheme, children: children });
 };
