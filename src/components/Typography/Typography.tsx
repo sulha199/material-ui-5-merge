@@ -8,7 +8,7 @@ function Typography(props: TypographyProps) {
   const { children, ...moreProps } = props;
 
   return (
-    <TypographyM {...moreProps} style={{ whiteSpace: 'pre-wrap' }}>
+    <TypographyM {...moreProps}>
       {children}
     </TypographyM>
   );

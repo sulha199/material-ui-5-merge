@@ -1,6 +1,7 @@
 import { jsx as _jsx } from "react/jsx-runtime";
 import * as React from 'react';
 import { DataGridPro, useGridApiRef } from '@mui/x-data-grid-pro';
+import { makeStyles } from '@material-ui/core';
 const columns = [
     { field: 'id', headerName: 'ID', width: 70 },
     { field: 'firstName', headerName: 'First name', width: 130 },
@@ -31,7 +32,11 @@ const rows = [
     { id: 8, lastName: 'Frances', firstName: 'Rossini', age: 36 },
     { id: 9, lastName: 'Roxie', firstName: 'Harvey', age: 65 },
 ];
+const dataTableStyle = makeStyles({
+    root: { height: 400, width: '100%' }
+});
 function DataTable() {
+    const style = dataTableStyle();
     const apiRef = useGridApiRef();
     React.useEffect(() => {
         return apiRef.current.subscribeEvent('columnResize', (params) => {
@@ -39,7 +44,7 @@ function DataTable() {
             setMessage(`Column ${params.colDef.headerName} resized to ${params.width}px.`);
         });
     }, [apiRef]);
-    return (_jsx("div", { style: { height: 400, width: '100%' }, children: _jsx(DataGridPro, { apiRef: apiRef, rows: rows, columns: columns, pageSize: 5, rowsPerPageOptions: [5], checkboxSelection: true }) }));
+    return (_jsx("div", { className: style.root, children: _jsx(DataGridPro, { apiRef: apiRef, rows: rows, columns: columns, pageSize: 5, rowsPerPageOptions: [5], checkboxSelection: true }) }));
 }
 export default DataTable;
 //# sourceMappingURL=DataTable.js.map

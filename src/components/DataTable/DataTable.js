@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { DataGridPro, useGridApiRef } from '@mui/x-data-grid-pro';
+import { makeStyles } from '@material-ui/core';
 
 const columns = [
   { field: 'id', headerName: 'ID', width: 70 },
@@ -34,7 +35,12 @@ const rows = [
   { id: 9, lastName: 'Roxie', firstName: 'Harvey', age: 65 },
 ];
 
+const dataTableStyle = makeStyles({
+  root: { height: 400, width: '100%' }
+})
+
 function DataTable() {
+  const style = dataTableStyle();
   const apiRef = useGridApiRef();
   React.useEffect(() => {
     return apiRef.current.subscribeEvent('columnResize', (params) => {
@@ -44,7 +50,7 @@ function DataTable() {
   }, [apiRef]);
 
   return (
-    <div style={{ height: 400, width: '100%' }}>
+    <div className={style.root}>
       <DataGridPro
         apiRef={apiRef}
         rows={rows}

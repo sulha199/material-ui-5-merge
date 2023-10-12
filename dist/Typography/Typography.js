@@ -5,7 +5,7 @@ import TypographyM from '@mui/material/Typography';
  */
 function Typography(props) {
     const { children, ...moreProps } = props;
-    return (_jsx(TypographyM, { ...moreProps, style: { whiteSpace: 'pre-wrap' }, children: children }));
+    return (_jsx(TypographyM, { ...moreProps, children: children }));
 }
 export default Typography;
 //# sourceMappingURL=Typography.js.map

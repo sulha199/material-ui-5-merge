@@ -12,7 +12,7 @@ function Dialog(props) {
     return (_jsx(DialogM, { ...props, open: open, onClose: (e, reason) => {
             setOpen(false);
             onClose?.(e, reason);
-        }, TransitionProps: { tabIndex: undefined, ...TransitionProps }, disablePortal: disablePortal ?? true, style: { minWidth: '300px', minHeight: '300px', width: '100%', height: '100%', ...style }, children: children }));
+        }, TransitionProps: { tabIndex: undefined, ...TransitionProps }, disablePortal: disablePortal ?? true, sx: { minWidth: '300px', minHeight: '300px', width: '100%', height: '100%', ...style }, children: children }));
 }
 export default Dialog;
 //# sourceMappingURL=Dialog.js.map

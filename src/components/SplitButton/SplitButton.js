@@ -60,7 +60,7 @@ export default function SplitButton(props) {
         {({ TransitionProps, placement }) => (
           <Grow
             {...TransitionProps}
-            style={{
+            sx={{
               transformOrigin: placement === 'bottom' ? 'center top' : 'center bottom',
             }}
           >

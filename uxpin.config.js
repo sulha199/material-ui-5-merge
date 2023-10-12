@@ -53,7 +53,7 @@ module.exports = {
           'src/components/Alert/Alert.tsx',
           'src/components/Backdrop/Backdrop.js',
           'src/components/Dialog/Dialog.tsx',
-          'src/components/CircularProgress/CircularProgress.js',
+          'src/components/CircularProgress/CircularProgress.tsx',
           'src/components/LinearProgress/LinearProgress.js',
           'src/components/Skeleton/Skeleton.js',
           'src/components/Snackbar/Snackbar.tsx',
@@ -73,7 +73,7 @@ module.exports = {
         include: [
           'src/components/BottomNavigation/BottomNavigation.js',
           'src/components/Breadcrumbs/Breadcrumbs.js',
-          'src/components/Drawer/Drawer.js',
+          'src/components/Drawer/Drawer.tsx',
           'src/components/Link/Link.js',
           'src/components/Menu/Menu.js',
           'src/components/Pagination/Pagination.tsx',

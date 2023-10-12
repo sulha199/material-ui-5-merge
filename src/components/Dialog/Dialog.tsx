@@ -24,7 +24,7 @@ function Dialog(props: DialogProps) {
       }}
       TransitionProps={{ tabIndex: undefined, ...TransitionProps }}
       disablePortal={disablePortal ?? true}
-      style={{ minWidth: '300px', minHeight: '300px', width: '100%', height: '100%', ...style }}
+      sx={{ minWidth: '300px', minHeight: '300px', width: '100%', height: '100%', ...style }}
     >
       {children}
     </DialogM>
