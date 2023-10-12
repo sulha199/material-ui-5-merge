@@ -1,14 +1,6 @@
-export default TableContainer;
+import { TableContainerProps } from '@mui/material/TableContainer';
 /**
  * @uxpindocurl https://mui.com/api/table-container/#main-content
  */
-declare function TableContainer(props: any): import("react/jsx-runtime").JSX.Element;
-declare namespace TableContainer {
-    namespace propTypes {
-        let children: PropTypes.Requireable<PropTypes.ReactNodeLike>;
-        let classes: PropTypes.Requireable<object>;
-        let component: PropTypes.Requireable<string>;
-        let sx: PropTypes.Requireable<object>;
-    }
-}
-import PropTypes from 'prop-types';
+declare function TableContainer(props: TableContainerProps): import("react/jsx-runtime").JSX.Element;
+export default TableContainer;
