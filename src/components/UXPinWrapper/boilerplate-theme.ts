@@ -27,7 +27,7 @@ const boilerplateTheme: ThemeOptions = {
       styleOverrides: {
         button: {
           fontSize: '2rem'
-        }
+        },
       }
     },
     MuiButton: {

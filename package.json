@@ -26,11 +26,14 @@
   },
   "scripts": {
     "start": "npx uxpin-merge --disable-tunneling",
+    "theme-creator": "cross-env nodemon --watch src/components/UXPinWrapper/boilerplate-theme.ts --exec \"npm run export-theme\" & cd './mui-theme-creator' && yarn && yarn start",
+    "export-theme": "ts-node --esm src/export-theme-options.ts",
     "uxpin": "uxpin-merge --disable-tunneling --webpack-config ./webpack.config.js --wrapper ./src/components/UXPinWrapper/UXPinWrapper.tsx",
     "watch": "parcel watch",
     "build": "npm run clean && tsc",
     "clean": "rimraf dist",
     "test": "react-scripts test",
+    "postinstall": "npm i -g yarn",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
@@ -64,10 +67,13 @@
     "@uxpin/merge-cli": "^3.0.4",
     "babel-loader": "^9.1.2",
     "buffer": "^6.0.3",
+    "cross-env": "^7.0.3",
+    "nodemon": "^3.0.1",
     "parcel": "^2.7.0",
     "react-scripts": "5.0.1",
     "rimraf": "^5.0.1",
     "ts-loader": "^9.4.2",
+    "ts-node": "^10.9.1",
     "typescript": "^5.1.6",
     "web-vitals": "^1.0.1",
     "webpack": "^5.82.1"
