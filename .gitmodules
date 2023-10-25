@@ -1,0 +1,3 @@
+[submodule "mui-theme-creator"]
+	path = mui-theme-creator
+	url = ./mui-theme-creator/
