@@ -1,5 +1,6 @@
 import { FC, useEffect } from 'react';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
+import ScopedCssBaseline from '@mui/material/ScopedCssBaseline';
 import boilerplateTheme from './boilerplate-theme';
 import { DefaultTheme, ThemeProviderProps } from '@mui/system';
 
@@ -17,7 +18,9 @@ const UXPinWrapper: FC<UxPinWrapperProps> = (props) => {
     document.head.prepend(icons);
   }, [])
 
-  return <ThemeProvider {...props} theme={theme ?? defaultTheme}>{children}</ThemeProvider>;
+  return <ScopedCssBaseline>
+    <ThemeProvider {...props} theme={theme ?? defaultTheme}>{children}</ThemeProvider>
+  </ScopedCssBaseline>;
 };
 
 export default UXPinWrapper;
