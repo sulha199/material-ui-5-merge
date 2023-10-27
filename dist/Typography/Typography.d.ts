@@ -1,6 +1,8 @@
 import { TypographyProps } from '@mui/material/Typography';
-/**
- * @uxpindocurl https://mui.com/api/typography/
- */
-declare function Typography(props: TypographyProps): import("react/jsx-runtime").JSX.Element;
+import { OverridableStringUnion } from '@mui/types';
+import { FC } from 'react';
+export type TextColor = OverridableStringUnion<'inherit' | 'primary' | 'secondary' | 'error', {}> | TypographyProps['color'];
+export declare const Typography: FC<TypographyProps & {
+    color?: TextColor;
+}>;
 export default Typography;
