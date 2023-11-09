@@ -72,8 +72,6 @@ typings/
 
 # vs-code 
 
-.vscode
-
 # Docz
 
 .docz/cache
