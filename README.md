@@ -44,3 +44,9 @@ To modify theme:
 1. Do the [Preview components in local](#preview-components-in-local)
 2. Then, edit file `src/components/UXPinWrapper/boilerplate-theme.ts`, and put the required changes into the `boilerplateTheme` variable.
 3. The `Preview components in local` will automatically reloaded when the `src/components/UXPinWrapper/boilerplate-theme.ts` is saved with correct value.
+
+**Note:** 
+
+`src/components/UXPinWrapper/boilerplate-theme.ts` uses React CSS, a bit different to the HTML CSS.
+- You could utilize the Visual Studio Code's intellisense to help you assign the React CSS.
+- Or, you could use tool https://staxmanade.com/CssToReact/ that is able to convert HTML CSS into React CSS
